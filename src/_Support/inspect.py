@@ -366,6 +366,7 @@ def getfile(object):
 def getmoduleinfo(path):
     """Get the module name, suffix, mode, and module type for a given file."""
     filename = os.path.basename(path)
+    
     suffixes = map(lambda (suffix, mode, mtype):
                    (-len(suffix), suffix, mode, mtype), imp.get_suffixes())
     suffixes.sort() # try longest suffixes first, in case they overlap

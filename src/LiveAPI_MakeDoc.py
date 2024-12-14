@@ -28,21 +28,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
 import Live
-import os, sys, types
-from _Support import inspect
 from _Framework.ControlSurface import ControlSurface
+import os
+import sys
+from ._Support import inspect
+
 
 class APIMakeDoc(ControlSurface):
-
     def __init__(self, c_instance):
-        ControlSurface.__init__(self, c_instance) 
+        ControlSurface.__init__(self, c_instance)
         module = Live
-        outfilename = (str(module.__name__) + ".xml")
-        outfilename = (os.path.join(os.path.expanduser('~'), outfilename))
+        outfilename = str(module.__name__) + ".xml"
+        outfilename = os.path.join(os.path.expanduser("~"), outfilename)
         cssfilename = "Live.css"
-        cssfilename = (os.path.join(os.path.expanduser('~'), cssfilename))
+        cssfilename = os.path.join(os.path.expanduser("~"), cssfilename)
         make_doc(module, outfilename, cssfilename)
-
 
     def disconnect(self):
         ControlSurface.disconnect(self)
@@ -52,140 +52,163 @@ def make_doc(module, outfilename, cssfilename):
     if outfilename != None:
         stdout_old = sys.stdout
 
-        outputfile = open(cssfilename, 'w')
+        outputfile = open(cssfilename, "w")
         sys.stdout = outputfile
         print(css)
         outputfile.close()
 
-        outputfile = open(outfilename, 'w')
+        outputfile = open(outfilename, "w")
         sys.stdout = outputfile
 
-        print ('<?xml-stylesheet type="text/css" href="Live.css"?>') # set stylesheet to Live.css
-        print ('<Live>')
-        app = Live.Application.get_application() # get a handle to the App
-        maj = app.get_major_version() # get the major version from the App
-        min = app.get_minor_version() # get the minor version from the App
-        bug = app.get_bugfix_version() # get the bugfix version from the App            
-        print ('Live API version ' + str(maj) + "." + str(min) + "." + str(bug)) # main title
-        print('<Doc>\t%s</Doc>\n' % header)
-        print('<Doc>\t%s</Doc>\n' % disclaimer)
+        print(
+            '<?xml-stylesheet type="text/css" href="Live.css"?>'
+        )  # set stylesheet to Live.css
+        print("<Live>")
+        app = Live.Application.get_application()  # get a handle to the App
+        maj = app.get_major_version()  # get the major version from the App
+        min = app.get_minor_version()  # get the minor version from the App
+        bug = app.get_bugfix_version()  # get the bugfix version from the App
+        print(
+            "Live API version " + str(maj) + "." + str(min) + "." + str(bug)
+        )  # main title
+        print("<Doc>\t%s</Doc>\n" % header)
+        print("<Doc>\t%s</Doc>\n" % disclaimer)
 
         describe_module(module)
 
-        print ("</Live>")
+        print("</Live>")
         outputfile.close()
         sys.stdout = stdout_old
-            
-            
+
+
 def get_doc(obj):
-    """ Get object's doc string and remove \n's and clean up <'s and >'s for XML compatibility"""
+    """Get object's doc string and remove \n's and clean up <'s and >'s for XML compatibility"""
 
     doc = False
     if obj.__doc__ != None:
-        doc = (obj.__doc__).replace("\n", "") #remove newlines from Live API docstings, for wrapped display
-        doc = doc.replace("   ", "") #Strip chunks of whitespace from docstrings, for wrapped display
-        doc = doc.replace("<", "&lt;") #replace XML reserved characters 
+        doc = (obj.__doc__).replace(
+            "\n", ""
+        )  # remove newlines from Live API docstings, for wrapped display
+        doc = doc.replace(
+            "   ", ""
+        )  # Strip chunks of whitespace from docstrings, for wrapped display
+        doc = doc.replace("<", "&lt;")  # replace XML reserved characters
         doc = doc.replace(">", "&gt;")
         doc = doc.replace("&", "&amp;")
     return doc
 
 
-def print_obj_info(description, obj, name = None):
-    """ Print object's descriptor and name on one line, and docstring (if any) on the next """
-    
-    if hasattr(obj, '__name__'):
+def print_obj_info(description, obj, name=None):
+    """Print object's descriptor and name on one line, and docstring (if any) on the next"""
+
+    if hasattr(obj, "__name__"):
         name_str = obj.__name__
     else:
-        name_str = name        
+        name_str = name
 
     if len(LINE) != 0:
         LINE.append("." + name_str)
-        if inspect.ismethod(obj) or inspect.isbuiltin(obj): 
+        if inspect.ismethod(obj) or inspect.isbuiltin(obj):
             LINE[-1] += "()"
     else:
         LINE.append(name_str)
     line_str = ""
     for item in LINE:
         line_str += item
-    print ('<%s>%s<Description>%s</Description></%s>\n' % (description, line_str, description, description))
+    print(
+        "<%s>%s<Description>%s</Description></%s>\n"
+        % (description, line_str, description, description)
+    )
 
-    if hasattr(obj, '__doc__'):
+    if hasattr(obj, "__doc__"):
         if obj.__doc__ != None:
-            print('<Doc>\t%s</Doc>\n' % get_doc(obj))
+            print("<Doc>\t%s</Doc>\n" % get_doc(obj))
 
 
 def describe_obj(descr, obj):
-    """ Describe object passed as argument, and identify as Class, Method, Property, Value, or Built-In """
+    """Describe object passed as argument, and identify as Class, Method, Property, Value, or Built-In"""
 
-    if obj.__name__ == "<unnamed Boost.Python function>" or obj.__name__.startswith('__'): #filter out descriptors
+    if obj.__name__ == "<unnamed Boost.Python function>" or obj.__name__.startswith(
+        "__"
+    ):  # filter out descriptors
         return
-    if (obj.__name__ == ("type")) or (obj.__name__ == ("class")): #filter out non-subclass type types 
+    if (obj.__name__ == ("type")) or (
+        obj.__name__ == ("class")
+    ):  # filter out non-subclass type types
         return
     print_obj_info(descr, obj)
-    if inspect.ismethod(obj) or inspect.isbuiltin(obj): #go no further for these objects
+    if inspect.ismethod(obj) or inspect.isbuiltin(
+        obj
+    ):  # go no further for these objects
         LINE.pop()
         return
     else:
-        try: 
+        try:
             members = inspect.getmembers(obj)
-            for (name, member) in members:
-                if inspect.isbuiltin(member):                    
+            for name, member in members:
+                if inspect.isbuiltin(member):
                     describe_obj("Built-In", member)
-            for (name, member) in members:
+            for name, member in members:
                 if str(type(member)) == "<type 'property'>":
                     print_obj_info("Property", member, name)
                     LINE.pop()
-            for (name, member) in members:
+            for name, member in members:
                 if inspect.ismethod(member):
-                    describe_obj("Method", member)                    
-            for (name, member) in members:
-                if (str(type(member)).startswith( "<class" )):
+                    describe_obj("Method", member)
+            for name, member in members:
+                if str(type(member)).startswith("<class"):
                     print_obj_info("Value", member, name)
                     LINE.pop()
-            for (name, member) in members:
-                if str(type(member)) == "<type 'object'>" or (str(type(member)) == "<type 'type'>" and not repr(obj).startswith("<class '")): #filter out unwanted types
+            for name, member in members:
+                if str(type(member)) == "<type 'object'>" or (
+                    str(type(member)) == "<type 'type'>"
+                    and not repr(obj).startswith("<class '")
+                ):  # filter out unwanted types
                     continue
                 if inspect.isclass(member) and str(type(member)) == "<type 'type'>":
-                    describe_obj("Sub-Class", member)   
-            for (name, member) in members:
-                if str(type(member)) == "<type 'object'>" or (str(type(member)) == "<type 'type'>" and not repr(obj).startswith("<class '")): #filter out unwanted types
+                    describe_obj("Sub-Class", member)
+            for name, member in members:
+                if str(type(member)) == "<type 'object'>" or (
+                    str(type(member)) == "<type 'type'>"
+                    and not repr(obj).startswith("<class '")
+                ):  # filter out unwanted types
                     continue
                 if inspect.isclass(member) and not str(type(member)) == "<type 'type'>":
                     describe_obj("Class", member)
             LINE.pop()
-        except: 
+        except:
             return
 
 
 def describe_module(module):
-    """ Describe the module object passed as argument
-    including its root classes and functions """
+    """Describe the module object passed as argument
+    including its root classes and functions"""
 
     print_obj_info("Module", module)
 
-    for name in dir(module): #do the built-ins first
+    for name in dir(module):  # do the built-ins first
         obj = getattr(module, name)
         if inspect.isbuiltin(obj):
             describe_obj("Built-In", obj)
 
-    for name in dir(module): #then the rest
-        obj = getattr(module, name)            
+    for name in dir(module):  # then the rest
+        obj = getattr(module, name)
         if inspect.isclass(obj):
             describe_obj("Class", obj)
-        elif (inspect.ismethod(obj) or inspect.isfunction(obj)):
+        elif inspect.ismethod(obj) or inspect.isfunction(obj):
             describe_obj("Method", obj)
         elif inspect.ismodule(obj):
             describe_module(obj)
-    LINE.pop()            
-            
-            
+    LINE.pop()
+
+
 LINE = []
-            
+
 header = """Unofficial Live API documentation generated by the "API_MakeDoc" MIDI Remote Script.   
             <requirement xmlns:html="http://www.w3.org/1999/xhtml">
             <html:a href="http://remotescripts.blogspot.com">http://remotescripts.blogspot.com</html:a></requirement>
             """
-disclaimer  = """This is unofficial documentation. Please do not contact Ableton with questions or problems relating to the use of this documentation."""
+disclaimer = """This is unofficial documentation. Please do not contact Ableton with questions or problems relating to the use of this documentation."""
 
 css = """/* Style Sheet for formatting XML output of Live API Inspector */
     Live
