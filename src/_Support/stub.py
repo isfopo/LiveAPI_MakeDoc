@@ -16,21 +16,22 @@ def generate(script_dir):
         makedirs(out_dir)
 
     xml = parse_xml(read_file(in_file))
-    with codecs.open(out_file, "w", "utf-8") as f:
-        f.write("from types import ModuleType\n")
-        last_tag = None
-        last_name = None
-        last_doc = None
-        for element in xml.findall("./*"):
-            assert isinstance(element, ElementTree.Element)
-            if element.tag == "Doc":
-                last_doc = element.text.strip() if element.text else ""
-            else:
-                generate_code(last_tag, last_name, last_doc, f)
-                last_doc = None
-                last_tag = element.tag
-                last_name = element.text.strip() if element.text else ""
-        generate_code(last_tag, last_name, last_doc, f)
+    if xml is not None:
+        with codecs.open(out_file, "w", "utf-8") as f:
+            f.write("from types import ModuleType\n")
+            last_tag = None
+            last_name = None
+            last_doc = None
+            for element in xml.findall("./*"):
+                assert isinstance(element, ElementTree.Element)
+                if element.tag == "Doc":
+                    last_doc = element.text.strip() if element.text else ""
+                else:
+                    generate_code(last_tag, last_name, last_doc, f)
+                    last_doc = None
+                    last_tag = element.tag
+                    last_name = element.text.strip() if element.text else ""
+            generate_code(last_tag, last_name, last_doc, f)
 
 
 def generate_code(tag, name, doc, f):
@@ -93,6 +94,9 @@ def generate_code(tag, name, doc, f):
 
 def parse_args_from_doc(doc):
     args = []
+    ret = None
+    doc = None
+
     try:
         if doc and ":" in doc:
             parts = doc.split(":", 1)
@@ -139,16 +143,37 @@ def read_file(name):
 
 def parse_xml(text):
     """
-    Create and return a namespace agnostic ElementTree.
+    Create and return a namespace-agnostic ElementTree.Element.
 
-    See http://stackoverflow.com/questions/13412496/python-elementtree-module-how-to-ignore-the-namespace-of-xml-files-to-locate-ma
+    Strips all namespaces from the XML tags.
+
+    See https://stackoverflow.com/questions/13412496/python-elementtree-module-how-to-ignore-the-namespace-of-xml-files-to-locate-ma
+    :param text: A string containing XML data.
+    :type text: str
+    :return: The root Element of the parsed XML tree without namespaces.
     :rtype: ElementTree.Element
     """
+    # Create an iterator for parsing the XML
     it = ElementTree.iterparse(StringIO(text))
+
+    # Strip namespaces from tags
     for _, el in it:
         if "}" in el.tag:
-            el.tag = el.tag.split("}", 1)[1]  # strip all namespaces
-    root = None
-    for _, el in it:
-        root = el
-    return root
+            el.tag = el.tag.split("}", 1)[1]  # Remove namespace
+
+    # Extract the root element
+    # Re-initialize the iterator to parse again for root
+    # Alternatively, use it.getroot() if available
+    try:
+        tree = ElementTree.ElementTree()
+        tree.parse(StringIO(text))
+        root = tree.getroot()
+
+        # Strip namespaces from root and its descendants
+        for elem in root.iter():
+            if "}" in elem.tag:
+                elem.tag = elem.tag.split("}", 1)[1]
+        return root
+    except ElementTree.ParseError as e:
+        print(f"Error parsing XML: {e}")
+        return None
