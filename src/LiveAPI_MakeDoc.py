@@ -146,7 +146,8 @@ def describe_obj(descr, obj):
     if inspect.ismethod(obj) or inspect.isbuiltin(
         obj
     ):  # go no further for these objects
-        LINE.pop()
+        if LINE:
+            LINE.pop()
         return
     else:
         try:
@@ -157,14 +158,16 @@ def describe_obj(descr, obj):
             for name, member in members:
                 if str(type(member)) == "<type 'property'>":
                     print_obj_info("Property", member, name)
-                    LINE.pop()
+                    if LINE:
+                        LINE.pop()
             for name, member in members:
                 if inspect.ismethod(member):
                     describe_obj("Method", member)
             for name, member in members:
                 if str(type(member)).startswith("<class"):
                     print_obj_info("Value", member, name)
-                    LINE.pop()
+                    if LINE:
+                        LINE.pop()
             for name, member in members:
                 if str(type(member)) == "<type 'object'>" or (
                     str(type(member)) == "<type 'type'>"
@@ -181,7 +184,8 @@ def describe_obj(descr, obj):
                     continue
                 if inspect.isclass(member) and not str(type(member)) == "<type 'type'>":
                     describe_obj("Class", member)
-            LINE.pop()
+            if LINE:
+                LINE.pop()
         except Exception:
             return
 
@@ -205,7 +209,8 @@ def describe_module(module):
             describe_obj("Method", obj)
         elif inspect.ismodule(obj):
             describe_module(obj)
-    LINE.pop()
+    if LINE:
+        LINE.pop()
 
 
 LINE = []
