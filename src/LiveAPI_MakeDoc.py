@@ -101,6 +101,10 @@ def get_doc(obj):
 def print_obj_info(description, obj, name=None):
     """Print object's descriptor and name on one line, and docstring (if any) on the next"""
 
+    if obj.__name__ == "<unnamed Boost.Python function>" or obj.__name__.startswith(
+        "__"
+    ):  # filter out descriptors
+        return
     if hasattr(obj, "__name__"):
         name_str = obj.__name__
     else:
