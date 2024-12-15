@@ -37,7 +37,6 @@ import dis
 import imp
 import tokenize
 import linecache
-import importlib.machinery
 from typing import Tuple, Optional, List, Any, Union
 
 from operator import attrgetter
@@ -383,8 +382,11 @@ def getfile(object: Any) -> str:
     if isclass(object):
         obj_module = sys.modules.get(object.__module__)
         if obj_module and hasattr(obj_module, "__file__"):
-            return obj_module.__file__
-        raise TypeError("arg is a built-in class")
+            file = obj_module.__file__
+            if isinstance(file, str):
+                return file
+        raise TypeError("arg is a built-in class or lacks __file__ attribute")
+
     if ismethod(object):
         object = object.__func__
     if isfunction(object):
