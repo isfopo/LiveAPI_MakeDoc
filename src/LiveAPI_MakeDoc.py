@@ -31,18 +31,20 @@ import Live
 from _Framework.ControlSurface import ControlSurface
 import os
 import sys
-from ._Support import inspect
+from ._Support import inspect, stub
 
 
 class APIMakeDoc(ControlSurface):
     def __init__(self, c_instance):
         ControlSurface.__init__(self, c_instance)
         module = Live
+        outdir = os.path.expanduser("~")
         outfilename = str(module.__name__) + ".xml"
-        outfilename = os.path.join(os.path.expanduser("~"), outfilename)
+        outfilename = os.path.join(outdir, outfilename)
         cssfilename = "Live.css"
-        cssfilename = os.path.join(os.path.expanduser("~"), cssfilename)
+        cssfilename = os.path.join(outdir, cssfilename)
         make_doc(module, outfilename, cssfilename)
+        stub.generate(outdir)
 
     def disconnect(self):
         ControlSurface.disconnect(self)
