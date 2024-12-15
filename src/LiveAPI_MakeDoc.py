@@ -49,7 +49,7 @@ class APIMakeDoc(ControlSurface):
 
 
 def make_doc(module, outfilename, cssfilename):
-    if outfilename != None:
+    if outfilename is not None:
         stdout_old = sys.stdout
 
         outputfile = open(cssfilename, "w")
@@ -85,7 +85,7 @@ def get_doc(obj):
     """Get object's doc string and remove \n's and clean up <'s and >'s for XML compatibility"""
 
     doc = False
-    if obj.__doc__ != None:
+    if obj.__doc__ is not None:
         doc = (obj.__doc__).replace(
             "\n", ""
         )  # remove newlines from Live API docstings, for wrapped display
@@ -107,6 +107,8 @@ def print_obj_info(description, obj, name=None):
         name_str = name
 
     if len(LINE) != 0:
+        assert name_str is not None
+
         LINE.append("." + name_str)
         if inspect.ismethod(obj) or inspect.isbuiltin(obj):
             LINE[-1] += "()"
@@ -121,7 +123,7 @@ def print_obj_info(description, obj, name=None):
     )
 
     if hasattr(obj, "__doc__"):
-        if obj.__doc__ != None:
+        if obj.__doc__ is not None:
             print("<Doc>\t%s</Doc>\n" % get_doc(obj))
 
 
@@ -176,7 +178,7 @@ def describe_obj(descr, obj):
                 if inspect.isclass(member) and not str(type(member)) == "<type 'type'>":
                     describe_obj("Class", member)
             LINE.pop()
-        except:
+        except Exception:
             return
 
 
