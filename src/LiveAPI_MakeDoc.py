@@ -45,7 +45,7 @@ class APIMakeDoc(ControlSurface):
         cssfilename = "Live.css"
         cssfilename = os.path.join(outdir, cssfilename)
         make_doc(module, outfilename, cssfilename)
-        stub.generate(outdir)
+        stub.generate(Live, outdir)
 
     def disconnect(self):
         ControlSurface.disconnect(self)

@@ -8,7 +8,7 @@ from os.path import relpath, join, exists
 from io import StringIO
 
 
-def generate(script_dir):
+def generate(module, script_dir):
     in_file = relpath(join(script_dir, "Live.xml"))
     out_dir = relpath(join(script_dir, "Live"))
     out_file = join(out_dir, "__init__.py")
@@ -136,7 +136,7 @@ def make_arg_doc(args, ret, indent):
     return arg_doc
 
 
-def read_file(name):
+def read_file(name) -> str:
     with codecs.open(name, "r", "utf-8") as f:
         return f.read()
 
