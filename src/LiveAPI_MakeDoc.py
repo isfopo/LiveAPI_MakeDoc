@@ -31,7 +31,8 @@ import Live
 from _Framework.ControlSurface import ControlSurface
 import os
 import sys
-from ._Support import inspect, stub
+import inspect
+from ._Support import stub
 
 
 class APIMakeDoc(ControlSurface):
