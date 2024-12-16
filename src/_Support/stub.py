@@ -143,37 +143,16 @@ def read_file(name):
 
 def parse_xml(text):
     """
-    Create and return a namespace-agnostic ElementTree.Element.
+    Create and return a namespace agnostic ElementTree.
 
-    Strips all namespaces from the XML tags.
-
-    See https://stackoverflow.com/questions/13412496/python-elementtree-module-how-to-ignore-the-namespace-of-xml-files-to-locate-ma
-    :param text: A string containing XML data.
-    :type text: str
-    :return: The root Element of the parsed XML tree without namespaces.
+    See http://stackoverflow.com/questions/13412496/python-elementtree-module-how-to-ignore-the-namespace-of-xml-files-to-locate-ma
     :rtype: ElementTree.Element
     """
-    # Create an iterator for parsing the XML
     it = ElementTree.iterparse(StringIO(text))
-
-    # Strip namespaces from tags
     for _, el in it:
         if "}" in el.tag:
-            el.tag = el.tag.split("}", 1)[1]  # Remove namespace
-
-    # Extract the root element
-    # Re-initialize the iterator to parse again for root
-    # Alternatively, use it.getroot() if available
-    try:
-        tree = ElementTree.ElementTree()
-        tree.parse(StringIO(text))
-        root = tree.getroot()
-
-        # Strip namespaces from root and its descendants
-        for elem in root.iter():
-            if "}" in elem.tag:
-                elem.tag = elem.tag.split("}", 1)[1]
-        return root
-    except ElementTree.ParseError as e:
-        print(f"Error parsing XML: {e}")
-        return None
+            el.tag = el.tag.split("}", 1)[1]  # strip all namespaces
+    root = None
+    for _, el in it:
+        root = el
+    return root
