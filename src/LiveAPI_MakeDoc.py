@@ -67,6 +67,7 @@ def make_doc(module, outfilename, cssfilename):
             '<?xml-stylesheet type="text/css" href="Live.css"?>'
         )  # set stylesheet to Live.css
         print("<Live>")
+
         app = Live.Application.get_application()  # get a handle to the App
         maj = app.get_major_version()  # get the major version from the App
         min = app.get_minor_version()  # get the minor version from the App
@@ -104,15 +105,26 @@ def get_doc(obj):
 def print_obj_info(description, obj, name=None):
     """Print object's descriptor and name on one line, and docstring (if any) on the next"""
 
-    if obj.__name__ == "<unnamed Boost.Python function>" or obj.__name__.startswith(
-        "__"
-    ):  # filter out descriptors
-        return
-    if hasattr(obj, "__name__"):
-        name_str = obj.__name__
+    # Safely retrieve __name__ if it exists
+    obj_name = getattr(obj, "__name__", None)
+
+    # Filter out unnamed Boost.Python functions and special methods
+    if obj_name:
+        if obj_name == "<unnamed Boost.Python function>" or obj_name.startswith("__"):
+            return
+
+    # Determine the name to use
+    if obj_name:
+        name_str = obj_name
     else:
         name_str = name
 
+    # Proceed only if name_str is available
+    if name_str is None:
+        print(f"Warning: No name available for object {obj}. Skipping.")
+        return
+
+    # Handle LINE stack
     if len(LINE) != 0:
         assert name_str is not None
 
@@ -121,76 +133,91 @@ def print_obj_info(description, obj, name=None):
             LINE[-1] += "()"
     else:
         LINE.append(name_str)
-    line_str = ""
-    for item in LINE:
-        line_str += item
+
+    # Build the line string
+    line_str = "".join(LINE)
+
+    # Print the formatted description
     print(
         "<%s>%s<Description>%s</Description></%s>\n"
         % (description, line_str, description, description)
     )
 
-    if hasattr(obj, "__doc__"):
-        if obj.__doc__ is not None:
-            print("<Doc>\t%s</Doc>\n" % get_doc(obj))
+    # Print the docstring if available
+    if hasattr(obj, "__doc__") and obj.__doc__:
+        print("<Doc>\t%s</Doc>\n" % get_doc(obj))
 
 
-def describe_obj(descr, obj):
+def describe_obj(descr: str, obj):
     """Describe object passed as argument, and identify as Class, Method, Property, Value, or Built-In"""
 
-    if obj.__name__ == "<unnamed Boost.Python function>" or obj.__name__.startswith(
-        "__"
-    ):  # filter out descriptors
-        return
-    if (obj.__name__ == ("type")) or (
-        obj.__name__ == ("class")
-    ):  # filter out non-subclass type types
-        return
-    print_obj_info(descr, obj)
-    if inspect.ismethod(obj) or inspect.isbuiltin(
-        obj
-    ):  # go no further for these objects
+    # Safely get the name attribute if it exists
+    obj_name = getattr(obj, "__name__", None)
+    if obj_name:
+        # Filter out unnamed Boost.Python functions and special methods
+        if obj_name == "<unnamed Boost.Python function>" or obj_name.startswith("__"):
+            return
+        # Filter out non-subclass 'type' and 'class' types
+        if obj_name in ("type", "class"):
+            return
+
+        # Output initial object information
+        print_obj_info(descr, obj)
+
+    # If the object is a method or built-in, stop further processing
+    if inspect.ismethod(obj) or inspect.isbuiltin(obj):
         if LINE:
             LINE.pop()
         return
-    else:
-        try:
-            members = inspect.getmembers(obj)
-            for name, member in members:
-                if inspect.isbuiltin(member):
-                    describe_obj("Built-In", member)
-            for name, member in members:
-                if str(type(member)) == "<type 'property'>":
-                    print_obj_info("Property", member, name)
-                    if LINE:
-                        LINE.pop()
-            for name, member in members:
-                if inspect.ismethod(member):
-                    describe_obj("Method", member)
-            for name, member in members:
-                if str(type(member)).startswith("<class"):
-                    print_obj_info("Value", member, name)
-                    if LINE:
-                        LINE.pop()
-            for name, member in members:
-                if str(type(member)) == "<type 'object'>" or (
-                    str(type(member)) == "<type 'type'>"
-                    and not repr(obj).startswith("<class '")
-                ):  # filter out unwanted types
-                    continue
-                if inspect.isclass(member) and str(type(member)) == "<type 'type'>":
-                    describe_obj("Sub-Class", member)
-            for name, member in members:
-                if str(type(member)) == "<type 'object'>" or (
-                    str(type(member)) == "<type 'type'>"
-                    and not repr(obj).startswith("<class '")
-                ):  # filter out unwanted types
-                    continue
-                if inspect.isclass(member) and not str(type(member)) == "<type 'type'>":
+
+    try:
+        # Retrieve all members of the object
+        members = inspect.getmembers(obj)
+
+        # Process properties
+        for name, member in members:
+            if isinstance(member, property):
+                print_obj_info("Property", member, name)
+                if LINE:
+                    LINE.pop()
+
+        # Process methods and functions
+        for name, member in members:
+            if inspect.isbuiltin(member) or inspect.isfunction(member):
+                describe_obj("Method", member)
+
+        # # Process non-callable, non-class attributes (Values)
+        # for name, member in members:
+        #     if not (
+        #         inspect.isbuiltin(member)
+        #         or inspect.isclass(member)
+        #         or inspect.ismethod(member)
+        #         or inspect.isfunction(member)
+        #     ):
+        #         print_obj_info("Value", member, name)
+        #         if LINE:
+        #             LINE.pop()
+
+        # Process subclasses of the current object
+        for name, member in members:
+            if inspect.isclass(member):
+                # Check if 'member' is a subclass of 'obj'
+                try:
+                    if issubclass(member, obj):
+                        describe_obj("Sub-Class", member)
+                    else:
+                        describe_obj("Class", member)
+                except TypeError:
+                    # 'obj' is not a class, so cannot be a base class
                     describe_obj("Class", member)
-            if LINE:
-                LINE.pop()
-        except Exception:
-            return
+
+        if LINE:
+            LINE.pop()
+
+    except Exception as e:
+        # Log the exception with more detail
+        print(f"<Error> Error processing object {obj}: {e} </Error>")
+        return
 
 
 def describe_module(module):
