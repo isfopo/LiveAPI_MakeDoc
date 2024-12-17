@@ -23,7 +23,6 @@ def generate(module, script_dir):
             last_name = None
             last_doc = None
             for element in xml.findall("./*"):
-                assert isinstance(element, ElementTree.Element)
                 if element.tag == "Doc":
                     last_doc = element.text.strip() if element.text else ""
                 else:
