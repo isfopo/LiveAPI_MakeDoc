@@ -32,7 +32,7 @@ from _Framework.ControlSurface import ControlSurface
 import os
 import sys
 import inspect
-from ._Support import stub
+import stub
 
 
 class APIMakeDoc(ControlSurface):
