@@ -4,18 +4,17 @@ import re
 import codecs
 import xml.etree.ElementTree as ElementTree
 from os import makedirs
-from os.path import relpath, join, exists
-from io import StringIO
+from os.path import abspath, join, exists
 
 
-def generate(module, script_dir):
-    in_file = relpath(join(script_dir, "Live.xml"))
-    out_dir = relpath(join(script_dir, "Live"))
+def generate(script_dir):
+    in_file = abspath(join(script_dir, "Live.xml"))
+    out_dir = abspath(join(script_dir, "Live"))
     out_file = join(out_dir, "__init__.py")
     if not exists(out_dir):
         makedirs(out_dir)
 
-    xml = parse_xml(read_file(in_file))
+    xml = parse_xml(in_file)
     if xml is not None:
         with codecs.open(out_file, "w", "utf-8") as f:
             f.write("from types import ModuleType\n")
@@ -94,7 +93,6 @@ def generate_code(tag, name, doc, f):
 def parse_args_from_doc(doc):
     args = []
     ret = None
-    doc = None
 
     try:
         if doc and ":" in doc:
@@ -140,14 +138,14 @@ def read_file(name) -> str:
         return f.read()
 
 
-def parse_xml(text):
+def parse_xml(file):
     """
     Create and return a namespace agnostic ElementTree.
 
     See http://stackoverflow.com/questions/13412496/python-elementtree-module-how-to-ignore-the-namespace-of-xml-files-to-locate-ma
     :rtype: ElementTree.Element
     """
-    it = ElementTree.iterparse(StringIO(text))
+    it = ElementTree.iterparse(file, events=("start", "end"))
     for _, el in it:
         if "}" in el.tag:
             el.tag = el.tag.split("}", 1)[1]  # strip all namespaces
