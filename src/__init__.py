@@ -1,6 +1,6 @@
 # http://remotescripts.blogspot.com
 
-from .LiveAPI_MakeDoc import APIMakeDoc
+from .MakeDoc import APIMakeDoc
 
 
 def create_instance(c_instance):
