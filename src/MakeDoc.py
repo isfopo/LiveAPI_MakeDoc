@@ -35,22 +35,26 @@ from .DocumentationGenerator import DocumentationGenerator
 
 
 class APIMakeDoc(ControlSurface):
+    outdir: str
+
     def __init__(self, c_instance):
         ControlSurface.__init__(self, c_instance)
-        module = Live
-        outdir = os.path.expanduser("~")
-        outfilename = str(module.__name__) + ".xml"
-        outfilename = os.path.join(outdir, outfilename)
-        cssfilename = "Live.css"
-        cssfilename = os.path.join(outdir, cssfilename)
+        self.outdir = os.path.expanduser("~")
 
+        self.build_documentation()
+        self.build_stub()
+
+    def build_documentation(self):
         self.log_message("Generating documentation for Live API")
+
         document_gen = DocumentationGenerator()
-        document_gen.make_doc(module, outfilename, cssfilename)
+        document_gen.make_doc(Live, self.outdir)
+
         self.log_message("Completed Generating documentation for Live API")
 
+    def build_stub(self):
         self.log_message("Generating stub for Live API")
-        generate(outdir)
+        generate(self.outdir)
         self.log_message("Completed generating stub for Live API")
 
     def disconnect(self):

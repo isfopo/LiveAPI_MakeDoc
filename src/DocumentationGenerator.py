@@ -1,18 +1,26 @@
 import inspect
 import codecs
-import Live
+import os
 
 
 class DocumentationGenerator:
+    outdir: str
+    xmlfilename: str
+    cssfilename: str
     lines = []
     xmlFile: codecs.StreamReaderWriter | None = None
 
-    def make_doc(self, module, outfilename, cssfilename):
-        with codecs.open(cssfilename, "w", "utf-8") as f:
+    def make_doc(self, module, outdir):
+        self.outdir = outdir
+
+        self.xmlfilename = os.path.join(self.outdir, str(module.__name__) + ".xml")
+        self.cssfilename = os.path.join(self.outdir, str(module.__name__) + ".css")
+
+        with codecs.open(self.cssfilename, "w", "utf-8") as f:
             f.write(self.css)
 
-        if outfilename is not None:
-            with codecs.open(outfilename, "w", "utf-8") as f:
+        if self.xmlfilename is not None:
+            with codecs.open(self.xmlfilename, "w", "utf-8") as f:
                 self.xmlFile = f
 
                 self._write_to_xml(
@@ -20,10 +28,11 @@ class DocumentationGenerator:
                 )  # set stylesheet to Live.css
                 self._write_to_xml("<Live>")
 
-                app = Live.Application.get_application()  # get a handle to the App
+                app = module.Application.get_application()  # get a handle to the App
                 maj = app.get_major_version()  # get the major version from the App
                 min = app.get_minor_version()  # get the minor version from the App
                 bug = app.get_bugfix_version()  # get the bugfix version from the App
+
                 self._write_to_xml(
                     "Live API version " + str(maj) + "." + str(min) + "." + str(bug)
                 )  # main title
