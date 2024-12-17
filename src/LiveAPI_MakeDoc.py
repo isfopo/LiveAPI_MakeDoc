@@ -32,7 +32,7 @@ from _Framework.ControlSurface import ControlSurface
 import os
 import sys
 import inspect
-import stub
+from .stub import generate
 
 
 class APIMakeDoc(ControlSurface):
@@ -44,8 +44,14 @@ class APIMakeDoc(ControlSurface):
         outfilename = os.path.join(outdir, outfilename)
         cssfilename = "Live.css"
         cssfilename = os.path.join(outdir, cssfilename)
+
+        self.log_message("Generating documentation for Live API")
         make_doc(module, outfilename, cssfilename)
-        stub.generate(Live, outdir)
+        self.log_message("Completed Generating documentation for Live API")
+
+        self.log_message("Generating stub for Live API")
+        generate(outdir)
+        self.log_message("Completed generating stub for Live API")
 
     def disconnect(self):
         ControlSurface.disconnect(self)
