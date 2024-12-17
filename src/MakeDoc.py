@@ -44,9 +44,8 @@ class APIMakeDoc(ControlSurface):
         cssfilename = "Live.css"
         cssfilename = os.path.join(outdir, cssfilename)
 
-        document_gen = DocumentationGenerator()
-
         self.log_message("Generating documentation for Live API")
+        document_gen = DocumentationGenerator()
         document_gen.make_doc(module, outfilename, cssfilename)
         self.log_message("Completed Generating documentation for Live API")
 
