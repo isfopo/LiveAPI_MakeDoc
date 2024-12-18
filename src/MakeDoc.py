@@ -27,8 +27,8 @@ GNU General Public License for more details.
 import os
 import Live  # type: ignore
 from _Framework.ControlSurface import ControlSurface  # type: ignore
-from .StubGenerator import StubGenerator
-from .DocumentationGenerator import DocumentationGenerator
+from .generators.StubGenerator import StubGenerator
+from .generators.DocumentationGenerator import DocumentationGenerator
 
 
 class APIMakeDoc(ControlSurface):
