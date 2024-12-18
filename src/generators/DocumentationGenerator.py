@@ -1,5 +1,6 @@
 import inspect
 import codecs
+from sys import version
 import os
 
 
@@ -9,6 +10,9 @@ class DocumentationGenerator:
     cssfilename: str
     lines = []
     xmlFile: codecs.StreamReaderWriter | None = None
+
+    def __init__(self):
+        pass
 
     def make_doc(self, module, outdir):
         self.outdir = outdir
@@ -36,7 +40,9 @@ class DocumentationGenerator:
                 self._write_to_xml(
                     "Live API version " + str(maj) + "." + str(min) + "." + str(bug)
                 )  # main title
+
                 self._write_to_xml("<Doc>\t%s</Doc>\n" % self.header)
+
                 self._write_to_xml("<Doc>\t%s</Doc>\n" % self.disclaimer)
 
                 self._describe_module(f, module)
