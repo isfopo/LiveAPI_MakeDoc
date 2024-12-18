@@ -92,9 +92,9 @@ class DocumentationGenerator:
         doc = doc.replace(
             "   ", ""
         )  # Strip chunks of whitespace from docstrings, for wrapped display
+        doc = doc.replace("&", "&amp;")
         doc = doc.replace("<", "&lt;")  # replace XML reserved characters
         doc = doc.replace(">", "&gt;")
-        doc = doc.replace("&", "&amp;")
         return doc
 
     def _print_obj_info(self, description, obj, name=None):
