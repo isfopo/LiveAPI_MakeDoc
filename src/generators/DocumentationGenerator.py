@@ -187,18 +187,6 @@ class DocumentationGenerator:
                 if inspect.isbuiltin(member) or inspect.isfunction(member):
                     self._describe_obj("Method", member)
 
-            # # Process non-callable, non-class attributes (Values)
-            # for name, member in members:
-            #     if not (
-            #         inspect.isbuiltin(member)
-            #         or inspect.isclass(member)
-            #         or inspect.ismethod(member)
-            #         or inspect.isfunction(member)
-            #     ):
-            #         _print_obj_info("Value", member, name)
-            #         if self.lines:
-            #             self.lines.pop()
-
             # Process subclasses of the current object
             for name, member in members:
                 if inspect.isclass(member):
