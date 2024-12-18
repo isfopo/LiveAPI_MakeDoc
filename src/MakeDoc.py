@@ -33,6 +33,7 @@ from .generators.DocumentationGenerator import DocumentationGenerator
 
 class APIMakeDoc(ControlSurface):
     outdir: str
+    document_gen: DocumentationGenerator
 
     def __init__(self, c_instance):
         ControlSurface.__init__(self, c_instance)
@@ -44,8 +45,7 @@ class APIMakeDoc(ControlSurface):
     def build_documentation(self):
         self.log_message("Generating documentation for Live API")
 
-        document_gen = DocumentationGenerator()
-        document_gen.make_doc(Live, self.outdir)
+        self.document_gen = DocumentationGenerator(Live, self.outdir)
 
         self.log_message("Completed Generating documentation for Live API")
 

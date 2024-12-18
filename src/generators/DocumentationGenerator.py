@@ -10,13 +10,15 @@ class DocumentationGenerator:
     cssfilename: str
     lines = []
     xmlFile: codecs.StreamReaderWriter | None = None
+    port: int
 
-    def __init__(self):
-        pass
-
-    def make_doc(self, module, outdir):
+    def __init__(self, module, outdir, port=8080):
         self.outdir = outdir
+        self.port = port
 
+        self.make_doc(module)
+
+    def make_doc(self, module):
         self.xmlfilename = os.path.join(self.outdir, str(module.__name__) + ".xml")
         self.cssfilename = os.path.join(self.outdir, str(module.__name__) + ".css")
 
