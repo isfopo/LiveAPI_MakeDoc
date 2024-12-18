@@ -25,9 +25,9 @@ GNU General Public License for more details.
 """
 
 import os
-import Live
-from _Framework.ControlSurface import ControlSurface
-from .stub import generate
+import Live  # type: ignore
+from _Framework.ControlSurface import ControlSurface  # type: ignore
+from .StubGenerator import StubGenerator
 from .DocumentationGenerator import DocumentationGenerator
 
 
@@ -51,7 +51,8 @@ class APIMakeDoc(ControlSurface):
 
     def build_stub(self):
         self.log_message("Generating stub for Live API")
-        generate(self.outdir)
+        stub_generator = StubGenerator()
+        stub_generator.generate(self.outdir)
         self.log_message("Completed generating stub for Live API")
 
     def disconnect(self):
