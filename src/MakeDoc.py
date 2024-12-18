@@ -24,7 +24,6 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 """
 
-import os
 import Live  # type: ignore
 from _Framework.ControlSurface import ControlSurface  # type: ignore
 from .generators.StubGenerator import StubGenerator
