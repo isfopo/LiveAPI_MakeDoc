@@ -26,6 +26,7 @@ If you have changed the name of your src folder, then it will need to be
 changed here as well.
 """
 
+import codecs
 import os
 import shutil
 import getpass
@@ -37,7 +38,6 @@ USERLIBMAC = "/Users/{user}/Music/Ableton/User Library"
 
 parser = argparse.ArgumentParser(description="Install remote script")
 parser.add_argument("--user_lib_dir", "-path to User Library folder", required=False)
-parser.add_argument("--out_dir", "-path to User Library folder", required=False)
 parser.add_argument("--user", "-your account username", required=False)
 parser.add_argument("--name", "-name of output folder", required=False)
 
@@ -62,6 +62,14 @@ if os.path.isdir(user_script_dir):
     shutil.rmtree(user_script_dir)
 
 shutil.copytree(src_dir, user_script_dir)
+
+content: str | None = None
+
+with codecs.open(os.path.join(user_script_dir, "__init__.py"), "r", "utf-8") as f:
+    content = f.read()
+
+with codecs.open(os.path.join(user_script_dir, "__init__.py"), "w", "utf-8") as f:
+    f.write(content.replace("%%%OUTPUTFOLDER%%%", current_dir))
 
 print(
     """
