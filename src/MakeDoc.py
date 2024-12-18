@@ -56,4 +56,5 @@ class APIMakeDoc(ControlSurface):
         self.log_message("Completed generating stub for Live API")
 
     def disconnect(self):
+        self.document_gen.close()
         ControlSurface.disconnect(self)
