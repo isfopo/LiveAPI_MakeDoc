@@ -1,6 +1,7 @@
 from io import BytesIO
 import re
 import codecs
+from typing import List, Optional, Tuple
 import xml.etree.ElementTree as ElementTree
 from os import makedirs
 from os.path import abspath, join, exists
@@ -59,6 +60,7 @@ class StubGenerator:
 
             if tag == "Method":
                 args, ret, doc = self.parse_args_from_doc(doc)
+                args.pop(0)  # remove first arg because that if "self"
                 if args:
                     f.write(
                         "\n%sdef %s(self, %s):\n"
@@ -97,16 +99,17 @@ class StubGenerator:
                 f.write('{0}    """\n{0}    {1}\n    {0}"""\n'.format(indent, doc))
             f.write("%s    pass\n" % indent)
 
-    def parse_args_from_doc(self, doc):
-        args = []
-        ret = None
+    def parse_args_from_doc(
+        self, doc: Optional[str]
+    ) -> Tuple[List[Tuple[str, str]], Optional[str], Optional[str]]:
+        args: List[Tuple[str, str]] = []
+        ret: Optional[str] = None
 
         try:
             if doc and ":" in doc:
                 parts = doc.split(":", 1)
                 raw_args = re.sub(r"^.*\( (.*)\) -> *([^ ]+) *$", r"\1, \2", parts[0])
                 raw_args = raw_args.replace("[", "").replace("]", "").split(", ")
-                raw_args.pop(0)
                 ret = raw_args[-1]
                 for arg in raw_args[:-1]:
                     arg_parts = re.split("[()]", arg)
