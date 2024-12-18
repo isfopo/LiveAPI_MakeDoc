@@ -2,7 +2,9 @@
 
 from .MakeDoc import APIMakeDoc
 
-OUTPUTFOLDER = "%%%OUTPUTFOLDER%%%"
+OUTPUTFOLDER = (
+    "%%%OUTPUTFOLDER%%%"  # this is a placeholder value that is replaced at installation
+)
 
 
 def create_instance(c_instance):
