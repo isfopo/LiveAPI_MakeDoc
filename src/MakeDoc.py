@@ -56,4 +56,3 @@ class APIMakeDoc(ControlSurface):
 
     def disconnect(self):
         ControlSurface.disconnect(self)
-``
