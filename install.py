@@ -9,11 +9,11 @@ should be available to you in your Midi preferences as one of the options
 for a control surface. This process will have to be run again when you
 have made changes in your code to see those changes in your control surface.
 
-This script only works for Live 11 because it relocates the folder to the
+This script only works for Live 11 and later because it relocates the folder to the
 User Library. If your User Library is in a different location than the
 standard installation you will need to either need to change the path in
 the script or pass in the path to your User Library as an argument using
-the `--path` flag. Pass in the full path, including "User Library".
+the `--user_lib_dir` flag. Pass in the full path, including "User Library".
 
 This script also takes a guess at your username for the path. If this guess
 is incorrect or there is some kind of error, try adding your username with
