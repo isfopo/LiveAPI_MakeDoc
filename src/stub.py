@@ -1,5 +1,6 @@
 # Attribution: This file is part of https://github.com/cylab/AbletonLive-API-Stub
 
+from io import BytesIO
 import re
 import codecs
 import xml.etree.ElementTree as ElementTree
@@ -146,22 +147,14 @@ def parse_xml(file):
     :return: Root ElementTree.Element or None if parsing fails.
     """
     try:
-        # Initialize iterparse and get an iterator with 'start' and 'end' events
-        context = ElementTree.iterparse(file, events=("start", "end"))
+        text = read_file(file)
 
-        # Get the root element by grabbing the first event
-        event, root = next(context)
-
-        # Iterate through the rest of the XML elements
-        for event, el in context:
+        it = ElementTree.iterparse(BytesIO(text.encode("UTF-8")))
+        for _, el in it:
             if "}" in el.tag:
-                el.tag = el.tag.split("}", 1)[1]  # Strip all namespaces
+                el.tag = el.tag.split("}", 1)[1]  # strip all namespaces
+        return it.root  # type: ignore
 
-            # Optionally, clear elements to save memory (useful for large XML files)
-            if event == "end":
-                el.clear()
-
-        return root
     except Exception as e:
         print(f"Unexpected error while parsing XML file '{file}': {e}")
 
