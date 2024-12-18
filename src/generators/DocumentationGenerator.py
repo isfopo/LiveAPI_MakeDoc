@@ -41,6 +41,10 @@ class DocumentationGenerator:
                     "Live API version " + str(maj) + "." + str(min) + "." + str(bug)
                 )  # main title
 
+                self._write_to_xml(
+                    "<Doc>Running Python version %s</Doc>\n" % version.split(" ")[0]
+                )
+
                 self._write_to_xml("<Doc>\t%s</Doc>\n" % self.header)
 
                 self._write_to_xml("<Doc>\t%s</Doc>\n" % self.disclaimer)
