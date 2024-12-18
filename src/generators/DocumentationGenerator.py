@@ -6,6 +6,7 @@ import sys
 import os
 import http
 import threading
+from typing import Callable
 
 
 class DocumentationGenerator:
@@ -15,10 +16,18 @@ class DocumentationGenerator:
     lines = []
     xmlFile: codecs.StreamReaderWriter | None = None
     port: int
+    on_server_start: Callable[[int], None] | None
 
-    def __init__(self, module, outdir, port=8080):
+    def __init__(
+        self,
+        module,
+        outdir,
+        port=8080,
+        on_server_start: Callable[[int], None] | None = None,
+    ):
         self.outdir = outdir
         self.port = port
+        self.on_server_start = on_server_start
 
         self.make_doc(module)
 
@@ -64,6 +73,8 @@ class DocumentationGenerator:
             self.server_thread = threading.Thread(
                 target=self._start_http_server, daemon=True
             )
+            if self.on_server_start is not None:
+                self.on_server_start(self.port)
             self.server_thread.start()
 
     def _get_doc(self, obj):
