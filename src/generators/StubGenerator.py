@@ -62,7 +62,16 @@ class StubGenerator:
                 if args:
                     f.write(
                         "\n%sdef %s(self, %s):\n"
-                        % (indent, short_name, ", ".join([arg[0] for arg in args]))
+                        % (
+                            indent,
+                            short_name,
+                            ", ".join(
+                                [
+                                    arg[0] if arg[0] == "" else arg[0] + ": " + arg[1]
+                                    for arg in args
+                                ]
+                            ),
+                        )
                     )
                     doc = "%s%s" % (doc, self.make_arg_doc(args, ret, indent + "    "))
                 else:
@@ -97,14 +106,14 @@ class StubGenerator:
                 parts = doc.split(":", 1)
                 raw_args = re.sub(r"^.*\( (.*)\) -> *([^ ]+) *$", r"\1, \2", parts[0])
                 raw_args = raw_args.replace("[", "").replace("]", "").split(", ")
-                ret = None if raw_args[-1] == "None" else raw_args[-1]
+                raw_args.pop(0)
+                ret = raw_args[-1]
                 for arg in raw_args[:-1]:
                     arg_parts = re.split("[()]", arg)
                     arg_name = arg_parts[2].strip()
                     arg_type = arg_parts[1].strip()
-                    if arg_name == "self":
-                        arg_name = "handle"
-                    args.append((arg_name, arg_type))
+                    if arg_name != "self":
+                        args.append((arg_name, arg_type))
                 doc = parts[1].strip()
         except Exception:
             pass
