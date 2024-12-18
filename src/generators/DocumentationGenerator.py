@@ -55,16 +55,21 @@ class DocumentationGenerator:
         """Get object's doc string and remove \n's and clean up <'s and >'s for XML compatibility"""
 
         if getattr(obj, "__doc__") is not None:
-            doc = (getattr(obj, "__doc__")).replace(
-                "\n", ""
-            )  # remove newlines from Live API docstings, for wrapped display
-            doc = doc.replace(
-                "   ", ""
-            )  # Strip chunks of whitespace from docstrings, for wrapped display
-            doc = doc.replace("<", "&lt;")  # replace XML reserved characters
-            doc = doc.replace(">", "&gt;")
-            doc = doc.replace("&", "&amp;")
-            return doc
+            return self._clean_doc(getattr(obj, "__doc__"))
+
+    def _clean_doc(self, doc):
+        """Remove \n's and clean up <'s and >'s for XML compatibility"""
+
+        doc.replace(
+            "\n", ""
+        )  # remove newlines from Live API docstings, for wrapped display
+        doc = doc.replace(
+            "   ", ""
+        )  # Strip chunks of whitespace from docstrings, for wrapped display
+        doc = doc.replace("<", "&lt;")  # replace XML reserved characters
+        doc = doc.replace(">", "&gt;")
+        doc = doc.replace("&", "&amp;")
+        return doc
 
     def _print_obj_info(self, description, obj, name=None):
         """Print object's descriptor and name on one line, and docstring (if any) on the next"""
