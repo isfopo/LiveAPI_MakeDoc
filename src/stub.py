@@ -140,16 +140,29 @@ def read_file(name) -> str:
 
 def parse_xml(file):
     """
-    Create and return a namespace agnostic ElementTree.
+    Create and return a namespace-agnostic ElementTree root element.
 
-    See http://stackoverflow.com/questions/13412496/python-elementtree-module-how-to-ignore-the-namespace-of-xml-files-to-locate-ma
-    :rtype: ElementTree.Element
+    :param file: Path to the XML file.
+    :return: Root ElementTree.Element or None if parsing fails.
     """
-    it = ElementTree.iterparse(file, events=("start", "end"))
-    for _, el in it:
-        if "}" in el.tag:
-            el.tag = el.tag.split("}", 1)[1]  # strip all namespaces
-    root = None
-    for _, el in it:
-        root = el
-    return root
+    try:
+        # Initialize iterparse and get an iterator with 'start' and 'end' events
+        context = ElementTree.iterparse(file, events=("start", "end"))
+
+        # Get the root element by grabbing the first event
+        event, root = next(context)
+
+        # Iterate through the rest of the XML elements
+        for event, el in context:
+            if "}" in el.tag:
+                el.tag = el.tag.split("}", 1)[1]  # Strip all namespaces
+
+            # Optionally, clear elements to save memory (useful for large XML files)
+            if event == "end":
+                el.clear()
+
+        return root
+    except Exception as e:
+        print(f"Unexpected error while parsing XML file '{file}': {e}")
+
+    return None
