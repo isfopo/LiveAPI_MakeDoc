@@ -36,29 +36,32 @@ USERLIBWIN = "C:\\Users\\{user}\\Documents\\Ableton\\User Library"
 USERLIBMAC = "/Users/{user}/Music/Ableton/User Library"
 
 parser = argparse.ArgumentParser(description="Install remote script")
-parser.add_argument("--path", "-path to User Library folder", required=False)
+parser.add_argument("--user_lib_dir", "-path to User Library folder", required=False)
+parser.add_argument("--out_dir", "-path to User Library folder", required=False)
 parser.add_argument("--user", "-your account username", required=False)
 parser.add_argument("--name", "-name of output folder", required=False)
 
 args = parser.parse_args()
 
-currentDir = os.getcwd()
-srcDir = os.path.join(currentDir, "src")
+current_dir = os.getcwd()
+src_dir = os.path.join(current_dir, "src")
 
 user = args.user or getpass.getuser()
 
-userScriptsPath = os.path.join(
-    args.path
+user_scripts_path = os.path.join(
+    args.user_lib_dir
     or (USERLIBWIN if platform.system() == "Windows" else USERLIBMAC).format(user=user),
     "Remote Scripts",
 )
 
-outputDir = os.path.join(userScriptsPath, args.name or os.path.basename(currentDir))
+user_script_dir = os.path.join(
+    user_scripts_path, args.name or os.path.basename(current_dir)
+)
 
-if os.path.isdir(outputDir):
-    shutil.rmtree(outputDir)
+if os.path.isdir(user_script_dir):
+    shutil.rmtree(user_script_dir)
 
-shutil.copytree(srcDir, outputDir)
+shutil.copytree(src_dir, user_script_dir)
 
 print(
     """
