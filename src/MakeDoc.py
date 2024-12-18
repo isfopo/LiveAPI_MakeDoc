@@ -45,7 +45,9 @@ class APIMakeDoc(ControlSurface):
     def build_documentation(self):
         self.log_message("Generating documentation for Live API")
 
-        self.document_gen = DocumentationGenerator(Live, self.outdir)
+        self.document_gen = DocumentationGenerator(
+            Live, self.outdir, on_server_start=self.handle_on_server_start
+        )
 
         self.log_message("Completed Generating documentation for Live API")
 
@@ -54,6 +56,11 @@ class APIMakeDoc(ControlSurface):
         stub_generator = StubGenerator()
         stub_generator.generate(self.outdir)
         self.log_message("Completed generating stub for Live API")
+
+    def handle_on_server_start(self, port: int):
+        self.show_message(
+            "Documentation is being served at localhost:%s/Live.xml" % port
+        )
 
     def disconnect(self):
         self.document_gen.close()
