@@ -35,10 +35,9 @@ class APIMakeDoc(ControlSurface):
     outdir: str
     document_gen: DocumentationGenerator
 
-    def __init__(self, c_instance):
+    def __init__(self, c_instance, out_dir):
         ControlSurface.__init__(self, c_instance)
-        self.outdir = os.path.expanduser("~")
-
+        self.outdir = out_dir
         self.build_documentation()
         self.build_stub()
 
