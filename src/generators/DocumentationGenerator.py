@@ -1,6 +1,6 @@
 import inspect
 import codecs
-from sys import version
+import sys
 import os
 
 
@@ -42,7 +42,7 @@ class DocumentationGenerator:
                 )  # main title
 
                 self._write_to_xml(
-                    "<Doc>Running Python version %s</Doc>\n" % version.split(" ")[0]
+                    "<Doc>Running Python version %s</Doc>\n" % sys.version.split(" ")[0]
                 )
 
                 self._write_to_xml("<Doc>\t%s</Doc>\n" % self.header)
