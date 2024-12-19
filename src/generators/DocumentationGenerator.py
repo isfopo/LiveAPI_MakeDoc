@@ -6,7 +6,9 @@ import sys
 import os
 import http
 import threading
-from typing import Callable
+from typing import Callable, Literal
+
+from ..helpers.app import get_version_number
 
 
 class DocumentationGenerator:
@@ -23,10 +25,15 @@ class DocumentationGenerator:
         self,
         module,
         outdir,
+        build_mode: Literal["build", "submodule"],
         port=8080,
         on_server_start: Callable[[int], None] | None = None,
     ):
         self.outdir = outdir
+
+        if not os.path.exists(self.outdir):
+            os.makedirs(outdir)
+
         self.port = port
         self.on_server_start = on_server_start
 
@@ -48,13 +55,8 @@ class DocumentationGenerator:
                 )  # set stylesheet to Live.css
                 self._write_to_xml("<Live>")
 
-                app = module.Application.get_application()  # get a handle to the App
-                maj = app.get_major_version()  # get the major version from the App
-                min = app.get_minor_version()  # get the minor version from the App
-                bug = app.get_bugfix_version()  # get the bugfix version from the App
-
                 self._write_to_xml(
-                    "Live API version " + str(maj) + "." + str(min) + "." + str(bug)
+                    "Live API version " + get_version_number(module)
                 )  # main title
 
                 self._write_to_xml(

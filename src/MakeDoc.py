@@ -24,8 +24,11 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 """
 
+import os
+from typing import Literal
 import Live  # type: ignore
 from _Framework.ControlSurface import ControlSurface  # type: ignore
+from .helpers.app import get_version_number
 from .generators.StubGenerator import StubGenerator
 from .generators.DocumentationGenerator import DocumentationGenerator
 
@@ -33,10 +36,21 @@ from .generators.DocumentationGenerator import DocumentationGenerator
 class APIMakeDoc(ControlSurface):
     outdir: str
     document_gen: DocumentationGenerator
+    build_mode: Literal["build", "submodule"]
 
-    def __init__(self, c_instance, out_dir):
+    def __init__(
+        self, c_instance, outdir: str, build_mode: Literal["build", "submodule"]
+    ):
         ControlSurface.__init__(self, c_instance)
-        self.outdir = out_dir
+        self.outdir = outdir
+        self.build_mode = build_mode
+
+        if build_mode == "build":
+            self.outdir = os.path.join(outdir, get_version_number(Live))
+
+        if not os.path.exists(outdir):
+            os.makedirs(outdir)
+
         self.build_documentation()
         self.build_stub()
 
@@ -44,7 +58,10 @@ class APIMakeDoc(ControlSurface):
         self.log_message("Generating documentation for Live API")
 
         self.document_gen = DocumentationGenerator(
-            Live, self.outdir, on_server_start=self.handle_on_server_start
+            Live,
+            self.outdir,
+            on_server_start=self.handle_on_server_start,
+            build_mode=self.build_mode,
         )
 
         self.log_message("Completed Generating documentation for Live API")
