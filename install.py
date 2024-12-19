@@ -32,6 +32,7 @@ import shutil
 import getpass
 import argparse
 import platform
+from typing import Literal
 
 USERLIBWIN = "C:\\Users\\{user}\\Documents\\Ableton\\User Library"
 USERLIBMAC = "/Users/{user}/Music/Ableton/User Library"
@@ -40,6 +41,13 @@ parser = argparse.ArgumentParser(description="Install remote script")
 parser.add_argument("--user_lib_dir", "-path to User Library folder", required=False)
 parser.add_argument("--user", "-your account username", required=False)
 parser.add_argument("--name", "-name of output folder", required=False)
+parser.add_argument(
+    "--mode",
+    "-build mode of script",
+    required=False,
+    choices=["build", "submodule"],
+    default="build",
+)
 
 args = parser.parse_args()
 
@@ -47,6 +55,8 @@ current_dir = os.getcwd()
 src_dir = os.path.join(current_dir, "src")
 
 user = args.user or getpass.getuser()
+
+mode: Literal["build", "submodule"] = args.mode or "build"
 
 user_scripts_path = os.path.join(
     args.user_lib_dir
@@ -69,7 +79,13 @@ with codecs.open(os.path.join(user_script_dir, "__init__.py"), "r", "utf-8") as 
     content = f.read()
 
 with codecs.open(os.path.join(user_script_dir, "__init__.py"), "w", "utf-8") as f:
+    outdir = current_dir
+
+    if mode == "build":
+        outdir = os.path.join(outdir, "build")
+
     f.write(content.replace("%%%OUTPUTFOLDER%%%", current_dir))
+    f.write(content.replace("%%%BUILDMODE%%%", mode))
 
 print(
     """
