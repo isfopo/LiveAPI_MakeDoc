@@ -17,6 +17,7 @@ class DocumentationGenerator:
     xmlFile: codecs.StreamReaderWriter | None = None
     port: int
     on_server_start: Callable[[int], None] | None
+    httpd: socketserver.TCPServer
 
     def __init__(
         self,
