@@ -60,19 +60,14 @@ class StubGenerator:
 
             if tag == "Method":
                 args, ret, doc = self.parse_args_from_doc(doc)
-                args.pop(0)  # remove first arg because that if "self"
-                if args:
+                if args and len(args) > 0:
+                    args.remove(args[0])  # remove first arg because that is "self"
                     f.write(
                         "\n%sdef %s(self, %s):\n"
                         % (
                             indent,
                             short_name,
-                            ", ".join(
-                                [
-                                    arg[0] if arg[0] == "" else arg[0] + ": " + arg[1]
-                                    for arg in args
-                                ]
-                            ),
+                            ", ".join([self.format_arg(arg) for arg in args]),
                         )
                     )
                     doc = "%s%s" % (doc, self.make_arg_doc(args, ret, indent + "    "))
@@ -85,7 +80,11 @@ class StubGenerator:
                 if args:
                     f.write(
                         "%sdef %s(%s):\n"
-                        % (indent, short_name, ", ".join([arg[0] for arg in args]))
+                        % (
+                            indent,
+                            short_name,
+                            ", ".join([self.format_arg(arg) for arg in args]),
+                        )
                     )
                     doc = "%s%s" % (doc, self.make_arg_doc(args, ret, indent + "    "))
                 else:
@@ -101,8 +100,8 @@ class StubGenerator:
 
     def parse_args_from_doc(
         self, doc: Optional[str]
-    ) -> Tuple[List[Tuple[str, str]], Optional[str], Optional[str]]:
-        args: List[Tuple[str, str]] = []
+    ) -> Tuple[List[Tuple[str, str, str | None]], Optional[str], Optional[str]]:
+        args: List[Tuple[str, str, str | None]] = []
         ret: Optional[str] = None
 
         try:
@@ -113,15 +112,21 @@ class StubGenerator:
                 ret = raw_args[-1]
                 for arg in raw_args[:-1]:
                     arg_parts = re.split("[()]", arg)
-                    arg_name = arg_parts[2].strip()
+                    # Use regex to split by "=" and assign to arg_name and arg_default
+                    name_default = re.split(r"=", arg_parts[2].strip(), maxsplit=1)
+                    arg_name = name_default[0].strip()
                     arg_type = arg_parts[1].strip()
-                    if arg_name != "self":
-                        args.append((arg_name, arg_type))
+
+                    args.append((arg_name, arg_type, None))
+
                 doc = parts[1].strip()
-        except Exception:
-            pass
+        except Exception as e:
+            raise Exception("Error parsing function documentation: {}".format(e))
 
         return args, ret, doc
+
+    def format_arg(self, arg: Tuple[str, str, str | None]):
+        return f"{arg[0]}: {arg[1]}{'=' + arg[2] if arg[2] is not None else ''}"
 
     def make_arg_doc(self, args, ret, indent):
         arg_doc = ""
