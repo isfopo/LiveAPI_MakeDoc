@@ -73,23 +73,28 @@ if os.path.isdir(user_script_dir):
 
 shutil.copytree(src_dir, user_script_dir)
 
+outdir = current_dir
+
+if mode == "build":
+    outdir = os.path.join(outdir, "build")
+
 content: str | None = None
 
 with codecs.open(os.path.join(user_script_dir, "__init__.py"), "r", "utf-8") as f:
     content = f.read()
 
 with codecs.open(os.path.join(user_script_dir, "__init__.py"), "w", "utf-8") as f:
-    outdir = current_dir
+    content = content.replace("%%%OUTPUTFOLDER%%%", outdir)
+    content = content.replace("%%%BUILDMODE%%%", mode)
 
-    if mode == "build":
-        outdir = os.path.join(outdir, "build")
-
-    f.write(content.replace("%%%OUTPUTFOLDER%%%", current_dir))
-    f.write(content.replace("%%%BUILDMODE%%%", mode))
+    f.write(content)
 
 print(
-    """
+    f"""
     Your code was successfully moved to your User Library folder.
     Restart Ableton to see your Remote Script.
-"""
+    
+    Output Folder: {outdir}
+    Build Mode: {mode}
+    """
 )
