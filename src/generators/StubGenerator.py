@@ -18,6 +18,7 @@ class StubGenerator:
         xml = self.parse_xml(in_file)
         if xml is not None:
             with codecs.open(out_file, "w", "utf-8") as f:
+                f.write("# type: ignore\n")
                 f.write("from types import ModuleType\n")
                 last_tag = None
                 last_name = None
