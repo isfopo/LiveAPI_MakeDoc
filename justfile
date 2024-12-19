@@ -1,6 +1,9 @@
 install:
 	python3 install.py --name MakeDoc
 
+install-builder:
+	python3 install.py --name MakeDoc_Build --mode build
+
 close-set:
 	pkill -x Ableton Live 12 Suite
 
