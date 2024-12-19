@@ -63,11 +63,12 @@ class StubGenerator:
                 if args and len(args) > 0:
                     args.remove(args[0])  # remove first arg because that is "self"
                     f.write(
-                        "\n%sdef %s(self, %s):\n"
+                        "\n%sdef %s(self, %s) -> %s:\n"
                         % (
                             indent,
                             short_name,
                             ", ".join([self.format_arg(arg) for arg in args]),
+                            ret,
                         )
                     )
                     doc = "%s%s" % (doc, self.make_arg_doc(args, ret, indent + "    "))
@@ -79,11 +80,12 @@ class StubGenerator:
                 f.write("\n%s@staticmethod\n" % indent)
                 if args:
                     f.write(
-                        "%sdef %s(%s):\n"
+                        "%sdef %s(%s) -> %s:\n"
                         % (
                             indent,
                             short_name,
                             ", ".join([self.format_arg(arg) for arg in args]),
+                            ret,
                         )
                     )
                     doc = "%s%s" % (doc, self.make_arg_doc(args, ret, indent + "    "))
