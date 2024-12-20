@@ -74,7 +74,9 @@ class StubGenerator:
                     )
                     doc = "%s%s" % (doc, self.make_arg_doc(args, ret, indent + "    "))
                 else:
-                    f.write("\n%sdef %s(self, *a, **k):\n" % (indent, short_name))
+                    f.write(
+                        "\n%sdef %s(self, *a, **k) -> %s:\n" % (indent, short_name, ret)
+                    )
 
             if tag == "Built-In":
                 args, ret, doc = self.parse_args_from_doc(doc)
@@ -94,8 +96,9 @@ class StubGenerator:
                     f.write("%sdef %s():\n" % (indent, short_name))
 
             if tag == "Property" or tag == "Value":
+                args, ret, doc = self.parse_args_from_doc(doc)
                 f.write("\n%s@property\n" % indent)
-                f.write("%sdef %s(self):\n" % (indent, short_name))
+                f.write("%sdef %s(self) -> %s:\n" % (indent, short_name, ret))
 
             if doc:
                 f.write('{0}    """\n{0}    {1}\n    {0}"""\n'.format(indent, doc))

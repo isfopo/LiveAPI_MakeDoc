@@ -11,7 +11,7 @@ open-set:
 	open ./set/set.als
 
 reload:
-	just install && just close-set && sleep 1 && just open-set
+	just install-builder && just close-set && sleep 1 && just open-set
 
 watch:
 	python3 watch.py --version 'Live 12.1.5'
