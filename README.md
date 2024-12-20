@@ -14,17 +14,19 @@ PC -> C:\Documents and Settings\username\
 
 Open Live.xml in a web browser to view the API documentation.
 
----
+## Usage
 
-## Revision History
+### Manual Installation
 
-2011-03-20
+Dropping into Remote script folder
 
-- Initial API_MakeDoc release
+### Usage as a Submodule
 
-Visit http://remotescripts.blogspot.com for the latest updates and more information
+How to use in another project or repository as a submodule
 
----
+## Release
+
+Explain the release process
 
 ## DISCLAIMER
 
