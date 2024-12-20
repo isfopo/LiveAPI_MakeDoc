@@ -19,6 +19,15 @@ jobs:
           latest_version=$(ls build | sort -V | tail -n 1)
           echo "version=$latest_version" >> $GITHUB_OUTPUT
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Install Dependencies
+        run: npm install
+        working-directory: .github/scripts
+
       - name: Delete existing release (if any)
         run: node .github/scripts/delete_release.js
         env:
