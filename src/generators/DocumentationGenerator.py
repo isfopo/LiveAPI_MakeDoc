@@ -81,12 +81,13 @@ class DocumentationGenerator:
 
                 self.xmlFile = None
 
-            self.server_thread = threading.Thread(
-                target=self._start_http_server, daemon=True
-            )
-            if self.on_server_start is not None:
-                self.on_server_start(self.port)
-            self.server_thread.start()
+            if self.build_mode != BuildMode.Build:
+                self.server_thread = threading.Thread(
+                    target=self._start_http_server, daemon=True
+                )
+                if self.on_server_start is not None:
+                    self.on_server_start(self.port)
+                self.server_thread.start()
 
     def _get_doc(self, obj):
         """Get object's doc string and remove \n's and clean up <'s and >'s for XML compatibility"""
