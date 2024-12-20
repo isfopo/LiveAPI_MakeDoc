@@ -33,8 +33,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: ${{ steps.get_version.outputs.version }}
-          GITHUB_OWNER: ${{ github.repository_owner }}
-          GITHUB_REPO: ${{ github.repository.name }}
+          GITHUB_REPO: ${{ github.repository }}
 
       - name: Create GitHub Release
         id: create_release
