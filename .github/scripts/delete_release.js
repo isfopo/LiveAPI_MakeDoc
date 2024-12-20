@@ -3,6 +3,8 @@ const { Octokit } = require("@octokit/rest");
 const deleteRelease = async () => {
   const tag = `v${process.env.VERSION}`;
   const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+  console.log(`Attempting to delete release for tag: ${tag}`);
+  console.log(`Fetching releases for repository: ${process.env.GITHUB_REPO}`);
 
   try {
     const releases = await octokit.repos.listReleases({
@@ -17,11 +19,6 @@ const deleteRelease = async () => {
         owner: process.env.GITHUB_OWNER,
         repo: process.env.GITHUB_REPO,
         release_id: release.id,
-      });
-      await octokit.git.deleteRef({
-        owner: process.env.GITHUB_OWNER,
-        repo: process.env.GITHUB_REPO,
-        ref: `tags/${tag}`,
       });
       console.log(`Deleted existing release and tag: ${tag}`);
     } else {
