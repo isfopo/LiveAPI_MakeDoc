@@ -15,6 +15,7 @@ class DocumentationGenerator:
     outdir: str
     xmlfilename: str
     cssfilename: str
+    css: str
     lines = []
     xmlFile: codecs.StreamReaderWriter | None = None
     port: int
@@ -25,6 +26,7 @@ class DocumentationGenerator:
         self,
         module,
         outdir,
+        script_dir,
         build_mode: Literal["build", "submodule"],
         port=8080,
         on_server_start: Callable[[int], None] | None = None,
@@ -36,6 +38,8 @@ class DocumentationGenerator:
 
         self.port = port
         self.on_server_start = on_server_start
+        with open(os.path.join(script_dir, "Live.css")) as f:
+            self.css = f.read()
 
         self.make_doc(module)
 
@@ -263,88 +267,3 @@ class DocumentationGenerator:
                 <requirement xmlns:html="http://www.w3.org/1999/xhtml"></requirement>
                 """
     disclaimer = """This is unofficial documentation. Please do not contact Ableton with questions or problems relating to the use of this documentation."""
-
-    css = """/* Style Sheet for formatting XML output of Live API Inspector */
-        Live
-        {
-        background: #f8f8f8;
-        display: block;
-        margin-bottom: 10px;
-        margin-left: 20px;
-        margin-top: 10px;
-        padding: 4px;
-        font-family: "Lucida Sans Unicode", "Lucida Sans", "Lucida Grande", Verdana, sans-serif;
-        font-weight: bold;
-        color: #000000;
-        font-size: 10pt;
-        } 
-
-        Module, Class, Sub-Class
-        {
-        display: block;
-        margin-bottom: 5px;
-        margin-top: 10px;
-        margin-left: -5px;
-        padding-left: 5px;
-        padding-top: 4px;
-        padding-bottom: 4px;
-        background: silver;
-        font-size: 12pt;
-        background-color: #DDD;
-        border: solid 1px #AAA;
-        color: #333;
-        }
-
-        Module
-        {
-        display: block;
-        color: #000;
-        background-color: #CCC;
-        }
-
-        Description
-        {
-        display: inline;
-        margin-left: 5px;
-        color: #000000;
-        font-family: Arial, Helvetica, sans-serif;
-        font-style: italic;
-        font-weight: normal;
-        font-size: 9pt;
-        }
-
-        Doc
-        {
-        display: block;
-        color: #408080;
-        margin-left: 20pt;
-        font-family: Arial, Helvetica, sans-serif;
-        font-style: italic;
-        font-weight: normal;
-        font-size: 9pt;
-        }
-        Method 
-        {
-        display: block;
-        margin-top: 10px;
-        color: #000080;
-        }
-        Built-In 
-        {		
-        display: block;
-        margin-top: 10px;
-        color: #081798;
-        }
-        Property 
-        {
-        display: block;
-        margin-top: 10px;
-        color: #0000AF;
-        }
-        Value 
-        {
-        display: block;
-        margin-top: 10px;
-        color: #1C5A8D;
-        }
-        """

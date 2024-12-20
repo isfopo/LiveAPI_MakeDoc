@@ -34,6 +34,7 @@ from .generators.DocumentationGenerator import DocumentationGenerator
 
 
 class APIMakeDoc(ControlSurface):
+    script_dir: str
     outdir: str
     document_gen: DocumentationGenerator
     build_mode: Literal["build", "submodule"]
@@ -42,6 +43,8 @@ class APIMakeDoc(ControlSurface):
         self, c_instance, outdir: str, build_mode: Literal["build", "submodule"]
     ):
         ControlSurface.__init__(self, c_instance)
+        self.script_dir = os.path.dirname(os.path.abspath(__file__))
+
         self.outdir = outdir
         self.build_mode = build_mode
 
@@ -59,7 +62,8 @@ class APIMakeDoc(ControlSurface):
 
         self.document_gen = DocumentationGenerator(
             Live,
-            self.outdir,
+            outdir=self.outdir,
+            script_dir=self.script_dir,
             on_server_start=self.handle_on_server_start,
             build_mode=self.build_mode,
         )
