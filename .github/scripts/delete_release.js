@@ -4,8 +4,6 @@ const deleteRelease = async () => {
   const tag = `v${process.env.VERSION}`;
   const [owner, repo] = process.env.GITHUB_REPO.split("/");
   const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
-  console.log(`Attempting to delete release for tag: ${tag}`);
-  console.log(`Fetching releases for repository: ${repo}`);
 
   try {
     const releases = await octokit.repos.listReleases({
