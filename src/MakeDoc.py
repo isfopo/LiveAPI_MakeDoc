@@ -25,9 +25,9 @@ GNU General Public License for more details.
 """
 
 import os
-from typing import Literal
 import Live  # type: ignore
 from _Framework.ControlSurface import ControlSurface  # type: ignore
+from .types.BuildMode import BuildMode
 from .helpers.app import get_version_number
 from .generators.StubGenerator import StubGenerator
 from .generators.DocumentationGenerator import DocumentationGenerator
@@ -37,11 +37,9 @@ class APIMakeDoc(ControlSurface):
     script_dir: str
     outdir: str
     document_gen: DocumentationGenerator
-    build_mode: Literal["build", "submodule"]
+    build_mode: BuildMode
 
-    def __init__(
-        self, c_instance, outdir: str, build_mode: Literal["build", "submodule"]
-    ):
+    def __init__(self, c_instance, outdir: str, build_mode: BuildMode):
         ControlSurface.__init__(self, c_instance)
         self.script_dir = os.path.dirname(os.path.abspath(__file__))
 

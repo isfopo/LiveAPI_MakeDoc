@@ -6,8 +6,9 @@ import sys
 import os
 import http
 import threading
-from typing import Callable, Literal
+from typing import Callable
 
+from ..types.BuildMode import BuildMode
 from ..helpers.app import get_version_number
 
 
@@ -21,23 +22,26 @@ class DocumentationGenerator:
     port: int
     on_server_start: Callable[[int], None] | None
     httpd: socketserver.TCPServer
+    build_mode: BuildMode
 
     def __init__(
         self,
         module,
         outdir,
         script_dir,
-        build_mode: Literal["build", "submodule"],
+        build_mode: BuildMode,
         port=8080,
         on_server_start: Callable[[int], None] | None = None,
     ):
         self.outdir = outdir
+        self.build_mode = build_mode
 
         if not os.path.exists(self.outdir):
             os.makedirs(outdir)
 
         self.port = port
         self.on_server_start = on_server_start
+
         with open(os.path.join(script_dir, "Live.css")) as f:
             self.css = f.read()
 
