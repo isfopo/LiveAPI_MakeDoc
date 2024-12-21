@@ -1,7 +1,7 @@
 const { Octokit } = require("@octokit/rest");
 
 const deleteRelease = async () => {
-  const tag = `v${process.env.VERSION}`;
+  const tag = `${process.env.VERSION}`;
   const [owner, repo] = process.env.GITHUB_REPO.split("/");
   const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
