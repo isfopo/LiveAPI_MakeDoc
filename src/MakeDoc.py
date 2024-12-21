@@ -66,15 +66,16 @@ class APIMakeDoc(ControlSurface):
             on_server_start=self.handle_on_server_start,
             build_mode=self.build_mode,
         )
-
         doc_generator.generate()
 
         self.log_message("Completed Generating documentation for Live API")
 
     def build_stub(self):
         self.log_message("Generating stub for Live API")
+
         stub_generator = StubGenerator(self.outdir, version=self.version)
         stub_generator.generate()
+
         self.log_message("Completed generating stub for Live API")
 
     def handle_on_server_start(self, port: int):
