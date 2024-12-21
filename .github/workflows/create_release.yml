@@ -40,10 +40,10 @@ jobs:
 
       - name: Create GitHub Release
         run: |
-          gh release create "build/${{ steps.get_version.outputs.version }}" "Ableton Live Version ${{ steps.get_version.outputs.version }}" --title "v${{ steps.get_version.outputs.version }}" --notes "Release version v${{ steps.get_version.outputs.version }}"
+          gh release create "v${{ steps.get_version.outputs.version }}" "build/${{ steps.get_version.outputs.version }}" --title "v${{ steps.get_version.outputs.version }}" --notes "Release version v${{ steps.get_version.outputs.version }}"
 
-      - name: Upload Release Asset
-        run: |
-          gh release upload "v${{ steps.get_version.outputs.version }}" "${{ steps.get_version.outputs.version }}.zip" --clobber
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Upload Release Asset
+      #   run: |
+      #     gh release upload "v${{ steps.get_version.outputs.version }}" "${{ steps.get_version.outputs.version }}" --clobber
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
