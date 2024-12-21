@@ -34,19 +34,6 @@ jobs:
           previous_version=$(ls build | sort -V | tail -n 2 | head -n 1)
           echo "previous_version=$previous_version" >> $GITHUB_OUTPUT
 
-      - name: Compute Live.xml Changes
-        id: compute_diff
-        env:
-          CURRENT_VERSION: ${{ steps.get_version.outputs.version }}
-          PREVIOUS_VERSION: ${{ steps.get_previous_version.outputs.previous_version }}
-          GITHUB_OUTPUT: $GITHUB_OUTPUT
-        run: node .github/scripts/compute_diff.js "$CURRENT_VERSION" "$PREVIOUS_VERSION"
-
-      - name: Zip Build Folder
-        run: |
-          cd build/${{ steps.get_version.outputs.version }}
-          zip -r ../../${{ steps.get_version.outputs.version }}.zip .
-
       - name: Delete existing release (if any)
         run: node .github/scripts/delete_release.js
         env:
@@ -54,15 +41,14 @@ jobs:
           VERSION: ${{ steps.get_version.outputs.version }}
           GITHUB_REPO: ${{ github.repository }}
 
+      - name: Zip Build Folder
+        run: |
+          cd build/${{ steps.get_version.outputs.version }}
+          zip -r ../../${{ steps.get_version.outputs.version }}.zip .
+
       - name: Authenticate GitHub CLI
         run: echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
 
       - name: Create GitHub Release
         run: |
-          gh release create "${{ steps.get_version.outputs.version }}" "${{ steps.get_version.outputs.version }}.zip" --title "Ableton Live Version: ${{ steps.get_version.outputs.version }}" --notes-file "build/${{ steps.get_version.outputs.version }}/diff.xml"
-
-      - name: Upload Diff XML to GitHub Release
-        run: |
-          gh release upload "${{ steps.get_version.outputs.version }}" "build/${{ steps.get_version.outputs.version }}/diff.xml" --title "Diff XML for ${{ steps.get_version.outputs.version }}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          gh release create "${{ steps.get_version.outputs.version }}" "${{ steps.get_version.outputs.version }}.zip" --title "Ableton Live Version: ${{ steps.get_version.outputs.version }}"
