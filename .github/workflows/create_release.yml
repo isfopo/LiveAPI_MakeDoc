@@ -27,7 +27,7 @@ jobs:
       - name: Determine Latest Version
         id: get_version
         run: |
-          latest_version=$(ls build | sort -V | tail -n 1)
+          latest_version=$(ls build | grep -v '^index\.html$' | sort -V | tail -n 1)
           echo "version=$latest_version" >> $GITHUB_OUTPUT
 
       - name: Determine Previous Version
