@@ -65,4 +65,4 @@ jobs:
 
       - name: Create GitHub Release
         run: |
-          gh release create "v${{ steps.get_version.outputs.version }}" "${{ steps.get_version.outputs.version }}.zip" --title "v${{ steps.get_version.outputs.version }}" --notes-file release_notes.txt
+          gh release create "${{ steps.get_version.outputs.version }}" "${{ steps.get_version.outputs.version }}.zip" --title "Ableton Live Version: ${{ steps.get_version.outputs.version }}" --notes-file release_notes.txt
