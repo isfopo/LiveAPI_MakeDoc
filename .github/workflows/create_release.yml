@@ -28,9 +28,6 @@ jobs:
         run: npm install
         working-directory: .github/scripts
 
-      - name: Install GitHub CLI
-        uses: actions4gh/setup-gh@v1
-
       - name: Zip Build Folder
         run: |
           cd build/${{ steps.get_version.outputs.version }}
