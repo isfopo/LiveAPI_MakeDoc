@@ -27,7 +27,7 @@ fs.readFile(templatePath, "utf8", (err, templateData) => {
         const [bMajor, bMinor, bPatch] = b.split(".").map(Number);
         if (aMajor !== bMajor) return aMajor - bMajor;
         if (aMinor !== bMinor) return aMinor - bMinor;
-        return aPatch - bPatch;
+        return bPatch - aPatch;
       });
 
     // Generate HTML list items for each version
