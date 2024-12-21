@@ -102,15 +102,15 @@ class DocumentationGenerator:
     def _clean_doc(self, doc):
         """Remove \n's and clean up <'s and >'s for XML compatibility"""
 
-        doc.replace(
+        doc = doc.replace(
             "\n", ""
         )  # remove newlines from Live API docstings, for wrapped display
         doc = doc.replace(
             "   ", ""
         )  # Strip chunks of whitespace from docstrings, for wrapped display
         doc = doc.replace("&", "&amp;")
-        doc = doc.replace("<", "&lt;")  # replace XML reserved characters
-        doc = doc.replace(">", "&gt;")
+        doc = doc.replace("<", "<")  # replace XML reserved characters
+        doc = doc.replace(">", ">")
         return doc
 
     def _print_obj_info(self, description, obj, name=None):

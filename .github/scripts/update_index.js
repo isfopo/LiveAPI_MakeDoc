@@ -1,10 +1,9 @@
-// update_index.js
 const fs = require("fs");
 const path = require("path");
 
 const buildDir = path.join(__dirname, "../../build");
 const indexPath = path.join(buildDir, "index.html");
-const templatePath = path.join(__dirname, "index_template.html");
+const templatePath = path.join(__dirname, "../../web/index_template.html"); // Updated path to the web folder
 
 fs.readFile(templatePath, "utf8", (err, templateData) => {
   if (err) {
@@ -38,7 +37,10 @@ fs.readFile(templatePath, "utf8", (err, templateData) => {
       .join("\n");
 
     // Replace the placeholder with the generated list items
-    const updatedContent = templateData.replace("{{VERSION_LINKS}}", listItems);
+    const updatedContent = templateData.replace(
+      "<!-- VERSIONS_PLACEHOLDER -->",
+      listItems
+    );
 
     // Write the updated content to index.html
     fs.writeFile(indexPath, updatedContent, (writeErr) => {
