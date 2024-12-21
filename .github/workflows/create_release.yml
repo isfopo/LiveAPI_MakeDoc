@@ -46,9 +46,3 @@ jobs:
       - name: Create GitHub Release
         run: |
           gh release create "v${{ steps.get_version.outputs.version }}" "${{ steps.get_version.outputs.version }}.zip" --title "v${{ steps.get_version.outputs.version }}" --notes "Release version v${{ steps.get_version.outputs.version }}"
-
-      # - name: Upload Release Asset
-      #   run: |
-      #     gh release upload "v${{ steps.get_version.outputs.version }}" "${{ steps.get_version.outputs.version }}.zip" --clobber
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
