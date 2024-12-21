@@ -1,16 +1,29 @@
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import path from "path";
+import { compile } from "svelte/compiler";
 
 const buildDir = path.join(__dirname, "../../build");
-const indexPath = path.join(buildDir, "index.html");
-const templatePath = path.join(__dirname, "../../web/index_template.html"); // Updated path to the web folder
+const versionsPath = path.join(__dirname, "../../web/versions.json"); // Path to write versions.json
+const appPath = path.join(__dirname, "../../web/src/App.svelte");
+const indexTemplatePath = path.join(
+  __dirname,
+  "../../.github/scripts/index_template.html"
+);
+const outputIndexPath = path.join(buildDir, "index.html");
 
-fs.readFile(templatePath, "utf8", (err, templateData) => {
-  if (err) {
-    console.error("Error reading template file:", err);
-    process.exit(1);
-  }
+// Function to compile Svelte component
+function compileSvelte() {
+  const appContent = fs.readFileSync(appPath, "utf-8");
+  const compiled = compile(appContent, {
+    format: "iife",
+    name: "App",
+    dev: false,
+  });
+  return compiled.js.code;
+}
 
+// Function to generate versions.json
+function generateVersions() {
   fs.readdir(buildDir, { withFileTypes: true }, (err, files) => {
     if (err) {
       console.error("Error reading build directory:", err);
@@ -29,28 +42,72 @@ fs.readFile(templatePath, "utf8", (err, templateData) => {
         return bPatch - aPatch;
       });
 
-    // Generate HTML list items for each version
-    const listItems = versionDirs
-      .map((version) => {
-        return `          <li><a href="${version}/Live.xml">Live Version ${version}</a></li>`;
-      })
-      .join("\n");
-
-    // Replace the placeholder with the generated list items
-    const updatedContent = templateData.replace(
-      "<!-- VERSIONS_PLACEHOLDER -->",
-      listItems
+    // Write versions.json
+    fs.writeFile(
+      versionsPath,
+      JSON.stringify(versionDirs, null, 2),
+      (writeErr) => {
+        if (writeErr) {
+          console.error("Error writing versions.json:", writeErr);
+          process.exit(1);
+        }
+        console.log(
+          "web/versions.json has been successfully created with available versions."
+        );
+      }
     );
+  });
+}
 
-    // Write the updated content to index.html
-    fs.writeFile(indexPath, updatedContent, (writeErr) => {
-      if (writeErr) {
-        console.error("Error writing to index.html:", writeErr);
+// Function to update index.html with compiled Svelte and versions
+function updateIndexHtml() {
+  const compiledSvelte = compileSvelte();
+
+  fs.readFile(indexTemplatePath, "utf-8", (err, template) => {
+    if (err) {
+      console.error("Error reading index_template.html:", err);
+      process.exit(1);
+    }
+
+    // Replace VERSIONS_PLACEHOLDER with versions data
+    fs.readFile(versionsPath, "utf-8", (versionsErr, versionsData) => {
+      if (versionsErr) {
+        console.error("Error reading versions.json:", versionsErr);
         process.exit(1);
       }
-      console.log(
-        "build/index.html has been successfully updated with available versions."
-      );
+
+      const versions = JSON.parse(versionsData);
+      const versionsList = versions
+        .map((version) => `<li>${version}</li>`)
+        .join("\n          ");
+
+      const updatedHtml = template
+        .replace("<!-- VERSIONS_PLACEHOLDER -->", versionsList)
+        .replace(
+          "</body>",
+          `
+    <script>
+      ${compiledSvelte}
+      new App({
+        target: document.body
+      });
+    </script>
+  </body>`
+        );
+
+      fs.writeFile(outputIndexPath, updatedHtml, (writeErr) => {
+        if (writeErr) {
+          console.error("Error writing index.html:", writeErr);
+          process.exit(1);
+        }
+        console.log(
+          "build/index.html has been successfully created with compiled Svelte code."
+        );
+      });
     });
   });
-});
+}
+
+// Execute functions
+generateVersions();
+updateIndexHtml();
