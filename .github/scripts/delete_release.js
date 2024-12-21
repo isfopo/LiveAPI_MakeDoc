@@ -20,7 +20,7 @@ const deleteRelease = async () => {
         release_id: release.id,
       });
 
-      await octokit.git.deleteRef({
+      await octokit.rest.git.deleteRef({
         owner,
         repo,
         ref: `tags/${tag}`,
