@@ -68,4 +68,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/${{ needs.create_release.outputs.version }}
-          publish_branch: main
+          publish_branch: gh-pages
