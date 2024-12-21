@@ -19,6 +19,13 @@ const deleteRelease = async () => {
         repo,
         release_id: release.id,
       });
+
+      await octokit.git.deleteRef({
+        owner,
+        repo,
+        ref: `tags/${tag}`,
+      });
+
       console.log(`Deleted existing release and tag: ${tag}`);
     } else {
       console.log(`No existing release found for tag: ${tag}`);
