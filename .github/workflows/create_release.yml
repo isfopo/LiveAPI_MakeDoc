@@ -40,23 +40,23 @@ jobs:
           VERSION: ${{ steps.get_version.outputs.version }}
           GITHUB_REPO: ${{ github.repository }}
 
-      - name: Create GitHub Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v${{ steps.get_version.outputs.version }}
-          release_name: ${{ steps.get_version.outputs.version }}
-          draft: false
-          prerelease: false
+      - name: Install GitHub CLI
+        run: |
+          sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+          sudo apt-add-repository https://cli.github.com/packages
+          sudo apt update
+          sudo apt install gh -y
 
-      - name: Upload Release Assets
-        uses: actions/upload-release-asset@v1
+      - name: Authenticate GitHub CLI
+        run: gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Create GitHub Release
+        run: |
+          gh release create "v${{ steps.get_version.outputs.version }}" "v${{ steps.get_version.outputs.version }}" --title "v${{ steps.get_version.outputs.version }}" --notes "Release version v${{ steps.get_version.outputs.version }}"
+
+      - name: Upload Release Asset
+        run: |
+          gh release upload "v${{ steps.get_version.outputs.version }}" "${{ steps.get_version.outputs.version }}.zip" --clobber
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./${{ steps.get_version.outputs.version }}.zip
-          asset_name: ${{ steps.get_version.outputs.version }}.zip
-          asset_content_type: application/zip
+</write_to_file>
