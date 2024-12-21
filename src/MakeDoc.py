@@ -45,9 +45,10 @@ class APIMakeDoc(ControlSurface):
 
         self.outdir = outdir
         self.build_mode = build_mode
+        self.version = get_version_number(Live)
 
         if build_mode == "build":
-            self.outdir = os.path.join(outdir, get_version_number(Live))
+            self.outdir = os.path.join(outdir, self.version)
 
         if not os.path.exists(outdir):
             os.makedirs(outdir)
@@ -71,7 +72,7 @@ class APIMakeDoc(ControlSurface):
     def build_stub(self):
         self.log_message("Generating stub for Live API")
         stub_generator = StubGenerator()
-        stub_generator.generate(self.outdir)
+        stub_generator.generate(self.outdir, version=self.version)
         self.log_message("Completed generating stub for Live API")
 
     def handle_on_server_start(self, port: int):

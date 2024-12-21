@@ -8,7 +8,7 @@ from os.path import abspath, join, exists
 
 
 class StubGenerator:
-    def generate(self, script_dir):
+    def generate(self, script_dir: str, version: str):
         in_file = abspath(join(script_dir, "Live.xml"))
         out_dir = abspath(join(script_dir, "Live"))
         out_file = join(out_dir, "__init__.py")
@@ -20,6 +20,7 @@ class StubGenerator:
             with codecs.open(out_file, "w", "utf-8") as f:
                 f.write("# type: ignore\n")
                 f.write("from types import ModuleType\n")
+                f.write(f'"""Stub generated for Ableton Version  {version}"""\n')
                 last_tag = None
                 last_name = None
                 last_doc = None
