@@ -59,4 +59,3 @@ jobs:
           gh release upload "v${{ steps.get_version.outputs.version }}" "${{ steps.get_version.outputs.version }}.zip" --clobber
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-</write_to_file>
