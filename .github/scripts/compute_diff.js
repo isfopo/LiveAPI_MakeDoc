@@ -63,11 +63,9 @@ try {
       const currentContent = readFileContent(currentVersion);
       diffContent = computeDiff(previousContent, currentContent);
     } catch (err) {
-      console.log(
-        "Previous Live.xml not found. Using entire Live.xml as release notes."
-      );
-      const currentContent = readFileContent(currentVersion);
-      diffContent = currentContent;
+      console.log("Previous Live.xml not found.");
+
+      diffContent = "No changes found in the previous version";
     }
   }
 
