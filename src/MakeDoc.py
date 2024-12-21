@@ -25,6 +25,7 @@ GNU General Public License for more details.
 """
 
 import os
+import sys
 import Live  # type: ignore
 from _Framework.ControlSurface import ControlSurface  # type: ignore
 from .types.BuildMode import BuildMode
@@ -41,6 +42,7 @@ class APIMakeDoc(ControlSurface):
 
     def __init__(self, c_instance, outdir: str, build_mode: BuildMode):
         ControlSurface.__init__(self, c_instance)
+        self.log_message(f"Running Python Version: {sys.version}")
         self.script_dir = os.path.dirname(os.path.abspath(__file__))
 
         self.outdir = outdir
