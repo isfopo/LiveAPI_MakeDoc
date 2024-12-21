@@ -1,5 +1,6 @@
 # type: ignore
 from types import ModuleType
+"""Stub generated for Ableton Version  12.1.0"""
 
 
 class Application(ModuleType):
@@ -453,12 +454,12 @@ The list contains None if no control surface is active at that index.
             """
             pass
 
-        def show_on_the_fly_message(self, message: str, buttons: int, enable_markup: bool, show_success_icon: bool, push_dialog_type: int) -> int:
+        def show_on_the_fly_message(self, message: str, buttons: int, enable_markup: bool, show_success_icon: bool) -> int:
             """
             Same as show_message, but for when there is no predefined Text object.
 
  C++ signature :
-  int show_on_the_fly_message(TPyHandle<ASongApp>,std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> [,int=Application.MessageButtons.OK_BUTTON [,bool=False [,bool=False [,int=Application.PushDialogType.MESSAGE_BOX]]]])
+  int show_on_the_fly_message(TPyHandle<ASongApp>,std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> [,int=Application.MessageButtons.OK_BUTTON [,bool=False [,bool=False]]])
             :param message: message
             :type message: str
             :param buttons: buttons
@@ -467,8 +468,6 @@ The list contains None if no control surface is active at that index.
             :type enable_markup: bool
             :param show_success_icon: show_success_icon
             :type show_success_icon: bool
-            :param push_dialog_type: push_dialog_type
-            :type push_dialog_type: int
             :rtype: int
             """
             pass
@@ -1043,33 +1042,6 @@ shown in the currently selected window.
         def __init__(self, *a, **k):
             """
             Specifies the characteristics of the message box, e.g. which buttons to show.
-            """
-            pass
-
-        def from_bytes(self, *a, **k) -> None:
-            """
-            Return the integer represented by the given array of bytes.
-
-  bytes
- Holds the array of bytes to convert.  The argument must either
- support the buffer protocol or be an iterable object producing bytes.
- Bytes and bytearray are examples of built-in objects that support the
- buffer protocol.
-  byteorder
- The byte order used to represent the integer.  If byteorder is 'big',
- the most significant byte is at the beginning of the byte array.  If
- byteorder is 'little', the most significant byte is at the end of the
- byte array.  To request the native byte order of the host system, use
- `sys.byteorder' as the byte order value.  Default is to use 'big'.
-  signed
- Indicates whether two's complement is used to represent the integer.
-            """
-            pass
-
-    class PushDialogType(object):
-        def __init__(self, *a, **k):
-            """
-            Specifies the dialog type for Push.
             """
             pass
 
