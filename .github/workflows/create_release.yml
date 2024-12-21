@@ -27,17 +27,11 @@ jobs:
 
       - name: Compute Live.xml Changes
         id: compute_diff
-        run: |
-          if [ -z "${{ steps.get_previous_version.outputs.previous_version }}" ]; then
-            echo "No previous version found. Using entire Live.xml as release notes."
-            diff_content=$(cat build/${{ steps.get_version.outputs.version }}/Live.xml)
-          else
-            diff_content=$(diff build/${{ steps.get_previous_version.outputs.previous_version }}/Live.xml build/${{ steps.get_version.outputs.version }}/Live.xml || true)
-            if [ -z "$diff_content" ]; then
-              diff_content="No changes in Live.xml since the previous release."
-            fi
-          fi
-          echo "$diff_content" > release_notes.txt
+        env:
+          CURRENT_VERSION: ${{ steps.get_version.outputs.version }}
+          PREVIOUS_VERSION: ${{ steps.get_previous_version.outputs.previous_version }}
+          GITHUB_OUTPUT: $GITHUB_OUTPUT
+        run: node .github/scripts/compute_diff.js "$CURRENT_VERSION" "$PREVIOUS_VERSION"
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -65,4 +59,4 @@ jobs:
 
       - name: Create GitHub Release
         run: |
-          gh release create "${{ steps.get_version.outputs.version }}" "${{ steps.get_version.outputs.version }}.zip" --title "Ableton Live Version: ${{ steps.get_version.outputs.version }}" --notes-file release_notes.txt
+          gh release create "${{ steps.get_version.outputs.version }}" "${{ steps.get_version.outputs.version }}.zip" --title "Ableton Live Version: ${{ steps.get_version.outputs.version }}" --notes "${{ steps.compute_diff.outputs.diff_content }}"
