@@ -7,6 +7,7 @@
     "delete": "node delete_release.js"
   },
   "dependencies": {
-    "@octokit/rest": "^19.0.0"
+    "@octokit/rest": "^19.0.0",
+    "diff": "^7.0.0"
   }
 }
