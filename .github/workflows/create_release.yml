@@ -19,6 +19,26 @@ jobs:
           latest_version=$(ls build | sort -V | tail -n 1)
           echo "version=$latest_version" >> $GITHUB_OUTPUT
 
+      - name: Determine Previous Version
+        id: get_previous_version
+        run: |
+          previous_version=$(ls build | sort -V | tail -n 2 | head -n 1)
+          echo "previous_version=$previous_version" >> $GITHUB_OUTPUT
+
+      - name: Compute Live.xml Changes
+        id: compute_diff
+        run: |
+          if [ -z "${{ steps.get_previous_version.outputs.previous_version }}" ]; then
+            echo "No previous version found. Using entire Live.xml as release notes."
+            diff_content=$(cat build/${{ steps.get_version.outputs.version }}/Live.xml)
+          else
+            diff_content=$(diff build/${{ steps.get_previous_version.outputs.previous_version }}/Live.xml build/${{ steps.get_version.outputs.version }}/Live.xml || true)
+            if [ -z "$diff_content" ]; then
+              diff_content="No changes in Live.xml since the previous release."
+            fi
+          fi
+          echo "$diff_content" > release_notes.txt
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -41,8 +61,8 @@ jobs:
           GITHUB_REPO: ${{ github.repository }}
 
       - name: Authenticate GitHub CLI
-        run: gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
 
       - name: Create GitHub Release
         run: |
-          gh release create "v${{ steps.get_version.outputs.version }}" "${{ steps.get_version.outputs.version }}.zip" --title "v${{ steps.get_version.outputs.version }}" --notes "Release version v${{ steps.get_version.outputs.version }}"
+          gh release create "v${{ steps.get_version.outputs.version }}" "${{ steps.get_version.outputs.version }}.zip" --title "v${{ steps.get_version.outputs.version }}" --notes-file release_notes.txt
