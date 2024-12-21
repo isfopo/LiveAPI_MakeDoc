@@ -6,7 +6,7 @@ import sys
 import os
 import http
 import threading
-from typing import Any, Callable
+from typing import Any, Callable, Union
 
 from ..types.BuildMode import BuildMode
 from ..helpers.app import get_version_number
@@ -20,9 +20,9 @@ class DocumentationGenerator:
     cssfilename: str
     css: str
     lines = []
-    xmlFile: codecs.StreamReaderWriter | None = None
+    xmlFile: Union[codecs.StreamReaderWriter, None] = None
     port: int
-    on_server_start: Callable[[int], None] | None
+    on_server_start: Union[Callable[[int], None], None]
     httpd: socketserver.TCPServer
     build_mode: BuildMode
 
@@ -33,7 +33,7 @@ class DocumentationGenerator:
         script_dir,
         build_mode: BuildMode,
         port=8080,
-        on_server_start: Callable[[int], None] | None = None,
+        on_server_start: Union[Callable[[int], None], None] = None,
     ):
         self.module = module
         self.outdir = outdir

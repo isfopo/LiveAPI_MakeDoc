@@ -1,7 +1,7 @@
 from io import BytesIO
 import re
 import codecs
-from typing import List, Optional, Tuple
+from typing import List, Optional, Tuple, Union
 import xml.etree.ElementTree as ElementTree
 from os import makedirs
 from os.path import abspath, join, exists
@@ -114,8 +114,8 @@ class StubGenerator:
 
     def parse_args_from_doc(
         self, doc: Optional[str]
-    ) -> Tuple[List[Tuple[str, str, str | None]], Optional[str], Optional[str]]:
-        args: List[Tuple[str, str, str | None]] = []
+    ) -> Tuple[List[Tuple[str, str, Union[str, None]]], Optional[str], Optional[str]]:
+        args: List[Tuple[str, str, Union[str, None]]] = []
         ret: Optional[str] = None
 
         try:
@@ -139,7 +139,7 @@ class StubGenerator:
 
         return args, ret, doc
 
-    def format_arg(self, arg: Tuple[str, str, str | None]):
+    def format_arg(self, arg: Tuple[str, str, Union[str, None]]):
         return f"{arg[0]}: {arg[1]}{'=' + arg[2] if arg[2] is not None else ''}"
 
     def make_arg_doc(self, args, ret, indent):
