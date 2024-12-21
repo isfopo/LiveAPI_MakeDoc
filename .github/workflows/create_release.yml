@@ -25,7 +25,7 @@ jobs:
         working-directory: .github/scripts
 
       - name: Update index.html with dynamic version links
-        run: node .github/scripts/update_index.js
+        run: node .github/scripts/update_index.cjs
 
       - name: Determine Latest Version
         id: get_version
