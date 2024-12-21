@@ -6,14 +6,16 @@ import sys
 import os
 import http
 import threading
-from typing import Callable
+from typing import Any, Callable
 
 from ..types.BuildMode import BuildMode
 from ..helpers.app import get_version_number
 
 
 class DocumentationGenerator:
+    module: Any
     outdir: str
+    script_dir: str
     xmlfilename: str
     cssfilename: str
     css: str
@@ -33,19 +35,21 @@ class DocumentationGenerator:
         port=8080,
         on_server_start: Callable[[int], None] | None = None,
     ):
+        self.module = module
         self.outdir = outdir
+        self.script_dir = script_dir
         self.build_mode = build_mode
-
-        if not os.path.exists(self.outdir):
-            os.makedirs(outdir)
-
         self.port = port
         self.on_server_start = on_server_start
 
-        with open(os.path.join(script_dir, "Live.css")) as f:
+    def generate(self):
+        if not os.path.exists(self.outdir):
+            os.makedirs(self.outdir)
+
+        with open(os.path.join(self.script_dir, "Live.css")) as f:
             self.css = f.read()
 
-        self.make_doc(module)
+        self.make_doc(self.module)
 
     def make_doc(self, module):
         self.xmlfilename = os.path.join(self.outdir, str(module.__name__) + ".xml")
