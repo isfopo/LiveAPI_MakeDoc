@@ -1,6 +1,10 @@
 import fs from "fs";
 import path from "path";
 import { compile } from "svelte/compiler";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const buildDir = path.join(__dirname, "../../build");
 const versionsPath = path.join(__dirname, "../../web/versions.json"); // Path to write versions.json
