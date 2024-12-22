@@ -1,68 +1,15 @@
 <!DOCTYPE html>
-      <html lang="en">
-        <head>
-          <meta charset="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <title>LiveAPI Versions</title>
-        </head> 
-          <script>
-          import "svelte/internal/disclose-version";
-import "svelte/internal/flags/legacy";
-import * as $ from "svelte/internal/client";
-import { onMount } from "svelte";
-
-var root_1 = $.template(`<li class="svelte-1qebjwj"><a> </a></li>`);
-var root = $.template(`<main class="svelte-1qebjwj"><h1 class="svelte-1qebjwj">Available Versions</h1> <ul class="svelte-1qebjwj"></ul></main>`);
-
-export default function App($$anchor, $$props) {
-	$.push($$props, false);
-
-	let versions = $.mutable_state([]);
-
-	onMount(async () => {
-		try {
-			const response = await fetch("/versions.json");
-
-			if (response.ok) {
-				$.set(versions, await response.json());
-			} else {
-				console.error("Failed to fetch versions.json:", response.statusText);
-			}
-		} catch(error) {
-			console.error("Error fetching versions.json:", error);
-		}
-	});
-
-	$.init();
-
-	var main = root();
-	var ul = $.sibling($.child(main), 2);
-
-	$.each(ul, 5, () => $.get(versions), $.index, ($$anchor, version) => {
-		var li = root_1();
-		var a = $.child(li);
-		var text = $.child(a);
-
-		$.reset(a);
-		$.reset(li);
-
-		$.template_effect(() => {
-			$.set_attribute(a, "href", `${$.get(version) ?? ""}/Live.xml`);
-			$.set_text(text, `Live Version ${$.get(version) ?? ""}`);
-		});
-
-		$.append($$anchor, li);
-	});
-
-	$.reset(ul);
-	$.reset(main);
-	$.append($$anchor, main);
-	$.pop();
-}
-          new App({
-            target: document.body
-            });
-          </script>
-        <body>       
-        </body>
-      </html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LiveAPI Versions</title>
+  </head>
+  <body>
+    <h1>Available Versions</h1>
+    <ul>
+                <li><a href="12.1.0/Live.xml">Live Version 12.1.0</a></li>
+          <li><a href="12.1.5/Live.xml">Live Version 12.1.5</a></li>
+    </ul>
+  </body>
+</html>
