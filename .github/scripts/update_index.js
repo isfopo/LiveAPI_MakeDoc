@@ -19,7 +19,6 @@ const outputIndexPath = path.join(buildDir, "index.html");
 function compileSvelte() {
   const appContent = fs.readFileSync(appPath, "utf-8");
   const compiled = compile(appContent, {
-    format: "iife",
     name: "App",
     dev: false,
   });
