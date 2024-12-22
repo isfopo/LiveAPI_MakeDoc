@@ -79,12 +79,7 @@ function updateIndexHtml() {
         process.exit(1);
       }
 
-      const versions = JSON.parse(versionsData);
-      const versionsList = versions
-        .map((version) => `<li>${version}</li>`)
-        .join("\n          ");
-
-      const updatedHtml = html`<!DOCTYPE html>
+      const updatedHtml = `<!DOCTYPE html>
       <html lang="en">
         <head>
           <meta charset="UTF-8" />
