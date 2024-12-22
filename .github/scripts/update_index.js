@@ -1,17 +1,17 @@
-const fs = require("fs");
-const path = require("path");
+import { readFile, readdir, writeFile } from "fs";
+import { join } from "path";
 
-const buildDir = path.join(__dirname, "../../build");
-const indexPath = path.join(buildDir, "index.html");
-const templatePath = path.join(__dirname, "index_template.html");
+const buildDir = join(__dirname, "../../build");
+const indexPath = join(buildDir, "index.html");
+const templatePath = join(__dirname, "index_template.html");
 
-fs.readFile(templatePath, "utf8", (err, templateData) => {
+readFile(templatePath, "utf8", (err, templateData) => {
   if (err) {
     console.error("Error reading template file:", err);
     process.exit(1);
   }
 
-  fs.readdir(buildDir, { withFileTypes: true }, (err, files) => {
+  readdir(buildDir, { withFileTypes: true }, (err, files) => {
     if (err) {
       console.error("Error reading build directory:", err);
       process.exit(1);
@@ -43,7 +43,7 @@ fs.readFile(templatePath, "utf8", (err, templateData) => {
     );
 
     // Write the updated content to index.html
-    fs.writeFile(indexPath, updatedContent, (writeErr) => {
+    writeFile(indexPath, updatedContent, (writeErr) => {
       if (writeErr) {
         console.error("Error writing to index.html:", writeErr);
         process.exit(1);
