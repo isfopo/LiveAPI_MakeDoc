@@ -9,10 +9,6 @@ const __dirname = path.dirname(__filename);
 const buildDir = path.join(__dirname, "../../build");
 const versionsPath = path.join(__dirname, "../../web/versions.json"); // Path to write versions.json
 const appPath = path.join(__dirname, "../../web/src/App.svelte");
-const indexTemplatePath = path.join(
-  __dirname,
-  "../../.github/scripts/index_template.html"
-);
 const outputIndexPath = path.join(buildDir, "index.html");
 
 // Function to compile Svelte component
@@ -66,48 +62,14 @@ function generateVersions() {
 function updateIndexHtml() {
   const compiledSvelte = compileSvelte();
 
-  fs.readFile(indexTemplatePath, "utf-8", (err, template) => {
-    if (err) {
-      console.error("Error reading index_template.html:", err);
+  fs.writeFile(outputIndexPath, compiledSvelte, (writeErr) => {
+    if (writeErr) {
+      console.error("Error writing index.html:", writeErr);
       process.exit(1);
     }
-
-    // Replace VERSIONS_PLACEHOLDER with versions data
-    fs.readFile(versionsPath, "utf-8", (versionsErr, versionsData) => {
-      if (versionsErr) {
-        console.error("Error reading versions.json:", versionsErr);
-        process.exit(1);
-      }
-
-      const versions = JSON.parse(versionsData);
-      const versionsList = versions
-        .map((version) => `<li>${version}</li>`)
-        .join("\n          ");
-
-      const updatedHtml = template
-        .replace("<!-- VERSIONS_PLACEHOLDER -->", versionsList)
-        .replace(
-          "</body>",
-          `
-    <script>
-      ${compiledSvelte}
-      new App({
-        target: document.body
-      });
-    </script>
-  </body>`
-        );
-
-      fs.writeFile(outputIndexPath, updatedHtml, (writeErr) => {
-        if (writeErr) {
-          console.error("Error writing index.html:", writeErr);
-          process.exit(1);
-        }
-        console.log(
-          "build/index.html has been successfully created with compiled Svelte code."
-        );
-      });
-    });
+    console.log(
+      "build/index.html has been successfully created with compiled Svelte code."
+    );
   });
 }
 
