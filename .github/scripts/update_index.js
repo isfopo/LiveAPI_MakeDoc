@@ -36,7 +36,9 @@ readFile(templatePath, "utf8", (err, templateData) => {
     // Generate HTML list items for each version
     const listItems = versionDirs
       .map((version) => {
-        return `          <li><a href="${version}/Live.xml">Live Version ${version}</a>< href="${version}/Live"a>Download</></li>`;
+        return `<li>
+          <a href="${version}/Live.xml">Live Version ${version}</a> - <a href="${version}/Live">Download</a>
+        </li>`;
       })
       .join("\n");
 
