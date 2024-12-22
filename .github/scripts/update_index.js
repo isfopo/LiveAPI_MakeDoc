@@ -85,7 +85,8 @@ function updateIndexHtml() {
           <meta charset="UTF-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <title>LiveAPI Versions</title>
-        </head>        
+        </head> 
+        <body>       
           <script>
             ${compiledSvelte}
             new App({
