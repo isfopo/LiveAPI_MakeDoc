@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LiveAPI Versions</title>
-  </head>
-  <body>
-    <h1>Available Versions</h1>
-    <ul>
-      <li>12.1.5</li>
-          <li>12.1.0</li>
-    </ul>
-  
-    <script>
-      import "svelte/internal/disclose-version";
+import "svelte/internal/disclose-version";
 import "svelte/internal/flags/legacy";
 import * as $ from "svelte/internal/client";
 import { onMount } from "svelte";
@@ -21,8 +6,8 @@ import { onMount } from "svelte";
 var root_1 = $.template(`<li class="svelte-1qebjwj"><a> </a></li>`);
 var root = $.template(`<main class="svelte-1qebjwj"><h1 class="svelte-1qebjwj">Available Versions</h1> <ul class="svelte-1qebjwj"></ul></main>`);
 
-export default function App($anchor, $props) {
-	$.push($props, false);
+export default function App($$anchor, $$props) {
+	$.push($$props, false);
 
 	let versions = $.mutable_state([]);
 
@@ -45,7 +30,7 @@ export default function App($anchor, $props) {
 	var main = root();
 	var ul = $.sibling($.child(main), 2);
 
-	$.each(ul, 5, () => $.get(versions), $.index, ($anchor, version) => {
+	$.each(ul, 5, () => $.get(versions), $.index, ($$anchor, version) => {
 		var li = root_1();
 		var a = $.child(li);
 		var text = $.child(a);
@@ -58,17 +43,11 @@ export default function App($anchor, $props) {
 			$.set_text(text, `Live Version ${$.get(version) ?? ""}`);
 		});
 
-		$.append($anchor, li);
+		$.append($$anchor, li);
 	});
 
 	$.reset(ul);
 	$.reset(main);
-	$.append($anchor, main);
+	$.append($$anchor, main);
 	$.pop();
 }
-      new App({
-        target: document.body
-      });
-    </script>
-  </body>
-</html>
