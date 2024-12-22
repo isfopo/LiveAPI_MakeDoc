@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@octokit/rest": "^19.0.0",
+    "diff": "^7.0.0",
+    "svelte": "^5.0.0"
+  }
+}
