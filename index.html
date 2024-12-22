@@ -1,4 +1,12 @@
-import "svelte/internal/disclose-version";
+<!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>LiveAPI Versions</title>
+        </head>        
+          <script>
+            import "svelte/internal/disclose-version";
 import "svelte/internal/flags/legacy";
 import * as $ from "svelte/internal/client";
 import { onMount } from "svelte";
@@ -51,3 +59,9 @@ export default function App($$anchor, $$props) {
 	$.append($$anchor, main);
 	$.pop();
 }
+            new App({
+              target: document.body
+            });
+          </script>
+        </body>
+      </html>
