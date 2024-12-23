@@ -22,21 +22,39 @@ if (!GITHUB_REPO) {
 
 const [owner, repo] = GITHUB_REPO.split("/");
 
-const getVersionDirectories = () => {
+const getVersionDirectories = (buildDir) => {
+  if (!fs.existsSync(buildDir)) {
+    console.error(`Build directory does not exist: ${buildDir}`);
+    process.exit(1);
+  }
+
   return fs
     .readdirSync(buildDir, { withFileTypes: true })
-    .filter((dirent) => dirent.isDirectory())
+    .filter(
+      (dirent) => dirent.isDirectory() && /^\d+\.\d+\.\d+$/.test(dirent.name)
+    )
     .map((dirent) => dirent.name);
 };
 
 const zipDirectory = async (version) => {
-  const sourceDir = join(buildDir, version, "Live");
-  const zipPath = join(process.cwd(), version, `Live.zip`);
+  const sourceDir = path.join(buildDir, version, "Live");
+  const destDir = path.join(buildDir, version);
+  const zipPath = path.join(destDir, `${version}.zip`);
+
+  console.log(`\Zipping version: ${version}`);
+  console.log(`Source Directory: ${sourceDir}`);
+  console.log(`Destination Zip Path: ${zipPath}`);
 
   // Ensure the source directory exists
   if (!fs.existsSync(sourceDir)) {
     console.error(`Source directory does not exist: ${sourceDir}`);
     throw new Error(`Source directory not found: ${sourceDir}`);
+  }
+
+  // Ensure the destination directory exists
+  if (!fs.existsSync(destDir)) {
+    console.error(`Source directory does not exist: ${destDir}`);
+    throw new Error(`Source directory not found: ${destDir}`);
   }
 
   try {
@@ -135,7 +153,7 @@ const createRelease = async (version, zipPath) => {
 };
 
 (async () => {
-  for (const version of getVersionDirectories()) {
+  for (const version of getVersionDirectories(buildDir)) {
     console.log(`Processing version: ${version}`);
     try {
       await createRelease(version, await zipDirectory(version));
