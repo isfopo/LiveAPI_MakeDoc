@@ -89,6 +89,8 @@ const createRelease = async (version, zipPaths) => {
       prerelease: false,
     });
 
+    console.log(`Created release: ${release.data.name}`);
+
     for (const zipPath of zipPaths) {
       if (fs.existsSync(zipPath)) {
         await octokit.repos.uploadReleaseAsset({
@@ -98,6 +100,7 @@ const createRelease = async (version, zipPaths) => {
           name: path.basename(zipPath),
           data: fs.createReadStream(zipPath),
         });
+
         console.log(
           `Uploaded asset: ${path.basename(zipPath)} to release ${version}`
         );
@@ -115,6 +118,7 @@ const createRelease = async (version, zipPaths) => {
 
 const main = async () => {
   const versions = getVersionDirectories();
+
   for (const version of versions) {
     console.log(`Processing version: ${version}`);
     try {
