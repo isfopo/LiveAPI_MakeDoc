@@ -78,6 +78,8 @@ const deleteRelease = async (version) => {
 };
 
 const createRelease = async (version, zipPath) => {
+  await deleteRelease(version);
+
   try {
     const release = await octokit.repos.createRelease({
       owner,
@@ -117,27 +119,15 @@ const createRelease = async (version, zipPath) => {
   }
 };
 
-const main = async () => {
-  const versions = getVersionDirectories();
-
-  for (const version of versions) {
+(async () => {
+  for (const version of getVersionDirectories()) {
     console.log(`Processing version: ${version}`);
     try {
-      await deleteRelease(version);
-      const zipPath = await zipDirectory(version);
+      await createRelease(version, await zipDirectory(version));
 
-      await createRelease(version, zipPath);
-
-      // Optionally delete the zip files after upload
-      // fs.unlinkSync(zipPath);
-      // if (fs.existsSync(liveZipPath)) {
-      //   fs.unlinkSync(liveZipPath);
-      // }
       console.log(`Completed processing for version: ${version}\n`);
     } catch (error) {
       console.error(`Failed to process version ${version}:`, error);
     }
   }
-};
-
-main();
+})();
