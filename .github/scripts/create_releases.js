@@ -26,8 +26,8 @@ const getVersionDirectories = () => {
 };
 
 const zipDirectory = async (version) => {
-  const sourceDir = path.join(buildDir, version);
-  const zipPath = path.join(process.cwd(), `${version}.zip`);
+  const sourceDir = path.join(buildDir, version, "Live");
+  const zipPath = path.join(process.cwd(), `Live.zip`);
   try {
     const { stdout, stderr } = await execAsync(
       `zip -r ${zipPath} ${sourceDir}`
@@ -77,7 +77,7 @@ const deleteRelease = async (version) => {
   }
 };
 
-const createRelease = async (version, zipPaths) => {
+const createRelease = async (version, zipPath) => {
   try {
     const release = await octokit.repos.createRelease({
       owner,
@@ -91,22 +91,20 @@ const createRelease = async (version, zipPaths) => {
 
     console.log(`Created release: ${release.data.name}`);
 
-    for (const zipPath of zipPaths) {
-      if (fs.existsSync(zipPath)) {
-        await octokit.repos.uploadReleaseAsset({
-          owner,
-          repo,
-          release_id: release.data.id,
-          name: path.basename(zipPath),
-          data: fs.createReadStream(zipPath),
-        });
+    if (fs.existsSync(zipPath)) {
+      await octokit.repos.uploadReleaseAsset({
+        owner,
+        repo,
+        release_id: release.data.id,
+        name: path.basename(zipPath),
+        data: fs.createReadStream(zipPath),
+      });
 
-        console.log(
-          `Uploaded asset: ${path.basename(zipPath)} to release ${version}`
-        );
-      } else {
-        console.warn(`Zip file not found: ${zipPath}. Skipping upload.`);
-      }
+      console.log(
+        `Uploaded asset: ${path.basename(zipPath)} to release ${version}`
+      );
+    } else {
+      console.warn(`Zip file not found: ${zipPath}. Skipping upload.`);
     }
 
     console.log(`Created release for version: ${version}`);
@@ -125,10 +123,7 @@ const main = async () => {
       await deleteRelease(version);
       const zipPath = await zipDirectory(version);
 
-      // Path to the zipped Live directory created by the GitHub Actions workflow
-      const liveZipPath = path.join(buildDir, version, "Live.zip");
-
-      await createRelease(version, [zipPath, liveZipPath]);
+      await createRelease(version, zipPath);
 
       // Optionally delete the zip files after upload
       // fs.unlinkSync(zipPath);
