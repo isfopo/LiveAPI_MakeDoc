@@ -1,12 +1,12 @@
 import { Octokit } from "@octokit/rest";
 import fs from "fs";
-import path from "path";
+import { join, dirname, basename } from "path";
 import { exec } from "child_process";
 import util from "util";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = dirname(__filename);
 
 const buildDir = join(__dirname, "../../build");
 
@@ -30,8 +30,8 @@ const getVersionDirectories = () => {
 };
 
 const zipDirectory = async (version) => {
-  const sourceDir = path.join(buildDir, version, "Live");
-  const zipPath = path.join(process.cwd(), version, `Live.zip`);
+  const sourceDir = join(buildDir, version, "Live");
+  const zipPath = join(process.cwd(), version, `Live.zip`);
 
   // Ensure the source directory exists
   if (!fs.existsSync(sourceDir)) {
@@ -114,7 +114,7 @@ const createRelease = async (version, zipPath) => {
         owner,
         repo,
         release_id: release.data.id,
-        name: path.basename(zipPath),
+        name: basename(zipPath),
         data: fs.createReadStream(zipPath),
         headers: {
           "content-type": "application/zip",
@@ -122,9 +122,7 @@ const createRelease = async (version, zipPath) => {
         },
       });
 
-      console.log(
-        `Uploaded asset: ${path.basename(zipPath)} to release ${version}`
-      );
+      console.log(`Uploaded asset: ${basename(zipPath)} to release ${version}`);
     } else {
       console.warn(`Zip file not found: ${zipPath}. Skipping upload.`);
     }
