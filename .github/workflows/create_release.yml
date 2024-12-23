@@ -1,4 +1,4 @@
-name: Create Release
+name: Create Releases
 
 on:
   push:
@@ -6,10 +6,8 @@ on:
       - main
 
 jobs:
-  create_release:
+  create_releases:
     runs-on: ubuntu-latest
-    outputs:
-      version: ${{ steps.get_version.outputs.version }}
 
     steps:
       - name: Checkout Repository
@@ -24,39 +22,14 @@ jobs:
         run: npm install
         working-directory: .github/scripts
 
-      - name: Update index.html with dynamic version links
-        run: node .github/scripts/update_index.js
-
-      - name: Determine Latest Version
-        id: get_version
-        run: |
-          latest_version=$(ls build | grep -v '^index\.html$' | sort -V | tail -n 1)
-          echo "version=$latest_version" >> $GITHUB_OUTPUT
-
-      - name: Determine Previous Version
-        id: get_previous_version
-        run: |
-          previous_version=$(ls build | sort -V | tail -n 2 | head -n 1)
-          echo "previous_version=$previous_version" >> $GITHUB_OUTPUT
-
-      - name: Delete existing release (if any)
-        run: node .github/scripts/delete_release.js
+      - name: Create Releases
+        run: node .github/scripts/create_releases.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERSION: ${{ steps.get_version.outputs.version }}
           GITHUB_REPO: ${{ github.repository }}
 
-      - name: Zip Build Folder
-        run: |
-          cd build/${{ steps.get_version.outputs.version }}
-          zip -r ../../${{ steps.get_version.outputs.version }}.zip .
-
-      - name: Authenticate GitHub CLI
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
-
-      - name: Create GitHub Release
-        run: |
-          gh release create "${{ steps.get_version.outputs.version }}" "${{ steps.get_version.outputs.version }}.zip" --title "Ableton Live Version: ${{ steps.get_version.outputs.version }}"
+      - name: Update index.html with dynamic version links
+        run: node .github/scripts/update_index.js
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
