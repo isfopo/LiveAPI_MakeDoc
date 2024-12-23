@@ -41,7 +41,7 @@ const zipDirectory = async (version) => {
   const sourceDir = join(buildDir, version); // Path to the version folder
   const zipPath = join(buildDir, `${version}.zip`); // Destination ZIP path in build/version.zip
 
-  console.log(`\nProcessing version: ${version}`);
+  console.log(`Zipping version: ${version}`);
   console.log(`Source Directory: ${sourceDir}`);
   console.log(`Destination Zip Path: ${zipPath}`);
 
@@ -174,8 +174,6 @@ const createRelease = async (version, zipPath) => {
     } else {
       console.warn(`Zip file not found: ${zipPath}. Skipping upload.`);
     }
-
-    console.log(`Created release for version: ${version}`);
   } catch (error) {
     console.error(`Error creating release for version ${version}:`, error);
     throw error;
@@ -184,13 +182,13 @@ const createRelease = async (version, zipPath) => {
 
 (async () => {
   for (const version of getVersionDirectories(buildDir)) {
-    console.log(`Processing version: ${version}`);
     try {
+      console.logZipping version: ${version}`);
       await createRelease(version, await zipDirectory(version));
 
-      console.log(`Completed processing for version: ${version}\n`);
+      console.log(`Completed processing for version: ${version}\n\n`);
     } catch (error) {
-      console.error(`Failed to process version ${version}:`, error);
+      console.error(`Failed to process version ${version}: ${error}\n`);
     }
   }
 })();
