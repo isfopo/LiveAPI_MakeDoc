@@ -6,10 +6,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const buildDir = join(__dirname, "../../build");
-const indexPath = join(buildDir, "index.html");
 const webDir = join(__dirname, "../../web");
+
 const templatePath = join(webDir, "index.html");
 const stylesPath = join(webDir, "styles.css");
+const indexDest = join(buildDir, "index.html");
+const stylesDest = join(buildDir, "index.html");
 
 readFile(templatePath, "utf8", (err, templateData) => {
   if (err) {
@@ -51,7 +53,7 @@ readFile(templatePath, "utf8", (err, templateData) => {
     );
 
     // Write the updated content to index.html
-    writeFile(indexPath, updatedContent, (writeErr) => {
+    writeFile(indexDest, updatedContent, (writeErr) => {
       if (writeErr) {
         console.error("Error writing to index.html:", writeErr);
         process.exit(1);
@@ -63,7 +65,7 @@ readFile(templatePath, "utf8", (err, templateData) => {
   });
 });
 
-readFile(templatePath, "utf8", (err, content) => {
+readFile(stylesDest, "utf8", (err, content) => {
   if (err) {
     console.error("Error reading template file:", err);
     process.exit(1);
