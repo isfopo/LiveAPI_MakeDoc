@@ -135,8 +135,6 @@ const createRelease = async (version, zipPath) => {
       prerelease: false,
     });
 
-    console.log(`Created release: ${release.data.name}`);
-
     // If release is still a draft (shouldn't be), explicitly publish it
     if (release.data.draft) {
       console.log(`Release ${version} is still a draft. Publishing it.`);
@@ -150,6 +148,8 @@ const createRelease = async (version, zipPath) => {
       console.log(
         `Draft status after publishing: ${updatedRelease.data.draft}`
       );
+    } else {
+      console.log(`Created release: ${release.data.name}`);
     }
 
     // Check if zipPath exists before uploading
