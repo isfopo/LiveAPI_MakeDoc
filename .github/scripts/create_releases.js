@@ -41,7 +41,7 @@ const zipDirectory = async (version) => {
   const sourceDir = join(buildDir, version); // Path to the version folder
   const zipPath = join(buildDir, `${version}.zip`); // Destination ZIP path in build/version.zip
 
-  console.log(`Zipping version: ${version}`);
+  console.log(`Zipping  version: ${version}`);
   console.log(`Source Directory: ${sourceDir}`);
   console.log(`Destination Zip Path: ${zipPath}`);
 
@@ -183,7 +183,7 @@ const createRelease = async (version, zipPath) => {
 (async () => {
   for (const version of getVersionDirectories(buildDir)) {
     try {
-      console.logZipping version: ${version}`);
+      console.log(`Processing version: ${version}`);
       await createRelease(version, await zipDirectory(version));
 
       console.log(`Completed processing for version: ${version}\n\n`);
