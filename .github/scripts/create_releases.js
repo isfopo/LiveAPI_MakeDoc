@@ -38,7 +38,7 @@ const getVersionDirectories = (buildDir) => {
 
 // Function to zip a directory
 const zipDirectory = async (version) => {
-  const sourceDir = join(buildDir, version, "Live"); // Path to the Live folder
+  const sourceDir = join(buildDir, version); // Path to the version folder
   const zipPath = join(buildDir, `${version}.zip`); // Destination ZIP path in build/version.zip
 
   console.log(`\nProcessing version: ${version}`);
