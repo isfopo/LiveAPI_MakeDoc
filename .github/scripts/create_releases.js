@@ -26,9 +26,12 @@ const getVersionDirectories = () => {
 };
 
 const zipDirectory = async (version) => {
-  const sourceDir = path.join(buildDir, version, "Live");
+  const parentDir = path.join(buildDir, version);
+  const sourceDir = path.join(parentDir, "Live");
   const zipPath = path.join(process.cwd(), version, `Live.zip`);
   try {
+    await execAsync(`mkdir ${parentDir}`);
+
     const { stdout, stderr } = await execAsync(
       `zip -r ${zipPath} ${sourceDir}`
     );
