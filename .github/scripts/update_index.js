@@ -65,13 +65,13 @@ readFile(templatePath, "utf8", (err, templateData) => {
   });
 });
 
-readFile(stylesDest, "utf8", (err, content) => {
+readFile(stylesPath, "utf8", (err, content) => {
   if (err) {
     console.error("Error reading template file:", err);
     process.exit(1);
   }
   // Write the updated content to styles.css
-  writeFile(indexPath, content, (writeErr) => {
+  writeFile(stylesDest, content, (writeErr) => {
     if (writeErr) {
       console.error("Error writing to styles.css:", writeErr);
       process.exit(1);
