@@ -103,6 +103,24 @@ const deleteRelease = async (version) => {
   }
 };
 
+// Function to explicitly update a release to set draft: false (publish the release)
+const updateReleaseToPublish = async (release_id) => {
+  try {
+    const updatedRelease = await octokit.repos.updateRelease({
+      owner,
+      repo,
+      release_id,
+      draft: false, // Set draft to false to publish
+    });
+
+    console.log(`Updated release ID ${release_id} to published.`);
+    return updatedRelease;
+  } catch (error) {
+    console.error(`Error updating release ID ${release_id} to publish:`, error);
+    throw error;
+  }
+};
+
 const createRelease = async (version, zipPath) => {
   await deleteRelease(version);
 
@@ -118,6 +136,21 @@ const createRelease = async (version, zipPath) => {
     });
 
     console.log(`Created release: ${release.data.name}`);
+
+    // If release is still a draft (shouldn't be), explicitly publish it
+    if (release.data.draft) {
+      console.log(`Release ${version} is still a draft. Publishing it.`);
+      await updateReleaseToPublish(release.data.id);
+      // Optionally, refetch the release to confirm
+      const updatedRelease = await octokit.repos.getRelease({
+        owner,
+        repo,
+        release_id: release.data.id,
+      });
+      console.log(
+        `Draft status after publishing: ${updatedRelease.data.draft}`
+      );
+    }
 
     // Check if zipPath exists before uploading
     if (fs.existsSync(zipPath)) {
