@@ -98,6 +98,9 @@ const createRelease = async (version, zipPath) => {
         release_id: release.data.id,
         name: path.basename(zipPath),
         data: fs.createReadStream(zipPath),
+        headers: {
+          contentType: "application/zip",
+        },
       });
 
       console.log(
