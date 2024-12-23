@@ -77,7 +77,7 @@ const deleteRelease = async (version) => {
   }
 };
 
-const createRelease = async (version, zipPath) => {
+const createRelease = async (version, zipPaths) => {
   try {
     const release = await octokit.repos.createRelease({
       owner,
@@ -89,13 +89,22 @@ const createRelease = async (version, zipPath) => {
       prerelease: false,
     });
 
-    await octokit.repos.uploadReleaseAsset({
-      owner,
-      repo,
-      release_id: release.data.id,
-      name: path.basename(zipPath),
-      data: fs.createReadStream(zipPath),
-    });
+    for (const zipPath of zipPaths) {
+      if (fs.existsSync(zipPath)) {
+        await octokit.repos.uploadReleaseAsset({
+          owner,
+          repo,
+          release_id: release.data.id,
+          name: path.basename(zipPath),
+          data: fs.createReadStream(zipPath),
+        });
+        console.log(
+          `Uploaded asset: ${path.basename(zipPath)} to release ${version}`
+        );
+      } else {
+        console.warn(`Zip file not found: ${zipPath}. Skipping upload.`);
+      }
+    }
 
     console.log(`Created release for version: ${version}`);
   } catch (error) {
@@ -111,9 +120,17 @@ const main = async () => {
     try {
       await deleteRelease(version);
       const zipPath = await zipDirectory(version);
-      await createRelease(version, zipPath);
-      // Optionally delete the zip file after upload
-      fs.unlinkSync(zipPath);
+
+      // Path to the zipped Live directory created by the GitHub Actions workflow
+      const liveZipPath = path.join(buildDir, version, "Live.zip");
+
+      await createRelease(version, [zipPath, liveZipPath]);
+
+      // Optionally delete the zip files after upload
+      // fs.unlinkSync(zipPath);
+      // if (fs.existsSync(liveZipPath)) {
+      //   fs.unlinkSync(liveZipPath);
+      // }
       console.log(`Completed processing for version: ${version}\n`);
     } catch (error) {
       console.error(`Failed to process version ${version}:`, error);

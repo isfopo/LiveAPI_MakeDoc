@@ -28,6 +28,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPO: ${{ github.repository }}
 
+      - name: Zip Live Directories
+        run: |
+          for dir in build/*/Live; do
+            zip -r "${dir}.zip" "$dir"
+          done
+
       - name: Update index.html with dynamic version links
         run: node .github/scripts/update_index.js
 
