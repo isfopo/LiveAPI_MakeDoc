@@ -3,6 +3,12 @@ import fs from "fs";
 import path from "path";
 import { exec } from "child_process";
 import util from "util";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const buildDir = join(__dirname, "../../build");
 
 const execAsync = util.promisify(exec);
 
@@ -16,8 +22,6 @@ if (!GITHUB_REPO) {
 
 const [owner, repo] = GITHUB_REPO.split("/");
 
-const buildDir = path.join(process.cwd(), "build");
-
 const getVersionDirectories = () => {
   return fs
     .readdirSync(buildDir, { withFileTypes: true })
@@ -26,8 +30,15 @@ const getVersionDirectories = () => {
 };
 
 const zipDirectory = async (version) => {
-  const sourceDir = path.join(buildDir, version);
+  const sourceDir = path.join(buildDir, version, "Live");
   const zipPath = path.join(process.cwd(), version, `Live.zip`);
+
+  // Ensure the source directory exists
+  if (!fs.existsSync(sourceDir)) {
+    console.error(`Source directory does not exist: ${sourceDir}`);
+    throw new Error(`Source directory not found: ${sourceDir}`);
+  }
+
   try {
     const { stdout, stderr } = await execAsync(
       `zip -r ${zipPath} ${sourceDir}`
@@ -93,7 +104,12 @@ const createRelease = async (version, zipPath) => {
 
     console.log(`Created release: ${release.data.name}`);
 
+    // Check if zipPath exists before uploading
     if (fs.existsSync(zipPath)) {
+      // Get the size of the file in bytes
+      const stat = fs.statSync(zipPath);
+      const fileSizeInBytes = stat.size;
+
       await octokit.repos.uploadReleaseAsset({
         owner,
         repo,
@@ -101,7 +117,8 @@ const createRelease = async (version, zipPath) => {
         name: path.basename(zipPath),
         data: fs.createReadStream(zipPath),
         headers: {
-          contentType: "application/zip",
+          "content-type": "application/zip",
+          "content-length": fileSizeInBytes,
         },
       });
 
