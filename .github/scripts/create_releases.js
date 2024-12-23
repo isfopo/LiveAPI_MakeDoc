@@ -2,7 +2,7 @@ import { Octokit } from "@octokit/rest";
 import fs from "fs";
 import { join, dirname, basename } from "path";
 import { exec } from "child_process";
-import util from "util";
+import { promisify } from "util";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -10,7 +10,7 @@ const __dirname = dirname(__filename);
 
 const buildDir = join(__dirname, "../../build");
 
-const execAsync = util.promisify(exec);
+const execAsync = promisify(exec);
 
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
@@ -37,9 +37,9 @@ const getVersionDirectories = (buildDir) => {
 };
 
 const zipDirectory = async (version) => {
-  const sourceDir = path.join(buildDir, version, "Live");
-  const destDir = path.join(buildDir, version);
-  const zipPath = path.join(destDir, `${version}.zip`);
+  const sourceDir = join(buildDir, version, "Live");
+  const destDir = join(buildDir, version);
+  const zipPath = join(destDir, `${version}.zip`);
 
   console.log(`\Zipping version: ${version}`);
   console.log(`Source Directory: ${sourceDir}`);
