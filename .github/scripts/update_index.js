@@ -7,7 +7,7 @@ const __dirname = dirname(__filename);
 
 const buildDir = join(__dirname, "../../build");
 const indexPath = join(buildDir, "index.html");
-const templatePath = join(__dirname, "index_template.html");
+const templatePath = join(__dirname, "../../web/index_template.html");
 
 readFile(templatePath, "utf8", (err, templateData) => {
   if (err) {
