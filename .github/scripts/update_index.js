@@ -7,7 +7,9 @@ const __dirname = dirname(__filename);
 
 const buildDir = join(__dirname, "../../build");
 const indexPath = join(buildDir, "index.html");
-const templatePath = join(__dirname, "../../web/index_template.html");
+const webDir = join(__dirname, "../../web");
+const templatePath = join(webDir, "index.html");
+const stylesPath = join(webDir, "styles.css");
 
 readFile(templatePath, "utf8", (err, templateData) => {
   if (err) {
@@ -58,5 +60,22 @@ readFile(templatePath, "utf8", (err, templateData) => {
         "build/index.html has been successfully updated with available versions."
       );
     });
+  });
+});
+
+readFile(templatePath, "utf8", (err, content) => {
+  if (err) {
+    console.error("Error reading template file:", err);
+    process.exit(1);
+  }
+  // Write the updated content to styles.css
+  writeFile(indexPath, content, (writeErr) => {
+    if (writeErr) {
+      console.error("Error writing to styles.css:", writeErr);
+      process.exit(1);
+    }
+    console.log(
+      "build/styles.css has been successfully updated with available versions."
+    );
   });
 });
