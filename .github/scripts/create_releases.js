@@ -36,36 +36,33 @@ const getVersionDirectories = (buildDir) => {
     .map((dirent) => dirent.name);
 };
 
+// Function to zip a directory
 const zipDirectory = async (version) => {
-  const sourceDir = join(buildDir, version, "Live");
-  const destDir = join(buildDir, version);
-  const zipPath = join(destDir, `${version}.zip`);
+  const sourceDir = join(buildDir, version, "Live"); // Path to the Live folder
+  const zipPath = join(buildDir, `${version}.zip`); // Destination ZIP path in build/version.zip
 
-  console.log(`\Zipping version: ${version}`);
+  console.log(`\nProcessing version: ${version}`);
   console.log(`Source Directory: ${sourceDir}`);
   console.log(`Destination Zip Path: ${zipPath}`);
 
-  // Ensure the source directory exists
+  // Verify that the source directory exists
   if (!fs.existsSync(sourceDir)) {
     console.error(`Source directory does not exist: ${sourceDir}`);
     throw new Error(`Source directory not found: ${sourceDir}`);
   }
 
-  // Ensure the destination directory exists
-  if (!fs.existsSync(destDir)) {
-    console.error(`Source directory does not exist: ${destDir}`);
-    throw new Error(`Source directory not found: ${destDir}`);
-  }
-
   try {
+    // Change into the source directory and zip its contents
     const { stdout, stderr } = await execAsync(
-      `zip -r ${zipPath} ${sourceDir}`
+      `cd "${sourceDir}" && zip -r "${zipPath}" .`
     );
-    if (stderr) {
+
+    if (stderr && stderr.trim() !== "") {
       console.error(`Error zipping directory ${version}:`, stderr);
       throw new Error(stderr);
     }
-    console.log(`Zipped ${sourceDir} to ${zipPath}`);
+
+    console.log(`Successfully zipped contents of ${sourceDir} to ${zipPath}`);
     return zipPath;
   } catch (error) {
     console.error(`Failed to zip directory ${version}:`, error);
