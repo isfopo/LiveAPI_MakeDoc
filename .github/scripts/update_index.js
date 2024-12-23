@@ -37,7 +37,7 @@ readFile(templatePath, "utf8", (err, templateData) => {
     const listItems = versionDirs
       .map((version) => {
         return `<li>
-          <a href="${version}/Live.xml">Live Version ${version}</a> - <a href="${version}/Live">Download</a>
+          <a href="${version}/Live.xml">Live Version ${version}</a> - <a href="https://github.com/isfopo/LiveAPI_MakeDoc/releases/download/${version}/${version}.zip">Download</a>
         </li>`;
       })
       .join("\n");
