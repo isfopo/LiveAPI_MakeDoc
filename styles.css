@@ -21,6 +21,7 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #eee;
 }
 
 li p {
@@ -41,6 +42,8 @@ li a {
   border: 0;
   cursor: pointer;
   text-decoration: none;
+  background: #333;
+  color: #000;
 }
 
 li .primary {
