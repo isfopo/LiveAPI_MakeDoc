@@ -2,12 +2,15 @@ html,
 body {
   font-family: futura-pt, Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
-
+  font-feature-settings: "kern";
+  font-kerning: normal
   max-width: 100%;
 }
 
 h1 {
   color: #333;
+  margin-top: -0.25em;
+  margin-bottom: 0.45em;
 }
 
 ul {
@@ -16,8 +19,7 @@ ul {
 }
 
 li {
-  margin: 5px 0;
-  padding: 10px;
+  padding: 1.875em 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,6 +27,10 @@ li {
 }
 
 li p {
+  font-size: 26.25px;
+  font-variant-ligatures: common-ligatures;
+  font-weight: 700;
+  line-height: 36.75px
 }
 
 li a {
