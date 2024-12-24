@@ -44,12 +44,15 @@ readFile(templatePath, "utf8", (err, templateData) => {
         <li>
           <p>${version}</p>
           <span>
-            <a href="${version}/Live.xml">View Documentation</a>
             <a href="https://github.com/isfopo/LiveAPI_MakeDoc/releases/download/${version}/${version}.zip">
               Download Stubbed Module
             </a>
+            <a href="${version}/Live.xml" class="primary">
+              View Documentation
+            </a>
           </span>
-        </li>`;
+        </li>
+        <hr>`;
       })
       .join("\n");
 
