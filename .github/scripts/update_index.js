@@ -77,7 +77,7 @@ readFile(stylesPath, "utf8", (err, content) => {
       process.exit(1);
     }
     console.log(
-      "build/styles.css has been successfully updated with available versions."
+      "build/styles.css has been successfully updated at" + stylesDest
     );
   });
 });
