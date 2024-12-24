@@ -42,7 +42,7 @@ readFile(templatePath, "utf8", (err, templateData) => {
       .map((version) => {
         return `
         <li>
-          <p>${version}</p>
+          <h3>${version}</h3>
           <span>
             <a href="https://github.com/isfopo/LiveAPI_MakeDoc/releases/download/${version}/${version}.zip">
               Download Stubbed Module
