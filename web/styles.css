@@ -18,7 +18,7 @@ ul {
 li {
   margin: 5px 0;
   padding: 10px;
-  display: flex:
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
@@ -38,9 +38,12 @@ li a {
   margin: 0;
   padding: 0.35em 1.5em;
   font-weight: bold;
-  color: #fff !important;
-  background: blue;
   border: 0;
   cursor: pointer;
   text-decoration: none;
+}
+
+li .primary {
+  color: #fff !important;
+  background: blue;
 }
