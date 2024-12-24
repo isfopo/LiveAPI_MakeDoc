@@ -11,7 +11,7 @@ const webDir = join(__dirname, "../../web");
 const templatePath = join(webDir, "index.html");
 const stylesPath = join(webDir, "styles.css");
 const indexDest = join(buildDir, "index.html");
-const stylesDest = join(buildDir, "index.html");
+const stylesDest = join(buildDir, "styles.css");
 
 readFile(templatePath, "utf8", (err, templateData) => {
   if (err) {
