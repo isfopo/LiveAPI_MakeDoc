@@ -42,11 +42,13 @@ readFile(templatePath, "utf8", (err, templateData) => {
       .map((version) => {
         return `
         <li>
-          <p>${version}</p>  
-          <a href="${version}/Live.xml">View Documentation</a>
-          <a href="https://github.com/isfopo/LiveAPI_MakeDoc/releases/download/${version}/${version}.zip">
-            Download Stubbed Module
-          </a>
+          <p>${version}</p>
+          <span>
+            <a href="${version}/Live.xml">View Documentation</a>
+            <a href="https://github.com/isfopo/LiveAPI_MakeDoc/releases/download/${version}/${version}.zip">
+              Download Stubbed Module
+            </a>
+          </span>
         </li>`;
       })
       .join("\n");
