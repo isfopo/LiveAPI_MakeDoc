@@ -18,6 +18,12 @@ ul {
 li {
   margin: 5px 0;
   padding: 10px;
+  display: flex:
+  justify-content: space-between;
+  align-items: center;
+}
+
+li p {
 }
 
 li a {
@@ -36,4 +42,5 @@ li a {
   background: blue;
   border: 0;
   cursor: pointer;
+  text-decoration: none;
 }
