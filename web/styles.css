@@ -41,6 +41,8 @@ li a {
   border: 0;
   cursor: pointer;
   text-decoration: none;
+  background: #333;
+  color: #000;
 }
 
 li .primary {
