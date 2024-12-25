@@ -51,8 +51,7 @@ readFile(templatePath, "utf8", (err, templateData) => {
               View Documentation
             </a>
           </span>
-        </li>
-        <hr>`;
+        </li>`;
       })
       .join("\n");
 
