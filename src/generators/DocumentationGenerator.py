@@ -63,7 +63,7 @@ class DocumentationGenerator:
                 self.xmlFile = f
 
                 self._write_to_xml(
-                    '<?xml-stylesheet type="text/css" href="Live.css"?>'
+                    '<?xml-stylesheet type="text/css" href="Live.css"?>\n'
                 )  # set stylesheet to Live.css
                 self._write_to_xml("<Live>")
 
@@ -109,8 +109,8 @@ class DocumentationGenerator:
             "   ", ""
         )  # Strip chunks of whitespace from docstrings, for wrapped display
         doc = doc.replace("&", "&amp;")
-        doc = doc.replace("<", "<")  # replace XML reserved characters
-        doc = doc.replace(">", ">")
+        doc = doc.replace("<", "&lt;")  # replace XML reserved characters
+        doc = doc.replace(">", "&gt;")
         return doc
 
     def _print_obj_info(self, description, obj, name=None):
