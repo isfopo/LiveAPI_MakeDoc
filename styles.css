@@ -1,9 +1,17 @@
-html,
-body {
+html {
   font-family: Jost, Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   max-width: 100%;
+  padding-left: 8vw;
+  padding-right: 8vw;
+  padding-top: 8vw;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  padding-right: 8vw;
 }
 
 h1 {
@@ -12,7 +20,8 @@ h1 {
   font-size: 3.75rem;
   line-height: 1.1;
   text-rendering: optimizeLegibility;
-  margin: 0.45em 0;
+  margin-top: 0;
+  margin-bottom: 0.45em;
 }
 
 ul {
@@ -36,6 +45,7 @@ li h3 {
 li a {
   font-size: 1rem;
   line-height: 1.5;
+  font-weight: 400;
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
