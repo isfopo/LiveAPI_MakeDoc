@@ -13,7 +13,11 @@ html {
 
 body {
   margin: 0;
-  padding-right: 8vw;
+  padding-right: 0;
+
+  @media (min-width: 768px) {
+    padding-right: 32vw;
+  }
 }
 
 h1 {
