@@ -45,10 +45,10 @@ readFile(templatePath, "utf8", (err, templateData) => {
           <h3>${version}</h3>
           <span>
             <a href="https://github.com/isfopo/LiveAPI_MakeDoc/releases/download/${version}/${version}.zip">
-              Download Stubbed Module
+              Stubbed Module
             </a>
             <a href="${version}/Live.xml" class="primary">
-              View Documentation
+              Documentation
             </a>
           </span>
         </li>`;
