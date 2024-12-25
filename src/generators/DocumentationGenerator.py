@@ -55,15 +55,13 @@ class DocumentationGenerator:
         self.xmlfilename = os.path.join(self.outdir, str(module.__name__) + ".xml")
         self.cssfilename = os.path.join(self.outdir, str(module.__name__) + ".css")
 
-        with codecs.open(self.cssfilename, "w", "utf-8") as f:
-            f.write(self.css)
 
         if self.xmlfilename is not None:
             with codecs.open(self.xmlfilename, "w", "utf-8") as f:
                 self.xmlFile = f
 
                 self._write_to_xml(
-                    '<?xml-stylesheet type="text/css" href="Live.css"?>\n'
+                    '<?xml-stylesheet type="text/css" href="../Live.css"?>\n'
                 )  # set stylesheet to Live.css
                 self._write_to_xml("<Live>")
 
