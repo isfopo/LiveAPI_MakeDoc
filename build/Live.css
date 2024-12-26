@@ -1,16 +1,26 @@
-Live {
-  background: #f8f8f8;
-  display: block;
-  margin-bottom: 10px;
-  margin-left: 20px;
-  margin-top: 10px;
-  padding: 4px;
+Root {
   font-family: Jost, Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-  font-weight: bold;
-  color: #000000;
-  font-size: 10pt;
+  position: relative;
+  max-width: 1200px;
+  margin: 0;
+  padding: 4vw;
+  padding-bottom: 0;
+  background-color: #fff;
+}
+
+Live {
+  margin: 0;
+  padding-right: 0;
+
+  @media (min-width: 768px) {
+    padding-right: 16vw;
+  }
+}
+
+Header {
+  font-size: 3.75rem;
 }
 
 Module,
@@ -66,6 +76,7 @@ Method {
 }
 Built-In {
   display: block;
+  font-size: 1rem;
   margin-top: 10px;
   color: #081798;
 }
