@@ -17,8 +17,6 @@ class DocumentationGenerator:
     outdir: str
     script_dir: str
     xmlfilename: str
-    cssfilename: str
-    css: str
     lines = []
     xmlFile: Union[codecs.StreamReaderWriter, None] = None
     port: int
@@ -46,15 +44,10 @@ class DocumentationGenerator:
         if not os.path.exists(self.outdir):
             os.makedirs(self.outdir)
 
-        with open(os.path.join(self.script_dir, "Live.css")) as f:
-            self.css = f.read()
-
         self.make_doc(self.module)
 
     def make_doc(self, module):
         self.xmlfilename = os.path.join(self.outdir, str(module.__name__) + ".xml")
-        self.cssfilename = os.path.join(self.outdir, str(module.__name__) + ".css")
-
 
         if self.xmlfilename is not None:
             with codecs.open(self.xmlfilename, "w", "utf-8") as f:
@@ -253,7 +246,7 @@ class DocumentationGenerator:
         return hasattr(obj, "__module__") and "boost.python" in obj.__module__
 
     def _start_http_server(self):
-        """Start a simple HTTP server to host Live.xml and Live.css"""
+        """Start a simple HTTP server to host Live.xml"""
 
         # Change the current working directory to the output directory
         os.chdir(self.outdir)
