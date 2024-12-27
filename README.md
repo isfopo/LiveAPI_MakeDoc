@@ -20,9 +20,13 @@ Open Live.xml in a web browser to view the API documentation.
 
 Dropping into Remote script folder
 
+### Usage as a Submodule
+
+How to use in another project or repository as a submodule
+
 ## Release
 
-For releases, see the [Releases](https://github.com/isfopo/LiveAPI_MakeDoc/releases) page.
+Explain the release process
 
 ## DISCLAIMER
 

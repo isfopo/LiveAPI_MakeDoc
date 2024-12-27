@@ -49,7 +49,7 @@ class APIMakeDoc(ControlSurface):
         self.build_mode = build_mode
         self.version = get_version_number(Live)
 
-        if build_mode == "release":
+        if build_mode == "build":
             self.outdir = os.path.join(outdir, self.version)
 
         if not os.path.exists(outdir):

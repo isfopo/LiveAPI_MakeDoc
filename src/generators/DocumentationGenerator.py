@@ -72,7 +72,7 @@ class DocumentationGenerator:
 
                 self.xmlFile = None
 
-            if self.build_mode != BuildMode.Release:
+            if self.build_mode != BuildMode.Build:
                 self.server_thread = threading.Thread(
                     target=self._start_http_server, daemon=True
                 )

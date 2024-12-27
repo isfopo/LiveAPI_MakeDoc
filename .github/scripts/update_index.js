@@ -5,13 +5,13 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const releaseDir = join(__dirname, "../../release");
+const buildDir = join(__dirname, "../../build");
 const webDir = join(__dirname, "../../web");
 
 const templatePath = join(webDir, "index.html");
 const stylesPath = join(webDir, "styles.css");
-const indexDest = join(releaseDir, "index.html");
-const stylesDest = join(releaseDir, "styles.css");
+const indexDest = join(buildDir, "index.html");
+const stylesDest = join(buildDir, "styles.css");
 
 readFile(templatePath, "utf8", (err, templateData) => {
   if (err) {
@@ -19,9 +19,9 @@ readFile(templatePath, "utf8", (err, templateData) => {
     process.exit(1);
   }
 
-  readdir(releaseDir, { withFileTypes: true }, (err, files) => {
+  readdir(buildDir, { withFileTypes: true }, (err, files) => {
     if (err) {
-      console.error("Error reading release directory:", err);
+      console.error("Error reading build directory:", err);
       process.exit(1);
     }
 
@@ -85,6 +85,8 @@ readFile(stylesPath, "utf8", (err, content) => {
       console.error("Error writing to styles.css:", writeErr);
       process.exit(1);
     }
-    console.log("styles.css has been successfully updated at" + stylesDest);
+    console.log(
+      "build/styles.css has been successfully updated at" + stylesDest
+    );
   });
 });
