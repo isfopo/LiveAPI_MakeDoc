@@ -44,7 +44,7 @@ readFile(templatePath, "utf8", (err, templateData) => {
         <li>
           <h3>${version}</h3>
           <span>
-            <a href="https://github.com/isfopo/LiveAPI_MakeDoc/releases/download/${version}/${version}.zip">
+            <a href="https://github.com/isfopo/LiveAPI_MakeDoc/release/download/${version}/${version}.zip">
               Module
             </a>
             <a href="${version}/Live.xml" class="primary">
@@ -68,7 +68,7 @@ readFile(templatePath, "utf8", (err, templateData) => {
         process.exit(1);
       }
       console.log(
-        "build/index.html has been successfully updated with available versions."
+        "index.html has been successfully updated with available versions."
       );
     });
   });
