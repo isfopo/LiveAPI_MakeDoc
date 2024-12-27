@@ -57,7 +57,7 @@ class DocumentationGenerator:
                 self._write_to_xml("<Root><Live>")
 
                 self._write_to_xml(
-                    f"<Header>Live API version {get_version_number(module)}</Header>"
+                    f"<Header>Live API Version {get_version_number(module)}</Header>"
                 )  # main title
 
                 self._write_to_xml(

@@ -172,11 +172,11 @@ class StubGenerator:
         try:
             text = self.read_file(file)
 
-            it = ElementTree.iterparse(BytesIO(text.encode("UTF-8")))
-            for _, el in it:
+            tree = ElementTree.iterparse(BytesIO(text.encode("UTF-8")))
+            for _, el in tree:
                 if "}" in el.tag:
                     el.tag = el.tag.split("}", 1)[1]  # strip all namespaces
-            return it.root  # type: ignore
+            return tree.root.find("Live")  # type: ignore
 
         except Exception as e:
             print(f"Unexpected error while parsing XML file '{file}': {e}")
