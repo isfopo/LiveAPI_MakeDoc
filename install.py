@@ -45,8 +45,8 @@ parser.add_argument(
     "--mode",
     "-build mode of script",
     required=False,
-    choices=["build", "submodule"],
-    default="build",
+    choices=["release", "submodule"],
+    default="release",
 )
 
 args = parser.parse_args()
@@ -56,7 +56,7 @@ src_dir = os.path.join(current_dir, "src")
 
 user = args.user or getpass.getuser()
 
-mode: Literal["build", "submodule"] = args.mode or "build"
+mode: Literal["release", "submodule"] = args.mode or "release"
 
 user_scripts_path = os.path.join(
     args.user_lib_dir
@@ -75,8 +75,8 @@ shutil.copytree(src_dir, user_script_dir)
 
 outdir = current_dir
 
-if mode == "build":
-    outdir = os.path.join(outdir, "build")
+if mode == "release":
+    outdir = os.path.join(outdir, "release")
 
 content: str | None = None
 

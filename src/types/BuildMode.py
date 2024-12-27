@@ -2,5 +2,5 @@ from enum import Enum
 
 
 class BuildMode(Enum):
-    Build = "build"
+    Release = "release"
     Submodule = "submodule"

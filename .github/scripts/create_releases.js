@@ -8,7 +8,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const buildDir = join(__dirname, "../../build");
+const releaseDir = join(__dirname, "../../release");
 
 const execAsync = promisify(exec);
 
@@ -22,14 +22,14 @@ if (!GITHUB_REPO) {
 
 const [owner, repo] = GITHUB_REPO.split("/");
 
-const getVersionDirectories = (buildDir) => {
-  if (!fs.existsSync(buildDir)) {
-    console.error(`Build directory does not exist: ${buildDir}`);
+const getVersionDirectories = (releaseDir) => {
+  if (!fs.existsSync(releaseDir)) {
+    console.error(`Release directory does not exist: ${releaseDir}`);
     process.exit(1);
   }
 
   return fs
-    .readdirSync(buildDir, { withFileTypes: true })
+    .readdirSync(releaseDir, { withFileTypes: true })
     .filter(
       (dirent) => dirent.isDirectory() && /^\d+\.\d+\.\d+$/.test(dirent.name)
     )
@@ -38,8 +38,8 @@ const getVersionDirectories = (buildDir) => {
 
 // Function to zip a directory
 const zipDirectory = async (version) => {
-  const sourceDir = join(buildDir, version); // Path to the version folder
-  const zipPath = join(buildDir, `${version}.zip`); // Destination ZIP path in build/version.zip
+  const sourceDir = join(releaseDir, version); // Path to the version folder
+  const zipPath = join(releaseDir, `${version}.zip`);
 
   console.log(`Zipping  version: ${version}`);
   console.log(`Source Directory: ${sourceDir}`);
@@ -181,7 +181,7 @@ const createRelease = async (version, zipPath) => {
 };
 
 (async () => {
-  for (const version of getVersionDirectories(buildDir)) {
+  for (const version of getVersionDirectories(releaseDir)) {
     try {
       console.log(`Processing version: ${version}`);
       await createRelease(version, await zipDirectory(version));
