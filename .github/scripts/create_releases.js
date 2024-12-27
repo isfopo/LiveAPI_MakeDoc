@@ -24,7 +24,8 @@ const [owner, repo] = GITHUB_REPO.split("/");
 
 const getVersionDirectories = (releaseDir) => {
   if (!fs.existsSync(releaseDir)) {
-    fs.mkdirSync(releaseDir, { recursive: true });
+    console.error(`Release directory does not exist: ${releaseDir}`);
+    process.exit(1);
   }
 
   return fs
