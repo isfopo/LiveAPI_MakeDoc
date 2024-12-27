@@ -24,9 +24,9 @@ Dropping into Remote script folder
 
 How to use in another project or repository as a submodule
 
-## Release
+## Build andRelease
 
-Explain the release process
+For releases, see the [Build and Release](https://github.com/isfopo/LiveAPI_MakeDoc/build) page.
 
 ## DISCLAIMER
 
