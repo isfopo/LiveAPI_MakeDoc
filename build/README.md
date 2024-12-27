@@ -11,14 +11,14 @@ Generating docs happens dynamically in the python runtime of Ableton Live via a 
 After cloning this repository, install the script by running the following command from the root of the repository:
 
 ```bash
-python3 install.py --name MakeDoc_Release --mode build
+python3 install.py --name MakeDoc_Build --mode build
 ```
 
 There is a shortcut for this command in the `justfile` of this project which can be run if [just](https://github.com/casey/just) is installed.
 
 ### Generating the Docs and Stub
 
-To run the remote script and generate the docs open Ableton Live, go to Preferences > Link, Tempo and MIDI, and select `MakeDoc Release` in the "Control Surface" dropdown.
+To run the remote script and generate the docs open Ableton Live, go to Preferences > Link, Tempo and MIDI, and select `MakeDoc Build` in the "Control Surface" dropdown.
 
 Doing this will generate the docs and stub for the version of Live API that is currently installed and place them in the `build` folder of this repository under the corresponding version tag.
 
