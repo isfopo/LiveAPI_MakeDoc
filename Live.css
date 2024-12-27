@@ -27,23 +27,11 @@ Module,
 Class,
 Sub-Class {
   display: block;
-  margin-bottom: 5px;
-  margin-top: 10px;
-  margin-left: -5px;
-  padding-left: 5px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  background: silver;
-  font-size: 12pt;
-  background-color: #ddd;
-  border: solid 1px #aaa;
-  color: #333;
-}
-
-Module {
-  display: block;
-  color: #000;
-  background-color: #ccc;
+  font-size: 1.25rem;
+  font-webkit: 600;
+  margin: 0.5rem 0;
+  width: 100%;
+  border-bottom: 2px solid #eee;
 }
 
 Description {
