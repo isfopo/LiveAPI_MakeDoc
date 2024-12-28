@@ -16,6 +16,10 @@ To use as a module in a remote script project, go to [isfopo.github.io/LiveAPI_M
 
 For releases, see the [Build and Release](https://github.com/isfopo/LiveAPI_MakeDoc/build) page.
 
+## Credits
+
+This repository is a fork of [NSUSpray/LiveAPI_MakeDoc](https://github.com/NSUSpray/LiveAPI_MakeDoc), which contained the python script for XML documentation generation. Stub generation is based on [cylab/AbletonLive-API-Stub](https://github.com/cylab/AbletonLive-API-Stub)
+
 ## Disclaimer
 
 This is unofficial documentation for the Ableton Live API for use in Remote Scripts and Max for Live devices. These files are provided as-is, without any warranty, expressed or implied, including but not limited to fitness for any particular purpose. Do not contact Ableton with questions about this project, but feel free to open an issue on this repository.
