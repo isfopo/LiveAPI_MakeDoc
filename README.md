@@ -1,33 +1,21 @@
 # API_MakeDoc
 
-This set of Python scripts will generate Live API documentation in XML format, based on realtime inspection of the Live module. Compatible with Live 8.1 & higher, on PC or mac.
-
-To run, first drop the API_LiveDoc folder into Ableton's MIDI Remote Scripts directory:
-
-MAC OS X -> /Applications/Live 8.x OS X/Live.app/Contents/App-Resources/MIDI Remote Scripts/
-PC -> C:\Program Files\Ableton\Live 8.x\Resources\MIDI Remote Scripts\
-
-Next, select "API_MakeDoc" from the MIDI Preferences dialog, then reset immediately to "None" (there is no need to close the dialog first). Two files will be written to the userhome directory: Live.xml and Live.css (sample output is included in the \_Sample_Output directory). To locate the userhome directory:
-
-MAC OS X -> click the Home icon in the Finder toolbar
-PC -> C:\Documents and Settings\username\
-
-Open Live.xml in a web browser to view the API documentation.
+This python script will generate Ableton Live API documentation in XML format, based on realtime inspection of the Live module in the remote script runtime. Compatible with Live 12 & higher, on PC or Mac.
 
 ## Usage
 
-### Manual Installation
+### Viewing Documentation
 
-Dropping into Remote script folder
+Docs for given version are available at [isfopo.github.io/LiveAPI_MakeDoc](https://isfopo.github.io/LiveAPI_MakeDoc/).Versions correspond with respective Live versions.
 
-### Usage as a Submodule
+### Usage as a Module
 
-How to use in another project or repository as a submodule
+To use as a module in a remote script project, go to [isfopo.github.io/LiveAPI_MakeDoc](https://isfopo.github.io/LiveAPI_MakeDoc/) and download the latest version of the script and move it to the same directory as your remote script. Then, in your project, import the script as a module like `import Live` or `from Live import *`
 
-## Build andRelease
+## Build and Release
 
 For releases, see the [Build and Release](https://github.com/isfopo/LiveAPI_MakeDoc/build) page.
 
-## DISCLAIMER
+## Disclaimer
 
-THESE FILES ARE PROVIDED AS-IS, WITHOUT ANY WARRANTY, EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO FITNESS FOR ANY PARTICULAR PURPOSE.
+This is unofficial documentation for the Ableton Live API for use in Remote Scripts and Max for Live devices. These files are provided as-is, without any warranty, expressed or implied, including but not limited to fitness for any particular purpose. Do not contact Ableton with questions about this project, but feel free to open an issue on this repository.
