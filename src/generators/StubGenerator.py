@@ -27,7 +27,6 @@ class StubGenerator:
             with codecs.open(out_file, "w", "utf-8") as f:
                 f.write("# type: ignore\n")
                 f.write("from types import ModuleType\n")
-                f.write(f'"""Stub generated for Ableton Version  {self.version}"""\n')
                 last_tag = None
                 last_name = None
                 last_doc = None
@@ -46,8 +45,8 @@ class StubGenerator:
             doc = (
                 doc.replace(">", ">")
                 .replace("<", "<")
-                .replace("&amp;gt;", ">")
-                .replace("&amp;lt;", "<")
+                .replace("&gt;", ">")
+                .replace("&lt;", "<")
                 .replace("&amp;", "&")
             )
         if tag is not None and name is not None and name != "Live":
@@ -58,6 +57,9 @@ class StubGenerator:
                 short_name = short_name.split("(")[0]
 
             print("Generating %s '%s'" % (tag, name))
+
+            if tag == "Header":
+                f.write(f'"""Stub generated for Ableton Version  {self.version}"""\n')
 
             if tag == "Module":
                 f.write("\n\n%sclass %s(ModuleType):\n" % (indent, short_name))
@@ -131,7 +133,7 @@ class StubGenerator:
                     arg_name = name_default[0].strip()
                     arg_type = arg_parts[1].strip()
 
-                    args.append((arg_name, arg_type, None))
+                    args.append((arg_name, arg_type, ret))
 
                 doc = parts[1].strip()
         except Exception as e:
