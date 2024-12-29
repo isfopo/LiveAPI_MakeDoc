@@ -114,10 +114,7 @@ class DocumentationGenerator:
                 return
 
         # Determine the name to use
-        if obj_name:
-            name_str = obj_name
-        else:
-            name_str = name
+        name_str = obj_name if obj_name is not None else name
 
         # Proceed only if name_str is available
         if name_str is None:
@@ -147,7 +144,7 @@ class DocumentationGenerator:
 
         # Print the docstring if available
         if hasattr(obj, "__doc__") and getattr(obj, "__doc__"):
-            self._write_to_xml("<Doc>\t%s</Doc>\n" % self._get_doc(obj))
+            self._write_to_xml(f"<Doc>\t{self._get_doc(obj)}</Doc>\n")
 
     def _describe_obj(self, descr: str, obj):
         """Describe object passed as argument, and identify as Class, Method, Property, Value, or Built-In"""

@@ -90,25 +90,19 @@ class StubGenerator:
 
             if tag == "Built-In":
                 args, ret, doc = self.parse_args_from_doc(doc)
-                f.write("\n%s@staticmethod\n" % indent)
+                f.write(f"\n{indent}@staticmethod\n")
                 if args:
                     f.write(
-                        "%sdef %s(%s) -> %s:\n"
-                        % (
-                            indent,
-                            short_name,
-                            ", ".join([self.format_arg(arg) for arg in args]),
-                            ret,
-                        )
+                        f"{indent}def {short_name}({', '.join([self.format_arg(arg) for arg in args])}) -> {ret}:\n"
                     )
-                    doc = "%s%s" % (doc, self.make_arg_doc(args, ret, indent + "    "))
+                    doc = f"{doc}{self.make_arg_doc(args, ret, indent + '    ')}"
                 else:
                     f.write("%sdef %s():\n" % (indent, short_name))
 
             if tag == "Property" or tag == "Value":
                 args, ret, doc = self.parse_args_from_doc(doc)
-                f.write("\n%s@property\n" % indent)
-                f.write("%sdef %s(self) -> %s:\n" % (indent, short_name, ret))
+                f.write(f"\n{indent}@property\n")
+                f.write(f"{indent}def {short_name}(self):\n")
 
             if doc:
                 f.write('{0}    """\n{0}    {1}\n    {0}"""\n'.format(indent, doc))
@@ -137,9 +131,9 @@ class StubGenerator:
 
                 doc = parts[1].strip()
         except Exception as e:
-            raise Exception("Error parsing function documentation: {}".format(e))
+            raise Exception(f"Error parsing function documentation: {e}")
 
-        return args, ret, doc
+        return args or [], ret or None, doc or None
 
     def format_arg(self, arg: Tuple[str, str, Union[str, None]]):
         return f"{arg[0]}: {arg[1]}{'=' + arg[2] if arg[2] is not None else ''}"
