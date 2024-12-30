@@ -19,7 +19,7 @@ class Application(ModuleType):
         pass
 
     @staticmethod
-    def encrypt_challenge(dongle1: int=tuple, dongle2: int=tuple, key_index: int=tuple) -> tuple:
+    def encrypt_challenge(dongle1: int, dongle2: int, key_index: int) -> tuple:
         """
         Returns an encrypted challenge based on the TEA algortithm C++ signature :  boost::python::tuple encrypt_challenge(int,int [,int=0])
         :param dongle1: dongle1
@@ -33,7 +33,7 @@ class Application(ModuleType):
         pass
 
     @staticmethod
-    def encrypt_challenge2(arg1: int=int) -> int:
+    def encrypt_challenge2(arg1: int) -> int:
         """
         Returns the UMAC hash for the given challenge. C++ signature :  int encrypt_challenge2(int)
         :param arg1: arg1
@@ -50,7 +50,7 @@ class Application(ModuleType):
         pass
 
     @staticmethod
-    def get_random_int(arg1: int=int, arg2: int=int) -> int:
+    def get_random_int(arg1: int, arg2: int) -> int:
         """
         Returns a random integer from the given range. C++ signature :  int get_random_int(int,int)
         :param arg1: arg1
@@ -149,7 +149,7 @@ class Application(ModuleType):
             """
             pass
 
-        def add_average_process_usage_listener(self, arg2: object=None) -> None:
+        def add_average_process_usage_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "average_process_usage" has changed. C++ signature :  void add_average_process_usage_listener(TPyHandle<ASongApp>,boost::python::api::object)
             :param arg2: arg2
@@ -158,7 +158,7 @@ class Application(ModuleType):
             """
             pass
 
-        def add_control_surfaces_listener(self, arg2: object=None) -> None:
+        def add_control_surfaces_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "control_surfaces" has changed. C++ signature :  void add_control_surfaces_listener(TPyHandle<ASongApp>,boost::python::api::object)
             :param arg2: arg2
@@ -167,7 +167,7 @@ class Application(ModuleType):
             """
             pass
 
-        def add_open_dialog_count_listener(self, arg2: object=None) -> None:
+        def add_open_dialog_count_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "open_dialog_count" has changed. C++ signature :  void add_open_dialog_count_listener(TPyHandle<ASongApp>,boost::python::api::object)
             :param arg2: arg2
@@ -176,7 +176,7 @@ class Application(ModuleType):
             """
             pass
 
-        def add_peak_process_usage_listener(self, arg2: object=None) -> None:
+        def add_peak_process_usage_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "peak_process_usage" has changed. C++ signature :  void add_peak_process_usage_listener(TPyHandle<ASongApp>,boost::python::api::object)
             :param arg2: arg2
@@ -185,7 +185,7 @@ class Application(ModuleType):
             """
             pass
 
-        def add_unavailable_features_listener(self, arg2: object=None) -> None:
+        def add_unavailable_features_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "unavailable_features" has changed. C++ signature :  void add_unavailable_features_listener(TPyHandle<ASongApp>,boost::python::api::object)
             :param arg2: arg2
@@ -194,7 +194,7 @@ class Application(ModuleType):
             """
             pass
 
-        def average_process_usage_has_listener(self, arg2: object=bool) -> bool:
+        def average_process_usage_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "average_process_usage". C++ signature :  bool average_process_usage_has_listener(TPyHandle<ASongApp>,boost::python::api::object)
             :param arg2: arg2
@@ -203,7 +203,7 @@ class Application(ModuleType):
             """
             pass
 
-        def control_surfaces_has_listener(self, arg2: object=bool) -> bool:
+        def control_surfaces_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "control_surfaces". C++ signature :  bool control_surfaces_has_listener(TPyHandle<ASongApp>,boost::python::api::object)
             :param arg2: arg2
@@ -261,7 +261,7 @@ class Application(ModuleType):
             """
             pass
 
-        def has_option(self, arg2: object=bool) -> bool:
+        def has_option(self, arg2: object) -> bool:
             """
             Returns True if the given entry exists in Options.txt, False otherwise. C++ signature :  bool has_option(TPyHandle<ASongApp>,TString)
             :param arg2: arg2
@@ -270,7 +270,7 @@ class Application(ModuleType):
             """
             pass
 
-        def open_dialog_count_has_listener(self, arg2: object=bool) -> bool:
+        def open_dialog_count_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "open_dialog_count". C++ signature :  bool open_dialog_count_has_listener(TPyHandle<ASongApp>,boost::python::api::object)
             :param arg2: arg2
@@ -279,7 +279,7 @@ class Application(ModuleType):
             """
             pass
 
-        def peak_process_usage_has_listener(self, arg2: object=bool) -> bool:
+        def peak_process_usage_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "peak_process_usage". C++ signature :  bool peak_process_usage_has_listener(TPyHandle<ASongApp>,boost::python::api::object)
             :param arg2: arg2
@@ -288,7 +288,7 @@ class Application(ModuleType):
             """
             pass
 
-        def press_current_dialog_button(self, arg2: int=None) -> None:
+        def press_current_dialog_button(self, arg2: int) -> None:
             """
             Press a button, by index, on the current message box. C++ signature :  void press_current_dialog_button(TPyHandle<ASongApp>,int)
             :param arg2: arg2
@@ -297,7 +297,7 @@ class Application(ModuleType):
             """
             pass
 
-        def remove_average_process_usage_listener(self, arg2: object=None) -> None:
+        def remove_average_process_usage_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "average_process_usage". C++ signature :  void remove_average_process_usage_listener(TPyHandle<ASongApp>,boost::python::api::object)
             :param arg2: arg2
@@ -306,7 +306,7 @@ class Application(ModuleType):
             """
             pass
 
-        def remove_control_surfaces_listener(self, arg2: object=None) -> None:
+        def remove_control_surfaces_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "control_surfaces". C++ signature :  void remove_control_surfaces_listener(TPyHandle<ASongApp>,boost::python::api::object)
             :param arg2: arg2
@@ -315,7 +315,7 @@ class Application(ModuleType):
             """
             pass
 
-        def remove_open_dialog_count_listener(self, arg2: object=None) -> None:
+        def remove_open_dialog_count_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "open_dialog_count". C++ signature :  void remove_open_dialog_count_listener(TPyHandle<ASongApp>,boost::python::api::object)
             :param arg2: arg2
@@ -324,7 +324,7 @@ class Application(ModuleType):
             """
             pass
 
-        def remove_peak_process_usage_listener(self, arg2: object=None) -> None:
+        def remove_peak_process_usage_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "peak_process_usage". C++ signature :  void remove_peak_process_usage_listener(TPyHandle<ASongApp>,boost::python::api::object)
             :param arg2: arg2
@@ -333,7 +333,7 @@ class Application(ModuleType):
             """
             pass
 
-        def remove_unavailable_features_listener(self, arg2: object=None) -> None:
+        def remove_unavailable_features_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "unavailable_features". C++ signature :  void remove_unavailable_features_listener(TPyHandle<ASongApp>,boost::python::api::object)
             :param arg2: arg2
@@ -342,7 +342,7 @@ class Application(ModuleType):
             """
             pass
 
-        def show_message(self, text: Text=int, buttons: int=int, enable_markup: bool=int, show_success_icon: bool=int) -> int:
+        def show_message(self, text: Text, buttons: int, enable_markup: bool, show_success_icon: bool) -> int:
             """
             Shows a message box, returning the position of the pressed button. C++ signature :  int show_message(TPyHandle<ASongApp>,TText [,int=Application.MessageButtons.OK_BUTTON [,bool=False [,bool=False]]])
             :param text: text
@@ -357,7 +357,7 @@ class Application(ModuleType):
             """
             pass
 
-        def show_on_the_fly_message(self, message: str=int, buttons: int=int, enable_markup: bool=int, show_success_icon: bool=int, push_dialog_type: int=int) -> int:
+        def show_on_the_fly_message(self, message: str, buttons: int, enable_markup: bool, show_success_icon: bool, push_dialog_type: int) -> int:
             """
             Same as show_message, but for when there is no predefined Text object. C++ signature :  int show_on_the_fly_message(TPyHandle<ASongApp>,std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> [,int=Application.MessageButtons.OK_BUTTON [,bool=False [,bool=False [,int=Application.PushDialogType.MESSAGE_BOX]]]])
             :param message: message
@@ -374,7 +374,7 @@ class Application(ModuleType):
             """
             pass
 
-        def unavailable_features_has_listener(self, arg2: object=bool) -> bool:
+        def unavailable_features_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "unavailable_features". C++ signature :  bool unavailable_features_has_listener(TPyHandle<ASongApp>,boost::python::api::object)
             :param arg2: arg2
@@ -415,7 +415,7 @@ class Application(ModuleType):
                 """
                 pass
 
-            def add_browse_mode_listener(self, arg2: object=None) -> None:
+            def add_browse_mode_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "browse_mode" has changed. C++ signature :  void add_browse_mode_listener(TPyViewData<ASongApp>,boost::python::api::object)
                 :param arg2: arg2
@@ -424,7 +424,7 @@ class Application(ModuleType):
                 """
                 pass
 
-            def add_focused_document_view_listener(self, arg2: object=None) -> None:
+            def add_focused_document_view_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "focused_document_view" has changed. C++ signature :  void add_focused_document_view_listener(TPyViewData<ASongApp>,boost::python::api::object)
                 :param arg2: arg2
@@ -433,7 +433,7 @@ class Application(ModuleType):
                 """
                 pass
 
-            def add_is_view_visible_listener(self, arg2: object=None, arg3: object=None) -> None:
+            def add_is_view_visible_listener(self, arg2: object, arg3: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "is_view_visible" has changed. C++ signature :  void add_is_view_visible_listener(TPyViewData<ASongApp>,TString,boost::python::api::object)
                 :param arg2: arg2
@@ -444,7 +444,7 @@ class Application(ModuleType):
                 """
                 pass
 
-            def add_view_focus_changed_listener(self, arg2: object=None) -> None:
+            def add_view_focus_changed_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "view_focus_changed" has changed. C++ signature :  void add_view_focus_changed_listener(TPyViewData<ASongApp>,boost::python::api::object)
                 :param arg2: arg2
@@ -460,7 +460,7 @@ class Application(ModuleType):
                 """
                 pass
 
-            def browse_mode_has_listener(self, arg2: object=bool) -> bool:
+            def browse_mode_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "browse_mode". C++ signature :  bool browse_mode_has_listener(TPyViewData<ASongApp>,boost::python::api::object)
                 :param arg2: arg2
@@ -469,7 +469,7 @@ class Application(ModuleType):
                 """
                 pass
 
-            def focus_view(self, arg2: object=None) -> None:
+            def focus_view(self, arg2: object) -> None:
                 """
                 Show and focus one through the identifier string specified view. C++ signature :  void focus_view(TPyViewData<ASongApp>,TString)
                 :param arg2: arg2
@@ -478,7 +478,7 @@ class Application(ModuleType):
                 """
                 pass
 
-            def focused_document_view_has_listener(self, arg2: object=bool) -> bool:
+            def focused_document_view_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "focused_document_view". C++ signature :  bool focused_document_view_has_listener(TPyViewData<ASongApp>,boost::python::api::object)
                 :param arg2: arg2
@@ -487,7 +487,7 @@ class Application(ModuleType):
                 """
                 pass
 
-            def hide_view(self, arg2: object=None) -> None:
+            def hide_view(self, arg2: object) -> None:
                 """
                 Hide one through the identifier string specified view. C++ signature :  void hide_view(TPyViewData<ASongApp>,TString)
                 :param arg2: arg2
@@ -496,7 +496,7 @@ class Application(ModuleType):
                 """
                 pass
 
-            def is_view_visible(self, identifier: object=bool, main_window_only: bool=bool) -> bool:
+            def is_view_visible(self, identifier: object, main_window_only: bool) -> bool:
                 """
                 Return true if the through the identifier string specified view is currently visible. If main_window_only is set to False, this will also check in second window. Notifications from the second window are not yet supported. C++ signature :  bool is_view_visible(TPyViewData<ASongApp>,TString [,bool=True])
                 :param identifier: identifier
@@ -507,7 +507,7 @@ class Application(ModuleType):
                 """
                 pass
 
-            def is_view_visible_has_listener(self, arg2: object=bool, arg3: object=bool) -> bool:
+            def is_view_visible_has_listener(self, arg2: object, arg3: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "is_view_visible". C++ signature :  bool is_view_visible_has_listener(TPyViewData<ASongApp>,TString,boost::python::api::object)
                 :param arg2: arg2
@@ -518,7 +518,7 @@ class Application(ModuleType):
                 """
                 pass
 
-            def remove_browse_mode_listener(self, arg2: object=None) -> None:
+            def remove_browse_mode_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "browse_mode". C++ signature :  void remove_browse_mode_listener(TPyViewData<ASongApp>,boost::python::api::object)
                 :param arg2: arg2
@@ -527,7 +527,7 @@ class Application(ModuleType):
                 """
                 pass
 
-            def remove_focused_document_view_listener(self, arg2: object=None) -> None:
+            def remove_focused_document_view_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "focused_document_view". C++ signature :  void remove_focused_document_view_listener(TPyViewData<ASongApp>,boost::python::api::object)
                 :param arg2: arg2
@@ -536,7 +536,7 @@ class Application(ModuleType):
                 """
                 pass
 
-            def remove_is_view_visible_listener(self, arg2: object=None, arg3: object=None) -> None:
+            def remove_is_view_visible_listener(self, arg2: object, arg3: object) -> None:
                 """
                 Remove a previously set listener function or method from property "is_view_visible". C++ signature :  void remove_is_view_visible_listener(TPyViewData<ASongApp>,TString,boost::python::api::object)
                 :param arg2: arg2
@@ -547,7 +547,7 @@ class Application(ModuleType):
                 """
                 pass
 
-            def remove_view_focus_changed_listener(self, arg2: object=None) -> None:
+            def remove_view_focus_changed_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "view_focus_changed". C++ signature :  void remove_view_focus_changed_listener(TPyViewData<ASongApp>,boost::python::api::object)
                 :param arg2: arg2
@@ -556,7 +556,7 @@ class Application(ModuleType):
                 """
                 pass
 
-            def scroll_view(self, arg2: int=None, arg3: object=None, arg4: bool=None) -> None:
+            def scroll_view(self, arg2: int, arg3: object, arg4: bool) -> None:
                 """
                 Scroll through the identifier string specified view into the given direction, if possible.  Will silently return if the specified view can not perform the requested action. C++ signature :  void scroll_view(TPyViewData<ASongApp>,int,TString,bool)
                 :param arg2: arg2
@@ -569,7 +569,7 @@ class Application(ModuleType):
                 """
                 pass
 
-            def show_view(self, arg2: object=None) -> None:
+            def show_view(self, arg2: object) -> None:
                 """
                 Show one through the identifier string specified view. Will throw a runtime error if this is called in Live's initialization scope. C++ signature :  void show_view(TPyViewData<ASongApp>,TString)
                 :param arg2: arg2
@@ -585,7 +585,7 @@ class Application(ModuleType):
                 """
                 pass
 
-            def view_focus_changed_has_listener(self, arg2: object=bool) -> bool:
+            def view_focus_changed_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "view_focus_changed". C++ signature :  bool view_focus_changed_has_listener(TPyViewData<ASongApp>,boost::python::api::object)
                 :param arg2: arg2
@@ -594,7 +594,7 @@ class Application(ModuleType):
                 """
                 pass
 
-            def zoom_view(self, arg2: int=None, arg3: object=None, arg4: bool=None) -> None:
+            def zoom_view(self, arg2: int, arg3: object, arg4: bool) -> None:
                 """
                 Zoom through the identifier string specified view into the given direction, if possible.  Will silently return if the specified view can not perform the requested action. C++ signature :  void zoom_view(TPyViewData<ASongApp>,int,TString,bool)
                 :param arg2: arg2
@@ -639,7 +639,7 @@ class Application(ModuleType):
             """
             pass
 
-        def append(self, arg2: object=None) -> None:
+        def append(self, arg2: object) -> None:
             """
             C++ signature :  void append(std::__1::vector<TControlDescription, std::__1::allocator<TControlDescription>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -648,7 +648,7 @@ class Application(ModuleType):
             """
             pass
 
-        def extend(self, arg2: object=None) -> None:
+        def extend(self, arg2: object) -> None:
             """
             C++ signature :  void extend(std::__1::vector<TControlDescription, std::__1::allocator<TControlDescription>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -672,7 +672,7 @@ class Application(ModuleType):
         def type_name(self):
             pass
 
-        def add_control_values_arrived_listener(self, arg2: object=None) -> None:
+        def add_control_values_arrived_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "control_values_arrived" has changed. C++ signature :  void add_control_values_arrived_listener(APythonControlSurfaceProxy,boost::python::api::object)
             :param arg2: arg2
@@ -681,7 +681,7 @@ class Application(ModuleType):
             """
             pass
 
-        def add_midi_received_listener(self, arg2: object=None) -> None:
+        def add_midi_received_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "midi_received" has changed. C++ signature :  void add_midi_received_listener(APythonControlSurfaceProxy,boost::python::api::object)
             :param arg2: arg2
@@ -690,7 +690,7 @@ class Application(ModuleType):
             """
             pass
 
-        def control_values_arrived_has_listener(self, arg2: object=bool) -> bool:
+        def control_values_arrived_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "control_values_arrived". C++ signature :  bool control_values_arrived_has_listener(APythonControlSurfaceProxy,boost::python::api::object)
             :param arg2: arg2
@@ -699,7 +699,7 @@ class Application(ModuleType):
             """
             pass
 
-        def enable_receive_midi(self, arg2: bool=None) -> None:
+        def enable_receive_midi(self, arg2: bool) -> None:
             """
             C++ signature :  void enable_receive_midi(APythonControlSurfaceProxy {lvalue},bool)
             :param arg2: arg2
@@ -722,7 +722,7 @@ class Application(ModuleType):
             """
             pass
 
-        def grab_control(self, arg2: int=None) -> None:
+        def grab_control(self, arg2: int) -> None:
             """
             C++ signature :  void grab_control(APythonControlSurfaceProxy {lvalue},int)
             :param arg2: arg2
@@ -731,7 +731,7 @@ class Application(ModuleType):
             """
             pass
 
-        def midi_received_has_listener(self, arg2: object=bool) -> bool:
+        def midi_received_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "midi_received". C++ signature :  bool midi_received_has_listener(APythonControlSurfaceProxy,boost::python::api::object)
             :param arg2: arg2
@@ -740,7 +740,7 @@ class Application(ModuleType):
             """
             pass
 
-        def release_control(self, arg2: int=None) -> None:
+        def release_control(self, arg2: int) -> None:
             """
             C++ signature :  void release_control(APythonControlSurfaceProxy {lvalue},int)
             :param arg2: arg2
@@ -749,7 +749,7 @@ class Application(ModuleType):
             """
             pass
 
-        def remove_control_values_arrived_listener(self, arg2: object=None) -> None:
+        def remove_control_values_arrived_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "control_values_arrived". C++ signature :  void remove_control_values_arrived_listener(APythonControlSurfaceProxy,boost::python::api::object)
             :param arg2: arg2
@@ -758,7 +758,7 @@ class Application(ModuleType):
             """
             pass
 
-        def remove_midi_received_listener(self, arg2: object=None) -> None:
+        def remove_midi_received_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "midi_received". C++ signature :  void remove_midi_received_listener(APythonControlSurfaceProxy,boost::python::api::object)
             :param arg2: arg2
@@ -767,7 +767,7 @@ class Application(ModuleType):
             """
             pass
 
-        def send_midi(self, arg2: tuple=None) -> None:
+        def send_midi(self, arg2: tuple) -> None:
             """
             C++ signature :  void send_midi(APythonControlSurfaceProxy {lvalue},boost::python::tuple)
             :param arg2: arg2
@@ -776,7 +776,7 @@ class Application(ModuleType):
             """
             pass
 
-        def send_value(self, arg2: tuple=None) -> None:
+        def send_value(self, arg2: tuple) -> None:
             """
             C++ signature :  void send_value(APythonControlSurfaceProxy {lvalue},boost::python::tuple)
             :param arg2: arg2
@@ -785,7 +785,7 @@ class Application(ModuleType):
             """
             pass
 
-        def subscribe_to_control(self, arg2: int=None) -> None:
+        def subscribe_to_control(self, arg2: int) -> None:
             """
             C++ signature :  void subscribe_to_control(APythonControlSurfaceProxy {lvalue},int)
             :param arg2: arg2
@@ -794,7 +794,7 @@ class Application(ModuleType):
             """
             pass
 
-        def unsubscribe_from_control(self, arg2: int=None) -> None:
+        def unsubscribe_from_control(self, arg2: int) -> None:
             """
             C++ signature :  void unsubscribe_from_control(APythonControlSurfaceProxy {lvalue},int)
             :param arg2: arg2
@@ -846,7 +846,7 @@ class Application(ModuleType):
             """
             pass
 
-        def append(self, arg2: object=None) -> None:
+        def append(self, arg2: object) -> None:
             """
             C++ signature :  void append(std::__1::vector<NPythonApplication::TUnavailableFeature, std::__1::allocator<NPythonApplication::TUnavailableFeature>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -855,7 +855,7 @@ class Application(ModuleType):
             """
             pass
 
-        def extend(self, arg2: object=None) -> None:
+        def extend(self, arg2: object) -> None:
             """
             C++ signature :  void extend(std::__1::vector<NPythonApplication::TUnavailableFeature, std::__1::allocator<NPythonApplication::TUnavailableFeature>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -876,7 +876,7 @@ class Base(ModuleType):
     pass
 
     @staticmethod
-    def get_text(classname: str=Text, textname: str=Text) -> Text:
+    def get_text(classname: str, textname: str) -> Text:
         """
         Retrieves the (translated) Text identified by `classname` and `textname`. C++ signature :  TText const* get_text(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>,std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>)
         :param classname: classname
@@ -888,7 +888,7 @@ class Base(ModuleType):
         pass
 
     @staticmethod
-    def log(arg1: str=None) -> None:
+    def log(arg1: str) -> None:
         """
         C++ signature :  void log(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>)
         :param arg1: arg1
@@ -898,7 +898,7 @@ class Base(ModuleType):
         pass
 
     @staticmethod
-    def subst_args(text: Text=str, arg1: str=str, arg2: str=str, arg3: str=str, arg4: str=str, arg5: str=str) -> str:
+    def subst_args(text: Text, arg1: str, arg2: str, arg3: str, arg4: str, arg5: str) -> str:
         """
         C++ signature :  std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> subst_args(TText [,std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>='' [,std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>='' [,std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>='' [,std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>='' [,std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>='']]]]])
         :param text: text
@@ -924,7 +924,7 @@ class Base(ModuleType):
             """
             pass
 
-        def append(self, arg2: object=None) -> None:
+        def append(self, arg2: object) -> None:
             """
             C++ signature :  void append(std::__1::vector<float, std::__1::allocator<float>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -933,7 +933,7 @@ class Base(ModuleType):
             """
             pass
 
-        def extend(self, arg2: object=None) -> None:
+        def extend(self, arg2: object) -> None:
             """
             C++ signature :  void extend(std::__1::vector<float, std::__1::allocator<float>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -949,7 +949,7 @@ class Base(ModuleType):
             """
             pass
 
-        def append(self, arg2: object=None) -> None:
+        def append(self, arg2: object) -> None:
             """
             C++ signature :  void append(std::__1::vector<unsigned long long, std::__1::allocator<unsigned long long>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -958,7 +958,7 @@ class Base(ModuleType):
             """
             pass
 
-        def extend(self, arg2: object=None) -> None:
+        def extend(self, arg2: object) -> None:
             """
             C++ signature :  void extend(std::__1::vector<unsigned long long, std::__1::allocator<unsigned long long>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -974,7 +974,7 @@ class Base(ModuleType):
             """
             pass
 
-        def append(self, arg2: object=None) -> None:
+        def append(self, arg2: object) -> None:
             """
             C++ signature :  void append(std::__1::vector<int, std::__1::allocator<int>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -983,7 +983,7 @@ class Base(ModuleType):
             """
             pass
 
-        def extend(self, arg2: object=None) -> None:
+        def extend(self, arg2: object) -> None:
             """
             C++ signature :  void extend(std::__1::vector<int, std::__1::allocator<int>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -1003,7 +1003,7 @@ class Base(ModuleType):
             """
             pass
 
-        def append(self, arg2: object=None) -> None:
+        def append(self, arg2: object) -> None:
             """
             C++ signature :  void append(std::__1::vector<boost::python::api::object, std::__1::allocator<boost::python::api::object>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -1012,7 +1012,7 @@ class Base(ModuleType):
             """
             pass
 
-        def extend(self, arg2: object=None) -> None:
+        def extend(self, arg2: object) -> None:
             """
             C++ signature :  void extend(std::__1::vector<boost::python::api::object, std::__1::allocator<boost::python::api::object>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -1028,7 +1028,7 @@ class Base(ModuleType):
             """
             pass
 
-        def append(self, arg2: object=None) -> None:
+        def append(self, arg2: object) -> None:
             """
             C++ signature :  void append(std::__1::vector<TString, std::__1::allocator<TString>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -1037,7 +1037,7 @@ class Base(ModuleType):
             """
             pass
 
-        def extend(self, arg2: object=None) -> None:
+        def extend(self, arg2: object) -> None:
             """
             C++ signature :  void extend(std::__1::vector<TString, std::__1::allocator<TString>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -1096,7 +1096,7 @@ class Base(ModuleType):
             """
             pass
 
-        def append(self, arg2: object=None) -> None:
+        def append(self, arg2: object) -> None:
             """
             C++ signature :  void append(std::__1::vector<TWeakPtr<TPyHandleBase>, std::__1::allocator<TWeakPtr<TPyHandleBase>>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -1105,7 +1105,7 @@ class Base(ModuleType):
             """
             pass
 
-        def extend(self, arg2: object=None) -> None:
+        def extend(self, arg2: object) -> None:
             """
             C++ signature :  void extend(std::__1::vector<TWeakPtr<TPyHandleBase>, std::__1::allocator<TWeakPtr<TPyHandleBase>>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -1248,7 +1248,7 @@ class Browser(ModuleType):
             """
             pass
 
-        def add_filter_type_listener(self, arg2: object=None) -> None:
+        def add_filter_type_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "filter_type" has changed. C++ signature :  void add_filter_type_listener(TPyHandle<ABrowserDelegate>,boost::python::api::object)
             :param arg2: arg2
@@ -1257,7 +1257,7 @@ class Browser(ModuleType):
             """
             pass
 
-        def add_full_refresh_listener(self, arg2: object=None) -> None:
+        def add_full_refresh_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "full_refresh" has changed. C++ signature :  void add_full_refresh_listener(TPyHandle<ABrowserDelegate>,boost::python::api::object)
             :param arg2: arg2
@@ -1266,7 +1266,7 @@ class Browser(ModuleType):
             """
             pass
 
-        def add_hotswap_target_listener(self, arg2: object=None) -> None:
+        def add_hotswap_target_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "hotswap_target" has changed. C++ signature :  void add_hotswap_target_listener(TPyHandle<ABrowserDelegate>,boost::python::api::object)
             :param arg2: arg2
@@ -1275,7 +1275,7 @@ class Browser(ModuleType):
             """
             pass
 
-        def filter_type_has_listener(self, arg2: object=bool) -> bool:
+        def filter_type_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "filter_type". C++ signature :  bool filter_type_has_listener(TPyHandle<ABrowserDelegate>,boost::python::api::object)
             :param arg2: arg2
@@ -1284,7 +1284,7 @@ class Browser(ModuleType):
             """
             pass
 
-        def full_refresh_has_listener(self, arg2: object=bool) -> bool:
+        def full_refresh_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "full_refresh". C++ signature :  bool full_refresh_has_listener(TPyHandle<ABrowserDelegate>,boost::python::api::object)
             :param arg2: arg2
@@ -1293,7 +1293,7 @@ class Browser(ModuleType):
             """
             pass
 
-        def hotswap_target_has_listener(self, arg2: object=bool) -> bool:
+        def hotswap_target_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "hotswap_target". C++ signature :  bool hotswap_target_has_listener(TPyHandle<ABrowserDelegate>,boost::python::api::object)
             :param arg2: arg2
@@ -1302,7 +1302,7 @@ class Browser(ModuleType):
             """
             pass
 
-        def load_item(self, arg2: BrowserItem=None) -> None:
+        def load_item(self, arg2: BrowserItem) -> None:
             """
             Loads the provided browser item. C++ signature :  void load_item(TPyHandle<ABrowserDelegate>,NPythonBrowser::TPythonBrowserItem)
             :param arg2: arg2
@@ -1311,7 +1311,7 @@ class Browser(ModuleType):
             """
             pass
 
-        def preview_item(self, arg2: BrowserItem=None) -> None:
+        def preview_item(self, arg2: BrowserItem) -> None:
             """
             Previews the provided browser item. C++ signature :  void preview_item(TPyHandle<ABrowserDelegate>,NPythonBrowser::TPythonBrowserItem)
             :param arg2: arg2
@@ -1320,7 +1320,7 @@ class Browser(ModuleType):
             """
             pass
 
-        def relation_to_hotswap_target(self, arg2: BrowserItem=Relation) -> Relation:
+        def relation_to_hotswap_target(self, arg2: BrowserItem) -> Relation:
             """
             Returns the relation between the given browser item and the current hotswap target C++ signature :  ableton::live_library::Relation relation_to_hotswap_target(TPyHandle<ABrowserDelegate>,NPythonBrowser::TPythonBrowserItem)
             :param arg2: arg2
@@ -1329,7 +1329,7 @@ class Browser(ModuleType):
             """
             pass
 
-        def remove_filter_type_listener(self, arg2: object=None) -> None:
+        def remove_filter_type_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "filter_type". C++ signature :  void remove_filter_type_listener(TPyHandle<ABrowserDelegate>,boost::python::api::object)
             :param arg2: arg2
@@ -1338,7 +1338,7 @@ class Browser(ModuleType):
             """
             pass
 
-        def remove_full_refresh_listener(self, arg2: object=None) -> None:
+        def remove_full_refresh_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "full_refresh". C++ signature :  void remove_full_refresh_listener(TPyHandle<ABrowserDelegate>,boost::python::api::object)
             :param arg2: arg2
@@ -1347,7 +1347,7 @@ class Browser(ModuleType):
             """
             pass
 
-        def remove_hotswap_target_listener(self, arg2: object=None) -> None:
+        def remove_hotswap_target_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "hotswap_target". C++ signature :  void remove_hotswap_target_listener(TPyHandle<ABrowserDelegate>,boost::python::api::object)
             :param arg2: arg2
@@ -1447,7 +1447,7 @@ class Browser(ModuleType):
             """
             pass
 
-        def append(self, arg2: object=None) -> None:
+        def append(self, arg2: object) -> None:
             """
             C++ signature :  void append(std::__1::vector<NPythonBrowser::TPythonBrowserItem, std::__1::allocator<NPythonBrowser::TPythonBrowserItem>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -1456,7 +1456,7 @@ class Browser(ModuleType):
             """
             pass
 
-        def extend(self, arg2: object=None) -> None:
+        def extend(self, arg2: object) -> None:
             """
             C++ signature :  void extend(std::__1::vector<NPythonBrowser::TPythonBrowserItem, std::__1::allocator<NPythonBrowser::TPythonBrowserItem>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -1766,7 +1766,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def add_custom_bool_target_listener(self, arg2: object=None) -> None:
+        def add_custom_bool_target_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "custom_bool_target" has changed. C++ signature :  void add_custom_bool_target_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -1775,7 +1775,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def add_custom_float_target_0_listener(self, arg2: object=None) -> None:
+        def add_custom_float_target_0_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "custom_float_target_0" has changed. C++ signature :  void add_custom_float_target_0_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -1784,7 +1784,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def add_custom_float_target_10_listener(self, arg2: object=None) -> None:
+        def add_custom_float_target_10_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "custom_float_target_10" has changed. C++ signature :  void add_custom_float_target_10_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -1793,7 +1793,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def add_custom_float_target_11_listener(self, arg2: object=None) -> None:
+        def add_custom_float_target_11_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "custom_float_target_11" has changed. C++ signature :  void add_custom_float_target_11_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -1802,7 +1802,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def add_custom_float_target_1_listener(self, arg2: object=None) -> None:
+        def add_custom_float_target_1_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "custom_float_target_1" has changed. C++ signature :  void add_custom_float_target_1_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -1811,7 +1811,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def add_custom_float_target_2_listener(self, arg2: object=None) -> None:
+        def add_custom_float_target_2_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "custom_float_target_2" has changed. C++ signature :  void add_custom_float_target_2_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -1820,7 +1820,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def add_custom_float_target_3_listener(self, arg2: object=None) -> None:
+        def add_custom_float_target_3_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "custom_float_target_3" has changed. C++ signature :  void add_custom_float_target_3_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -1829,7 +1829,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def add_custom_float_target_4_listener(self, arg2: object=None) -> None:
+        def add_custom_float_target_4_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "custom_float_target_4" has changed. C++ signature :  void add_custom_float_target_4_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -1838,7 +1838,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def add_custom_float_target_5_listener(self, arg2: object=None) -> None:
+        def add_custom_float_target_5_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "custom_float_target_5" has changed. C++ signature :  void add_custom_float_target_5_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -1847,7 +1847,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def add_custom_float_target_6_listener(self, arg2: object=None) -> None:
+        def add_custom_float_target_6_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "custom_float_target_6" has changed. C++ signature :  void add_custom_float_target_6_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -1856,7 +1856,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def add_custom_float_target_7_listener(self, arg2: object=None) -> None:
+        def add_custom_float_target_7_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "custom_float_target_7" has changed. C++ signature :  void add_custom_float_target_7_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -1865,7 +1865,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def add_custom_float_target_8_listener(self, arg2: object=None) -> None:
+        def add_custom_float_target_8_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "custom_float_target_8" has changed. C++ signature :  void add_custom_float_target_8_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -1874,7 +1874,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def add_custom_float_target_9_listener(self, arg2: object=None) -> None:
+        def add_custom_float_target_9_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "custom_float_target_9" has changed. C++ signature :  void add_custom_float_target_9_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -1883,7 +1883,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def add_is_active_listener(self, arg2: object=None) -> None:
+        def add_is_active_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_active" has changed. C++ signature :  void add_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -1892,7 +1892,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def add_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_ms" has changed. C++ signature :  void add_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -1901,7 +1901,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def add_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_samples" has changed. C++ signature :  void add_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -1910,7 +1910,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -1919,7 +1919,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def add_parameters_listener(self, arg2: object=None) -> None:
+        def add_parameters_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "parameters" has changed. C++ signature :  void add_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -1928,7 +1928,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def custom_bool_target_has_listener(self, arg2: object=bool) -> bool:
+        def custom_bool_target_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "custom_bool_target". C++ signature :  bool custom_bool_target_has_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -1937,7 +1937,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def custom_float_target_0_has_listener(self, arg2: object=bool) -> bool:
+        def custom_float_target_0_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "custom_float_target_0". C++ signature :  bool custom_float_target_0_has_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -1946,7 +1946,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def custom_float_target_10_has_listener(self, arg2: object=bool) -> bool:
+        def custom_float_target_10_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "custom_float_target_10". C++ signature :  bool custom_float_target_10_has_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -1955,7 +1955,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def custom_float_target_11_has_listener(self, arg2: object=bool) -> bool:
+        def custom_float_target_11_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "custom_float_target_11". C++ signature :  bool custom_float_target_11_has_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -1964,7 +1964,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def custom_float_target_1_has_listener(self, arg2: object=bool) -> bool:
+        def custom_float_target_1_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "custom_float_target_1". C++ signature :  bool custom_float_target_1_has_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -1973,7 +1973,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def custom_float_target_2_has_listener(self, arg2: object=bool) -> bool:
+        def custom_float_target_2_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "custom_float_target_2". C++ signature :  bool custom_float_target_2_has_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -1982,7 +1982,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def custom_float_target_3_has_listener(self, arg2: object=bool) -> bool:
+        def custom_float_target_3_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "custom_float_target_3". C++ signature :  bool custom_float_target_3_has_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -1991,7 +1991,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def custom_float_target_4_has_listener(self, arg2: object=bool) -> bool:
+        def custom_float_target_4_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "custom_float_target_4". C++ signature :  bool custom_float_target_4_has_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2000,7 +2000,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def custom_float_target_5_has_listener(self, arg2: object=bool) -> bool:
+        def custom_float_target_5_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "custom_float_target_5". C++ signature :  bool custom_float_target_5_has_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2009,7 +2009,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def custom_float_target_6_has_listener(self, arg2: object=bool) -> bool:
+        def custom_float_target_6_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "custom_float_target_6". C++ signature :  bool custom_float_target_6_has_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2018,7 +2018,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def custom_float_target_7_has_listener(self, arg2: object=bool) -> bool:
+        def custom_float_target_7_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "custom_float_target_7". C++ signature :  bool custom_float_target_7_has_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2027,7 +2027,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def custom_float_target_8_has_listener(self, arg2: object=bool) -> bool:
+        def custom_float_target_8_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "custom_float_target_8". C++ signature :  bool custom_float_target_8_has_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2036,7 +2036,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def custom_float_target_9_has_listener(self, arg2: object=bool) -> bool:
+        def custom_float_target_9_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "custom_float_target_9". C++ signature :  bool custom_float_target_9_has_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2045,7 +2045,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def is_active_has_listener(self, arg2: object=bool) -> bool:
+        def is_active_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_active". C++ signature :  bool is_active_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -2054,7 +2054,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def latency_in_ms_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_ms_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_ms". C++ signature :  bool latency_in_ms_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -2063,7 +2063,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def latency_in_samples_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_samples_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_samples". C++ signature :  bool latency_in_samples_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -2072,7 +2072,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -2081,7 +2081,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def parameters_has_listener(self, arg2: object=bool) -> bool:
+        def parameters_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "parameters". C++ signature :  bool parameters_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -2090,7 +2090,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def remove_custom_bool_target_listener(self, arg2: object=None) -> None:
+        def remove_custom_bool_target_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "custom_bool_target". C++ signature :  void remove_custom_bool_target_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2099,7 +2099,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def remove_custom_float_target_0_listener(self, arg2: object=None) -> None:
+        def remove_custom_float_target_0_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "custom_float_target_0". C++ signature :  void remove_custom_float_target_0_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2108,7 +2108,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def remove_custom_float_target_10_listener(self, arg2: object=None) -> None:
+        def remove_custom_float_target_10_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "custom_float_target_10". C++ signature :  void remove_custom_float_target_10_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2117,7 +2117,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def remove_custom_float_target_11_listener(self, arg2: object=None) -> None:
+        def remove_custom_float_target_11_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "custom_float_target_11". C++ signature :  void remove_custom_float_target_11_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2126,7 +2126,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def remove_custom_float_target_1_listener(self, arg2: object=None) -> None:
+        def remove_custom_float_target_1_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "custom_float_target_1". C++ signature :  void remove_custom_float_target_1_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2135,7 +2135,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def remove_custom_float_target_2_listener(self, arg2: object=None) -> None:
+        def remove_custom_float_target_2_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "custom_float_target_2". C++ signature :  void remove_custom_float_target_2_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2144,7 +2144,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def remove_custom_float_target_3_listener(self, arg2: object=None) -> None:
+        def remove_custom_float_target_3_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "custom_float_target_3". C++ signature :  void remove_custom_float_target_3_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2153,7 +2153,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def remove_custom_float_target_4_listener(self, arg2: object=None) -> None:
+        def remove_custom_float_target_4_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "custom_float_target_4". C++ signature :  void remove_custom_float_target_4_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2162,7 +2162,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def remove_custom_float_target_5_listener(self, arg2: object=None) -> None:
+        def remove_custom_float_target_5_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "custom_float_target_5". C++ signature :  void remove_custom_float_target_5_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2171,7 +2171,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def remove_custom_float_target_6_listener(self, arg2: object=None) -> None:
+        def remove_custom_float_target_6_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "custom_float_target_6". C++ signature :  void remove_custom_float_target_6_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2180,7 +2180,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def remove_custom_float_target_7_listener(self, arg2: object=None) -> None:
+        def remove_custom_float_target_7_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "custom_float_target_7". C++ signature :  void remove_custom_float_target_7_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2189,7 +2189,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def remove_custom_float_target_8_listener(self, arg2: object=None) -> None:
+        def remove_custom_float_target_8_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "custom_float_target_8". C++ signature :  void remove_custom_float_target_8_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2198,7 +2198,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def remove_custom_float_target_9_listener(self, arg2: object=None) -> None:
+        def remove_custom_float_target_9_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "custom_float_target_9". C++ signature :  void remove_custom_float_target_9_listener(TCcControlDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2207,7 +2207,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def remove_is_active_listener(self, arg2: object=None) -> None:
+        def remove_is_active_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_active". C++ signature :  void remove_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -2216,7 +2216,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_ms". C++ signature :  void remove_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -2225,7 +2225,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_samples". C++ signature :  void remove_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -2234,7 +2234,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -2243,7 +2243,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def remove_parameters_listener(self, arg2: object=None) -> None:
+        def remove_parameters_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "parameters". C++ signature :  void remove_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -2259,7 +2259,7 @@ class CcControlDevice(ModuleType):
             """
             pass
 
-        def store_chosen_bank(self, arg2: int=None, arg3: int=None) -> None:
+        def store_chosen_bank(self, arg2: int, arg3: int) -> None:
             """
             Set the selected bank in the device for persistency. C++ signature :  void store_chosen_bank(TPyHandle<ADevice>,int,int)
             :param arg2: arg2
@@ -2295,7 +2295,7 @@ class CcControlDevice(ModuleType):
                 """
                 pass
 
-            def add_is_collapsed_listener(self, arg2: object=None) -> None:
+            def add_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "is_collapsed" has changed. C++ signature :  void add_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -2304,7 +2304,7 @@ class CcControlDevice(ModuleType):
                 """
                 pass
 
-            def is_collapsed_has_listener(self, arg2: object=bool) -> bool:
+            def is_collapsed_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "is_collapsed". C++ signature :  bool is_collapsed_has_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -2313,7 +2313,7 @@ class CcControlDevice(ModuleType):
                 """
                 pass
 
-            def remove_is_collapsed_listener(self, arg2: object=None) -> None:
+            def remove_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "is_collapsed". C++ signature :  void remove_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -2403,7 +2403,7 @@ class Chain(ModuleType):
         @property
         def mixer_device(self):
             """
-            the Volume, Pan, and Sendamounts.
+            Return access to the mixer device that holds the chain's mixer parameters:the Volume, Pan, and Sendamounts.
             """
             pass
 
@@ -2435,7 +2435,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def add_color_index_listener(self, arg2: object=None) -> None:
+        def add_color_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "color_index" has changed. C++ signature :  void add_color_index_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2444,7 +2444,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def add_color_listener(self, arg2: object=None) -> None:
+        def add_color_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "color" has changed. C++ signature :  void add_color_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2453,7 +2453,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def add_devices_listener(self, arg2: object=None) -> None:
+        def add_devices_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "devices" has changed. C++ signature :  void add_devices_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2462,7 +2462,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def add_is_auto_colored_listener(self, arg2: object=None) -> None:
+        def add_is_auto_colored_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_auto_colored" has changed. C++ signature :  void add_is_auto_colored_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2471,7 +2471,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def add_mute_listener(self, arg2: object=None) -> None:
+        def add_mute_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "mute" has changed. C++ signature :  void add_mute_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2480,7 +2480,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def add_muted_via_solo_listener(self, arg2: object=None) -> None:
+        def add_muted_via_solo_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "muted_via_solo" has changed. C++ signature :  void add_muted_via_solo_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2489,7 +2489,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2498,7 +2498,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def add_solo_listener(self, arg2: object=None) -> None:
+        def add_solo_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "solo" has changed. C++ signature :  void add_solo_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2507,7 +2507,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def color_has_listener(self, arg2: object=bool) -> bool:
+        def color_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "color". C++ signature :  bool color_has_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2516,7 +2516,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def color_index_has_listener(self, arg2: object=bool) -> bool:
+        def color_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "color_index". C++ signature :  bool color_index_has_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2525,7 +2525,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def delete_device(self, arg2: int=None) -> None:
+        def delete_device(self, arg2: int) -> None:
             """
             Remove a device identified by its index from the chain. Throws runtime error if bad index.  C++ signature :  void delete_device(TChainPyHandle,int)
             :param arg2: arg2
@@ -2534,7 +2534,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def devices_has_listener(self, arg2: object=bool) -> bool:
+        def devices_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "devices". C++ signature :  bool devices_has_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2543,7 +2543,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def is_auto_colored_has_listener(self, arg2: object=bool) -> bool:
+        def is_auto_colored_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_auto_colored". C++ signature :  bool is_auto_colored_has_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2552,7 +2552,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def mute_has_listener(self, arg2: object=bool) -> bool:
+        def mute_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "mute". C++ signature :  bool mute_has_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2561,7 +2561,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def muted_via_solo_has_listener(self, arg2: object=bool) -> bool:
+        def muted_via_solo_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "muted_via_solo". C++ signature :  bool muted_via_solo_has_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2570,7 +2570,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2579,7 +2579,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def remove_color_index_listener(self, arg2: object=None) -> None:
+        def remove_color_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "color_index". C++ signature :  void remove_color_index_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2588,7 +2588,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def remove_color_listener(self, arg2: object=None) -> None:
+        def remove_color_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "color". C++ signature :  void remove_color_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2597,7 +2597,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def remove_devices_listener(self, arg2: object=None) -> None:
+        def remove_devices_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "devices". C++ signature :  void remove_devices_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2606,7 +2606,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def remove_is_auto_colored_listener(self, arg2: object=None) -> None:
+        def remove_is_auto_colored_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_auto_colored". C++ signature :  void remove_is_auto_colored_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2615,7 +2615,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def remove_mute_listener(self, arg2: object=None) -> None:
+        def remove_mute_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "mute". C++ signature :  void remove_mute_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2624,7 +2624,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def remove_muted_via_solo_listener(self, arg2: object=None) -> None:
+        def remove_muted_via_solo_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "muted_via_solo". C++ signature :  void remove_muted_via_solo_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2633,7 +2633,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2642,7 +2642,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def remove_solo_listener(self, arg2: object=None) -> None:
+        def remove_solo_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "solo". C++ signature :  void remove_solo_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2651,7 +2651,7 @@ class Chain(ModuleType):
             """
             pass
 
-        def solo_has_listener(self, arg2: object=bool) -> bool:
+        def solo_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "solo". C++ signature :  bool solo_has_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -2710,7 +2710,7 @@ class ChainMixerDevice(ModuleType):
             """
             pass
 
-        def add_sends_listener(self, arg2: object=None) -> None:
+        def add_sends_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "sends" has changed. C++ signature :  void add_sends_listener(TPyHandle<ABranchMixerDevice>,boost::python::api::object)
             :param arg2: arg2
@@ -2719,7 +2719,7 @@ class ChainMixerDevice(ModuleType):
             """
             pass
 
-        def remove_sends_listener(self, arg2: object=None) -> None:
+        def remove_sends_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "sends". C++ signature :  void remove_sends_listener(TPyHandle<ABranchMixerDevice>,boost::python::api::object)
             :param arg2: arg2
@@ -2728,7 +2728,7 @@ class ChainMixerDevice(ModuleType):
             """
             pass
 
-        def sends_has_listener(self, arg2: object=bool) -> bool:
+        def sends_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "sends". C++ signature :  bool sends_has_listener(TPyHandle<ABranchMixerDevice>,boost::python::api::object)
             :param arg2: arg2
@@ -2748,7 +2748,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def insert_step(self, arg2: float=None, arg3: float=None, arg4: float=None) -> None:
+        def insert_step(self, arg2: float, arg3: float, arg4: float) -> None:
             """
             C++ signature :  void insert_step(AAutomation {lvalue},double,double,double)
             :param arg2: arg2
@@ -2761,7 +2761,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def value_at_time(self, arg2: float=float) -> float:
+        def value_at_time(self, arg2: float) -> float:
             """
             C++ signature :  double value_at_time(AAutomation {lvalue},double)
             :param arg2: arg2
@@ -3096,7 +3096,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_color_index_listener(self, arg2: object=None) -> None:
+        def add_color_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "color_index" has changed. C++ signature :  void add_color_index_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3105,7 +3105,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_color_listener(self, arg2: object=None) -> None:
+        def add_color_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "color" has changed. C++ signature :  void add_color_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3114,7 +3114,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_end_marker_listener(self, arg2: object=None) -> None:
+        def add_end_marker_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "end_marker" has changed. C++ signature :  void add_end_marker_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3123,7 +3123,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_end_time_listener(self, arg2: object=None) -> None:
+        def add_end_time_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "end_time" has changed. C++ signature :  void add_end_time_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3132,7 +3132,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_file_path_listener(self, arg2: object=None) -> None:
+        def add_file_path_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "file_path" has changed. C++ signature :  void add_file_path_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3141,7 +3141,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_gain_listener(self, arg2: object=None) -> None:
+        def add_gain_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "gain" has changed. C++ signature :  void add_gain_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3150,7 +3150,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_groove_listener(self, arg2: object=None) -> None:
+        def add_groove_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "groove" has changed. C++ signature :  void add_groove_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3159,7 +3159,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_has_envelopes_listener(self, arg2: object=None) -> None:
+        def add_has_envelopes_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "has_envelopes" has changed. C++ signature :  void add_has_envelopes_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3168,7 +3168,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_is_overdubbing_listener(self, arg2: object=None) -> None:
+        def add_is_overdubbing_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_overdubbing" has changed. C++ signature :  void add_is_overdubbing_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3177,7 +3177,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_is_recording_listener(self, arg2: object=None) -> None:
+        def add_is_recording_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_recording" has changed. C++ signature :  void add_is_recording_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3186,7 +3186,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_launch_mode_listener(self, arg2: object=None) -> None:
+        def add_launch_mode_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "launch_mode" has changed. C++ signature :  void add_launch_mode_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3195,7 +3195,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_launch_quantization_listener(self, arg2: object=None) -> None:
+        def add_launch_quantization_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "launch_quantization" has changed. C++ signature :  void add_launch_quantization_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3204,7 +3204,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_legato_listener(self, arg2: object=None) -> None:
+        def add_legato_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "legato" has changed. C++ signature :  void add_legato_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3213,7 +3213,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_loop_end_listener(self, arg2: object=None) -> None:
+        def add_loop_end_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "loop_end" has changed. C++ signature :  void add_loop_end_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3222,7 +3222,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_loop_jump_listener(self, arg2: object=None) -> None:
+        def add_loop_jump_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "loop_jump" has changed. C++ signature :  void add_loop_jump_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3231,7 +3231,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_loop_start_listener(self, arg2: object=None) -> None:
+        def add_loop_start_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "loop_start" has changed. C++ signature :  void add_loop_start_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3240,7 +3240,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_looping_listener(self, arg2: object=None) -> None:
+        def add_looping_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "looping" has changed. C++ signature :  void add_looping_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3249,7 +3249,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_muted_listener(self, arg2: object=None) -> None:
+        def add_muted_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "muted" has changed. C++ signature :  void add_muted_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3258,7 +3258,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3267,7 +3267,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_new_notes(self, arg2: object=IntU64Vector) -> IntU64Vector:
+        def add_new_notes(self, arg2: object) -> IntU64Vector:
             """
             Expects a Python iterable holding a number of Live.Clip.MidiNoteSpecification objects. The objects will be used to construct new notes in the clip. C++ signature :  std::__1::vector<unsigned long long, std::__1::allocator<unsigned long long>> add_new_notes(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3276,7 +3276,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_notes_listener(self, arg2: object=None) -> None:
+        def add_notes_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "notes" has changed. C++ signature :  void add_notes_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3285,7 +3285,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_pitch_coarse_listener(self, arg2: object=None) -> None:
+        def add_pitch_coarse_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "pitch_coarse" has changed. C++ signature :  void add_pitch_coarse_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3294,7 +3294,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_pitch_fine_listener(self, arg2: object=None) -> None:
+        def add_pitch_fine_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "pitch_fine" has changed. C++ signature :  void add_pitch_fine_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3303,7 +3303,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_playing_position_listener(self, arg2: object=None) -> None:
+        def add_playing_position_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "playing_position" has changed. C++ signature :  void add_playing_position_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3312,7 +3312,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_playing_status_listener(self, arg2: object=None) -> None:
+        def add_playing_status_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "playing_status" has changed. C++ signature :  void add_playing_status_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3321,7 +3321,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_position_listener(self, arg2: object=None) -> None:
+        def add_position_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "position" has changed. C++ signature :  void add_position_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3330,7 +3330,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_ram_mode_listener(self, arg2: object=None) -> None:
+        def add_ram_mode_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "ram_mode" has changed. C++ signature :  void add_ram_mode_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3339,7 +3339,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_signature_denominator_listener(self, arg2: object=None) -> None:
+        def add_signature_denominator_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "signature_denominator" has changed. C++ signature :  void add_signature_denominator_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3348,7 +3348,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_signature_numerator_listener(self, arg2: object=None) -> None:
+        def add_signature_numerator_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "signature_numerator" has changed. C++ signature :  void add_signature_numerator_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3357,7 +3357,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_start_marker_listener(self, arg2: object=None) -> None:
+        def add_start_marker_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "start_marker" has changed. C++ signature :  void add_start_marker_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3366,7 +3366,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_velocity_amount_listener(self, arg2: object=None) -> None:
+        def add_velocity_amount_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "velocity_amount" has changed. C++ signature :  void add_velocity_amount_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3375,7 +3375,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_warp_marker(self, warp_marker: object=None) -> None:
+        def add_warp_marker(self, warp_marker: object) -> None:
             """
             Available for AudioClips only. Adds the specified warp marker, if possible. C++ signature :  void add_warp_marker(TPyHandle<AClip>,boost::python::api::object)
             :param warp_marker: warp_marker
@@ -3384,7 +3384,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_warp_markers_listener(self, arg2: object=None) -> None:
+        def add_warp_markers_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "warp_markers" has changed. C++ signature :  void add_warp_markers_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3393,7 +3393,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_warp_mode_listener(self, arg2: object=None) -> None:
+        def add_warp_mode_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "warp_mode" has changed. C++ signature :  void add_warp_mode_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3402,7 +3402,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def add_warping_listener(self, arg2: object=None) -> None:
+        def add_warping_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "warping" has changed. C++ signature :  void add_warping_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3411,7 +3411,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def apply_note_modifications(self, arg2: MidiNoteVector=None) -> None:
+        def apply_note_modifications(self, arg2: MidiNoteVector) -> None:
             """
             Expects a list of notes as returned from get_notes_extended. The content of the list will be used to modify existing notes in the clip, based on matching note IDs. This function should be used when modifying existing notes, e.g. changing the velocity or start time. The function ensures that per-note events attached to the modified notes are preserved. This is NOT the case when replacing notes via a combination of remove_notes_extended and add_new_notes. The given list can be a subset of the notes in the clip, but it must not contain any notes that are not present in the clip.  C++ signature :  void apply_note_modifications(TPyHandle<AClip>,std::__1::vector<NClipApi::TNoteInfo, std::__1::allocator<NClipApi::TNoteInfo>>)
             :param arg2: arg2
@@ -3420,7 +3420,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def automation_envelope(self, arg2: DeviceParameter=AutomationEnvelope) -> AutomationEnvelope:
+        def automation_envelope(self, arg2: DeviceParameter) -> AutomationEnvelope:
             """
             Return the envelope for the given parameter.Returns None if the envelope doesn't exist.Returns None for Arrangement clips.Returns None for parameters from a different track. C++ signature :  TWeakPtr<AAutomation> automation_envelope(TPyHandle<AClip>,TPyHandle<ATimeableValue>)
             :param arg2: arg2
@@ -3429,7 +3429,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def beat_to_sample_time(self, beat_time: float=float) -> float:
+        def beat_to_sample_time(self, beat_time: float) -> float:
             """
             Available for AudioClips only. Converts the given beat time to sample time. Raises an error if the sample is not warped. C++ signature :  double beat_to_sample_time(TPyHandle<AClip>,double)
             :param beat_time: beat_time
@@ -3445,7 +3445,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def clear_envelope(self, arg2: DeviceParameter=None) -> None:
+        def clear_envelope(self, arg2: DeviceParameter) -> None:
             """
             Clears the envelope of this clips given parameter. C++ signature :  void clear_envelope(TPyHandle<AClip>,TPyHandle<ATimeableValue>)
             :param arg2: arg2
@@ -3454,7 +3454,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def color_has_listener(self, arg2: object=bool) -> bool:
+        def color_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "color". C++ signature :  bool color_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3463,7 +3463,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def color_index_has_listener(self, arg2: object=bool) -> bool:
+        def color_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "color_index". C++ signature :  bool color_index_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3472,7 +3472,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def create_automation_envelope(self, arg2: DeviceParameter=AutomationEnvelope) -> AutomationEnvelope:
+        def create_automation_envelope(self, arg2: DeviceParameter) -> AutomationEnvelope:
             """
             Creates an envelope for a given parameter and returns it.This should only be used if the envelope doesn't exist.Raises an error if the envelope can't be created. C++ signature :  TWeakPtr<AAutomation> create_automation_envelope(TPyHandle<AClip>,TPyHandle<ATimeableValue>)
             :param arg2: arg2
@@ -3502,7 +3502,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def duplicate_notes_by_id(self, note_ids: object=IntU64Vector, destination_time: object=IntU64Vector, transposition_amount: int=IntU64Vector) -> IntU64Vector:
+        def duplicate_notes_by_id(self, note_ids: object, destination_time: object, transposition_amount: int) -> IntU64Vector:
             """
             Duplicate all notes matching the given note IDs. If the optional destination_time is not provided, new notes will be inserted after the last selected note. This behavior can be observed when duplicating notes in the Live GUI. If the transposition_amount is specified, the notes in the region will be transposed by the number of semitones. Raises an error on audio clips. C++ signature :  std::__1::vector<unsigned long long, std::__1::allocator<unsigned long long>> duplicate_notes_by_id(TPyHandle<AClip>,boost::python::api::object [,boost::python::api::object=None [,int=0]])
             :param note_ids: note_ids
@@ -3515,7 +3515,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def duplicate_region(self, region_start: float=None, region_length: float=None, destination_time: float=None, pitch: int=None, transposition_amount: int=None) -> None:
+        def duplicate_region(self, region_start: float, region_length: float, destination_time: float, pitch: int, transposition_amount: int) -> None:
             """
             Duplicate the notes in the specified region to the destination_time. Only notes of the specified pitch are duplicated or all if pitch is -1. If the transposition_amount is not 0, the notes in the region will be transposed by the transpose_amount of semitones.Raises an error on audio clips. C++ signature :  void duplicate_region(TPyHandle<AClip>,double,double,double [,int=-1 [,int=0]])
             :param region_start: region_start
@@ -3532,7 +3532,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def end_marker_has_listener(self, arg2: object=bool) -> bool:
+        def end_marker_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "end_marker". C++ signature :  bool end_marker_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3541,7 +3541,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def end_time_has_listener(self, arg2: object=bool) -> bool:
+        def end_time_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "end_time". C++ signature :  bool end_time_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3550,7 +3550,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def file_path_has_listener(self, arg2: object=bool) -> bool:
+        def file_path_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "file_path". C++ signature :  bool file_path_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3566,7 +3566,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def gain_has_listener(self, arg2: object=bool) -> bool:
+        def gain_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "gain". C++ signature :  bool gain_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3582,7 +3582,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def get_notes(self, from_time: float=tuple, from_pitch: int=tuple, time_span: float=tuple, pitch_span: int=tuple) -> tuple:
+        def get_notes(self, from_time: float, from_pitch: int, time_span: float, pitch_span: int) -> tuple:
             """
             Returns a tuple of tuples where each inner tuple represents a note starting in the given pitch- and time range. The inner tuple contains pitch, time, duration, velocity, and mute state. C++ signature :  boost::python::tuple get_notes(TPyHandle<AClip>,double,int,double,int)
             :param from_time: from_time
@@ -3597,7 +3597,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def get_notes_by_id(self, note_ids: object=MidiNoteVector) -> MidiNoteVector:
+        def get_notes_by_id(self, note_ids: object) -> MidiNoteVector:
             """
             Return a list of MIDI notes matching the given note IDs.  C++ signature :  std::__1::vector<NClipApi::TNoteInfo, std::__1::allocator<NClipApi::TNoteInfo>> get_notes_by_id(TPyHandle<AClip>,boost::python::api::object)
             :param note_ids: note_ids
@@ -3606,7 +3606,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def get_notes_extended(self, from_pitch: int=MidiNoteVector, pitch_span: int=MidiNoteVector, from_time: float=MidiNoteVector, time_span: float=MidiNoteVector) -> MidiNoteVector:
+        def get_notes_extended(self, from_pitch: int, pitch_span: int, from_time: float, time_span: float) -> MidiNoteVector:
             """
             Returns a list of MIDI notes from the given pitch and time range. Each note is represented by a Live.Clip.MidiNote object. The returned list can be modified freely, but modifications will not be reflected in the MIDI clip until apply_note_modifications is called. C++ signature :  std::__1::vector<NClipApi::TNoteInfo, std::__1::allocator<NClipApi::TNoteInfo>> get_notes_extended(TPyHandle<AClip>,int,int,double,double)
             :param from_pitch: from_pitch
@@ -3635,7 +3635,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def groove_has_listener(self, arg2: object=bool) -> bool:
+        def groove_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "groove". C++ signature :  bool groove_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3644,7 +3644,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def has_envelopes_has_listener(self, arg2: object=bool) -> bool:
+        def has_envelopes_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "has_envelopes". C++ signature :  bool has_envelopes_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3653,7 +3653,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def is_overdubbing_has_listener(self, arg2: object=bool) -> bool:
+        def is_overdubbing_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_overdubbing". C++ signature :  bool is_overdubbing_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3662,7 +3662,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def is_recording_has_listener(self, arg2: object=bool) -> bool:
+        def is_recording_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_recording". C++ signature :  bool is_recording_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3671,7 +3671,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def launch_mode_has_listener(self, arg2: object=bool) -> bool:
+        def launch_mode_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "launch_mode". C++ signature :  bool launch_mode_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3680,7 +3680,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def launch_quantization_has_listener(self, arg2: object=bool) -> bool:
+        def launch_quantization_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "launch_quantization". C++ signature :  bool launch_quantization_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3689,7 +3689,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def legato_has_listener(self, arg2: object=bool) -> bool:
+        def legato_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "legato". C++ signature :  bool legato_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3698,7 +3698,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def loop_end_has_listener(self, arg2: object=bool) -> bool:
+        def loop_end_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "loop_end". C++ signature :  bool loop_end_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3707,7 +3707,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def loop_jump_has_listener(self, arg2: object=bool) -> bool:
+        def loop_jump_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "loop_jump". C++ signature :  bool loop_jump_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3716,7 +3716,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def loop_start_has_listener(self, arg2: object=bool) -> bool:
+        def loop_start_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "loop_start". C++ signature :  bool loop_start_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3725,7 +3725,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def looping_has_listener(self, arg2: object=bool) -> bool:
+        def looping_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "looping". C++ signature :  bool looping_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3734,7 +3734,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def move_playing_pos(self, arg2: float=None) -> None:
+        def move_playing_pos(self, arg2: float) -> None:
             """
             Jump forward or backward by the specified relative amount in beats. Will do nothing, if the Clip is not playing. C++ signature :  void move_playing_pos(TPyHandle<AClip>,double)
             :param arg2: arg2
@@ -3743,7 +3743,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def move_warp_marker(self, marker_beat_time: float=None, beat_time_distance: float=None) -> None:
+        def move_warp_marker(self, marker_beat_time: float, beat_time_distance: float) -> None:
             """
             Available for AudioClips only. Moves the specified warp marker by the specified beat time amount, if possible. C++ signature :  void move_warp_marker(TPyHandle<AClip>,double,double)
             :param marker_beat_time: marker_beat_time
@@ -3754,7 +3754,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def muted_has_listener(self, arg2: object=bool) -> bool:
+        def muted_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "muted". C++ signature :  bool muted_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3763,7 +3763,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3772,7 +3772,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def note_number_to_name(self, midi_pitch: int=str) -> str:
+        def note_number_to_name(self, midi_pitch: int) -> str:
             """
             Return a human-readable name for the given MIDI note number. Takes into account the scale and tonal spelling settings of the clip, as well as the current tuning system (if any) C++ signature :  TString note_number_to_name(TPyHandle<AClip>,int)
             :param midi_pitch: midi_pitch
@@ -3781,7 +3781,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def notes_has_listener(self, arg2: object=bool) -> bool:
+        def notes_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "notes". C++ signature :  bool notes_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3790,7 +3790,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def pitch_coarse_has_listener(self, arg2: object=bool) -> bool:
+        def pitch_coarse_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "pitch_coarse". C++ signature :  bool pitch_coarse_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3799,7 +3799,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def pitch_fine_has_listener(self, arg2: object=bool) -> bool:
+        def pitch_fine_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "pitch_fine". C++ signature :  bool pitch_fine_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3808,7 +3808,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def playing_position_has_listener(self, arg2: object=bool) -> bool:
+        def playing_position_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "playing_position". C++ signature :  bool playing_position_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3817,7 +3817,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def playing_status_has_listener(self, arg2: object=bool) -> bool:
+        def playing_status_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "playing_status". C++ signature :  bool playing_status_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3826,7 +3826,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def position_has_listener(self, arg2: object=bool) -> bool:
+        def position_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "position". C++ signature :  bool position_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3835,7 +3835,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def quantize(self, arg2: int=None, arg3: float=None) -> None:
+        def quantize(self, arg2: int, arg3: float) -> None:
             """
             Quantize all notes in a clip or align warp markers. C++ signature :  void quantize(TPyHandle<AClip>,int,float)
             :param arg2: arg2
@@ -3846,7 +3846,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def quantize_pitch(self, arg2: int=None, arg3: int=None, arg4: float=None) -> None:
+        def quantize_pitch(self, arg2: int, arg3: int, arg4: float) -> None:
             """
             Quantize all the notes of a given pitch.  Raises an error on audio clips. C++ signature :  void quantize_pitch(TPyHandle<AClip>,int,int,float)
             :param arg2: arg2
@@ -3859,7 +3859,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def ram_mode_has_listener(self, arg2: object=bool) -> bool:
+        def ram_mode_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "ram_mode". C++ signature :  bool ram_mode_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3868,7 +3868,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_color_index_listener(self, arg2: object=None) -> None:
+        def remove_color_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "color_index". C++ signature :  void remove_color_index_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3877,7 +3877,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_color_listener(self, arg2: object=None) -> None:
+        def remove_color_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "color". C++ signature :  void remove_color_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3886,7 +3886,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_end_marker_listener(self, arg2: object=None) -> None:
+        def remove_end_marker_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "end_marker". C++ signature :  void remove_end_marker_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3895,7 +3895,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_end_time_listener(self, arg2: object=None) -> None:
+        def remove_end_time_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "end_time". C++ signature :  void remove_end_time_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3904,7 +3904,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_file_path_listener(self, arg2: object=None) -> None:
+        def remove_file_path_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "file_path". C++ signature :  void remove_file_path_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3913,7 +3913,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_gain_listener(self, arg2: object=None) -> None:
+        def remove_gain_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "gain". C++ signature :  void remove_gain_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3922,7 +3922,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_groove_listener(self, arg2: object=None) -> None:
+        def remove_groove_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "groove". C++ signature :  void remove_groove_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3931,7 +3931,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_has_envelopes_listener(self, arg2: object=None) -> None:
+        def remove_has_envelopes_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "has_envelopes". C++ signature :  void remove_has_envelopes_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3940,7 +3940,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_is_overdubbing_listener(self, arg2: object=None) -> None:
+        def remove_is_overdubbing_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_overdubbing". C++ signature :  void remove_is_overdubbing_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3949,7 +3949,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_is_recording_listener(self, arg2: object=None) -> None:
+        def remove_is_recording_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_recording". C++ signature :  void remove_is_recording_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3958,7 +3958,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_launch_mode_listener(self, arg2: object=None) -> None:
+        def remove_launch_mode_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "launch_mode". C++ signature :  void remove_launch_mode_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3967,7 +3967,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_launch_quantization_listener(self, arg2: object=None) -> None:
+        def remove_launch_quantization_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "launch_quantization". C++ signature :  void remove_launch_quantization_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3976,7 +3976,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_legato_listener(self, arg2: object=None) -> None:
+        def remove_legato_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "legato". C++ signature :  void remove_legato_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3985,7 +3985,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_loop_end_listener(self, arg2: object=None) -> None:
+        def remove_loop_end_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "loop_end". C++ signature :  void remove_loop_end_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -3994,7 +3994,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_loop_jump_listener(self, arg2: object=None) -> None:
+        def remove_loop_jump_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "loop_jump". C++ signature :  void remove_loop_jump_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4003,7 +4003,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_loop_start_listener(self, arg2: object=None) -> None:
+        def remove_loop_start_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "loop_start". C++ signature :  void remove_loop_start_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4012,7 +4012,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_looping_listener(self, arg2: object=None) -> None:
+        def remove_looping_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "looping". C++ signature :  void remove_looping_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4021,7 +4021,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_muted_listener(self, arg2: object=None) -> None:
+        def remove_muted_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "muted". C++ signature :  void remove_muted_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4030,7 +4030,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4039,7 +4039,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_notes(self, arg2: float=None, arg3: int=None, arg4: float=None, arg5: int=None) -> None:
+        def remove_notes(self, arg2: float, arg3: int, arg4: float, arg5: int) -> None:
             """
             Delete all notes starting in the given pitch- and time range. C++ signature :  void remove_notes(TPyHandle<AClip>,double,int,double,int)
             :param arg2: arg2
@@ -4054,7 +4054,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_notes_by_id(self, arg2: object=None) -> None:
+        def remove_notes_by_id(self, arg2: object) -> None:
             """
             Delete all notes matching the given note IDs. This function should NOT be used to implement modification of existing notes (i.e. in combination with add_new_notes), as that leads to loss of per-note events. apply_note_modifications must be used instead for modifying existing notes. C++ signature :  void remove_notes_by_id(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4063,7 +4063,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_notes_extended(self, from_pitch: int=None, pitch_span: int=None, from_time: float=None, time_span: float=None) -> None:
+        def remove_notes_extended(self, from_pitch: int, pitch_span: int, from_time: float, time_span: float) -> None:
             """
             Delete all notes starting in the given pitch and time range. This function should NOT be used to implement modification of existing notes (i.e. in combination with add_new_notes), as that leads to loss of per-note events. apply_note_modifications must be used instead for modifying existing notes. C++ signature :  void remove_notes_extended(TPyHandle<AClip>,int,int,double,double)
             :param from_pitch: from_pitch
@@ -4078,7 +4078,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_notes_listener(self, arg2: object=None) -> None:
+        def remove_notes_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "notes". C++ signature :  void remove_notes_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4087,7 +4087,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_pitch_coarse_listener(self, arg2: object=None) -> None:
+        def remove_pitch_coarse_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "pitch_coarse". C++ signature :  void remove_pitch_coarse_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4096,7 +4096,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_pitch_fine_listener(self, arg2: object=None) -> None:
+        def remove_pitch_fine_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "pitch_fine". C++ signature :  void remove_pitch_fine_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4105,7 +4105,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_playing_position_listener(self, arg2: object=None) -> None:
+        def remove_playing_position_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "playing_position". C++ signature :  void remove_playing_position_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4114,7 +4114,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_playing_status_listener(self, arg2: object=None) -> None:
+        def remove_playing_status_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "playing_status". C++ signature :  void remove_playing_status_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4123,7 +4123,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_position_listener(self, arg2: object=None) -> None:
+        def remove_position_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "position". C++ signature :  void remove_position_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4132,7 +4132,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_ram_mode_listener(self, arg2: object=None) -> None:
+        def remove_ram_mode_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "ram_mode". C++ signature :  void remove_ram_mode_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4141,7 +4141,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_signature_denominator_listener(self, arg2: object=None) -> None:
+        def remove_signature_denominator_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "signature_denominator". C++ signature :  void remove_signature_denominator_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4150,7 +4150,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_signature_numerator_listener(self, arg2: object=None) -> None:
+        def remove_signature_numerator_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "signature_numerator". C++ signature :  void remove_signature_numerator_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4159,7 +4159,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_start_marker_listener(self, arg2: object=None) -> None:
+        def remove_start_marker_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "start_marker". C++ signature :  void remove_start_marker_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4168,7 +4168,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_velocity_amount_listener(self, arg2: object=None) -> None:
+        def remove_velocity_amount_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "velocity_amount". C++ signature :  void remove_velocity_amount_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4177,7 +4177,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_warp_marker(self, beat_time: float=None) -> None:
+        def remove_warp_marker(self, beat_time: float) -> None:
             """
             Available for AudioClips only. Removes the specified warp marker, if possible. C++ signature :  void remove_warp_marker(TPyHandle<AClip>,double)
             :param beat_time: beat_time
@@ -4186,7 +4186,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_warp_markers_listener(self, arg2: object=None) -> None:
+        def remove_warp_markers_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "warp_markers". C++ signature :  void remove_warp_markers_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4195,7 +4195,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_warp_mode_listener(self, arg2: object=None) -> None:
+        def remove_warp_mode_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "warp_mode". C++ signature :  void remove_warp_mode_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4204,7 +4204,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def remove_warping_listener(self, arg2: object=None) -> None:
+        def remove_warping_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "warping". C++ signature :  void remove_warping_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4213,7 +4213,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def replace_selected_notes(self, arg2: tuple=None) -> None:
+        def replace_selected_notes(self, arg2: tuple) -> None:
             """
             Called with a tuple of tuples where each inner tuple represents a note in the same format as returned by get_selected_notes. The notes described that way will then be used to replace the old selection. C++ signature :  void replace_selected_notes(TPyHandle<AClip>,boost::python::tuple)
             :param arg2: arg2
@@ -4222,7 +4222,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def sample_to_beat_time(self, sample_time: float=float) -> float:
+        def sample_to_beat_time(self, sample_time: float) -> float:
             """
             Available for AudioClips only. Converts the given sample time to beat time. Raises an error if the sample is not warped. C++ signature :  double sample_to_beat_time(TPyHandle<AClip>,double)
             :param sample_time: sample_time
@@ -4231,7 +4231,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def scrub(self, scrub_position: float=None) -> None:
+        def scrub(self, scrub_position: float) -> None:
             """
             Scrubs inside a clip. scrub_position defines the position in beats that the scrub will start from. The scrub will continue until stop_scrub is called. Global quantization applies to the scrub's position and length. C++ signature :  void scrub(TPyHandle<AClip>,double)
             :param scrub_position: scrub_position
@@ -4240,7 +4240,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def seconds_to_sample_time(self, seconds: float=float) -> float:
+        def seconds_to_sample_time(self, seconds: float) -> float:
             """
             Available for AudioClips only. Converts the given seconds to sample time. Raises an error if the sample is warped. C++ signature :  double seconds_to_sample_time(TPyHandle<AClip>,double)
             :param seconds: seconds
@@ -4256,7 +4256,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def select_notes_by_id(self, arg2: object=None) -> None:
+        def select_notes_by_id(self, arg2: object) -> None:
             """
             Selects all notes matching the given note IDs. C++ signature :  void select_notes_by_id(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4265,7 +4265,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def set_fire_button_state(self, arg2: bool=None) -> None:
+        def set_fire_button_state(self, arg2: bool) -> None:
             """
             Set the clip's fire button state directly. Supports all launch modes. C++ signature :  void set_fire_button_state(TPyHandle<AClip>,bool)
             :param arg2: arg2
@@ -4274,7 +4274,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def set_notes(self, arg2: tuple=None) -> None:
+        def set_notes(self, arg2: tuple) -> None:
             """
             Called with a tuple of tuples where each inner tuple represents a note in the same format as returned by get_notes. The notes described that way will then be added to the clip. C++ signature :  void set_notes(TPyHandle<AClip>,boost::python::tuple)
             :param arg2: arg2
@@ -4283,7 +4283,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def signature_denominator_has_listener(self, arg2: object=bool) -> bool:
+        def signature_denominator_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "signature_denominator". C++ signature :  bool signature_denominator_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4292,7 +4292,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def signature_numerator_has_listener(self, arg2: object=bool) -> bool:
+        def signature_numerator_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "signature_numerator". C++ signature :  bool signature_numerator_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4301,7 +4301,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def start_marker_has_listener(self, arg2: object=bool) -> bool:
+        def start_marker_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "start_marker". C++ signature :  bool start_marker_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4324,7 +4324,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def velocity_amount_has_listener(self, arg2: object=bool) -> bool:
+        def velocity_amount_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "velocity_amount". C++ signature :  bool velocity_amount_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4333,7 +4333,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def warp_markers_has_listener(self, arg2: object=bool) -> bool:
+        def warp_markers_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "warp_markers". C++ signature :  bool warp_markers_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4342,7 +4342,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def warp_mode_has_listener(self, arg2: object=bool) -> bool:
+        def warp_mode_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "warp_mode". C++ signature :  bool warp_mode_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4351,7 +4351,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def warping_has_listener(self, arg2: object=bool) -> bool:
+        def warping_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "warping". C++ signature :  bool warping_has_listener(TPyHandle<AClip>,boost::python::api::object)
             :param arg2: arg2
@@ -4399,7 +4399,7 @@ class Clip(ModuleType):
                 """
                 pass
 
-            def select_envelope_parameter(self, arg2: DeviceParameter=None) -> None:
+            def select_envelope_parameter(self, arg2: DeviceParameter) -> None:
                 """
                 Select the given device parameter in the envelope view. C++ signature :  void select_envelope_parameter(TPyViewData<AClip>,TPyHandle<ATimeableValue>)
                 :param arg2: arg2
@@ -4512,7 +4512,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def append(self, arg2: object=None) -> None:
+        def append(self, arg2: object) -> None:
             """
             C++ signature :  void append(std::__1::vector<NClipApi::TNoteInfo, std::__1::allocator<NClipApi::TNoteInfo>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -4521,7 +4521,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def extend(self, arg2: object=None) -> None:
+        def extend(self, arg2: object) -> None:
             """
             C++ signature :  void extend(std::__1::vector<NClipApi::TNoteInfo, std::__1::allocator<NClipApi::TNoteInfo>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -4558,7 +4558,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def append(self, arg2: object=None) -> None:
+        def append(self, arg2: object) -> None:
             """
             C++ signature :  void append(std::__1::vector<NApiHelpers::TWarpMarker, std::__1::allocator<NApiHelpers::TWarpMarker>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -4567,7 +4567,7 @@ class Clip(ModuleType):
             """
             pass
 
-        def extend(self, arg2: object=None) -> None:
+        def extend(self, arg2: object) -> None:
             """
             C++ signature :  void extend(std::__1::vector<NApiHelpers::TWarpMarker, std::__1::allocator<NApiHelpers::TWarpMarker>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -4692,7 +4692,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def add_color_index_listener(self, arg2: object=None) -> None:
+        def add_color_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "color_index" has changed. C++ signature :  void add_color_index_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4701,7 +4701,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def add_color_listener(self, arg2: object=None) -> None:
+        def add_color_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "color" has changed. C++ signature :  void add_color_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4710,7 +4710,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def add_controls_other_clips_listener(self, arg2: object=None) -> None:
+        def add_controls_other_clips_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "controls_other_clips" has changed. C++ signature :  void add_controls_other_clips_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4719,7 +4719,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def add_has_clip_listener(self, arg2: object=None) -> None:
+        def add_has_clip_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "has_clip" has changed. C++ signature :  void add_has_clip_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4728,7 +4728,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def add_has_stop_button_listener(self, arg2: object=None) -> None:
+        def add_has_stop_button_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "has_stop_button" has changed. C++ signature :  void add_has_stop_button_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4737,7 +4737,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def add_is_triggered_listener(self, arg2: object=None) -> None:
+        def add_is_triggered_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_triggered" has changed. C++ signature :  void add_is_triggered_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4746,7 +4746,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def add_playing_status_listener(self, arg2: object=None) -> None:
+        def add_playing_status_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "playing_status" has changed. C++ signature :  void add_playing_status_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4755,7 +4755,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def color_has_listener(self, arg2: object=bool) -> bool:
+        def color_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "color". C++ signature :  bool color_has_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4764,7 +4764,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def color_index_has_listener(self, arg2: object=bool) -> bool:
+        def color_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "color_index". C++ signature :  bool color_index_has_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4773,7 +4773,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def controls_other_clips_has_listener(self, arg2: object=bool) -> bool:
+        def controls_other_clips_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "controls_other_clips". C++ signature :  bool controls_other_clips_has_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4782,7 +4782,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def create_audio_clip(self, arg2: object=Clip) -> Clip:
+        def create_audio_clip(self, arg2: object) -> Clip:
             """
             Creates an audio clip referencing the file at the given absolute path in the slot. Throws an error when called on non-empty slots or slots in non-audio or frozen tracks, or when the path doesn't point at a valid audio file. C++ signature :  TWeakPtr<TPyHandle<AClip>> create_audio_clip(TPyHandle<AGroupAndClipSlotBase>,TString)
             :param arg2: arg2
@@ -4791,7 +4791,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def create_clip(self, arg2: float=Clip) -> Clip:
+        def create_clip(self, arg2: float) -> Clip:
             """
             Creates an empty clip with the given length in the slot. Throws an error when called on non-empty slots or slots in non-MIDI tracks. C++ signature :  TWeakPtr<TPyHandle<AClip>> create_clip(TPyHandle<AGroupAndClipSlotBase>,double)
             :param arg2: arg2
@@ -4807,7 +4807,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def duplicate_clip_to(self, arg2: ClipSlot=None) -> None:
+        def duplicate_clip_to(self, arg2: ClipSlot) -> None:
             """
             Duplicates the slot's clip to the passed in target slot. Overrides the target's clip if it's not empty. Raises an exception if the (source) slot itself is empty, or if source and target have different track types (audio vs. MIDI). Also raises if the source or target slot is in a group track (so called group slot). C++ signature :  void duplicate_clip_to(TPyHandle<AGroupAndClipSlotBase>,TPyHandle<AGroupAndClipSlotBase>)
             :param arg2: arg2
@@ -4823,7 +4823,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def has_clip_has_listener(self, arg2: object=bool) -> bool:
+        def has_clip_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "has_clip". C++ signature :  bool has_clip_has_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4832,7 +4832,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def has_stop_button_has_listener(self, arg2: object=bool) -> bool:
+        def has_stop_button_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "has_stop_button". C++ signature :  bool has_stop_button_has_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4841,7 +4841,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def is_triggered_has_listener(self, arg2: object=bool) -> bool:
+        def is_triggered_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_triggered". C++ signature :  bool is_triggered_has_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4850,7 +4850,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def playing_status_has_listener(self, arg2: object=bool) -> bool:
+        def playing_status_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "playing_status". C++ signature :  bool playing_status_has_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4859,7 +4859,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def remove_color_index_listener(self, arg2: object=None) -> None:
+        def remove_color_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "color_index". C++ signature :  void remove_color_index_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4868,7 +4868,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def remove_color_listener(self, arg2: object=None) -> None:
+        def remove_color_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "color". C++ signature :  void remove_color_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4877,7 +4877,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def remove_controls_other_clips_listener(self, arg2: object=None) -> None:
+        def remove_controls_other_clips_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "controls_other_clips". C++ signature :  void remove_controls_other_clips_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4886,7 +4886,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def remove_has_clip_listener(self, arg2: object=None) -> None:
+        def remove_has_clip_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "has_clip". C++ signature :  void remove_has_clip_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4895,7 +4895,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def remove_has_stop_button_listener(self, arg2: object=None) -> None:
+        def remove_has_stop_button_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "has_stop_button". C++ signature :  void remove_has_stop_button_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4904,7 +4904,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def remove_is_triggered_listener(self, arg2: object=None) -> None:
+        def remove_is_triggered_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_triggered". C++ signature :  void remove_is_triggered_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4913,7 +4913,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def remove_playing_status_listener(self, arg2: object=None) -> None:
+        def remove_playing_status_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "playing_status". C++ signature :  void remove_playing_status_listener(TPyHandle<AGroupAndClipSlotBase>,boost::python::api::object)
             :param arg2: arg2
@@ -4922,7 +4922,7 @@ class ClipSlot(ModuleType):
             """
             pass
 
-        def set_fire_button_state(self, arg2: bool=None) -> None:
+        def set_fire_button_state(self, arg2: bool) -> None:
             """
             Set the clipslot's fire button state directly. Supports all launch modes. C++ signature :  void set_fire_button_state(TPyHandle<AGroupAndClipSlotBase>,bool)
             :param arg2: arg2
@@ -5075,7 +5075,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def add_available_input_routing_channels_listener(self, arg2: object=None) -> None:
+        def add_available_input_routing_channels_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "available_input_routing_channels" has changed. C++ signature :  void add_available_input_routing_channels_listener(TCompressorDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -5084,7 +5084,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def add_available_input_routing_types_listener(self, arg2: object=None) -> None:
+        def add_available_input_routing_types_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "available_input_routing_types" has changed. C++ signature :  void add_available_input_routing_types_listener(TCompressorDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -5093,7 +5093,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def add_input_routing_channel_listener(self, arg2: object=None) -> None:
+        def add_input_routing_channel_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "input_routing_channel" has changed. C++ signature :  void add_input_routing_channel_listener(TCompressorDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -5102,7 +5102,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def add_input_routing_type_listener(self, arg2: object=None) -> None:
+        def add_input_routing_type_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "input_routing_type" has changed. C++ signature :  void add_input_routing_type_listener(TCompressorDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -5111,7 +5111,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def add_is_active_listener(self, arg2: object=None) -> None:
+        def add_is_active_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_active" has changed. C++ signature :  void add_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5120,7 +5120,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def add_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_ms" has changed. C++ signature :  void add_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5129,7 +5129,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def add_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_samples" has changed. C++ signature :  void add_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5138,7 +5138,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5147,7 +5147,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def add_parameters_listener(self, arg2: object=None) -> None:
+        def add_parameters_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "parameters" has changed. C++ signature :  void add_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5156,7 +5156,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def available_input_routing_channels_has_listener(self, arg2: object=bool) -> bool:
+        def available_input_routing_channels_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "available_input_routing_channels". C++ signature :  bool available_input_routing_channels_has_listener(TCompressorDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -5165,7 +5165,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def available_input_routing_types_has_listener(self, arg2: object=bool) -> bool:
+        def available_input_routing_types_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "available_input_routing_types". C++ signature :  bool available_input_routing_types_has_listener(TCompressorDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -5174,7 +5174,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def input_routing_channel_has_listener(self, arg2: object=bool) -> bool:
+        def input_routing_channel_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "input_routing_channel". C++ signature :  bool input_routing_channel_has_listener(TCompressorDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -5183,7 +5183,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def input_routing_type_has_listener(self, arg2: object=bool) -> bool:
+        def input_routing_type_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "input_routing_type". C++ signature :  bool input_routing_type_has_listener(TCompressorDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -5192,7 +5192,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def is_active_has_listener(self, arg2: object=bool) -> bool:
+        def is_active_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_active". C++ signature :  bool is_active_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5201,7 +5201,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def latency_in_ms_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_ms_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_ms". C++ signature :  bool latency_in_ms_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5210,7 +5210,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def latency_in_samples_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_samples_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_samples". C++ signature :  bool latency_in_samples_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5219,7 +5219,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5228,7 +5228,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def parameters_has_listener(self, arg2: object=bool) -> bool:
+        def parameters_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "parameters". C++ signature :  bool parameters_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5237,7 +5237,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def remove_available_input_routing_channels_listener(self, arg2: object=None) -> None:
+        def remove_available_input_routing_channels_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "available_input_routing_channels". C++ signature :  void remove_available_input_routing_channels_listener(TCompressorDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -5246,7 +5246,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def remove_available_input_routing_types_listener(self, arg2: object=None) -> None:
+        def remove_available_input_routing_types_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "available_input_routing_types". C++ signature :  void remove_available_input_routing_types_listener(TCompressorDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -5255,7 +5255,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def remove_input_routing_channel_listener(self, arg2: object=None) -> None:
+        def remove_input_routing_channel_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "input_routing_channel". C++ signature :  void remove_input_routing_channel_listener(TCompressorDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -5264,7 +5264,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def remove_input_routing_type_listener(self, arg2: object=None) -> None:
+        def remove_input_routing_type_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "input_routing_type". C++ signature :  void remove_input_routing_type_listener(TCompressorDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -5273,7 +5273,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def remove_is_active_listener(self, arg2: object=None) -> None:
+        def remove_is_active_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_active". C++ signature :  void remove_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5282,7 +5282,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_ms". C++ signature :  void remove_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5291,7 +5291,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_samples". C++ signature :  void remove_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5300,7 +5300,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5309,7 +5309,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def remove_parameters_listener(self, arg2: object=None) -> None:
+        def remove_parameters_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "parameters". C++ signature :  void remove_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5318,7 +5318,7 @@ class CompressorDevice(ModuleType):
             """
             pass
 
-        def store_chosen_bank(self, arg2: int=None, arg3: int=None) -> None:
+        def store_chosen_bank(self, arg2: int, arg3: int) -> None:
             """
             Set the selected bank in the device for persistency. C++ signature :  void store_chosen_bank(TPyHandle<ADevice>,int,int)
             :param arg2: arg2
@@ -5354,7 +5354,7 @@ class CompressorDevice(ModuleType):
                 """
                 pass
 
-            def add_is_collapsed_listener(self, arg2: object=None) -> None:
+            def add_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "is_collapsed" has changed. C++ signature :  void add_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -5363,7 +5363,7 @@ class CompressorDevice(ModuleType):
                 """
                 pass
 
-            def is_collapsed_has_listener(self, arg2: object=bool) -> bool:
+            def is_collapsed_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "is_collapsed". C++ signature :  bool is_collapsed_has_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -5372,7 +5372,7 @@ class CompressorDevice(ModuleType):
                 """
                 pass
 
-            def remove_is_collapsed_listener(self, arg2: object=None) -> None:
+            def remove_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "is_collapsed". C++ signature :  void remove_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -5386,7 +5386,7 @@ class Conversions(ModuleType):
     pass
 
     @staticmethod
-    def audio_to_midi_clip(song: Song=None, audio_clip: Clip=None, audio_to_midi_type: int=None) -> None:
+    def audio_to_midi_clip(song: Song, audio_clip: Clip, audio_to_midi_type: int) -> None:
         """
         Creates a MIDI clip in a new MIDI track with the notes extracted from the given audio_clip. The `audio_to_midi_type` decides which algorithm is used in the process. Raises error when called with an inconvertible clip or invalid `audio_to_midi_type`. C++ signature :  void audio_to_midi_clip(TPyHandle<ASong>,TPyHandle<AClip>,int)
         :param song: song
@@ -5400,7 +5400,7 @@ class Conversions(ModuleType):
         pass
 
     @staticmethod
-    def create_drum_rack_from_audio_clip(song: Song=None, audio_clip: Clip=None) -> None:
+    def create_drum_rack_from_audio_clip(song: Song, audio_clip: Clip) -> None:
         """
         Creates a new track with a drum rack with a simpler on the first pad with the specified audio clip. C++ signature :  void create_drum_rack_from_audio_clip(TPyHandle<ASong>,TPyHandle<AClip>)
         :param song: song
@@ -5412,7 +5412,7 @@ class Conversions(ModuleType):
         pass
 
     @staticmethod
-    def create_midi_track_from_drum_pad(song: Song=None, drum_pad: DrumPad=None) -> None:
+    def create_midi_track_from_drum_pad(song: Song, drum_pad: DrumPad) -> None:
         """
         Creates a new Midi track containing the specified Drum Pad's device chain. C++ signature :  void create_midi_track_from_drum_pad(TPyHandle<ASong>,TPyHandle<ADrumGroupDevicePad>)
         :param song: song
@@ -5424,7 +5424,7 @@ class Conversions(ModuleType):
         pass
 
     @staticmethod
-    def create_midi_track_with_simpler(song: Song=None, audio_clip: Clip=None) -> None:
+    def create_midi_track_with_simpler(song: Song, audio_clip: Clip) -> None:
         """
         Creates a new Midi track with a simpler including the specified audio clip. C++ signature :  void create_midi_track_with_simpler(TPyHandle<ASong>,TPyHandle<AClip>)
         :param song: song
@@ -5436,7 +5436,7 @@ class Conversions(ModuleType):
         pass
 
     @staticmethod
-    def is_convertible_to_midi(song: Song=bool, audio_clip: Clip=bool) -> bool:
+    def is_convertible_to_midi(song: Song, audio_clip: Clip) -> bool:
         """
         Returns whether `audio_clip` can be converted to MIDI. Raises error when called with a MIDI clip C++ signature :  bool is_convertible_to_midi(TPyHandle<ASong>,TPyHandle<AClip>)
         :param song: song
@@ -5448,7 +5448,7 @@ class Conversions(ModuleType):
         pass
 
     @staticmethod
-    def move_devices_on_track_to_new_drum_rack_pad(song: Song=LomObject, track_index: int=LomObject) -> LomObject:
+    def move_devices_on_track_to_new_drum_rack_pad(song: Song, track_index: int) -> LomObject:
         """
         Moves the entire device chain of the track according to the track index onto the C1 (note 36) drum pad of a new drum rack in a new track.If the track associated with the track index does not contain any devices nothing changes (i.e. a new track and new drum rack are not created). C++ signature :  TWeakPtr<TPyHandleBase> move_devices_on_track_to_new_drum_rack_pad(TPyHandle<ASong>,int)
         :param song: song
@@ -5460,7 +5460,7 @@ class Conversions(ModuleType):
         pass
 
     @staticmethod
-    def sliced_simpler_to_drum_rack(song: Song=None, simpler: SimplerDevice=None) -> None:
+    def sliced_simpler_to_drum_rack(song: Song, simpler: SimplerDevice) -> None:
         """
         Converts the Simpler into a Drum Rack, assigning each slice to a drum pad. Calling it on a non-sliced simpler raises an error. C++ signature :  void sliced_simpler_to_drum_rack(TPyHandle<ASong>,TSimplerDevicePyHandle)
         :param song: song
@@ -5489,7 +5489,7 @@ class Device(ModuleType):
         def __init__(self, *a, **k):
             pass
 
-        def append(self, arg2: object=None) -> None:
+        def append(self, arg2: object) -> None:
             """
             C++ signature :  void append(std::__1::vector<TWeakPtr<ATimeableValue>, std::__1::allocator<TWeakPtr<ATimeableValue>>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -5498,7 +5498,7 @@ class Device(ModuleType):
             """
             pass
 
-        def extend(self, arg2: object=None) -> None:
+        def extend(self, arg2: object) -> None:
             """
             C++ signature :  void extend(std::__1::vector<TWeakPtr<ATimeableValue>, std::__1::allocator<TWeakPtr<ATimeableValue>>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -5602,7 +5602,7 @@ class Device(ModuleType):
             """
             pass
 
-        def add_is_active_listener(self, arg2: object=None) -> None:
+        def add_is_active_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_active" has changed. C++ signature :  void add_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5611,7 +5611,7 @@ class Device(ModuleType):
             """
             pass
 
-        def add_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def add_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_ms" has changed. C++ signature :  void add_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5620,7 +5620,7 @@ class Device(ModuleType):
             """
             pass
 
-        def add_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def add_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_samples" has changed. C++ signature :  void add_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5629,7 +5629,7 @@ class Device(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5638,7 +5638,7 @@ class Device(ModuleType):
             """
             pass
 
-        def add_parameters_listener(self, arg2: object=None) -> None:
+        def add_parameters_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "parameters" has changed. C++ signature :  void add_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5647,7 +5647,7 @@ class Device(ModuleType):
             """
             pass
 
-        def is_active_has_listener(self, arg2: object=bool) -> bool:
+        def is_active_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_active". C++ signature :  bool is_active_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5656,7 +5656,7 @@ class Device(ModuleType):
             """
             pass
 
-        def latency_in_ms_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_ms_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_ms". C++ signature :  bool latency_in_ms_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5665,7 +5665,7 @@ class Device(ModuleType):
             """
             pass
 
-        def latency_in_samples_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_samples_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_samples". C++ signature :  bool latency_in_samples_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5674,7 +5674,7 @@ class Device(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5683,7 +5683,7 @@ class Device(ModuleType):
             """
             pass
 
-        def parameters_has_listener(self, arg2: object=bool) -> bool:
+        def parameters_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "parameters". C++ signature :  bool parameters_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5692,7 +5692,7 @@ class Device(ModuleType):
             """
             pass
 
-        def remove_is_active_listener(self, arg2: object=None) -> None:
+        def remove_is_active_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_active". C++ signature :  void remove_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5701,7 +5701,7 @@ class Device(ModuleType):
             """
             pass
 
-        def remove_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_ms". C++ signature :  void remove_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5710,7 +5710,7 @@ class Device(ModuleType):
             """
             pass
 
-        def remove_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_samples". C++ signature :  void remove_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5719,7 +5719,7 @@ class Device(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5728,7 +5728,7 @@ class Device(ModuleType):
             """
             pass
 
-        def remove_parameters_listener(self, arg2: object=None) -> None:
+        def remove_parameters_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "parameters". C++ signature :  void remove_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -5737,7 +5737,7 @@ class Device(ModuleType):
             """
             pass
 
-        def store_chosen_bank(self, arg2: int=None, arg3: int=None) -> None:
+        def store_chosen_bank(self, arg2: int, arg3: int) -> None:
             """
             Set the selected bank in the device for persistency. C++ signature :  void store_chosen_bank(TPyHandle<ADevice>,int,int)
             :param arg2: arg2
@@ -5773,7 +5773,7 @@ class Device(ModuleType):
                 """
                 pass
 
-            def add_is_collapsed_listener(self, arg2: object=None) -> None:
+            def add_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "is_collapsed" has changed. C++ signature :  void add_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -5782,7 +5782,7 @@ class Device(ModuleType):
                 """
                 pass
 
-            def is_collapsed_has_listener(self, arg2: object=bool) -> bool:
+            def is_collapsed_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "is_collapsed". C++ signature :  bool is_collapsed_has_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -5791,7 +5791,7 @@ class Device(ModuleType):
                 """
                 pass
 
-            def remove_is_collapsed_listener(self, arg2: object=None) -> None:
+            def remove_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "is_collapsed". C++ signature :  void remove_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -5870,7 +5870,7 @@ class DeviceIO(ModuleType):
             """
             pass
 
-        def add_available_routing_channels_listener(self, arg2: object=None) -> None:
+        def add_available_routing_channels_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "available_routing_channels" has changed. C++ signature :  void add_available_routing_channels_listener(TPyHandle<AMxDRoutable>,boost::python::api::object)
             :param arg2: arg2
@@ -5879,7 +5879,7 @@ class DeviceIO(ModuleType):
             """
             pass
 
-        def add_available_routing_types_listener(self, arg2: object=None) -> None:
+        def add_available_routing_types_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "available_routing_types" has changed. C++ signature :  void add_available_routing_types_listener(TPyHandle<AMxDRoutable>,boost::python::api::object)
             :param arg2: arg2
@@ -5888,7 +5888,7 @@ class DeviceIO(ModuleType):
             """
             pass
 
-        def add_routing_channel_listener(self, arg2: object=None) -> None:
+        def add_routing_channel_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "routing_channel" has changed. C++ signature :  void add_routing_channel_listener(TPyHandle<AMxDRoutable>,boost::python::api::object)
             :param arg2: arg2
@@ -5897,7 +5897,7 @@ class DeviceIO(ModuleType):
             """
             pass
 
-        def add_routing_type_listener(self, arg2: object=None) -> None:
+        def add_routing_type_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "routing_type" has changed. C++ signature :  void add_routing_type_listener(TPyHandle<AMxDRoutable>,boost::python::api::object)
             :param arg2: arg2
@@ -5906,7 +5906,7 @@ class DeviceIO(ModuleType):
             """
             pass
 
-        def available_routing_channels_has_listener(self, arg2: object=bool) -> bool:
+        def available_routing_channels_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "available_routing_channels". C++ signature :  bool available_routing_channels_has_listener(TPyHandle<AMxDRoutable>,boost::python::api::object)
             :param arg2: arg2
@@ -5915,7 +5915,7 @@ class DeviceIO(ModuleType):
             """
             pass
 
-        def available_routing_types_has_listener(self, arg2: object=bool) -> bool:
+        def available_routing_types_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "available_routing_types". C++ signature :  bool available_routing_types_has_listener(TPyHandle<AMxDRoutable>,boost::python::api::object)
             :param arg2: arg2
@@ -5924,7 +5924,7 @@ class DeviceIO(ModuleType):
             """
             pass
 
-        def remove_available_routing_channels_listener(self, arg2: object=None) -> None:
+        def remove_available_routing_channels_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "available_routing_channels". C++ signature :  void remove_available_routing_channels_listener(TPyHandle<AMxDRoutable>,boost::python::api::object)
             :param arg2: arg2
@@ -5933,7 +5933,7 @@ class DeviceIO(ModuleType):
             """
             pass
 
-        def remove_available_routing_types_listener(self, arg2: object=None) -> None:
+        def remove_available_routing_types_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "available_routing_types". C++ signature :  void remove_available_routing_types_listener(TPyHandle<AMxDRoutable>,boost::python::api::object)
             :param arg2: arg2
@@ -5942,7 +5942,7 @@ class DeviceIO(ModuleType):
             """
             pass
 
-        def remove_routing_channel_listener(self, arg2: object=None) -> None:
+        def remove_routing_channel_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "routing_channel". C++ signature :  void remove_routing_channel_listener(TPyHandle<AMxDRoutable>,boost::python::api::object)
             :param arg2: arg2
@@ -5951,7 +5951,7 @@ class DeviceIO(ModuleType):
             """
             pass
 
-        def remove_routing_type_listener(self, arg2: object=None) -> None:
+        def remove_routing_type_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "routing_type". C++ signature :  void remove_routing_type_listener(TPyHandle<AMxDRoutable>,boost::python::api::object)
             :param arg2: arg2
@@ -5960,7 +5960,7 @@ class DeviceIO(ModuleType):
             """
             pass
 
-        def routing_channel_has_listener(self, arg2: object=bool) -> bool:
+        def routing_channel_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "routing_channel". C++ signature :  bool routing_channel_has_listener(TPyHandle<AMxDRoutable>,boost::python::api::object)
             :param arg2: arg2
@@ -5969,7 +5969,7 @@ class DeviceIO(ModuleType):
             """
             pass
 
-        def routing_type_has_listener(self, arg2: object=bool) -> bool:
+        def routing_type_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "routing_type". C++ signature :  bool routing_type_has_listener(TPyHandle<AMxDRoutable>,boost::python::api::object)
             :param arg2: arg2
@@ -6076,7 +6076,7 @@ class DeviceParameter(ModuleType):
         @property
         def state(self):
             """
-            - enabled - the parameter's value can be changed,- irrelevant - the parameter is enabled, but value changes will not take any effect until it gets enabled,- disabled - the parameter's value cannot be changed.
+            Returns the state of the parameter:- enabled - the parameter's value can be changed,- irrelevant - the parameter is enabled, but value changes will not take any effect until it gets enabled,- disabled - the parameter's value cannot be changed.
             """
             pass
 
@@ -6094,7 +6094,7 @@ class DeviceParameter(ModuleType):
             """
             pass
 
-        def add_automation_state_listener(self, arg2: object=None) -> None:
+        def add_automation_state_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "automation_state" has changed. C++ signature :  void add_automation_state_listener(TPyHandle<ATimeableValue>,boost::python::api::object)
             :param arg2: arg2
@@ -6103,7 +6103,7 @@ class DeviceParameter(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ATimeableValue>,boost::python::api::object)
             :param arg2: arg2
@@ -6112,7 +6112,7 @@ class DeviceParameter(ModuleType):
             """
             pass
 
-        def add_state_listener(self, arg2: object=None) -> None:
+        def add_state_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "state" has changed. C++ signature :  void add_state_listener(TPyHandle<ATimeableValue>,boost::python::api::object)
             :param arg2: arg2
@@ -6121,7 +6121,7 @@ class DeviceParameter(ModuleType):
             """
             pass
 
-        def add_value_listener(self, arg2: object=None) -> None:
+        def add_value_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "value" has changed. C++ signature :  void add_value_listener(TPyHandle<ATimeableValue>,boost::python::api::object)
             :param arg2: arg2
@@ -6130,7 +6130,7 @@ class DeviceParameter(ModuleType):
             """
             pass
 
-        def automation_state_has_listener(self, arg2: object=bool) -> bool:
+        def automation_state_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "automation_state". C++ signature :  bool automation_state_has_listener(TPyHandle<ATimeableValue>,boost::python::api::object)
             :param arg2: arg2
@@ -6153,7 +6153,7 @@ class DeviceParameter(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ATimeableValue>,boost::python::api::object)
             :param arg2: arg2
@@ -6169,7 +6169,7 @@ class DeviceParameter(ModuleType):
             """
             pass
 
-        def remove_automation_state_listener(self, arg2: object=None) -> None:
+        def remove_automation_state_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "automation_state". C++ signature :  void remove_automation_state_listener(TPyHandle<ATimeableValue>,boost::python::api::object)
             :param arg2: arg2
@@ -6178,7 +6178,7 @@ class DeviceParameter(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ATimeableValue>,boost::python::api::object)
             :param arg2: arg2
@@ -6187,7 +6187,7 @@ class DeviceParameter(ModuleType):
             """
             pass
 
-        def remove_state_listener(self, arg2: object=None) -> None:
+        def remove_state_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "state". C++ signature :  void remove_state_listener(TPyHandle<ATimeableValue>,boost::python::api::object)
             :param arg2: arg2
@@ -6196,7 +6196,7 @@ class DeviceParameter(ModuleType):
             """
             pass
 
-        def remove_value_listener(self, arg2: object=None) -> None:
+        def remove_value_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "value". C++ signature :  void remove_value_listener(TPyHandle<ATimeableValue>,boost::python::api::object)
             :param arg2: arg2
@@ -6205,7 +6205,7 @@ class DeviceParameter(ModuleType):
             """
             pass
 
-        def state_has_listener(self, arg2: object=bool) -> bool:
+        def state_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "state". C++ signature :  bool state_has_listener(TPyHandle<ATimeableValue>,boost::python::api::object)
             :param arg2: arg2
@@ -6214,7 +6214,7 @@ class DeviceParameter(ModuleType):
             """
             pass
 
-        def str_for_value(self, arg2: float=str) -> str:
+        def str_for_value(self, arg2: float) -> str:
             """
             Return a string representation of the given value. To be used for display purposes only.  This value can include characters like 'db' or 'hz', depending on the type of the parameter. C++ signature :  TString str_for_value(TPyHandle<ATimeableValue>,float)
             :param arg2: arg2
@@ -6223,7 +6223,7 @@ class DeviceParameter(ModuleType):
             """
             pass
 
-        def value_has_listener(self, arg2: object=bool) -> bool:
+        def value_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "value". C++ signature :  bool value_has_listener(TPyHandle<ATimeableValue>,boost::python::api::object)
             :param arg2: arg2
@@ -6544,7 +6544,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def add_is_active_listener(self, arg2: object=None) -> None:
+        def add_is_active_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_active" has changed. C++ signature :  void add_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -6553,7 +6553,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def add_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_ms" has changed. C++ signature :  void add_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -6562,7 +6562,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def add_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_samples" has changed. C++ signature :  void add_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -6571,7 +6571,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def add_mod_matrix_filter_source_1_index_listener(self, arg2: object=None) -> None:
+        def add_mod_matrix_filter_source_1_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "mod_matrix_filter_source_1_index" has changed. C++ signature :  void add_mod_matrix_filter_source_1_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6580,7 +6580,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def add_mod_matrix_filter_source_2_index_listener(self, arg2: object=None) -> None:
+        def add_mod_matrix_filter_source_2_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "mod_matrix_filter_source_2_index" has changed. C++ signature :  void add_mod_matrix_filter_source_2_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6589,7 +6589,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def add_mod_matrix_lfo_source_index_listener(self, arg2: object=None) -> None:
+        def add_mod_matrix_lfo_source_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "mod_matrix_lfo_source_index" has changed. C++ signature :  void add_mod_matrix_lfo_source_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6598,7 +6598,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def add_mod_matrix_pitch_source_1_index_listener(self, arg2: object=None) -> None:
+        def add_mod_matrix_pitch_source_1_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "mod_matrix_pitch_source_1_index" has changed. C++ signature :  void add_mod_matrix_pitch_source_1_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6607,7 +6607,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def add_mod_matrix_pitch_source_2_index_listener(self, arg2: object=None) -> None:
+        def add_mod_matrix_pitch_source_2_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "mod_matrix_pitch_source_2_index" has changed. C++ signature :  void add_mod_matrix_pitch_source_2_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6616,7 +6616,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def add_mod_matrix_shape_source_index_listener(self, arg2: object=None) -> None:
+        def add_mod_matrix_shape_source_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "mod_matrix_shape_source_index" has changed. C++ signature :  void add_mod_matrix_shape_source_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6625,7 +6625,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def add_mod_matrix_source_1_index_listener(self, arg2: object=None) -> None:
+        def add_mod_matrix_source_1_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "mod_matrix_source_1_index" has changed. C++ signature :  void add_mod_matrix_source_1_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6634,7 +6634,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def add_mod_matrix_source_2_index_listener(self, arg2: object=None) -> None:
+        def add_mod_matrix_source_2_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "mod_matrix_source_2_index" has changed. C++ signature :  void add_mod_matrix_source_2_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6643,7 +6643,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def add_mod_matrix_source_3_index_listener(self, arg2: object=None) -> None:
+        def add_mod_matrix_source_3_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "mod_matrix_source_3_index" has changed. C++ signature :  void add_mod_matrix_source_3_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6652,7 +6652,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def add_mod_matrix_target_1_index_listener(self, arg2: object=None) -> None:
+        def add_mod_matrix_target_1_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "mod_matrix_target_1_index" has changed. C++ signature :  void add_mod_matrix_target_1_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6661,7 +6661,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def add_mod_matrix_target_2_index_listener(self, arg2: object=None) -> None:
+        def add_mod_matrix_target_2_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "mod_matrix_target_2_index" has changed. C++ signature :  void add_mod_matrix_target_2_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6670,7 +6670,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def add_mod_matrix_target_3_index_listener(self, arg2: object=None) -> None:
+        def add_mod_matrix_target_3_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "mod_matrix_target_3_index" has changed. C++ signature :  void add_mod_matrix_target_3_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6679,7 +6679,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -6688,7 +6688,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def add_parameters_listener(self, arg2: object=None) -> None:
+        def add_parameters_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "parameters" has changed. C++ signature :  void add_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -6697,7 +6697,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def add_pitch_bend_range_listener(self, arg2: object=None) -> None:
+        def add_pitch_bend_range_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "pitch_bend_range" has changed. C++ signature :  void add_pitch_bend_range_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6706,7 +6706,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def add_voice_count_index_listener(self, arg2: object=None) -> None:
+        def add_voice_count_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "voice_count_index" has changed. C++ signature :  void add_voice_count_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6715,7 +6715,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def add_voice_mode_index_listener(self, arg2: object=None) -> None:
+        def add_voice_mode_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "voice_mode_index" has changed. C++ signature :  void add_voice_mode_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6724,7 +6724,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def is_active_has_listener(self, arg2: object=bool) -> bool:
+        def is_active_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_active". C++ signature :  bool is_active_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -6733,7 +6733,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def latency_in_ms_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_ms_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_ms". C++ signature :  bool latency_in_ms_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -6742,7 +6742,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def latency_in_samples_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_samples_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_samples". C++ signature :  bool latency_in_samples_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -6751,7 +6751,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def mod_matrix_filter_source_1_index_has_listener(self, arg2: object=bool) -> bool:
+        def mod_matrix_filter_source_1_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "mod_matrix_filter_source_1_index". C++ signature :  bool mod_matrix_filter_source_1_index_has_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6760,7 +6760,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def mod_matrix_filter_source_2_index_has_listener(self, arg2: object=bool) -> bool:
+        def mod_matrix_filter_source_2_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "mod_matrix_filter_source_2_index". C++ signature :  bool mod_matrix_filter_source_2_index_has_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6769,7 +6769,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def mod_matrix_lfo_source_index_has_listener(self, arg2: object=bool) -> bool:
+        def mod_matrix_lfo_source_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "mod_matrix_lfo_source_index". C++ signature :  bool mod_matrix_lfo_source_index_has_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6778,7 +6778,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def mod_matrix_pitch_source_1_index_has_listener(self, arg2: object=bool) -> bool:
+        def mod_matrix_pitch_source_1_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "mod_matrix_pitch_source_1_index". C++ signature :  bool mod_matrix_pitch_source_1_index_has_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6787,7 +6787,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def mod_matrix_pitch_source_2_index_has_listener(self, arg2: object=bool) -> bool:
+        def mod_matrix_pitch_source_2_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "mod_matrix_pitch_source_2_index". C++ signature :  bool mod_matrix_pitch_source_2_index_has_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6796,7 +6796,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def mod_matrix_shape_source_index_has_listener(self, arg2: object=bool) -> bool:
+        def mod_matrix_shape_source_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "mod_matrix_shape_source_index". C++ signature :  bool mod_matrix_shape_source_index_has_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6805,7 +6805,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def mod_matrix_source_1_index_has_listener(self, arg2: object=bool) -> bool:
+        def mod_matrix_source_1_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "mod_matrix_source_1_index". C++ signature :  bool mod_matrix_source_1_index_has_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6814,7 +6814,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def mod_matrix_source_2_index_has_listener(self, arg2: object=bool) -> bool:
+        def mod_matrix_source_2_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "mod_matrix_source_2_index". C++ signature :  bool mod_matrix_source_2_index_has_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6823,7 +6823,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def mod_matrix_source_3_index_has_listener(self, arg2: object=bool) -> bool:
+        def mod_matrix_source_3_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "mod_matrix_source_3_index". C++ signature :  bool mod_matrix_source_3_index_has_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6832,7 +6832,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def mod_matrix_target_1_index_has_listener(self, arg2: object=bool) -> bool:
+        def mod_matrix_target_1_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "mod_matrix_target_1_index". C++ signature :  bool mod_matrix_target_1_index_has_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6841,7 +6841,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def mod_matrix_target_2_index_has_listener(self, arg2: object=bool) -> bool:
+        def mod_matrix_target_2_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "mod_matrix_target_2_index". C++ signature :  bool mod_matrix_target_2_index_has_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6850,7 +6850,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def mod_matrix_target_3_index_has_listener(self, arg2: object=bool) -> bool:
+        def mod_matrix_target_3_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "mod_matrix_target_3_index". C++ signature :  bool mod_matrix_target_3_index_has_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6859,7 +6859,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -6868,7 +6868,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def parameters_has_listener(self, arg2: object=bool) -> bool:
+        def parameters_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "parameters". C++ signature :  bool parameters_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -6877,7 +6877,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def pitch_bend_range_has_listener(self, arg2: object=bool) -> bool:
+        def pitch_bend_range_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "pitch_bend_range". C++ signature :  bool pitch_bend_range_has_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6886,7 +6886,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def remove_is_active_listener(self, arg2: object=None) -> None:
+        def remove_is_active_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_active". C++ signature :  void remove_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -6895,7 +6895,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_ms". C++ signature :  void remove_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -6904,7 +6904,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_samples". C++ signature :  void remove_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -6913,7 +6913,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def remove_mod_matrix_filter_source_1_index_listener(self, arg2: object=None) -> None:
+        def remove_mod_matrix_filter_source_1_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "mod_matrix_filter_source_1_index". C++ signature :  void remove_mod_matrix_filter_source_1_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6922,7 +6922,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def remove_mod_matrix_filter_source_2_index_listener(self, arg2: object=None) -> None:
+        def remove_mod_matrix_filter_source_2_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "mod_matrix_filter_source_2_index". C++ signature :  void remove_mod_matrix_filter_source_2_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6931,7 +6931,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def remove_mod_matrix_lfo_source_index_listener(self, arg2: object=None) -> None:
+        def remove_mod_matrix_lfo_source_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "mod_matrix_lfo_source_index". C++ signature :  void remove_mod_matrix_lfo_source_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6940,7 +6940,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def remove_mod_matrix_pitch_source_1_index_listener(self, arg2: object=None) -> None:
+        def remove_mod_matrix_pitch_source_1_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "mod_matrix_pitch_source_1_index". C++ signature :  void remove_mod_matrix_pitch_source_1_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6949,7 +6949,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def remove_mod_matrix_pitch_source_2_index_listener(self, arg2: object=None) -> None:
+        def remove_mod_matrix_pitch_source_2_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "mod_matrix_pitch_source_2_index". C++ signature :  void remove_mod_matrix_pitch_source_2_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6958,7 +6958,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def remove_mod_matrix_shape_source_index_listener(self, arg2: object=None) -> None:
+        def remove_mod_matrix_shape_source_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "mod_matrix_shape_source_index". C++ signature :  void remove_mod_matrix_shape_source_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6967,7 +6967,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def remove_mod_matrix_source_1_index_listener(self, arg2: object=None) -> None:
+        def remove_mod_matrix_source_1_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "mod_matrix_source_1_index". C++ signature :  void remove_mod_matrix_source_1_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6976,7 +6976,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def remove_mod_matrix_source_2_index_listener(self, arg2: object=None) -> None:
+        def remove_mod_matrix_source_2_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "mod_matrix_source_2_index". C++ signature :  void remove_mod_matrix_source_2_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6985,7 +6985,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def remove_mod_matrix_source_3_index_listener(self, arg2: object=None) -> None:
+        def remove_mod_matrix_source_3_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "mod_matrix_source_3_index". C++ signature :  void remove_mod_matrix_source_3_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -6994,7 +6994,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def remove_mod_matrix_target_1_index_listener(self, arg2: object=None) -> None:
+        def remove_mod_matrix_target_1_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "mod_matrix_target_1_index". C++ signature :  void remove_mod_matrix_target_1_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7003,7 +7003,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def remove_mod_matrix_target_2_index_listener(self, arg2: object=None) -> None:
+        def remove_mod_matrix_target_2_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "mod_matrix_target_2_index". C++ signature :  void remove_mod_matrix_target_2_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7012,7 +7012,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def remove_mod_matrix_target_3_index_listener(self, arg2: object=None) -> None:
+        def remove_mod_matrix_target_3_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "mod_matrix_target_3_index". C++ signature :  void remove_mod_matrix_target_3_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7021,7 +7021,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -7030,7 +7030,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def remove_parameters_listener(self, arg2: object=None) -> None:
+        def remove_parameters_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "parameters". C++ signature :  void remove_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -7039,7 +7039,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def remove_pitch_bend_range_listener(self, arg2: object=None) -> None:
+        def remove_pitch_bend_range_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "pitch_bend_range". C++ signature :  void remove_pitch_bend_range_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7048,7 +7048,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def remove_voice_count_index_listener(self, arg2: object=None) -> None:
+        def remove_voice_count_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "voice_count_index". C++ signature :  void remove_voice_count_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7057,7 +7057,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def remove_voice_mode_index_listener(self, arg2: object=None) -> None:
+        def remove_voice_mode_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "voice_mode_index". C++ signature :  void remove_voice_mode_index_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7066,7 +7066,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def store_chosen_bank(self, arg2: int=None, arg3: int=None) -> None:
+        def store_chosen_bank(self, arg2: int, arg3: int) -> None:
             """
             Set the selected bank in the device for persistency. C++ signature :  void store_chosen_bank(TPyHandle<ADevice>,int,int)
             :param arg2: arg2
@@ -7077,7 +7077,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def voice_count_index_has_listener(self, arg2: object=bool) -> bool:
+        def voice_count_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "voice_count_index". C++ signature :  bool voice_count_index_has_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7086,7 +7086,7 @@ class DriftDevice(ModuleType):
             """
             pass
 
-        def voice_mode_index_has_listener(self, arg2: object=bool) -> bool:
+        def voice_mode_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "voice_mode_index". C++ signature :  bool voice_mode_index_has_listener(TDriftDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7120,7 +7120,7 @@ class DriftDevice(ModuleType):
                 """
                 pass
 
-            def add_is_collapsed_listener(self, arg2: object=None) -> None:
+            def add_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "is_collapsed" has changed. C++ signature :  void add_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -7129,7 +7129,7 @@ class DriftDevice(ModuleType):
                 """
                 pass
 
-            def is_collapsed_has_listener(self, arg2: object=bool) -> bool:
+            def is_collapsed_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "is_collapsed". C++ signature :  bool is_collapsed_has_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -7138,7 +7138,7 @@ class DriftDevice(ModuleType):
                 """
                 pass
 
-            def remove_is_collapsed_listener(self, arg2: object=None) -> None:
+            def remove_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "is_collapsed". C++ signature :  void remove_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -7253,7 +7253,7 @@ class DrumCellDevice(ModuleType):
             """
             pass
 
-        def add_gain_listener(self, arg2: object=None) -> None:
+        def add_gain_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "gain" has changed. C++ signature :  void add_gain_listener(TDrumCellDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7262,7 +7262,7 @@ class DrumCellDevice(ModuleType):
             """
             pass
 
-        def add_is_active_listener(self, arg2: object=None) -> None:
+        def add_is_active_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_active" has changed. C++ signature :  void add_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -7271,7 +7271,7 @@ class DrumCellDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def add_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_ms" has changed. C++ signature :  void add_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -7280,7 +7280,7 @@ class DrumCellDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def add_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_samples" has changed. C++ signature :  void add_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -7289,7 +7289,7 @@ class DrumCellDevice(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -7298,7 +7298,7 @@ class DrumCellDevice(ModuleType):
             """
             pass
 
-        def add_parameters_listener(self, arg2: object=None) -> None:
+        def add_parameters_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "parameters" has changed. C++ signature :  void add_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -7307,7 +7307,7 @@ class DrumCellDevice(ModuleType):
             """
             pass
 
-        def gain_has_listener(self, arg2: object=bool) -> bool:
+        def gain_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "gain". C++ signature :  bool gain_has_listener(TDrumCellDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7316,7 +7316,7 @@ class DrumCellDevice(ModuleType):
             """
             pass
 
-        def is_active_has_listener(self, arg2: object=bool) -> bool:
+        def is_active_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_active". C++ signature :  bool is_active_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -7325,7 +7325,7 @@ class DrumCellDevice(ModuleType):
             """
             pass
 
-        def latency_in_ms_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_ms_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_ms". C++ signature :  bool latency_in_ms_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -7334,7 +7334,7 @@ class DrumCellDevice(ModuleType):
             """
             pass
 
-        def latency_in_samples_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_samples_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_samples". C++ signature :  bool latency_in_samples_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -7343,7 +7343,7 @@ class DrumCellDevice(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -7352,7 +7352,7 @@ class DrumCellDevice(ModuleType):
             """
             pass
 
-        def parameters_has_listener(self, arg2: object=bool) -> bool:
+        def parameters_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "parameters". C++ signature :  bool parameters_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -7361,7 +7361,7 @@ class DrumCellDevice(ModuleType):
             """
             pass
 
-        def remove_gain_listener(self, arg2: object=None) -> None:
+        def remove_gain_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "gain". C++ signature :  void remove_gain_listener(TDrumCellDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7370,7 +7370,7 @@ class DrumCellDevice(ModuleType):
             """
             pass
 
-        def remove_is_active_listener(self, arg2: object=None) -> None:
+        def remove_is_active_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_active". C++ signature :  void remove_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -7379,7 +7379,7 @@ class DrumCellDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_ms". C++ signature :  void remove_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -7388,7 +7388,7 @@ class DrumCellDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_samples". C++ signature :  void remove_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -7397,7 +7397,7 @@ class DrumCellDevice(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -7406,7 +7406,7 @@ class DrumCellDevice(ModuleType):
             """
             pass
 
-        def remove_parameters_listener(self, arg2: object=None) -> None:
+        def remove_parameters_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "parameters". C++ signature :  void remove_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -7415,7 +7415,7 @@ class DrumCellDevice(ModuleType):
             """
             pass
 
-        def store_chosen_bank(self, arg2: int=None, arg3: int=None) -> None:
+        def store_chosen_bank(self, arg2: int, arg3: int) -> None:
             """
             Set the selected bank in the device for persistency. C++ signature :  void store_chosen_bank(TPyHandle<ADevice>,int,int)
             :param arg2: arg2
@@ -7451,7 +7451,7 @@ class DrumCellDevice(ModuleType):
                 """
                 pass
 
-            def add_is_collapsed_listener(self, arg2: object=None) -> None:
+            def add_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "is_collapsed" has changed. C++ signature :  void add_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -7460,7 +7460,7 @@ class DrumCellDevice(ModuleType):
                 """
                 pass
 
-            def is_collapsed_has_listener(self, arg2: object=bool) -> bool:
+            def is_collapsed_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "is_collapsed". C++ signature :  bool is_collapsed_has_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -7469,7 +7469,7 @@ class DrumCellDevice(ModuleType):
                 """
                 pass
 
-            def remove_is_collapsed_listener(self, arg2: object=None) -> None:
+            def remove_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "is_collapsed". C++ signature :  void remove_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -7566,7 +7566,7 @@ class DrumChain(ModuleType):
         @property
         def mixer_device(self):
             """
-            the Volume, Pan, and Sendamounts.
+            Return access to the mixer device that holds the chain's mixer parameters:the Volume, Pan, and Sendamounts.
             """
             pass
 
@@ -7605,7 +7605,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def add_choke_group_listener(self, arg2: object=None) -> None:
+        def add_choke_group_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "choke_group" has changed. C++ signature :  void add_choke_group_listener(TDrumChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7614,7 +7614,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def add_color_index_listener(self, arg2: object=None) -> None:
+        def add_color_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "color_index" has changed. C++ signature :  void add_color_index_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7623,7 +7623,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def add_color_listener(self, arg2: object=None) -> None:
+        def add_color_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "color" has changed. C++ signature :  void add_color_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7632,7 +7632,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def add_devices_listener(self, arg2: object=None) -> None:
+        def add_devices_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "devices" has changed. C++ signature :  void add_devices_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7641,7 +7641,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def add_is_auto_colored_listener(self, arg2: object=None) -> None:
+        def add_is_auto_colored_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_auto_colored" has changed. C++ signature :  void add_is_auto_colored_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7650,7 +7650,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def add_mute_listener(self, arg2: object=None) -> None:
+        def add_mute_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "mute" has changed. C++ signature :  void add_mute_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7659,7 +7659,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def add_muted_via_solo_listener(self, arg2: object=None) -> None:
+        def add_muted_via_solo_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "muted_via_solo" has changed. C++ signature :  void add_muted_via_solo_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7668,7 +7668,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7677,7 +7677,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def add_out_note_listener(self, arg2: object=None) -> None:
+        def add_out_note_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "out_note" has changed. C++ signature :  void add_out_note_listener(TDrumChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7686,7 +7686,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def add_solo_listener(self, arg2: object=None) -> None:
+        def add_solo_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "solo" has changed. C++ signature :  void add_solo_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7695,7 +7695,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def choke_group_has_listener(self, arg2: object=bool) -> bool:
+        def choke_group_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "choke_group". C++ signature :  bool choke_group_has_listener(TDrumChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7704,7 +7704,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def color_has_listener(self, arg2: object=bool) -> bool:
+        def color_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "color". C++ signature :  bool color_has_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7713,7 +7713,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def color_index_has_listener(self, arg2: object=bool) -> bool:
+        def color_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "color_index". C++ signature :  bool color_index_has_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7722,7 +7722,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def delete_device(self, arg2: int=None) -> None:
+        def delete_device(self, arg2: int) -> None:
             """
             Remove a device identified by its index from the chain. Throws runtime error if bad index.  C++ signature :  void delete_device(TChainPyHandle,int)
             :param arg2: arg2
@@ -7731,7 +7731,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def devices_has_listener(self, arg2: object=bool) -> bool:
+        def devices_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "devices". C++ signature :  bool devices_has_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7740,7 +7740,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def is_auto_colored_has_listener(self, arg2: object=bool) -> bool:
+        def is_auto_colored_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_auto_colored". C++ signature :  bool is_auto_colored_has_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7749,7 +7749,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def mute_has_listener(self, arg2: object=bool) -> bool:
+        def mute_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "mute". C++ signature :  bool mute_has_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7758,7 +7758,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def muted_via_solo_has_listener(self, arg2: object=bool) -> bool:
+        def muted_via_solo_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "muted_via_solo". C++ signature :  bool muted_via_solo_has_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7767,7 +7767,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7776,7 +7776,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def out_note_has_listener(self, arg2: object=bool) -> bool:
+        def out_note_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "out_note". C++ signature :  bool out_note_has_listener(TDrumChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7785,7 +7785,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def remove_choke_group_listener(self, arg2: object=None) -> None:
+        def remove_choke_group_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "choke_group". C++ signature :  void remove_choke_group_listener(TDrumChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7794,7 +7794,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def remove_color_index_listener(self, arg2: object=None) -> None:
+        def remove_color_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "color_index". C++ signature :  void remove_color_index_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7803,7 +7803,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def remove_color_listener(self, arg2: object=None) -> None:
+        def remove_color_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "color". C++ signature :  void remove_color_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7812,7 +7812,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def remove_devices_listener(self, arg2: object=None) -> None:
+        def remove_devices_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "devices". C++ signature :  void remove_devices_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7821,7 +7821,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def remove_is_auto_colored_listener(self, arg2: object=None) -> None:
+        def remove_is_auto_colored_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_auto_colored". C++ signature :  void remove_is_auto_colored_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7830,7 +7830,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def remove_mute_listener(self, arg2: object=None) -> None:
+        def remove_mute_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "mute". C++ signature :  void remove_mute_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7839,7 +7839,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def remove_muted_via_solo_listener(self, arg2: object=None) -> None:
+        def remove_muted_via_solo_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "muted_via_solo". C++ signature :  void remove_muted_via_solo_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7848,7 +7848,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7857,7 +7857,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def remove_out_note_listener(self, arg2: object=None) -> None:
+        def remove_out_note_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "out_note". C++ signature :  void remove_out_note_listener(TDrumChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7866,7 +7866,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def remove_solo_listener(self, arg2: object=None) -> None:
+        def remove_solo_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "solo". C++ signature :  void remove_solo_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7875,7 +7875,7 @@ class DrumChain(ModuleType):
             """
             pass
 
-        def solo_has_listener(self, arg2: object=bool) -> bool:
+        def solo_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "solo". C++ signature :  bool solo_has_listener(TChainPyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -7941,7 +7941,7 @@ class DrumPad(ModuleType):
             """
             pass
 
-        def add_chains_listener(self, arg2: object=None) -> None:
+        def add_chains_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "chains" has changed. C++ signature :  void add_chains_listener(TPyHandle<ADrumGroupDevicePad>,boost::python::api::object)
             :param arg2: arg2
@@ -7950,7 +7950,7 @@ class DrumPad(ModuleType):
             """
             pass
 
-        def add_mute_listener(self, arg2: object=None) -> None:
+        def add_mute_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "mute" has changed. C++ signature :  void add_mute_listener(TPyHandle<ADrumGroupDevicePad>,boost::python::api::object)
             :param arg2: arg2
@@ -7959,7 +7959,7 @@ class DrumPad(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ADrumGroupDevicePad>,boost::python::api::object)
             :param arg2: arg2
@@ -7968,7 +7968,7 @@ class DrumPad(ModuleType):
             """
             pass
 
-        def add_solo_listener(self, arg2: object=None) -> None:
+        def add_solo_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "solo" has changed. C++ signature :  void add_solo_listener(TPyHandle<ADrumGroupDevicePad>,boost::python::api::object)
             :param arg2: arg2
@@ -7977,7 +7977,7 @@ class DrumPad(ModuleType):
             """
             pass
 
-        def chains_has_listener(self, arg2: object=bool) -> bool:
+        def chains_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "chains". C++ signature :  bool chains_has_listener(TPyHandle<ADrumGroupDevicePad>,boost::python::api::object)
             :param arg2: arg2
@@ -7993,7 +7993,7 @@ class DrumPad(ModuleType):
             """
             pass
 
-        def mute_has_listener(self, arg2: object=bool) -> bool:
+        def mute_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "mute". C++ signature :  bool mute_has_listener(TPyHandle<ADrumGroupDevicePad>,boost::python::api::object)
             :param arg2: arg2
@@ -8002,7 +8002,7 @@ class DrumPad(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ADrumGroupDevicePad>,boost::python::api::object)
             :param arg2: arg2
@@ -8011,7 +8011,7 @@ class DrumPad(ModuleType):
             """
             pass
 
-        def remove_chains_listener(self, arg2: object=None) -> None:
+        def remove_chains_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "chains". C++ signature :  void remove_chains_listener(TPyHandle<ADrumGroupDevicePad>,boost::python::api::object)
             :param arg2: arg2
@@ -8020,7 +8020,7 @@ class DrumPad(ModuleType):
             """
             pass
 
-        def remove_mute_listener(self, arg2: object=None) -> None:
+        def remove_mute_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "mute". C++ signature :  void remove_mute_listener(TPyHandle<ADrumGroupDevicePad>,boost::python::api::object)
             :param arg2: arg2
@@ -8029,7 +8029,7 @@ class DrumPad(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ADrumGroupDevicePad>,boost::python::api::object)
             :param arg2: arg2
@@ -8038,7 +8038,7 @@ class DrumPad(ModuleType):
             """
             pass
 
-        def remove_solo_listener(self, arg2: object=None) -> None:
+        def remove_solo_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "solo". C++ signature :  void remove_solo_listener(TPyHandle<ADrumGroupDevicePad>,boost::python::api::object)
             :param arg2: arg2
@@ -8047,7 +8047,7 @@ class DrumPad(ModuleType):
             """
             pass
 
-        def solo_has_listener(self, arg2: object=bool) -> bool:
+        def solo_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "solo". C++ signature :  bool solo_has_listener(TPyHandle<ADrumGroupDevicePad>,boost::python::api::object)
             :param arg2: arg2
@@ -8186,7 +8186,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def add_edit_mode_listener(self, arg2: object=None) -> None:
+        def add_edit_mode_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "edit_mode" has changed. C++ signature :  void add_edit_mode_listener(TEq8DevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -8195,7 +8195,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def add_global_mode_listener(self, arg2: object=None) -> None:
+        def add_global_mode_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "global_mode" has changed. C++ signature :  void add_global_mode_listener(TEq8DevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -8204,7 +8204,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def add_is_active_listener(self, arg2: object=None) -> None:
+        def add_is_active_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_active" has changed. C++ signature :  void add_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -8213,7 +8213,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def add_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def add_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_ms" has changed. C++ signature :  void add_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -8222,7 +8222,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def add_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def add_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_samples" has changed. C++ signature :  void add_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -8231,7 +8231,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -8240,7 +8240,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def add_oversample_listener(self, arg2: object=None) -> None:
+        def add_oversample_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "oversample" has changed. C++ signature :  void add_oversample_listener(TEq8DevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -8249,7 +8249,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def add_parameters_listener(self, arg2: object=None) -> None:
+        def add_parameters_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "parameters" has changed. C++ signature :  void add_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -8258,7 +8258,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def edit_mode_has_listener(self, arg2: object=bool) -> bool:
+        def edit_mode_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "edit_mode". C++ signature :  bool edit_mode_has_listener(TEq8DevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -8267,7 +8267,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def global_mode_has_listener(self, arg2: object=bool) -> bool:
+        def global_mode_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "global_mode". C++ signature :  bool global_mode_has_listener(TEq8DevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -8276,7 +8276,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def is_active_has_listener(self, arg2: object=bool) -> bool:
+        def is_active_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_active". C++ signature :  bool is_active_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -8285,7 +8285,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def latency_in_ms_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_ms_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_ms". C++ signature :  bool latency_in_ms_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -8294,7 +8294,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def latency_in_samples_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_samples_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_samples". C++ signature :  bool latency_in_samples_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -8303,7 +8303,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -8312,7 +8312,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def oversample_has_listener(self, arg2: object=bool) -> bool:
+        def oversample_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "oversample". C++ signature :  bool oversample_has_listener(TEq8DevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -8321,7 +8321,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def parameters_has_listener(self, arg2: object=bool) -> bool:
+        def parameters_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "parameters". C++ signature :  bool parameters_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -8330,7 +8330,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def remove_edit_mode_listener(self, arg2: object=None) -> None:
+        def remove_edit_mode_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "edit_mode". C++ signature :  void remove_edit_mode_listener(TEq8DevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -8339,7 +8339,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def remove_global_mode_listener(self, arg2: object=None) -> None:
+        def remove_global_mode_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "global_mode". C++ signature :  void remove_global_mode_listener(TEq8DevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -8348,7 +8348,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def remove_is_active_listener(self, arg2: object=None) -> None:
+        def remove_is_active_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_active". C++ signature :  void remove_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -8357,7 +8357,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def remove_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_ms". C++ signature :  void remove_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -8366,7 +8366,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def remove_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_samples". C++ signature :  void remove_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -8375,7 +8375,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -8384,7 +8384,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def remove_oversample_listener(self, arg2: object=None) -> None:
+        def remove_oversample_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "oversample". C++ signature :  void remove_oversample_listener(TEq8DevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -8393,7 +8393,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def remove_parameters_listener(self, arg2: object=None) -> None:
+        def remove_parameters_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "parameters". C++ signature :  void remove_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -8402,7 +8402,7 @@ class Eq8Device(ModuleType):
             """
             pass
 
-        def store_chosen_bank(self, arg2: int=None, arg3: int=None) -> None:
+        def store_chosen_bank(self, arg2: int, arg3: int) -> None:
             """
             Set the selected bank in the device for persistency. C++ signature :  void store_chosen_bank(TPyHandle<ADevice>,int,int)
             :param arg2: arg2
@@ -8445,7 +8445,7 @@ class Eq8Device(ModuleType):
                 """
                 pass
 
-            def add_is_collapsed_listener(self, arg2: object=None) -> None:
+            def add_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "is_collapsed" has changed. C++ signature :  void add_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -8454,7 +8454,7 @@ class Eq8Device(ModuleType):
                 """
                 pass
 
-            def add_selected_band_listener(self, arg2: object=None) -> None:
+            def add_selected_band_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "selected_band" has changed. C++ signature :  void add_selected_band_listener(TEq8DevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -8463,7 +8463,7 @@ class Eq8Device(ModuleType):
                 """
                 pass
 
-            def is_collapsed_has_listener(self, arg2: object=bool) -> bool:
+            def is_collapsed_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "is_collapsed". C++ signature :  bool is_collapsed_has_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -8472,7 +8472,7 @@ class Eq8Device(ModuleType):
                 """
                 pass
 
-            def remove_is_collapsed_listener(self, arg2: object=None) -> None:
+            def remove_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "is_collapsed". C++ signature :  void remove_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -8481,7 +8481,7 @@ class Eq8Device(ModuleType):
                 """
                 pass
 
-            def remove_selected_band_listener(self, arg2: object=None) -> None:
+            def remove_selected_band_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "selected_band". C++ signature :  void remove_selected_band_listener(TEq8DevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -8490,7 +8490,7 @@ class Eq8Device(ModuleType):
                 """
                 pass
 
-            def selected_band_has_listener(self, arg2: object=bool) -> bool:
+            def selected_band_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "selected_band". C++ signature :  bool selected_band_has_listener(TEq8DevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -8583,7 +8583,7 @@ class Groove(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<AAbstractGroove>,boost::python::api::object)
             :param arg2: arg2
@@ -8592,7 +8592,7 @@ class Groove(ModuleType):
             """
             pass
 
-        def add_quantization_amount_listener(self, arg2: object=None) -> None:
+        def add_quantization_amount_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "quantization_amount" has changed. C++ signature :  void add_quantization_amount_listener(TPyHandle<AAbstractGroove>,boost::python::api::object)
             :param arg2: arg2
@@ -8601,7 +8601,7 @@ class Groove(ModuleType):
             """
             pass
 
-        def add_random_amount_listener(self, arg2: object=None) -> None:
+        def add_random_amount_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "random_amount" has changed. C++ signature :  void add_random_amount_listener(TPyHandle<AAbstractGroove>,boost::python::api::object)
             :param arg2: arg2
@@ -8610,7 +8610,7 @@ class Groove(ModuleType):
             """
             pass
 
-        def add_timing_amount_listener(self, arg2: object=None) -> None:
+        def add_timing_amount_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "timing_amount" has changed. C++ signature :  void add_timing_amount_listener(TPyHandle<AAbstractGroove>,boost::python::api::object)
             :param arg2: arg2
@@ -8619,7 +8619,7 @@ class Groove(ModuleType):
             """
             pass
 
-        def add_velocity_amount_listener(self, arg2: object=None) -> None:
+        def add_velocity_amount_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "velocity_amount" has changed. C++ signature :  void add_velocity_amount_listener(TPyHandle<AAbstractGroove>,boost::python::api::object)
             :param arg2: arg2
@@ -8628,7 +8628,7 @@ class Groove(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<AAbstractGroove>,boost::python::api::object)
             :param arg2: arg2
@@ -8637,7 +8637,7 @@ class Groove(ModuleType):
             """
             pass
 
-        def quantization_amount_has_listener(self, arg2: object=bool) -> bool:
+        def quantization_amount_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "quantization_amount". C++ signature :  bool quantization_amount_has_listener(TPyHandle<AAbstractGroove>,boost::python::api::object)
             :param arg2: arg2
@@ -8646,7 +8646,7 @@ class Groove(ModuleType):
             """
             pass
 
-        def random_amount_has_listener(self, arg2: object=bool) -> bool:
+        def random_amount_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "random_amount". C++ signature :  bool random_amount_has_listener(TPyHandle<AAbstractGroove>,boost::python::api::object)
             :param arg2: arg2
@@ -8655,7 +8655,7 @@ class Groove(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<AAbstractGroove>,boost::python::api::object)
             :param arg2: arg2
@@ -8664,7 +8664,7 @@ class Groove(ModuleType):
             """
             pass
 
-        def remove_quantization_amount_listener(self, arg2: object=None) -> None:
+        def remove_quantization_amount_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "quantization_amount". C++ signature :  void remove_quantization_amount_listener(TPyHandle<AAbstractGroove>,boost::python::api::object)
             :param arg2: arg2
@@ -8673,7 +8673,7 @@ class Groove(ModuleType):
             """
             pass
 
-        def remove_random_amount_listener(self, arg2: object=None) -> None:
+        def remove_random_amount_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "random_amount". C++ signature :  void remove_random_amount_listener(TPyHandle<AAbstractGroove>,boost::python::api::object)
             :param arg2: arg2
@@ -8682,7 +8682,7 @@ class Groove(ModuleType):
             """
             pass
 
-        def remove_timing_amount_listener(self, arg2: object=None) -> None:
+        def remove_timing_amount_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "timing_amount". C++ signature :  void remove_timing_amount_listener(TPyHandle<AAbstractGroove>,boost::python::api::object)
             :param arg2: arg2
@@ -8691,7 +8691,7 @@ class Groove(ModuleType):
             """
             pass
 
-        def remove_velocity_amount_listener(self, arg2: object=None) -> None:
+        def remove_velocity_amount_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "velocity_amount". C++ signature :  void remove_velocity_amount_listener(TPyHandle<AAbstractGroove>,boost::python::api::object)
             :param arg2: arg2
@@ -8700,7 +8700,7 @@ class Groove(ModuleType):
             """
             pass
 
-        def timing_amount_has_listener(self, arg2: object=bool) -> bool:
+        def timing_amount_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "timing_amount". C++ signature :  bool timing_amount_has_listener(TPyHandle<AAbstractGroove>,boost::python::api::object)
             :param arg2: arg2
@@ -8709,7 +8709,7 @@ class Groove(ModuleType):
             """
             pass
 
-        def velocity_amount_has_listener(self, arg2: object=bool) -> bool:
+        def velocity_amount_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "velocity_amount". C++ signature :  bool velocity_amount_has_listener(TPyHandle<AAbstractGroove>,boost::python::api::object)
             :param arg2: arg2
@@ -8747,7 +8747,7 @@ class GroovePool(ModuleType):
             """
             pass
 
-        def add_grooves_listener(self, arg2: object=None) -> None:
+        def add_grooves_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "grooves" has changed. C++ signature :  void add_grooves_listener(TPyHandle<AGroovePool>,boost::python::api::object)
             :param arg2: arg2
@@ -8756,7 +8756,7 @@ class GroovePool(ModuleType):
             """
             pass
 
-        def grooves_has_listener(self, arg2: object=bool) -> bool:
+        def grooves_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "grooves". C++ signature :  bool grooves_has_listener(TPyHandle<AGroovePool>,boost::python::api::object)
             :param arg2: arg2
@@ -8765,7 +8765,7 @@ class GroovePool(ModuleType):
             """
             pass
 
-        def remove_grooves_listener(self, arg2: object=None) -> None:
+        def remove_grooves_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "grooves". C++ signature :  void remove_grooves_listener(TPyHandle<AGroovePool>,boost::python::api::object)
             :param arg2: arg2
@@ -8929,7 +8929,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def add_ir_attack_time_listener(self, arg2: object=None) -> None:
+        def add_ir_attack_time_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "ir_attack_time" has changed. C++ signature :  void add_ir_attack_time_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -8938,7 +8938,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def add_ir_category_index_listener(self, arg2: object=None) -> None:
+        def add_ir_category_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "ir_category_index" has changed. C++ signature :  void add_ir_category_index_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -8947,7 +8947,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def add_ir_decay_time_listener(self, arg2: object=None) -> None:
+        def add_ir_decay_time_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "ir_decay_time" has changed. C++ signature :  void add_ir_decay_time_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -8956,7 +8956,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def add_ir_file_index_listener(self, arg2: object=None) -> None:
+        def add_ir_file_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "ir_file_index" has changed. C++ signature :  void add_ir_file_index_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -8965,7 +8965,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def add_ir_file_list_listener(self, arg2: object=None) -> None:
+        def add_ir_file_list_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "ir_file_list" has changed. C++ signature :  void add_ir_file_list_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -8974,7 +8974,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def add_ir_size_factor_listener(self, arg2: object=None) -> None:
+        def add_ir_size_factor_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "ir_size_factor" has changed. C++ signature :  void add_ir_size_factor_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -8983,7 +8983,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def add_ir_time_shaping_on_listener(self, arg2: object=None) -> None:
+        def add_ir_time_shaping_on_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "ir_time_shaping_on" has changed. C++ signature :  void add_ir_time_shaping_on_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -8992,7 +8992,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def add_is_active_listener(self, arg2: object=None) -> None:
+        def add_is_active_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_active" has changed. C++ signature :  void add_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9001,7 +9001,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def add_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_ms" has changed. C++ signature :  void add_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9010,7 +9010,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def add_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_samples" has changed. C++ signature :  void add_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9019,7 +9019,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9028,7 +9028,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def add_parameters_listener(self, arg2: object=None) -> None:
+        def add_parameters_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "parameters" has changed. C++ signature :  void add_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9037,7 +9037,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def ir_attack_time_has_listener(self, arg2: object=bool) -> bool:
+        def ir_attack_time_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "ir_attack_time". C++ signature :  bool ir_attack_time_has_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -9046,7 +9046,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def ir_category_index_has_listener(self, arg2: object=bool) -> bool:
+        def ir_category_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "ir_category_index". C++ signature :  bool ir_category_index_has_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -9055,7 +9055,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def ir_decay_time_has_listener(self, arg2: object=bool) -> bool:
+        def ir_decay_time_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "ir_decay_time". C++ signature :  bool ir_decay_time_has_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -9064,7 +9064,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def ir_file_index_has_listener(self, arg2: object=bool) -> bool:
+        def ir_file_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "ir_file_index". C++ signature :  bool ir_file_index_has_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -9073,7 +9073,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def ir_file_list_has_listener(self, arg2: object=bool) -> bool:
+        def ir_file_list_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "ir_file_list". C++ signature :  bool ir_file_list_has_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -9082,7 +9082,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def ir_size_factor_has_listener(self, arg2: object=bool) -> bool:
+        def ir_size_factor_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "ir_size_factor". C++ signature :  bool ir_size_factor_has_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -9091,7 +9091,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def ir_time_shaping_on_has_listener(self, arg2: object=bool) -> bool:
+        def ir_time_shaping_on_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "ir_time_shaping_on". C++ signature :  bool ir_time_shaping_on_has_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -9100,7 +9100,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def is_active_has_listener(self, arg2: object=bool) -> bool:
+        def is_active_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_active". C++ signature :  bool is_active_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9109,7 +9109,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def latency_in_ms_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_ms_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_ms". C++ signature :  bool latency_in_ms_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9118,7 +9118,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def latency_in_samples_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_samples_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_samples". C++ signature :  bool latency_in_samples_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9127,7 +9127,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9136,7 +9136,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def parameters_has_listener(self, arg2: object=bool) -> bool:
+        def parameters_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "parameters". C++ signature :  bool parameters_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9145,7 +9145,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def remove_ir_attack_time_listener(self, arg2: object=None) -> None:
+        def remove_ir_attack_time_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "ir_attack_time". C++ signature :  void remove_ir_attack_time_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -9154,7 +9154,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def remove_ir_category_index_listener(self, arg2: object=None) -> None:
+        def remove_ir_category_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "ir_category_index". C++ signature :  void remove_ir_category_index_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -9163,7 +9163,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def remove_ir_decay_time_listener(self, arg2: object=None) -> None:
+        def remove_ir_decay_time_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "ir_decay_time". C++ signature :  void remove_ir_decay_time_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -9172,7 +9172,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def remove_ir_file_index_listener(self, arg2: object=None) -> None:
+        def remove_ir_file_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "ir_file_index". C++ signature :  void remove_ir_file_index_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -9181,7 +9181,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def remove_ir_file_list_listener(self, arg2: object=None) -> None:
+        def remove_ir_file_list_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "ir_file_list". C++ signature :  void remove_ir_file_list_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -9190,7 +9190,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def remove_ir_size_factor_listener(self, arg2: object=None) -> None:
+        def remove_ir_size_factor_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "ir_size_factor". C++ signature :  void remove_ir_size_factor_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -9199,7 +9199,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def remove_ir_time_shaping_on_listener(self, arg2: object=None) -> None:
+        def remove_ir_time_shaping_on_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "ir_time_shaping_on". C++ signature :  void remove_ir_time_shaping_on_listener(THybridReverbDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -9208,7 +9208,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def remove_is_active_listener(self, arg2: object=None) -> None:
+        def remove_is_active_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_active". C++ signature :  void remove_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9217,7 +9217,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_ms". C++ signature :  void remove_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9226,7 +9226,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_samples". C++ signature :  void remove_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9235,7 +9235,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9244,7 +9244,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def remove_parameters_listener(self, arg2: object=None) -> None:
+        def remove_parameters_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "parameters". C++ signature :  void remove_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9253,7 +9253,7 @@ class HybridReverbDevice(ModuleType):
             """
             pass
 
-        def store_chosen_bank(self, arg2: int=None, arg3: int=None) -> None:
+        def store_chosen_bank(self, arg2: int, arg3: int) -> None:
             """
             Set the selected bank in the device for persistency. C++ signature :  void store_chosen_bank(TPyHandle<ADevice>,int,int)
             :param arg2: arg2
@@ -9289,7 +9289,7 @@ class HybridReverbDevice(ModuleType):
                 """
                 pass
 
-            def add_is_collapsed_listener(self, arg2: object=None) -> None:
+            def add_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "is_collapsed" has changed. C++ signature :  void add_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -9298,7 +9298,7 @@ class HybridReverbDevice(ModuleType):
                 """
                 pass
 
-            def is_collapsed_has_listener(self, arg2: object=bool) -> bool:
+            def is_collapsed_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "is_collapsed". C++ signature :  bool is_collapsed_has_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -9307,7 +9307,7 @@ class HybridReverbDevice(ModuleType):
                 """
                 pass
 
-            def remove_is_collapsed_listener(self, arg2: object=None) -> None:
+            def remove_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "is_collapsed". C++ signature :  void remove_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -9328,7 +9328,7 @@ class Licensing(ModuleType):
         pass
 
     @staticmethod
-    def get_authorization_page_url(reauthorize: bool=str, is_trial: bool=str) -> str:
+    def get_authorization_page_url(reauthorize: bool, is_trial: bool) -> str:
         """
         Retrieves the appopriate URL on ableton.com where the unser can initiate the authorization. C++ signature :  TString get_authorization_page_url(bool,bool)
         :param reauthorize: reauthorize
@@ -9354,7 +9354,7 @@ class Licensing(ModuleType):
         pass
 
     @staticmethod
-    def launch_web_browser(url: str=None) -> None:
+    def launch_web_browser(url: str) -> None:
         """
         Opens a web browser at the specified URL on the user's computer. C++ signature :  void launch_web_browser(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>)
         :param url: url
@@ -9384,7 +9384,7 @@ class Licensing(ModuleType):
             """
             pass
 
-        def set_status_message(self, msg: str=None) -> None:
+        def set_status_message(self, msg: str) -> None:
             """
             C++ signature :  void set_status_message(TWeakPtr<AProgressDialog>,std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>)
             :param msg: msg
@@ -9467,7 +9467,7 @@ class Licensing(ModuleType):
             """
             pass
 
-        def get_startup_dialog(self, authorize_callable: object=(object)authorize_later_callable) -> StartupDialogServes as an entry point for the user to authorize Live on first launch. ) -> (object)authorize_later_callable) -> StartupDialogServes as an entry point for the user to authorize Live on first launch. :
+        def get_startup_dialog(self, authorize_callable: object) -> (object)authorize_later_callable) -> StartupDialogServes as an entry point for the user to authorize Live on first launch. :
             """
             Retrieves an instance of the startup dialog with the passed callables connected to its buttons. C++ signature :  TWeakPtr<AStartupDialog> get_startup_dialog(APythonLicensingBridge {lvalue},boost::python::api::object,boost::python::api::object)
             :param authorize_callable: authorize_callable
@@ -9490,7 +9490,7 @@ class Licensing(ModuleType):
             """
             pass
 
-        def process_license_response(self, license_response_lines: list=UnlockStatus) -> UnlockStatus:
+        def process_license_response(self, license_response_lines: list) -> UnlockStatus:
             """
             Processes a list of strings, each representing a server response to a product authorization. C++ signature :  TUnlockStatus process_license_response(APythonLicensingBridge {lvalue},boost::python::list)
             :param license_response_lines: license_response_lines
@@ -9499,7 +9499,7 @@ class Licensing(ModuleType):
             """
             pass
 
-        def process_trial_response(self, trial_response_line: str=bool) -> bool:
+        def process_trial_response(self, trial_response_line: str) -> bool:
             """
             Process the server's response to a Trial authorization. C++ signature :  bool process_trial_response(APythonLicensingBridge {lvalue},std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>)
             :param trial_response_line: trial_response_line
@@ -9508,7 +9508,7 @@ class Licensing(ModuleType):
             """
             pass
 
-        def request_exit(self, exit_code: int=None) -> None:
+        def request_exit(self, exit_code: int) -> None:
             """
             C++ signature :  void request_exit(APythonLicensingBridge {lvalue} [,int=0])
             :param exit_code: exit_code
@@ -9524,7 +9524,7 @@ class Licensing(ModuleType):
             """
             pass
 
-        def set_network_timer(self, callback: object=None, interval_in_ms: int=None) -> None:
+        def set_network_timer(self, callback: object, interval_in_ms: int) -> None:
             """
             Starts or stops a timer meant for driving network operations. Pass None as callback to stop the timer. If any callback invocation raises an exception, the timer is stopped. C++ signature :  void set_network_timer(APythonLicensingBridge {lvalue},boost::python::api::object,int)
             :param callback: callback
@@ -9535,7 +9535,7 @@ class Licensing(ModuleType):
             """
             pass
 
-        def store_session_id(self, session_id: str=None) -> None:
+        def store_session_id(self, session_id: str) -> None:
             """
             Securely stores the user's session ID (aka cookie, aka credentials). C++ signature :  void store_session_id(APythonLicensingBridge {lvalue},std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>)
             :param session_id: session_id
@@ -9555,7 +9555,7 @@ class Licensing(ModuleType):
                 """
                 pass
 
-            def run_in_modal_loop(self, show_only_offline_auth_instructions: bool=None) -> None:
+            def run_in_modal_loop(self, show_only_offline_auth_instructions: bool) -> None:
                 """
                 C++ signature :  void run_in_modal_loop(AStartupDialog {lvalue},bool)
                 :param show_only_offline_auth_instructions: show_only_offline_auth_instructions
@@ -9564,7 +9564,7 @@ class Licensing(ModuleType):
                 """
                 pass
 
-            def set_notification_message(self, notification_text: object=None, show_progress_bar: bool=None) -> None:
+            def set_notification_message(self, notification_text: object, show_progress_bar: bool) -> None:
                 """
                 C++ signature :  void set_notification_message(AStartupDialog {lvalue},TString,bool)
                 :param notification_text: notification_text
@@ -9662,7 +9662,7 @@ class Listener(ModuleType):
             """
             pass
 
-        def append(self, arg2: object=None) -> None:
+        def append(self, arg2: object) -> None:
             """
             C++ signature :  void append(std::__1::vector<TWeakPtr<LPythonRemote>, std::__1::allocator<TWeakPtr<LPythonRemote>>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -9671,7 +9671,7 @@ class Listener(ModuleType):
             """
             pass
 
-        def extend(self, arg2: object=None) -> None:
+        def extend(self, arg2: object) -> None:
             """
             C++ signature :  void extend(std::__1::vector<TWeakPtr<LPythonRemote>, std::__1::allocator<TWeakPtr<LPythonRemote>>> {lvalue},boost::python::api::object)
             :param arg2: arg2
@@ -9829,7 +9829,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def add_is_active_listener(self, arg2: object=None) -> None:
+        def add_is_active_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_active" has changed. C++ signature :  void add_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9838,7 +9838,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def add_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_ms" has changed. C++ signature :  void add_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9847,7 +9847,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def add_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_samples" has changed. C++ signature :  void add_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9856,7 +9856,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def add_loop_length_listener(self, arg2: object=None) -> None:
+        def add_loop_length_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "loop_length" has changed. C++ signature :  void add_loop_length_listener(TLooperDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -9865,7 +9865,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9874,7 +9874,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def add_overdub_after_record_listener(self, arg2: object=None) -> None:
+        def add_overdub_after_record_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "overdub_after_record" has changed. C++ signature :  void add_overdub_after_record_listener(TLooperDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -9883,7 +9883,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def add_parameters_listener(self, arg2: object=None) -> None:
+        def add_parameters_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "parameters" has changed. C++ signature :  void add_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9892,7 +9892,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def add_record_length_index_listener(self, arg2: object=None) -> None:
+        def add_record_length_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "record_length_index" has changed. C++ signature :  void add_record_length_index_listener(TLooperDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -9901,7 +9901,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def add_tempo_listener(self, arg2: object=None) -> None:
+        def add_tempo_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "tempo" has changed. C++ signature :  void add_tempo_listener(TLooperDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -9931,7 +9931,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def export_to_clip_slot(self, arg2: ClipSlot=None) -> None:
+        def export_to_clip_slot(self, arg2: ClipSlot) -> None:
             """
             Export Looper's content to a Session Clip Slot. C++ signature :  void export_to_clip_slot(TLooperDevicePyHandle,TPyHandle<AGroupAndClipSlotBase>)
             :param arg2: arg2
@@ -9954,7 +9954,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def is_active_has_listener(self, arg2: object=bool) -> bool:
+        def is_active_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_active". C++ signature :  bool is_active_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9963,7 +9963,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def latency_in_ms_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_ms_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_ms". C++ signature :  bool latency_in_ms_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9972,7 +9972,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def latency_in_samples_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_samples_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_samples". C++ signature :  bool latency_in_samples_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -9981,7 +9981,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def loop_length_has_listener(self, arg2: object=bool) -> bool:
+        def loop_length_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "loop_length". C++ signature :  bool loop_length_has_listener(TLooperDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -9990,7 +9990,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10006,7 +10006,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def overdub_after_record_has_listener(self, arg2: object=bool) -> bool:
+        def overdub_after_record_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "overdub_after_record". C++ signature :  bool overdub_after_record_has_listener(TLooperDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10015,7 +10015,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def parameters_has_listener(self, arg2: object=bool) -> bool:
+        def parameters_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "parameters". C++ signature :  bool parameters_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10038,7 +10038,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def record_length_index_has_listener(self, arg2: object=bool) -> bool:
+        def record_length_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "record_length_index". C++ signature :  bool record_length_index_has_listener(TLooperDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10047,7 +10047,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def remove_is_active_listener(self, arg2: object=None) -> None:
+        def remove_is_active_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_active". C++ signature :  void remove_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10056,7 +10056,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_ms". C++ signature :  void remove_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10065,7 +10065,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_samples". C++ signature :  void remove_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10074,7 +10074,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def remove_loop_length_listener(self, arg2: object=None) -> None:
+        def remove_loop_length_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "loop_length". C++ signature :  void remove_loop_length_listener(TLooperDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10083,7 +10083,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10092,7 +10092,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def remove_overdub_after_record_listener(self, arg2: object=None) -> None:
+        def remove_overdub_after_record_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "overdub_after_record". C++ signature :  void remove_overdub_after_record_listener(TLooperDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10101,7 +10101,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def remove_parameters_listener(self, arg2: object=None) -> None:
+        def remove_parameters_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "parameters". C++ signature :  void remove_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10110,7 +10110,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def remove_record_length_index_listener(self, arg2: object=None) -> None:
+        def remove_record_length_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "record_length_index". C++ signature :  void remove_record_length_index_listener(TLooperDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10119,7 +10119,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def remove_tempo_listener(self, arg2: object=None) -> None:
+        def remove_tempo_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "tempo". C++ signature :  void remove_tempo_listener(TLooperDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10135,7 +10135,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def store_chosen_bank(self, arg2: int=None, arg3: int=None) -> None:
+        def store_chosen_bank(self, arg2: int, arg3: int) -> None:
             """
             Set the selected bank in the device for persistency. C++ signature :  void store_chosen_bank(TPyHandle<ADevice>,int,int)
             :param arg2: arg2
@@ -10146,7 +10146,7 @@ class LooperDevice(ModuleType):
             """
             pass
 
-        def tempo_has_listener(self, arg2: object=bool) -> bool:
+        def tempo_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "tempo". C++ signature :  bool tempo_has_listener(TLooperDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10187,7 +10187,7 @@ class LooperDevice(ModuleType):
                 """
                 pass
 
-            def add_is_collapsed_listener(self, arg2: object=None) -> None:
+            def add_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "is_collapsed" has changed. C++ signature :  void add_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -10196,7 +10196,7 @@ class LooperDevice(ModuleType):
                 """
                 pass
 
-            def is_collapsed_has_listener(self, arg2: object=bool) -> bool:
+            def is_collapsed_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "is_collapsed". C++ signature :  bool is_collapsed_has_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -10205,7 +10205,7 @@ class LooperDevice(ModuleType):
                 """
                 pass
 
-            def remove_is_collapsed_listener(self, arg2: object=None) -> None:
+            def remove_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "is_collapsed". C++ signature :  void remove_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -10341,7 +10341,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def add_audio_inputs_listener(self, arg2: object=None) -> None:
+        def add_audio_inputs_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "audio_inputs" has changed. C++ signature :  void add_audio_inputs_listener(TMaxDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10350,7 +10350,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def add_audio_outputs_listener(self, arg2: object=None) -> None:
+        def add_audio_outputs_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "audio_outputs" has changed. C++ signature :  void add_audio_outputs_listener(TMaxDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10359,7 +10359,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def add_bank_parameters_changed_listener(self, arg2: object=None) -> None:
+        def add_bank_parameters_changed_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "bank_parameters_changed" has changed. C++ signature :  void add_bank_parameters_changed_listener(TMaxDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10368,7 +10368,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def add_is_active_listener(self, arg2: object=None) -> None:
+        def add_is_active_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_active" has changed. C++ signature :  void add_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10377,7 +10377,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def add_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_ms" has changed. C++ signature :  void add_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10386,7 +10386,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def add_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_samples" has changed. C++ signature :  void add_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10395,7 +10395,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def add_midi_inputs_listener(self, arg2: object=None) -> None:
+        def add_midi_inputs_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "midi_inputs" has changed. C++ signature :  void add_midi_inputs_listener(TMaxDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10404,7 +10404,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def add_midi_outputs_listener(self, arg2: object=None) -> None:
+        def add_midi_outputs_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "midi_outputs" has changed. C++ signature :  void add_midi_outputs_listener(TMaxDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10413,7 +10413,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10422,7 +10422,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def add_parameters_listener(self, arg2: object=None) -> None:
+        def add_parameters_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "parameters" has changed. C++ signature :  void add_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10431,7 +10431,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def audio_inputs_has_listener(self, arg2: object=bool) -> bool:
+        def audio_inputs_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "audio_inputs". C++ signature :  bool audio_inputs_has_listener(TMaxDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10440,7 +10440,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def audio_outputs_has_listener(self, arg2: object=bool) -> bool:
+        def audio_outputs_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "audio_outputs". C++ signature :  bool audio_outputs_has_listener(TMaxDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10449,7 +10449,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def bank_parameters_changed_has_listener(self, arg2: object=bool) -> bool:
+        def bank_parameters_changed_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "bank_parameters_changed". C++ signature :  bool bank_parameters_changed_has_listener(TMaxDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10465,7 +10465,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def get_bank_name(self, arg2: int=str) -> str:
+        def get_bank_name(self, arg2: int) -> str:
             """
             Get the name of a parameter bank given by index. This is related to hardware control surfaces. C++ signature :  TString get_bank_name(TMaxDevicePyHandle,int)
             :param arg2: arg2
@@ -10474,7 +10474,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def get_bank_parameters(self, arg2: int=list) -> list:
+        def get_bank_parameters(self, arg2: int) -> list:
             """
             Get the indices of parameters of the given bank index. Empty slots are marked as -1. Bank index -1 refers to the best-of bank. This function is related to hardware control surfaces. C++ signature :  boost::python::list get_bank_parameters(TMaxDevicePyHandle,int)
             :param arg2: arg2
@@ -10483,7 +10483,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def get_value_item_icons(self, arg2: DeviceParameter=list) -> list:
+        def get_value_item_icons(self, arg2: DeviceParameter) -> list:
             """
             Get a list of icon identifier strings for a list parameter's values.An empty string is given where no icon should be displayed.An empty list is given when no icons should be displayed.This is related to hardware control surfaces. C++ signature :  boost::python::list get_value_item_icons(TMaxDevicePyHandle,TPyHandle<ATimeableValue>)
             :param arg2: arg2
@@ -10492,7 +10492,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def is_active_has_listener(self, arg2: object=bool) -> bool:
+        def is_active_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_active". C++ signature :  bool is_active_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10501,7 +10501,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def latency_in_ms_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_ms_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_ms". C++ signature :  bool latency_in_ms_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10510,7 +10510,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def latency_in_samples_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_samples_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_samples". C++ signature :  bool latency_in_samples_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10519,7 +10519,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def midi_inputs_has_listener(self, arg2: object=bool) -> bool:
+        def midi_inputs_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "midi_inputs". C++ signature :  bool midi_inputs_has_listener(TMaxDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10528,7 +10528,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def midi_outputs_has_listener(self, arg2: object=bool) -> bool:
+        def midi_outputs_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "midi_outputs". C++ signature :  bool midi_outputs_has_listener(TMaxDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10537,7 +10537,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10546,7 +10546,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def parameters_has_listener(self, arg2: object=bool) -> bool:
+        def parameters_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "parameters". C++ signature :  bool parameters_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10555,7 +10555,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def remove_audio_inputs_listener(self, arg2: object=None) -> None:
+        def remove_audio_inputs_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "audio_inputs". C++ signature :  void remove_audio_inputs_listener(TMaxDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10564,7 +10564,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def remove_audio_outputs_listener(self, arg2: object=None) -> None:
+        def remove_audio_outputs_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "audio_outputs". C++ signature :  void remove_audio_outputs_listener(TMaxDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10573,7 +10573,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def remove_bank_parameters_changed_listener(self, arg2: object=None) -> None:
+        def remove_bank_parameters_changed_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "bank_parameters_changed". C++ signature :  void remove_bank_parameters_changed_listener(TMaxDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10582,7 +10582,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def remove_is_active_listener(self, arg2: object=None) -> None:
+        def remove_is_active_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_active". C++ signature :  void remove_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10591,7 +10591,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_ms". C++ signature :  void remove_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10600,7 +10600,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_samples". C++ signature :  void remove_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10609,7 +10609,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def remove_midi_inputs_listener(self, arg2: object=None) -> None:
+        def remove_midi_inputs_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "midi_inputs". C++ signature :  void remove_midi_inputs_listener(TMaxDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10618,7 +10618,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def remove_midi_outputs_listener(self, arg2: object=None) -> None:
+        def remove_midi_outputs_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "midi_outputs". C++ signature :  void remove_midi_outputs_listener(TMaxDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10627,7 +10627,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10636,7 +10636,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def remove_parameters_listener(self, arg2: object=None) -> None:
+        def remove_parameters_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "parameters". C++ signature :  void remove_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10645,7 +10645,7 @@ class MaxDevice(ModuleType):
             """
             pass
 
-        def store_chosen_bank(self, arg2: int=None, arg3: int=None) -> None:
+        def store_chosen_bank(self, arg2: int, arg3: int) -> None:
             """
             Set the selected bank in the device for persistency. C++ signature :  void store_chosen_bank(TPyHandle<ADevice>,int,int)
             :param arg2: arg2
@@ -10681,7 +10681,7 @@ class MaxDevice(ModuleType):
                 """
                 pass
 
-            def add_is_collapsed_listener(self, arg2: object=None) -> None:
+            def add_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "is_collapsed" has changed. C++ signature :  void add_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -10690,7 +10690,7 @@ class MaxDevice(ModuleType):
                 """
                 pass
 
-            def is_collapsed_has_listener(self, arg2: object=bool) -> bool:
+            def is_collapsed_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "is_collapsed". C++ signature :  bool is_collapsed_has_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -10699,7 +10699,7 @@ class MaxDevice(ModuleType):
                 """
                 pass
 
-            def remove_is_collapsed_listener(self, arg2: object=None) -> None:
+            def remove_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "is_collapsed". C++ signature :  void remove_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -10835,7 +10835,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def add_is_active_listener(self, arg2: object=None) -> None:
+        def add_is_active_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_active" has changed. C++ signature :  void add_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10844,7 +10844,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def add_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_ms" has changed. C++ signature :  void add_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10853,7 +10853,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def add_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_samples" has changed. C++ signature :  void add_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10862,7 +10862,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def add_mono_poly_listener(self, arg2: object=None) -> None:
+        def add_mono_poly_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "mono_poly" has changed. C++ signature :  void add_mono_poly_listener(TMeldDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10871,7 +10871,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10880,7 +10880,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def add_parameters_listener(self, arg2: object=None) -> None:
+        def add_parameters_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "parameters" has changed. C++ signature :  void add_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10889,7 +10889,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def add_poly_voices_listener(self, arg2: object=None) -> None:
+        def add_poly_voices_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "poly_voices" has changed. C++ signature :  void add_poly_voices_listener(TMeldDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10898,7 +10898,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def add_selected_engine_listener(self, arg2: object=None) -> None:
+        def add_selected_engine_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "selected_engine" has changed. C++ signature :  void add_selected_engine_listener(TMeldDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10907,7 +10907,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def add_unison_voices_listener(self, arg2: object=None) -> None:
+        def add_unison_voices_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "unison_voices" has changed. C++ signature :  void add_unison_voices_listener(TMeldDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10916,7 +10916,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def is_active_has_listener(self, arg2: object=bool) -> bool:
+        def is_active_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_active". C++ signature :  bool is_active_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10925,7 +10925,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def latency_in_ms_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_ms_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_ms". C++ signature :  bool latency_in_ms_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10934,7 +10934,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def latency_in_samples_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_samples_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_samples". C++ signature :  bool latency_in_samples_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10943,7 +10943,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def mono_poly_has_listener(self, arg2: object=bool) -> bool:
+        def mono_poly_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "mono_poly". C++ signature :  bool mono_poly_has_listener(TMeldDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10952,7 +10952,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10961,7 +10961,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def parameters_has_listener(self, arg2: object=bool) -> bool:
+        def parameters_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "parameters". C++ signature :  bool parameters_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10970,7 +10970,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def poly_voices_has_listener(self, arg2: object=bool) -> bool:
+        def poly_voices_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "poly_voices". C++ signature :  bool poly_voices_has_listener(TMeldDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -10979,7 +10979,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def remove_is_active_listener(self, arg2: object=None) -> None:
+        def remove_is_active_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_active". C++ signature :  void remove_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10988,7 +10988,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_ms". C++ signature :  void remove_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -10997,7 +10997,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_samples". C++ signature :  void remove_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11006,7 +11006,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def remove_mono_poly_listener(self, arg2: object=None) -> None:
+        def remove_mono_poly_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "mono_poly". C++ signature :  void remove_mono_poly_listener(TMeldDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -11015,7 +11015,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11024,7 +11024,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def remove_parameters_listener(self, arg2: object=None) -> None:
+        def remove_parameters_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "parameters". C++ signature :  void remove_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11033,7 +11033,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def remove_poly_voices_listener(self, arg2: object=None) -> None:
+        def remove_poly_voices_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "poly_voices". C++ signature :  void remove_poly_voices_listener(TMeldDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -11042,7 +11042,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def remove_selected_engine_listener(self, arg2: object=None) -> None:
+        def remove_selected_engine_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "selected_engine". C++ signature :  void remove_selected_engine_listener(TMeldDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -11051,7 +11051,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def remove_unison_voices_listener(self, arg2: object=None) -> None:
+        def remove_unison_voices_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "unison_voices". C++ signature :  void remove_unison_voices_listener(TMeldDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -11060,7 +11060,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def selected_engine_has_listener(self, arg2: object=bool) -> bool:
+        def selected_engine_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "selected_engine". C++ signature :  bool selected_engine_has_listener(TMeldDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -11069,7 +11069,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def store_chosen_bank(self, arg2: int=None, arg3: int=None) -> None:
+        def store_chosen_bank(self, arg2: int, arg3: int) -> None:
             """
             Set the selected bank in the device for persistency. C++ signature :  void store_chosen_bank(TPyHandle<ADevice>,int,int)
             :param arg2: arg2
@@ -11080,7 +11080,7 @@ class MeldDevice(ModuleType):
             """
             pass
 
-        def unison_voices_has_listener(self, arg2: object=bool) -> bool:
+        def unison_voices_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "unison_voices". C++ signature :  bool unison_voices_has_listener(TMeldDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -11114,7 +11114,7 @@ class MeldDevice(ModuleType):
                 """
                 pass
 
-            def add_is_collapsed_listener(self, arg2: object=None) -> None:
+            def add_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "is_collapsed" has changed. C++ signature :  void add_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -11123,7 +11123,7 @@ class MeldDevice(ModuleType):
                 """
                 pass
 
-            def is_collapsed_has_listener(self, arg2: object=bool) -> bool:
+            def is_collapsed_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "is_collapsed". C++ signature :  bool is_collapsed_has_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -11132,7 +11132,7 @@ class MeldDevice(ModuleType):
                 """
                 pass
 
-            def remove_is_collapsed_listener(self, arg2: object=None) -> None:
+            def remove_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "is_collapsed". C++ signature :  void remove_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -11146,7 +11146,7 @@ class MidiMap(ModuleType):
     pass
 
     @staticmethod
-    def forward_midi_cc(arg1: int=bool, arg2: int=bool, arg3: int=bool, arg4: int=bool, ShouldConsumeEvent: bool=bool) -> bool:
+    def forward_midi_cc(arg1: int, arg2: int, arg3: int, arg4: int, ShouldConsumeEvent: bool) -> bool:
         """
         C++ signature :  bool forward_midi_cc(unsigned int,unsigned int,int,int [,bool=True])
         :param arg1: arg1
@@ -11164,7 +11164,7 @@ class MidiMap(ModuleType):
         pass
 
     @staticmethod
-    def forward_midi_note(arg1: int=bool, arg2: int=bool, arg3: int=bool, arg4: int=bool, ShouldConsumeEvent: bool=bool) -> bool:
+    def forward_midi_note(arg1: int, arg2: int, arg3: int, arg4: int, ShouldConsumeEvent: bool) -> bool:
         """
         C++ signature :  bool forward_midi_note(unsigned int,unsigned int,int,int [,bool=True])
         :param arg1: arg1
@@ -11182,7 +11182,7 @@ class MidiMap(ModuleType):
         pass
 
     @staticmethod
-    def forward_midi_pitchbend(arg1: int=bool, arg2: int=bool, arg3: int=bool) -> bool:
+    def forward_midi_pitchbend(arg1: int, arg2: int, arg3: int) -> bool:
         """
         C++ signature :  bool forward_midi_pitchbend(unsigned int,unsigned int,int)
         :param arg1: arg1
@@ -11196,7 +11196,7 @@ class MidiMap(ModuleType):
         pass
 
     @staticmethod
-    def map_midi_cc(midi_map_handle: int=bool, parameter: DeviceParameter=bool, midi_channel: int=bool, controller_number: int=bool, map_mode: MapMode=bool, avoid_takeover: bool=bool, sensitivity: float=bool) -> bool:
+    def map_midi_cc(midi_map_handle: int, parameter: DeviceParameter, midi_channel: int, controller_number: int, map_mode: MapMode, avoid_takeover: bool, sensitivity: float) -> bool:
         """
         C++ signature :  bool map_midi_cc(unsigned int,TPyHandle<ATimeableValue>,int,int,NRemoteMapperTypes::TControllerMapMode,bool [,float=1.0])
         :param midi_map_handle: midi_map_handle
@@ -11218,7 +11218,7 @@ class MidiMap(ModuleType):
         pass
 
     @staticmethod
-    def map_midi_cc_with_feedback_map(midi_map_handle: int=bool, parameter: DeviceParameter=bool, midi_channel: int=bool, controller_number: int=bool, map_mode: MapMode=bool, feedback_rule: CCFeedbackRule=bool, avoid_takeover: bool=bool, sensitivity: float=bool) -> bool:
+    def map_midi_cc_with_feedback_map(midi_map_handle: int, parameter: DeviceParameter, midi_channel: int, controller_number: int, map_mode: MapMode, feedback_rule: CCFeedbackRule, avoid_takeover: bool, sensitivity: float) -> bool:
         """
         C++ signature :  bool map_midi_cc_with_feedback_map(unsigned int,TPyHandle<ATimeableValue>,int,int,NRemoteMapperTypes::TControllerMapMode,NPythonMidiMap::TCCFeedbackRule,bool [,float=1.0])
         :param midi_map_handle: midi_map_handle
@@ -11242,7 +11242,7 @@ class MidiMap(ModuleType):
         pass
 
     @staticmethod
-    def map_midi_note(arg1: int=bool, arg2: DeviceParameter=bool, arg3: int=bool, arg4: int=bool) -> bool:
+    def map_midi_note(arg1: int, arg2: DeviceParameter, arg3: int, arg4: int) -> bool:
         """
         C++ signature :  bool map_midi_note(unsigned int,TPyHandle<ATimeableValue>,int,int)
         :param arg1: arg1
@@ -11258,7 +11258,7 @@ class MidiMap(ModuleType):
         pass
 
     @staticmethod
-    def map_midi_note_with_feedback_map(arg1: int=bool, arg2: DeviceParameter=bool, arg3: int=bool, arg4: int=bool, arg5: NoteFeedbackRule=bool) -> bool:
+    def map_midi_note_with_feedback_map(arg1: int, arg2: DeviceParameter, arg3: int, arg4: int, arg5: NoteFeedbackRule) -> bool:
         """
         C++ signature :  bool map_midi_note_with_feedback_map(unsigned int,TPyHandle<ATimeableValue>,int,int,NPythonMidiMap::TNoteFeedbackRule)
         :param arg1: arg1
@@ -11276,7 +11276,7 @@ class MidiMap(ModuleType):
         pass
 
     @staticmethod
-    def map_midi_pitchbend(arg1: int=bool, arg2: DeviceParameter=bool, arg3: int=bool, arg4: bool=bool) -> bool:
+    def map_midi_pitchbend(arg1: int, arg2: DeviceParameter, arg3: int, arg4: bool) -> bool:
         """
         C++ signature :  bool map_midi_pitchbend(unsigned int,TPyHandle<ATimeableValue>,int,bool)
         :param arg1: arg1
@@ -11292,7 +11292,7 @@ class MidiMap(ModuleType):
         pass
 
     @staticmethod
-    def map_midi_pitchbend_with_feedback_map(arg1: int=bool, arg2: DeviceParameter=bool, arg3: int=bool, arg4: PitchBendFeedbackRule=bool, arg5: bool=bool) -> bool:
+    def map_midi_pitchbend_with_feedback_map(arg1: int, arg2: DeviceParameter, arg3: int, arg4: PitchBendFeedbackRule, arg5: bool) -> bool:
         """
         C++ signature :  bool map_midi_pitchbend_with_feedback_map(unsigned int,TPyHandle<ATimeableValue>,int,NPythonMidiMap::TPitchBendFeedbackRule,bool)
         :param arg1: arg1
@@ -11310,7 +11310,7 @@ class MidiMap(ModuleType):
         pass
 
     @staticmethod
-    def send_feedback_for_parameter(arg1: int=None, arg2: DeviceParameter=None) -> None:
+    def send_feedback_for_parameter(arg1: int, arg2: DeviceParameter) -> None:
         """
         C++ signature :  void send_feedback_for_parameter(unsigned int,TPyHandle<ATimeableValue>)
         :param arg1: arg1
@@ -11433,21 +11433,21 @@ class MixerDevice(ModuleType):
         @property
         def crossfade_assign(self):
             """
-            Access to the Track's Crossfade Assign State.
+            Player- and ReturnTracks only: Access to the Track's Crossfade Assign State.
             """
             pass
 
         @property
         def crossfader(self):
             """
-            Const access to the Crossfader.
+            MainTrack only: Const access to the Crossfader.
             """
             pass
 
         @property
         def cue_volume(self):
             """
-            Const access to the Cue Volume Parameter.
+            MainTrack only: Const access to the Cue Volume Parameter.
             """
             pass
 
@@ -11489,7 +11489,7 @@ class MixerDevice(ModuleType):
         @property
         def song_tempo(self):
             """
-            Const access to the Song's Tempo.
+            MainTrack only: Const access to the Song's Tempo.
             """
             pass
 
@@ -11507,7 +11507,7 @@ class MixerDevice(ModuleType):
             """
             pass
 
-        def add_crossfade_assign_listener(self, arg2: object=None) -> None:
+        def add_crossfade_assign_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "crossfade_assign" has changed. C++ signature :  void add_crossfade_assign_listener(TPyHandle<ATrackDevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11516,7 +11516,7 @@ class MixerDevice(ModuleType):
             """
             pass
 
-        def add_panning_mode_listener(self, arg2: object=None) -> None:
+        def add_panning_mode_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "panning_mode" has changed. C++ signature :  void add_panning_mode_listener(TPyHandle<ATrackDevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11525,7 +11525,7 @@ class MixerDevice(ModuleType):
             """
             pass
 
-        def add_sends_listener(self, arg2: object=None) -> None:
+        def add_sends_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "sends" has changed. C++ signature :  void add_sends_listener(TPyHandle<ATrackDevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11534,7 +11534,7 @@ class MixerDevice(ModuleType):
             """
             pass
 
-        def crossfade_assign_has_listener(self, arg2: object=bool) -> bool:
+        def crossfade_assign_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "crossfade_assign". C++ signature :  bool crossfade_assign_has_listener(TPyHandle<ATrackDevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11543,7 +11543,7 @@ class MixerDevice(ModuleType):
             """
             pass
 
-        def panning_mode_has_listener(self, arg2: object=bool) -> bool:
+        def panning_mode_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "panning_mode". C++ signature :  bool panning_mode_has_listener(TPyHandle<ATrackDevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11552,7 +11552,7 @@ class MixerDevice(ModuleType):
             """
             pass
 
-        def remove_crossfade_assign_listener(self, arg2: object=None) -> None:
+        def remove_crossfade_assign_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "crossfade_assign". C++ signature :  void remove_crossfade_assign_listener(TPyHandle<ATrackDevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11561,7 +11561,7 @@ class MixerDevice(ModuleType):
             """
             pass
 
-        def remove_panning_mode_listener(self, arg2: object=None) -> None:
+        def remove_panning_mode_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "panning_mode". C++ signature :  void remove_panning_mode_listener(TPyHandle<ATrackDevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11570,7 +11570,7 @@ class MixerDevice(ModuleType):
             """
             pass
 
-        def remove_sends_listener(self, arg2: object=None) -> None:
+        def remove_sends_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "sends". C++ signature :  void remove_sends_listener(TPyHandle<ATrackDevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11579,7 +11579,7 @@ class MixerDevice(ModuleType):
             """
             pass
 
-        def sends_has_listener(self, arg2: object=bool) -> bool:
+        def sends_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "sends". C++ signature :  bool sends_has_listener(TPyHandle<ATrackDevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11721,7 +11721,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def add_is_active_listener(self, arg2: object=None) -> None:
+        def add_is_active_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_active" has changed. C++ signature :  void add_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11730,7 +11730,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def add_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_ms" has changed. C++ signature :  void add_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11739,7 +11739,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def add_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_samples" has changed. C++ signature :  void add_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11748,7 +11748,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11757,7 +11757,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def add_parameters_listener(self, arg2: object=None) -> None:
+        def add_parameters_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "parameters" has changed. C++ signature :  void add_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11766,7 +11766,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def add_presets_listener(self, arg2: object=None) -> None:
+        def add_presets_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "presets" has changed. C++ signature :  void add_presets_listener(TPluginDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -11775,7 +11775,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def add_selected_preset_index_listener(self, arg2: object=None) -> None:
+        def add_selected_preset_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "selected_preset_index" has changed. C++ signature :  void add_selected_preset_index_listener(TPluginDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -11784,7 +11784,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def get_parameter_names(self, begin: int=StringVector, end: int=StringVector) -> StringVector:
+        def get_parameter_names(self, begin: int, end: int) -> StringVector:
             """
             Get the range of plugin parameter names, bound by begin and end. If end is smaller than 0 it is interpreted as the parameter count.  C++ signature :  std::__1::vector<TString, std::__1::allocator<TString>> get_parameter_names(TPluginDevicePyHandle [,int=0 [,int=-1]])
             :param begin: begin
@@ -11795,7 +11795,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def is_active_has_listener(self, arg2: object=bool) -> bool:
+        def is_active_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_active". C++ signature :  bool is_active_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11804,7 +11804,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def latency_in_ms_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_ms_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_ms". C++ signature :  bool latency_in_ms_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11813,7 +11813,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def latency_in_samples_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_samples_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_samples". C++ signature :  bool latency_in_samples_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11822,7 +11822,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11831,7 +11831,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def parameters_has_listener(self, arg2: object=bool) -> bool:
+        def parameters_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "parameters". C++ signature :  bool parameters_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11840,7 +11840,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def presets_has_listener(self, arg2: object=bool) -> bool:
+        def presets_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "presets". C++ signature :  bool presets_has_listener(TPluginDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -11849,7 +11849,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def remove_is_active_listener(self, arg2: object=None) -> None:
+        def remove_is_active_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_active". C++ signature :  void remove_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11858,7 +11858,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_ms". C++ signature :  void remove_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11867,7 +11867,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_samples". C++ signature :  void remove_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11876,7 +11876,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11885,7 +11885,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def remove_parameters_listener(self, arg2: object=None) -> None:
+        def remove_parameters_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "parameters". C++ signature :  void remove_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -11894,7 +11894,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def remove_presets_listener(self, arg2: object=None) -> None:
+        def remove_presets_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "presets". C++ signature :  void remove_presets_listener(TPluginDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -11903,7 +11903,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def remove_selected_preset_index_listener(self, arg2: object=None) -> None:
+        def remove_selected_preset_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "selected_preset_index". C++ signature :  void remove_selected_preset_index_listener(TPluginDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -11912,7 +11912,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def selected_preset_index_has_listener(self, arg2: object=bool) -> bool:
+        def selected_preset_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "selected_preset_index". C++ signature :  bool selected_preset_index_has_listener(TPluginDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -11921,7 +11921,7 @@ class PluginDevice(ModuleType):
             """
             pass
 
-        def store_chosen_bank(self, arg2: int=None, arg3: int=None) -> None:
+        def store_chosen_bank(self, arg2: int, arg3: int) -> None:
             """
             Set the selected bank in the device for persistency. C++ signature :  void store_chosen_bank(TPyHandle<ADevice>,int,int)
             :param arg2: arg2
@@ -11957,7 +11957,7 @@ class PluginDevice(ModuleType):
                 """
                 pass
 
-            def add_is_collapsed_listener(self, arg2: object=None) -> None:
+            def add_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "is_collapsed" has changed. C++ signature :  void add_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -11966,7 +11966,7 @@ class PluginDevice(ModuleType):
                 """
                 pass
 
-            def is_collapsed_has_listener(self, arg2: object=bool) -> bool:
+            def is_collapsed_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "is_collapsed". C++ signature :  bool is_collapsed_has_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -11975,7 +11975,7 @@ class PluginDevice(ModuleType):
                 """
                 pass
 
-            def remove_is_collapsed_listener(self, arg2: object=None) -> None:
+            def remove_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "is_collapsed". C++ signature :  void remove_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -12174,7 +12174,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def add_chains_listener(self, arg2: object=None) -> None:
+        def add_chains_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "chains" has changed. C++ signature :  void add_chains_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12183,7 +12183,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def add_drum_pads_listener(self, arg2: object=None) -> None:
+        def add_drum_pads_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "drum_pads" has changed. C++ signature :  void add_drum_pads_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12192,7 +12192,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def add_has_drum_pads_listener(self, arg2: object=None) -> None:
+        def add_has_drum_pads_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "has_drum_pads" has changed. C++ signature :  void add_has_drum_pads_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12201,7 +12201,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def add_has_macro_mappings_listener(self, arg2: object=None) -> None:
+        def add_has_macro_mappings_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "has_macro_mappings" has changed. C++ signature :  void add_has_macro_mappings_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12210,7 +12210,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def add_is_active_listener(self, arg2: object=None) -> None:
+        def add_is_active_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_active" has changed. C++ signature :  void add_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -12219,7 +12219,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def add_is_showing_chains_listener(self, arg2: object=None) -> None:
+        def add_is_showing_chains_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_showing_chains" has changed. C++ signature :  void add_is_showing_chains_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12228,7 +12228,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def add_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_ms" has changed. C++ signature :  void add_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -12237,7 +12237,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def add_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_samples" has changed. C++ signature :  void add_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -12253,7 +12253,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def add_macros_mapped_listener(self, arg2: object=None) -> None:
+        def add_macros_mapped_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "macros_mapped" has changed. C++ signature :  void add_macros_mapped_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12262,7 +12262,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -12271,7 +12271,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def add_parameters_listener(self, arg2: object=None) -> None:
+        def add_parameters_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "parameters" has changed. C++ signature :  void add_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -12280,7 +12280,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def add_return_chains_listener(self, arg2: object=None) -> None:
+        def add_return_chains_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "return_chains" has changed. C++ signature :  void add_return_chains_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12289,7 +12289,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def add_variation_count_listener(self, arg2: object=None) -> None:
+        def add_variation_count_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "variation_count" has changed. C++ signature :  void add_variation_count_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12298,7 +12298,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def add_visible_drum_pads_listener(self, arg2: object=None) -> None:
+        def add_visible_drum_pads_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "visible_drum_pads" has changed. C++ signature :  void add_visible_drum_pads_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12307,7 +12307,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def add_visible_macro_count_listener(self, arg2: object=None) -> None:
+        def add_visible_macro_count_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "visible_macro_count" has changed. C++ signature :  void add_visible_macro_count_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12316,7 +12316,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def chains_has_listener(self, arg2: object=bool) -> bool:
+        def chains_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "chains". C++ signature :  bool chains_has_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12325,7 +12325,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def copy_pad(self, arg2: int=None, arg3: int=None) -> None:
+        def copy_pad(self, arg2: int, arg3: int) -> None:
             """
             Copies all contents of a drum pad from a source pad into a destination pad. copy_pad(source_index, destination_index) where source_index and destination_index correspond to the note number/index of the drum pad in a drum rack. Throws an exception when the source pad is empty, or when the source or destination indices are not between 0 - 127. C++ signature :  void copy_pad(TRackDevicePyHandle,int,int)
             :param arg2: arg2
@@ -12343,7 +12343,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def drum_pads_has_listener(self, arg2: object=bool) -> bool:
+        def drum_pads_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "drum_pads". C++ signature :  bool drum_pads_has_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12352,7 +12352,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def has_drum_pads_has_listener(self, arg2: object=bool) -> bool:
+        def has_drum_pads_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "has_drum_pads". C++ signature :  bool has_drum_pads_has_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12361,7 +12361,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def has_macro_mappings_has_listener(self, arg2: object=bool) -> bool:
+        def has_macro_mappings_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "has_macro_mappings". C++ signature :  bool has_macro_mappings_has_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12370,7 +12370,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def is_active_has_listener(self, arg2: object=bool) -> bool:
+        def is_active_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_active". C++ signature :  bool is_active_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -12379,7 +12379,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def is_showing_chains_has_listener(self, arg2: object=bool) -> bool:
+        def is_showing_chains_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_showing_chains". C++ signature :  bool is_showing_chains_has_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12388,7 +12388,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def latency_in_ms_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_ms_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_ms". C++ signature :  bool latency_in_ms_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -12397,7 +12397,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def latency_in_samples_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_samples_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_samples". C++ signature :  bool latency_in_samples_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -12406,7 +12406,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def macros_mapped_has_listener(self, arg2: object=bool) -> bool:
+        def macros_mapped_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "macros_mapped". C++ signature :  bool macros_mapped_has_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12415,7 +12415,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -12424,7 +12424,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def parameters_has_listener(self, arg2: object=bool) -> bool:
+        def parameters_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "parameters". C++ signature :  bool parameters_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -12454,7 +12454,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def remove_chains_listener(self, arg2: object=None) -> None:
+        def remove_chains_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "chains". C++ signature :  void remove_chains_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12463,7 +12463,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def remove_drum_pads_listener(self, arg2: object=None) -> None:
+        def remove_drum_pads_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "drum_pads". C++ signature :  void remove_drum_pads_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12472,7 +12472,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def remove_has_drum_pads_listener(self, arg2: object=None) -> None:
+        def remove_has_drum_pads_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "has_drum_pads". C++ signature :  void remove_has_drum_pads_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12481,7 +12481,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def remove_has_macro_mappings_listener(self, arg2: object=None) -> None:
+        def remove_has_macro_mappings_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "has_macro_mappings". C++ signature :  void remove_has_macro_mappings_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12490,7 +12490,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def remove_is_active_listener(self, arg2: object=None) -> None:
+        def remove_is_active_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_active". C++ signature :  void remove_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -12499,7 +12499,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def remove_is_showing_chains_listener(self, arg2: object=None) -> None:
+        def remove_is_showing_chains_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_showing_chains". C++ signature :  void remove_is_showing_chains_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12508,7 +12508,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_ms". C++ signature :  void remove_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -12517,7 +12517,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_samples". C++ signature :  void remove_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -12533,7 +12533,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def remove_macros_mapped_listener(self, arg2: object=None) -> None:
+        def remove_macros_mapped_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "macros_mapped". C++ signature :  void remove_macros_mapped_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12542,7 +12542,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -12551,7 +12551,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def remove_parameters_listener(self, arg2: object=None) -> None:
+        def remove_parameters_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "parameters". C++ signature :  void remove_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -12560,7 +12560,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def remove_return_chains_listener(self, arg2: object=None) -> None:
+        def remove_return_chains_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "return_chains". C++ signature :  void remove_return_chains_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12569,7 +12569,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def remove_variation_count_listener(self, arg2: object=None) -> None:
+        def remove_variation_count_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "variation_count". C++ signature :  void remove_variation_count_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12578,7 +12578,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def remove_visible_drum_pads_listener(self, arg2: object=None) -> None:
+        def remove_visible_drum_pads_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "visible_drum_pads". C++ signature :  void remove_visible_drum_pads_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12587,7 +12587,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def remove_visible_macro_count_listener(self, arg2: object=None) -> None:
+        def remove_visible_macro_count_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "visible_macro_count". C++ signature :  void remove_visible_macro_count_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12596,7 +12596,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def return_chains_has_listener(self, arg2: object=bool) -> bool:
+        def return_chains_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "return_chains". C++ signature :  bool return_chains_has_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12605,7 +12605,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def store_chosen_bank(self, arg2: int=None, arg3: int=None) -> None:
+        def store_chosen_bank(self, arg2: int, arg3: int) -> None:
             """
             Set the selected bank in the device for persistency. C++ signature :  void store_chosen_bank(TPyHandle<ADevice>,int,int)
             :param arg2: arg2
@@ -12623,7 +12623,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def variation_count_has_listener(self, arg2: object=bool) -> bool:
+        def variation_count_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "variation_count". C++ signature :  bool variation_count_has_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12632,7 +12632,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def visible_drum_pads_has_listener(self, arg2: object=bool) -> bool:
+        def visible_drum_pads_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "visible_drum_pads". C++ signature :  bool visible_drum_pads_has_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12641,7 +12641,7 @@ class RackDevice(ModuleType):
             """
             pass
 
-        def visible_macro_count_has_listener(self, arg2: object=bool) -> bool:
+        def visible_macro_count_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "visible_macro_count". C++ signature :  bool visible_macro_count_has_listener(TRackDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12703,7 +12703,7 @@ class RackDevice(ModuleType):
                 """
                 pass
 
-            def add_drum_pads_scroll_position_listener(self, arg2: object=None) -> None:
+            def add_drum_pads_scroll_position_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "drum_pads_scroll_position" has changed. C++ signature :  void add_drum_pads_scroll_position_listener(TRackDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -12712,7 +12712,7 @@ class RackDevice(ModuleType):
                 """
                 pass
 
-            def add_is_collapsed_listener(self, arg2: object=None) -> None:
+            def add_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "is_collapsed" has changed. C++ signature :  void add_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -12721,7 +12721,7 @@ class RackDevice(ModuleType):
                 """
                 pass
 
-            def add_is_showing_chain_devices_listener(self, arg2: object=None) -> None:
+            def add_is_showing_chain_devices_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "is_showing_chain_devices" has changed. C++ signature :  void add_is_showing_chain_devices_listener(TRackDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -12730,7 +12730,7 @@ class RackDevice(ModuleType):
                 """
                 pass
 
-            def add_selected_chain_listener(self, arg2: object=None) -> None:
+            def add_selected_chain_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "selected_chain" has changed. C++ signature :  void add_selected_chain_listener(TRackDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -12739,7 +12739,7 @@ class RackDevice(ModuleType):
                 """
                 pass
 
-            def add_selected_drum_pad_listener(self, arg2: object=None) -> None:
+            def add_selected_drum_pad_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "selected_drum_pad" has changed. C++ signature :  void add_selected_drum_pad_listener(TRackDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -12748,7 +12748,7 @@ class RackDevice(ModuleType):
                 """
                 pass
 
-            def drum_pads_scroll_position_has_listener(self, arg2: object=bool) -> bool:
+            def drum_pads_scroll_position_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "drum_pads_scroll_position". C++ signature :  bool drum_pads_scroll_position_has_listener(TRackDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -12757,7 +12757,7 @@ class RackDevice(ModuleType):
                 """
                 pass
 
-            def is_collapsed_has_listener(self, arg2: object=bool) -> bool:
+            def is_collapsed_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "is_collapsed". C++ signature :  bool is_collapsed_has_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -12766,7 +12766,7 @@ class RackDevice(ModuleType):
                 """
                 pass
 
-            def is_showing_chain_devices_has_listener(self, arg2: object=bool) -> bool:
+            def is_showing_chain_devices_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "is_showing_chain_devices". C++ signature :  bool is_showing_chain_devices_has_listener(TRackDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -12775,7 +12775,7 @@ class RackDevice(ModuleType):
                 """
                 pass
 
-            def remove_drum_pads_scroll_position_listener(self, arg2: object=None) -> None:
+            def remove_drum_pads_scroll_position_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "drum_pads_scroll_position". C++ signature :  void remove_drum_pads_scroll_position_listener(TRackDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -12784,7 +12784,7 @@ class RackDevice(ModuleType):
                 """
                 pass
 
-            def remove_is_collapsed_listener(self, arg2: object=None) -> None:
+            def remove_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "is_collapsed". C++ signature :  void remove_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -12793,7 +12793,7 @@ class RackDevice(ModuleType):
                 """
                 pass
 
-            def remove_is_showing_chain_devices_listener(self, arg2: object=None) -> None:
+            def remove_is_showing_chain_devices_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "is_showing_chain_devices". C++ signature :  void remove_is_showing_chain_devices_listener(TRackDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -12802,7 +12802,7 @@ class RackDevice(ModuleType):
                 """
                 pass
 
-            def remove_selected_chain_listener(self, arg2: object=None) -> None:
+            def remove_selected_chain_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "selected_chain". C++ signature :  void remove_selected_chain_listener(TRackDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -12811,7 +12811,7 @@ class RackDevice(ModuleType):
                 """
                 pass
 
-            def remove_selected_drum_pad_listener(self, arg2: object=None) -> None:
+            def remove_selected_drum_pad_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "selected_drum_pad". C++ signature :  void remove_selected_drum_pad_listener(TRackDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -12820,7 +12820,7 @@ class RackDevice(ModuleType):
                 """
                 pass
 
-            def selected_chain_has_listener(self, arg2: object=bool) -> bool:
+            def selected_chain_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "selected_chain". C++ signature :  bool selected_chain_has_listener(TRackDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -12829,7 +12829,7 @@ class RackDevice(ModuleType):
                 """
                 pass
 
-            def selected_drum_pad_has_listener(self, arg2: object=bool) -> bool:
+            def selected_drum_pad_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "selected_drum_pad". C++ signature :  bool selected_drum_pad_has_listener(TRackDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -12958,7 +12958,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def add_env_listen_listener(self, arg2: object=None) -> None:
+        def add_env_listen_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "env_listen" has changed. C++ signature :  void add_env_listen_listener(TRoarDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -12967,7 +12967,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def add_is_active_listener(self, arg2: object=None) -> None:
+        def add_is_active_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_active" has changed. C++ signature :  void add_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -12976,7 +12976,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def add_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_ms" has changed. C++ signature :  void add_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -12985,7 +12985,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def add_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_samples" has changed. C++ signature :  void add_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -12994,7 +12994,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -13003,7 +13003,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def add_parameters_listener(self, arg2: object=None) -> None:
+        def add_parameters_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "parameters" has changed. C++ signature :  void add_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -13012,7 +13012,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def add_routing_mode_index_listener(self, arg2: object=None) -> None:
+        def add_routing_mode_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "routing_mode_index" has changed. C++ signature :  void add_routing_mode_index_listener(TRoarDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -13021,7 +13021,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def env_listen_has_listener(self, arg2: object=bool) -> bool:
+        def env_listen_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "env_listen". C++ signature :  bool env_listen_has_listener(TRoarDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -13030,7 +13030,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def is_active_has_listener(self, arg2: object=bool) -> bool:
+        def is_active_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_active". C++ signature :  bool is_active_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -13039,7 +13039,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def latency_in_ms_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_ms_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_ms". C++ signature :  bool latency_in_ms_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -13048,7 +13048,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def latency_in_samples_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_samples_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_samples". C++ signature :  bool latency_in_samples_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -13057,7 +13057,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -13066,7 +13066,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def parameters_has_listener(self, arg2: object=bool) -> bool:
+        def parameters_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "parameters". C++ signature :  bool parameters_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -13075,7 +13075,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def remove_env_listen_listener(self, arg2: object=None) -> None:
+        def remove_env_listen_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "env_listen". C++ signature :  void remove_env_listen_listener(TRoarDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -13084,7 +13084,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def remove_is_active_listener(self, arg2: object=None) -> None:
+        def remove_is_active_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_active". C++ signature :  void remove_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -13093,7 +13093,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_ms". C++ signature :  void remove_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -13102,7 +13102,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_samples". C++ signature :  void remove_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -13111,7 +13111,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -13120,7 +13120,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def remove_parameters_listener(self, arg2: object=None) -> None:
+        def remove_parameters_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "parameters". C++ signature :  void remove_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -13129,7 +13129,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def remove_routing_mode_index_listener(self, arg2: object=None) -> None:
+        def remove_routing_mode_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "routing_mode_index". C++ signature :  void remove_routing_mode_index_listener(TRoarDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -13138,7 +13138,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def routing_mode_index_has_listener(self, arg2: object=bool) -> bool:
+        def routing_mode_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "routing_mode_index". C++ signature :  bool routing_mode_index_has_listener(TRoarDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -13147,7 +13147,7 @@ class RoarDevice(ModuleType):
             """
             pass
 
-        def store_chosen_bank(self, arg2: int=None, arg3: int=None) -> None:
+        def store_chosen_bank(self, arg2: int, arg3: int) -> None:
             """
             Set the selected bank in the device for persistency. C++ signature :  void store_chosen_bank(TPyHandle<ADevice>,int,int)
             :param arg2: arg2
@@ -13183,7 +13183,7 @@ class RoarDevice(ModuleType):
                 """
                 pass
 
-            def add_is_collapsed_listener(self, arg2: object=None) -> None:
+            def add_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "is_collapsed" has changed. C++ signature :  void add_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -13192,7 +13192,7 @@ class RoarDevice(ModuleType):
                 """
                 pass
 
-            def is_collapsed_has_listener(self, arg2: object=bool) -> bool:
+            def is_collapsed_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "is_collapsed". C++ signature :  bool is_collapsed_has_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -13201,7 +13201,7 @@ class RoarDevice(ModuleType):
                 """
                 pass
 
-            def remove_is_collapsed_listener(self, arg2: object=None) -> None:
+            def remove_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "is_collapsed". C++ signature :  void remove_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -13386,7 +13386,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def add_beats_granulation_resolution_listener(self, arg2: object=None) -> None:
+        def add_beats_granulation_resolution_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "beats_granulation_resolution" has changed. C++ signature :  void add_beats_granulation_resolution_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13395,7 +13395,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def add_beats_transient_envelope_listener(self, arg2: object=None) -> None:
+        def add_beats_transient_envelope_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "beats_transient_envelope" has changed. C++ signature :  void add_beats_transient_envelope_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13404,7 +13404,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def add_beats_transient_loop_mode_listener(self, arg2: object=None) -> None:
+        def add_beats_transient_loop_mode_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "beats_transient_loop_mode" has changed. C++ signature :  void add_beats_transient_loop_mode_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13413,7 +13413,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def add_complex_pro_envelope_listener(self, arg2: object=None) -> None:
+        def add_complex_pro_envelope_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "complex_pro_envelope" has changed. C++ signature :  void add_complex_pro_envelope_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13422,7 +13422,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def add_complex_pro_formants_listener(self, arg2: object=None) -> None:
+        def add_complex_pro_formants_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "complex_pro_formants" has changed. C++ signature :  void add_complex_pro_formants_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13431,7 +13431,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def add_end_marker_listener(self, arg2: object=None) -> None:
+        def add_end_marker_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "end_marker" has changed. C++ signature :  void add_end_marker_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13440,7 +13440,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def add_file_path_listener(self, arg2: object=None) -> None:
+        def add_file_path_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "file_path" has changed. C++ signature :  void add_file_path_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13449,7 +13449,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def add_gain_listener(self, arg2: object=None) -> None:
+        def add_gain_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "gain" has changed. C++ signature :  void add_gain_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13458,7 +13458,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def add_slices_listener(self, arg2: object=None) -> None:
+        def add_slices_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "slices" has changed. C++ signature :  void add_slices_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13467,7 +13467,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def add_slicing_beat_division_listener(self, arg2: object=None) -> None:
+        def add_slicing_beat_division_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "slicing_beat_division" has changed. C++ signature :  void add_slicing_beat_division_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13476,7 +13476,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def add_slicing_region_count_listener(self, arg2: object=None) -> None:
+        def add_slicing_region_count_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "slicing_region_count" has changed. C++ signature :  void add_slicing_region_count_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13485,7 +13485,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def add_slicing_sensitivity_listener(self, arg2: object=None) -> None:
+        def add_slicing_sensitivity_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "slicing_sensitivity" has changed. C++ signature :  void add_slicing_sensitivity_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13494,7 +13494,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def add_slicing_style_listener(self, arg2: object=None) -> None:
+        def add_slicing_style_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "slicing_style" has changed. C++ signature :  void add_slicing_style_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13503,7 +13503,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def add_start_marker_listener(self, arg2: object=None) -> None:
+        def add_start_marker_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "start_marker" has changed. C++ signature :  void add_start_marker_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13512,7 +13512,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def add_texture_flux_listener(self, arg2: object=None) -> None:
+        def add_texture_flux_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "texture_flux" has changed. C++ signature :  void add_texture_flux_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13521,7 +13521,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def add_texture_grain_size_listener(self, arg2: object=None) -> None:
+        def add_texture_grain_size_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "texture_grain_size" has changed. C++ signature :  void add_texture_grain_size_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13530,7 +13530,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def add_tones_grain_size_listener(self, arg2: object=None) -> None:
+        def add_tones_grain_size_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "tones_grain_size" has changed. C++ signature :  void add_tones_grain_size_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13539,7 +13539,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def add_warp_markers_listener(self, arg2: object=None) -> None:
+        def add_warp_markers_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "warp_markers" has changed. C++ signature :  void add_warp_markers_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13548,7 +13548,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def add_warp_mode_listener(self, arg2: object=None) -> None:
+        def add_warp_mode_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "warp_mode" has changed. C++ signature :  void add_warp_mode_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13557,7 +13557,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def add_warping_listener(self, arg2: object=None) -> None:
+        def add_warping_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "warping" has changed. C++ signature :  void add_warping_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13566,7 +13566,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def beat_to_sample_time(self, beat_time: float=float) -> float:
+        def beat_to_sample_time(self, beat_time: float) -> float:
             """
             Converts the given beat time to sample time. Raises an error if the sample is not warped. C++ signature :  double beat_to_sample_time(TPyHandle<AMultiSamplePart>,double)
             :param beat_time: beat_time
@@ -13575,7 +13575,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def beats_granulation_resolution_has_listener(self, arg2: object=bool) -> bool:
+        def beats_granulation_resolution_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "beats_granulation_resolution". C++ signature :  bool beats_granulation_resolution_has_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13584,7 +13584,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def beats_transient_envelope_has_listener(self, arg2: object=bool) -> bool:
+        def beats_transient_envelope_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "beats_transient_envelope". C++ signature :  bool beats_transient_envelope_has_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13593,7 +13593,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def beats_transient_loop_mode_has_listener(self, arg2: object=bool) -> bool:
+        def beats_transient_loop_mode_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "beats_transient_loop_mode". C++ signature :  bool beats_transient_loop_mode_has_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13609,7 +13609,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def complex_pro_envelope_has_listener(self, arg2: object=bool) -> bool:
+        def complex_pro_envelope_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "complex_pro_envelope". C++ signature :  bool complex_pro_envelope_has_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13618,7 +13618,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def complex_pro_formants_has_listener(self, arg2: object=bool) -> bool:
+        def complex_pro_formants_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "complex_pro_formants". C++ signature :  bool complex_pro_formants_has_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13627,7 +13627,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def end_marker_has_listener(self, arg2: object=bool) -> bool:
+        def end_marker_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "end_marker". C++ signature :  bool end_marker_has_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13636,7 +13636,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def file_path_has_listener(self, arg2: object=bool) -> bool:
+        def file_path_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "file_path". C++ signature :  bool file_path_has_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13652,7 +13652,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def gain_has_listener(self, arg2: object=bool) -> bool:
+        def gain_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "gain". C++ signature :  bool gain_has_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13661,7 +13661,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def insert_slice(self, slice_time: int=None) -> None:
+        def insert_slice(self, slice_time: int) -> None:
             """
             Add a slice point at the provided time if there is none. C++ signature :  void insert_slice(TPyHandle<AMultiSamplePart>,int)
             :param slice_time: slice_time
@@ -13670,7 +13670,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def move_slice(self, old_time: int=int, new_time: int=int) -> int:
+        def move_slice(self, old_time: int, new_time: int) -> int:
             """
             Move the slice point at the provided time. C++ signature :  int move_slice(TPyHandle<AMultiSamplePart>,int,int)
             :param old_time: old_time
@@ -13681,7 +13681,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_beats_granulation_resolution_listener(self, arg2: object=None) -> None:
+        def remove_beats_granulation_resolution_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "beats_granulation_resolution". C++ signature :  void remove_beats_granulation_resolution_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13690,7 +13690,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_beats_transient_envelope_listener(self, arg2: object=None) -> None:
+        def remove_beats_transient_envelope_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "beats_transient_envelope". C++ signature :  void remove_beats_transient_envelope_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13699,7 +13699,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_beats_transient_loop_mode_listener(self, arg2: object=None) -> None:
+        def remove_beats_transient_loop_mode_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "beats_transient_loop_mode". C++ signature :  void remove_beats_transient_loop_mode_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13708,7 +13708,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_complex_pro_envelope_listener(self, arg2: object=None) -> None:
+        def remove_complex_pro_envelope_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "complex_pro_envelope". C++ signature :  void remove_complex_pro_envelope_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13717,7 +13717,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_complex_pro_formants_listener(self, arg2: object=None) -> None:
+        def remove_complex_pro_formants_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "complex_pro_formants". C++ signature :  void remove_complex_pro_formants_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13726,7 +13726,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_end_marker_listener(self, arg2: object=None) -> None:
+        def remove_end_marker_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "end_marker". C++ signature :  void remove_end_marker_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13735,7 +13735,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_file_path_listener(self, arg2: object=None) -> None:
+        def remove_file_path_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "file_path". C++ signature :  void remove_file_path_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13744,7 +13744,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_gain_listener(self, arg2: object=None) -> None:
+        def remove_gain_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "gain". C++ signature :  void remove_gain_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13753,7 +13753,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_slice(self, slice_time: int=None) -> None:
+        def remove_slice(self, slice_time: int) -> None:
             """
             Remove the slice point at the provided time if there is one. C++ signature :  void remove_slice(TPyHandle<AMultiSamplePart>,int)
             :param slice_time: slice_time
@@ -13762,7 +13762,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_slices_listener(self, arg2: object=None) -> None:
+        def remove_slices_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "slices". C++ signature :  void remove_slices_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13771,7 +13771,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_slicing_beat_division_listener(self, arg2: object=None) -> None:
+        def remove_slicing_beat_division_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "slicing_beat_division". C++ signature :  void remove_slicing_beat_division_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13780,7 +13780,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_slicing_region_count_listener(self, arg2: object=None) -> None:
+        def remove_slicing_region_count_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "slicing_region_count". C++ signature :  void remove_slicing_region_count_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13789,7 +13789,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_slicing_sensitivity_listener(self, arg2: object=None) -> None:
+        def remove_slicing_sensitivity_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "slicing_sensitivity". C++ signature :  void remove_slicing_sensitivity_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13798,7 +13798,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_slicing_style_listener(self, arg2: object=None) -> None:
+        def remove_slicing_style_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "slicing_style". C++ signature :  void remove_slicing_style_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13807,7 +13807,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_start_marker_listener(self, arg2: object=None) -> None:
+        def remove_start_marker_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "start_marker". C++ signature :  void remove_start_marker_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13816,7 +13816,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_texture_flux_listener(self, arg2: object=None) -> None:
+        def remove_texture_flux_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "texture_flux". C++ signature :  void remove_texture_flux_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13825,7 +13825,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_texture_grain_size_listener(self, arg2: object=None) -> None:
+        def remove_texture_grain_size_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "texture_grain_size". C++ signature :  void remove_texture_grain_size_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13834,7 +13834,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_tones_grain_size_listener(self, arg2: object=None) -> None:
+        def remove_tones_grain_size_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "tones_grain_size". C++ signature :  void remove_tones_grain_size_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13843,7 +13843,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_warp_markers_listener(self, arg2: object=None) -> None:
+        def remove_warp_markers_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "warp_markers". C++ signature :  void remove_warp_markers_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13852,7 +13852,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_warp_mode_listener(self, arg2: object=None) -> None:
+        def remove_warp_mode_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "warp_mode". C++ signature :  void remove_warp_mode_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13861,7 +13861,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def remove_warping_listener(self, arg2: object=None) -> None:
+        def remove_warping_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "warping". C++ signature :  void remove_warping_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13877,7 +13877,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def sample_to_beat_time(self, sample_time: float=float) -> float:
+        def sample_to_beat_time(self, sample_time: float) -> float:
             """
             Converts the given sample time to beat time. Raises an error if the sample is not warped. C++ signature :  double sample_to_beat_time(TPyHandle<AMultiSamplePart>,double)
             :param sample_time: sample_time
@@ -13886,7 +13886,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def slices_has_listener(self, arg2: object=bool) -> bool:
+        def slices_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "slices". C++ signature :  bool slices_has_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13895,7 +13895,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def slicing_beat_division_has_listener(self, arg2: object=bool) -> bool:
+        def slicing_beat_division_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "slicing_beat_division". C++ signature :  bool slicing_beat_division_has_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13904,7 +13904,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def slicing_region_count_has_listener(self, arg2: object=bool) -> bool:
+        def slicing_region_count_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "slicing_region_count". C++ signature :  bool slicing_region_count_has_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13913,7 +13913,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def slicing_sensitivity_has_listener(self, arg2: object=bool) -> bool:
+        def slicing_sensitivity_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "slicing_sensitivity". C++ signature :  bool slicing_sensitivity_has_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13922,7 +13922,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def slicing_style_has_listener(self, arg2: object=bool) -> bool:
+        def slicing_style_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "slicing_style". C++ signature :  bool slicing_style_has_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13931,7 +13931,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def start_marker_has_listener(self, arg2: object=bool) -> bool:
+        def start_marker_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "start_marker". C++ signature :  bool start_marker_has_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13940,7 +13940,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def texture_flux_has_listener(self, arg2: object=bool) -> bool:
+        def texture_flux_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "texture_flux". C++ signature :  bool texture_flux_has_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13949,7 +13949,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def texture_grain_size_has_listener(self, arg2: object=bool) -> bool:
+        def texture_grain_size_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "texture_grain_size". C++ signature :  bool texture_grain_size_has_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13958,7 +13958,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def tones_grain_size_has_listener(self, arg2: object=bool) -> bool:
+        def tones_grain_size_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "tones_grain_size". C++ signature :  bool tones_grain_size_has_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13967,7 +13967,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def warp_markers_has_listener(self, arg2: object=bool) -> bool:
+        def warp_markers_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "warp_markers". C++ signature :  bool warp_markers_has_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13976,7 +13976,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def warp_mode_has_listener(self, arg2: object=bool) -> bool:
+        def warp_mode_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "warp_mode". C++ signature :  bool warp_mode_has_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -13985,7 +13985,7 @@ class Sample(ModuleType):
             """
             pass
 
-        def warping_has_listener(self, arg2: object=bool) -> bool:
+        def warping_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "warping". C++ signature :  bool warping_has_listener(TPyHandle<AMultiSamplePart>,boost::python::api::object)
             :param arg2: arg2
@@ -14123,7 +14123,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def add_clip_slots_listener(self, arg2: object=None) -> None:
+        def add_clip_slots_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "clip_slots" has changed. C++ signature :  void add_clip_slots_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14132,7 +14132,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def add_color_index_listener(self, arg2: object=None) -> None:
+        def add_color_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "color_index" has changed. C++ signature :  void add_color_index_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14141,7 +14141,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def add_color_listener(self, arg2: object=None) -> None:
+        def add_color_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "color" has changed. C++ signature :  void add_color_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14150,7 +14150,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def add_is_triggered_listener(self, arg2: object=None) -> None:
+        def add_is_triggered_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_triggered" has changed. C++ signature :  void add_is_triggered_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14159,7 +14159,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14168,7 +14168,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def add_tempo_enabled_listener(self, arg2: object=None) -> None:
+        def add_tempo_enabled_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "tempo_enabled" has changed. C++ signature :  void add_tempo_enabled_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14177,7 +14177,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def add_tempo_listener(self, arg2: object=None) -> None:
+        def add_tempo_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "tempo" has changed. C++ signature :  void add_tempo_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14186,7 +14186,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def add_time_signature_denominator_listener(self, arg2: object=None) -> None:
+        def add_time_signature_denominator_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "time_signature_denominator" has changed. C++ signature :  void add_time_signature_denominator_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14195,7 +14195,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def add_time_signature_enabled_listener(self, arg2: object=None) -> None:
+        def add_time_signature_enabled_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "time_signature_enabled" has changed. C++ signature :  void add_time_signature_enabled_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14204,7 +14204,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def add_time_signature_numerator_listener(self, arg2: object=None) -> None:
+        def add_time_signature_numerator_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "time_signature_numerator" has changed. C++ signature :  void add_time_signature_numerator_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14213,7 +14213,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def clip_slots_has_listener(self, arg2: object=bool) -> bool:
+        def clip_slots_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "clip_slots". C++ signature :  bool clip_slots_has_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14222,7 +14222,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def color_has_listener(self, arg2: object=bool) -> bool:
+        def color_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "color". C++ signature :  bool color_has_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14231,7 +14231,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def color_index_has_listener(self, arg2: object=bool) -> bool:
+        def color_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "color_index". C++ signature :  bool color_index_has_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14240,7 +14240,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def fire(self, force_legato: bool=None, can_select_scene_on_launch: bool=None) -> None:
+        def fire(self, force_legato: bool, can_select_scene_on_launch: bool) -> None:
             """
             Fire the scene directly. Will fire all clipslots that this scene owns and select the scene itself. C++ signature :  void fire(TPyHandle<AScene> [,bool=False [,bool=True]])
             :param force_legato: force_legato
@@ -14251,7 +14251,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def fire_as_selected(self, force_legato: bool=None) -> None:
+        def fire_as_selected(self, force_legato: bool) -> None:
             """
             Fire the selected scene. Will fire all clipslots that this scene owns and select the next scene if necessary. C++ signature :  void fire_as_selected(TPyHandle<AScene> [,bool=False])
             :param force_legato: force_legato
@@ -14260,7 +14260,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def is_triggered_has_listener(self, arg2: object=bool) -> bool:
+        def is_triggered_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_triggered". C++ signature :  bool is_triggered_has_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14269,7 +14269,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14278,7 +14278,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def remove_clip_slots_listener(self, arg2: object=None) -> None:
+        def remove_clip_slots_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "clip_slots". C++ signature :  void remove_clip_slots_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14287,7 +14287,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def remove_color_index_listener(self, arg2: object=None) -> None:
+        def remove_color_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "color_index". C++ signature :  void remove_color_index_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14296,7 +14296,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def remove_color_listener(self, arg2: object=None) -> None:
+        def remove_color_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "color". C++ signature :  void remove_color_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14305,7 +14305,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def remove_is_triggered_listener(self, arg2: object=None) -> None:
+        def remove_is_triggered_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_triggered". C++ signature :  void remove_is_triggered_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14314,7 +14314,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14323,7 +14323,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def remove_tempo_enabled_listener(self, arg2: object=None) -> None:
+        def remove_tempo_enabled_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "tempo_enabled". C++ signature :  void remove_tempo_enabled_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14332,7 +14332,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def remove_tempo_listener(self, arg2: object=None) -> None:
+        def remove_tempo_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "tempo". C++ signature :  void remove_tempo_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14341,7 +14341,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def remove_time_signature_denominator_listener(self, arg2: object=None) -> None:
+        def remove_time_signature_denominator_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "time_signature_denominator". C++ signature :  void remove_time_signature_denominator_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14350,7 +14350,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def remove_time_signature_enabled_listener(self, arg2: object=None) -> None:
+        def remove_time_signature_enabled_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "time_signature_enabled". C++ signature :  void remove_time_signature_enabled_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14359,7 +14359,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def remove_time_signature_numerator_listener(self, arg2: object=None) -> None:
+        def remove_time_signature_numerator_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "time_signature_numerator". C++ signature :  void remove_time_signature_numerator_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14368,7 +14368,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def set_fire_button_state(self, arg2: bool=None) -> None:
+        def set_fire_button_state(self, arg2: bool) -> None:
             """
             Set the scene's fire button state directly. Supports all launch modes. C++ signature :  void set_fire_button_state(TPyHandle<AScene>,bool)
             :param arg2: arg2
@@ -14377,7 +14377,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def tempo_enabled_has_listener(self, arg2: object=bool) -> bool:
+        def tempo_enabled_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "tempo_enabled". C++ signature :  bool tempo_enabled_has_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14386,7 +14386,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def tempo_has_listener(self, arg2: object=bool) -> bool:
+        def tempo_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "tempo". C++ signature :  bool tempo_has_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14395,7 +14395,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def time_signature_denominator_has_listener(self, arg2: object=bool) -> bool:
+        def time_signature_denominator_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "time_signature_denominator". C++ signature :  bool time_signature_denominator_has_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14404,7 +14404,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def time_signature_enabled_has_listener(self, arg2: object=bool) -> bool:
+        def time_signature_enabled_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "time_signature_enabled". C++ signature :  bool time_signature_enabled_has_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14413,7 +14413,7 @@ class Scene(ModuleType):
             """
             pass
 
-        def time_signature_numerator_has_listener(self, arg2: object=bool) -> bool:
+        def time_signature_numerator_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "time_signature_numerator". C++ signature :  bool time_signature_numerator_has_listener(TPyHandle<AScene>,boost::python::api::object)
             :param arg2: arg2
@@ -14542,7 +14542,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def add_is_active_listener(self, arg2: object=None) -> None:
+        def add_is_active_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_active" has changed. C++ signature :  void add_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -14551,7 +14551,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def add_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_ms" has changed. C++ signature :  void add_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -14560,7 +14560,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def add_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_samples" has changed. C++ signature :  void add_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -14569,7 +14569,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -14578,7 +14578,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def add_parameters_listener(self, arg2: object=None) -> None:
+        def add_parameters_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "parameters" has changed. C++ signature :  void add_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -14587,7 +14587,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def add_pitch_bend_range_listener(self, arg2: object=None) -> None:
+        def add_pitch_bend_range_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "pitch_bend_range" has changed. C++ signature :  void add_pitch_bend_range_listener(TShifterDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -14596,7 +14596,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def add_pitch_mode_index_listener(self, arg2: object=None) -> None:
+        def add_pitch_mode_index_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "pitch_mode_index" has changed. C++ signature :  void add_pitch_mode_index_listener(TShifterDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -14605,7 +14605,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def is_active_has_listener(self, arg2: object=bool) -> bool:
+        def is_active_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_active". C++ signature :  bool is_active_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -14614,7 +14614,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def latency_in_ms_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_ms_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_ms". C++ signature :  bool latency_in_ms_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -14623,7 +14623,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def latency_in_samples_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_samples_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_samples". C++ signature :  bool latency_in_samples_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -14632,7 +14632,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -14641,7 +14641,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def parameters_has_listener(self, arg2: object=bool) -> bool:
+        def parameters_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "parameters". C++ signature :  bool parameters_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -14650,7 +14650,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def pitch_bend_range_has_listener(self, arg2: object=bool) -> bool:
+        def pitch_bend_range_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "pitch_bend_range". C++ signature :  bool pitch_bend_range_has_listener(TShifterDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -14659,7 +14659,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def pitch_mode_index_has_listener(self, arg2: object=bool) -> bool:
+        def pitch_mode_index_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "pitch_mode_index". C++ signature :  bool pitch_mode_index_has_listener(TShifterDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -14668,7 +14668,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def remove_is_active_listener(self, arg2: object=None) -> None:
+        def remove_is_active_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_active". C++ signature :  void remove_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -14677,7 +14677,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_ms". C++ signature :  void remove_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -14686,7 +14686,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_samples". C++ signature :  void remove_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -14695,7 +14695,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -14704,7 +14704,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def remove_parameters_listener(self, arg2: object=None) -> None:
+        def remove_parameters_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "parameters". C++ signature :  void remove_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -14713,7 +14713,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def remove_pitch_bend_range_listener(self, arg2: object=None) -> None:
+        def remove_pitch_bend_range_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "pitch_bend_range". C++ signature :  void remove_pitch_bend_range_listener(TShifterDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -14722,7 +14722,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def remove_pitch_mode_index_listener(self, arg2: object=None) -> None:
+        def remove_pitch_mode_index_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "pitch_mode_index". C++ signature :  void remove_pitch_mode_index_listener(TShifterDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -14731,7 +14731,7 @@ class ShifterDevice(ModuleType):
             """
             pass
 
-        def store_chosen_bank(self, arg2: int=None, arg3: int=None) -> None:
+        def store_chosen_bank(self, arg2: int, arg3: int) -> None:
             """
             Set the selected bank in the device for persistency. C++ signature :  void store_chosen_bank(TPyHandle<ADevice>,int,int)
             :param arg2: arg2
@@ -14767,7 +14767,7 @@ class ShifterDevice(ModuleType):
                 """
                 pass
 
-            def add_is_collapsed_listener(self, arg2: object=None) -> None:
+            def add_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "is_collapsed" has changed. C++ signature :  void add_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -14776,7 +14776,7 @@ class ShifterDevice(ModuleType):
                 """
                 pass
 
-            def is_collapsed_has_listener(self, arg2: object=bool) -> bool:
+            def is_collapsed_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "is_collapsed". C++ signature :  bool is_collapsed_has_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -14785,7 +14785,7 @@ class ShifterDevice(ModuleType):
                 """
                 pass
 
-            def remove_is_collapsed_listener(self, arg2: object=None) -> None:
+            def remove_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "is_collapsed". C++ signature :  void remove_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -15008,7 +15008,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def add_can_warp_as_listener(self, arg2: object=None) -> None:
+        def add_can_warp_as_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "can_warp_as" has changed. C++ signature :  void add_can_warp_as_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15017,7 +15017,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def add_can_warp_double_listener(self, arg2: object=None) -> None:
+        def add_can_warp_double_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "can_warp_double" has changed. C++ signature :  void add_can_warp_double_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15026,7 +15026,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def add_can_warp_half_listener(self, arg2: object=None) -> None:
+        def add_can_warp_half_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "can_warp_half" has changed. C++ signature :  void add_can_warp_half_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15035,7 +15035,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def add_is_active_listener(self, arg2: object=None) -> None:
+        def add_is_active_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "is_active" has changed. C++ signature :  void add_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -15044,7 +15044,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def add_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_ms" has changed. C++ signature :  void add_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -15053,7 +15053,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def add_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def add_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "latency_in_samples" has changed. C++ signature :  void add_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -15062,7 +15062,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def add_multi_sample_mode_listener(self, arg2: object=None) -> None:
+        def add_multi_sample_mode_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "multi_sample_mode" has changed. C++ signature :  void add_multi_sample_mode_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15071,7 +15071,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -15080,7 +15080,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def add_note_pitch_bend_range_listener(self, arg2: object=None) -> None:
+        def add_note_pitch_bend_range_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "note_pitch_bend_range" has changed. C++ signature :  void add_note_pitch_bend_range_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15089,7 +15089,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def add_pad_slicing_listener(self, arg2: object=None) -> None:
+        def add_pad_slicing_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "pad_slicing" has changed. C++ signature :  void add_pad_slicing_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15098,7 +15098,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def add_parameters_listener(self, arg2: object=None) -> None:
+        def add_parameters_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "parameters" has changed. C++ signature :  void add_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -15107,7 +15107,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def add_pitch_bend_range_listener(self, arg2: object=None) -> None:
+        def add_pitch_bend_range_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "pitch_bend_range" has changed. C++ signature :  void add_pitch_bend_range_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15116,7 +15116,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def add_playback_mode_listener(self, arg2: object=None) -> None:
+        def add_playback_mode_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "playback_mode" has changed. C++ signature :  void add_playback_mode_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15125,7 +15125,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def add_playing_position_enabled_listener(self, arg2: object=None) -> None:
+        def add_playing_position_enabled_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "playing_position_enabled" has changed. C++ signature :  void add_playing_position_enabled_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15134,7 +15134,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def add_playing_position_listener(self, arg2: object=None) -> None:
+        def add_playing_position_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "playing_position" has changed. C++ signature :  void add_playing_position_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15143,7 +15143,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def add_retrigger_listener(self, arg2: object=None) -> None:
+        def add_retrigger_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "retrigger" has changed. C++ signature :  void add_retrigger_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15152,7 +15152,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def add_sample_listener(self, arg2: object=None) -> None:
+        def add_sample_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "sample" has changed. C++ signature :  void add_sample_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15161,7 +15161,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def add_slicing_playback_mode_listener(self, arg2: object=None) -> None:
+        def add_slicing_playback_mode_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "slicing_playback_mode" has changed. C++ signature :  void add_slicing_playback_mode_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15170,7 +15170,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def add_voices_listener(self, arg2: object=None) -> None:
+        def add_voices_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "voices" has changed. C++ signature :  void add_voices_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15179,7 +15179,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def can_warp_as_has_listener(self, arg2: object=bool) -> bool:
+        def can_warp_as_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "can_warp_as". C++ signature :  bool can_warp_as_has_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15188,7 +15188,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def can_warp_double_has_listener(self, arg2: object=bool) -> bool:
+        def can_warp_double_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "can_warp_double". C++ signature :  bool can_warp_double_has_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15197,7 +15197,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def can_warp_half_has_listener(self, arg2: object=bool) -> bool:
+        def can_warp_half_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "can_warp_half". C++ signature :  bool can_warp_half_has_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15220,7 +15220,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def is_active_has_listener(self, arg2: object=bool) -> bool:
+        def is_active_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "is_active". C++ signature :  bool is_active_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -15229,7 +15229,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def latency_in_ms_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_ms_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_ms". C++ signature :  bool latency_in_ms_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -15238,7 +15238,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def latency_in_samples_has_listener(self, arg2: object=bool) -> bool:
+        def latency_in_samples_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "latency_in_samples". C++ signature :  bool latency_in_samples_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -15247,7 +15247,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def multi_sample_mode_has_listener(self, arg2: object=bool) -> bool:
+        def multi_sample_mode_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "multi_sample_mode". C++ signature :  bool multi_sample_mode_has_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15256,7 +15256,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -15265,7 +15265,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def note_pitch_bend_range_has_listener(self, arg2: object=bool) -> bool:
+        def note_pitch_bend_range_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "note_pitch_bend_range". C++ signature :  bool note_pitch_bend_range_has_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15274,7 +15274,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def pad_slicing_has_listener(self, arg2: object=bool) -> bool:
+        def pad_slicing_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "pad_slicing". C++ signature :  bool pad_slicing_has_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15283,7 +15283,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def parameters_has_listener(self, arg2: object=bool) -> bool:
+        def parameters_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "parameters". C++ signature :  bool parameters_has_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -15292,7 +15292,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def pitch_bend_range_has_listener(self, arg2: object=bool) -> bool:
+        def pitch_bend_range_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "pitch_bend_range". C++ signature :  bool pitch_bend_range_has_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15301,7 +15301,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def playback_mode_has_listener(self, arg2: object=bool) -> bool:
+        def playback_mode_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "playback_mode". C++ signature :  bool playback_mode_has_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15310,7 +15310,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def playing_position_enabled_has_listener(self, arg2: object=bool) -> bool:
+        def playing_position_enabled_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "playing_position_enabled". C++ signature :  bool playing_position_enabled_has_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15319,7 +15319,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def playing_position_has_listener(self, arg2: object=bool) -> bool:
+        def playing_position_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "playing_position". C++ signature :  bool playing_position_has_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15328,7 +15328,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def remove_can_warp_as_listener(self, arg2: object=None) -> None:
+        def remove_can_warp_as_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "can_warp_as". C++ signature :  void remove_can_warp_as_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15337,7 +15337,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def remove_can_warp_double_listener(self, arg2: object=None) -> None:
+        def remove_can_warp_double_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "can_warp_double". C++ signature :  void remove_can_warp_double_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15346,7 +15346,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def remove_can_warp_half_listener(self, arg2: object=None) -> None:
+        def remove_can_warp_half_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "can_warp_half". C++ signature :  void remove_can_warp_half_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15355,7 +15355,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def remove_is_active_listener(self, arg2: object=None) -> None:
+        def remove_is_active_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "is_active". C++ signature :  void remove_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -15364,7 +15364,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_ms_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_ms_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_ms". C++ signature :  void remove_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -15373,7 +15373,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def remove_latency_in_samples_listener(self, arg2: object=None) -> None:
+        def remove_latency_in_samples_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "latency_in_samples". C++ signature :  void remove_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -15382,7 +15382,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def remove_multi_sample_mode_listener(self, arg2: object=None) -> None:
+        def remove_multi_sample_mode_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "multi_sample_mode". C++ signature :  void remove_multi_sample_mode_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15391,7 +15391,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -15400,7 +15400,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def remove_note_pitch_bend_range_listener(self, arg2: object=None) -> None:
+        def remove_note_pitch_bend_range_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "note_pitch_bend_range". C++ signature :  void remove_note_pitch_bend_range_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15409,7 +15409,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def remove_pad_slicing_listener(self, arg2: object=None) -> None:
+        def remove_pad_slicing_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "pad_slicing". C++ signature :  void remove_pad_slicing_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15418,7 +15418,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def remove_parameters_listener(self, arg2: object=None) -> None:
+        def remove_parameters_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "parameters". C++ signature :  void remove_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
             :param arg2: arg2
@@ -15427,7 +15427,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def remove_pitch_bend_range_listener(self, arg2: object=None) -> None:
+        def remove_pitch_bend_range_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "pitch_bend_range". C++ signature :  void remove_pitch_bend_range_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15436,7 +15436,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def remove_playback_mode_listener(self, arg2: object=None) -> None:
+        def remove_playback_mode_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "playback_mode". C++ signature :  void remove_playback_mode_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15445,7 +15445,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def remove_playing_position_enabled_listener(self, arg2: object=None) -> None:
+        def remove_playing_position_enabled_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "playing_position_enabled". C++ signature :  void remove_playing_position_enabled_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15454,7 +15454,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def remove_playing_position_listener(self, arg2: object=None) -> None:
+        def remove_playing_position_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "playing_position". C++ signature :  void remove_playing_position_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15463,7 +15463,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def remove_retrigger_listener(self, arg2: object=None) -> None:
+        def remove_retrigger_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "retrigger". C++ signature :  void remove_retrigger_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15472,7 +15472,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def remove_sample_listener(self, arg2: object=None) -> None:
+        def remove_sample_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "sample". C++ signature :  void remove_sample_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15481,7 +15481,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def remove_slicing_playback_mode_listener(self, arg2: object=None) -> None:
+        def remove_slicing_playback_mode_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "slicing_playback_mode". C++ signature :  void remove_slicing_playback_mode_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15490,7 +15490,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def remove_voices_listener(self, arg2: object=None) -> None:
+        def remove_voices_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "voices". C++ signature :  void remove_voices_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15499,7 +15499,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def retrigger_has_listener(self, arg2: object=bool) -> bool:
+        def retrigger_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "retrigger". C++ signature :  bool retrigger_has_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15515,7 +15515,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def sample_has_listener(self, arg2: object=bool) -> bool:
+        def sample_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "sample". C++ signature :  bool sample_has_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15524,7 +15524,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def slicing_playback_mode_has_listener(self, arg2: object=bool) -> bool:
+        def slicing_playback_mode_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "slicing_playback_mode". C++ signature :  bool slicing_playback_mode_has_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15533,7 +15533,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def store_chosen_bank(self, arg2: int=None, arg3: int=None) -> None:
+        def store_chosen_bank(self, arg2: int, arg3: int) -> None:
             """
             Set the selected bank in the device for persistency. C++ signature :  void store_chosen_bank(TPyHandle<ADevice>,int,int)
             :param arg2: arg2
@@ -15544,7 +15544,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def voices_has_listener(self, arg2: object=bool) -> bool:
+        def voices_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "voices". C++ signature :  bool voices_has_listener(TSimplerDevicePyHandle,boost::python::api::object)
             :param arg2: arg2
@@ -15553,7 +15553,7 @@ class SimplerDevice(ModuleType):
             """
             pass
 
-        def warp_as(self, beat_time: float=None) -> None:
+        def warp_as(self, beat_time: float) -> None:
             """
             Warp the playback region between start- and end-marker as the given length. Calling this method on an empty simpler raises an error. C++ signature :  void warp_as(TSimplerDevicePyHandle,double)
             :param beat_time: beat_time
@@ -15657,7 +15657,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def add_is_collapsed_listener(self, arg2: object=None) -> None:
+            def add_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "is_collapsed" has changed. C++ signature :  void add_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -15666,7 +15666,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def add_sample_end_listener(self, arg2: object=None) -> None:
+            def add_sample_end_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "sample_end" has changed. C++ signature :  void add_sample_end_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15675,7 +15675,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def add_sample_env_fade_in_listener(self, arg2: object=None) -> None:
+            def add_sample_env_fade_in_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "sample_env_fade_in" has changed. C++ signature :  void add_sample_env_fade_in_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15684,7 +15684,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def add_sample_env_fade_out_listener(self, arg2: object=None) -> None:
+            def add_sample_env_fade_out_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "sample_env_fade_out" has changed. C++ signature :  void add_sample_env_fade_out_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15693,7 +15693,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def add_sample_loop_end_listener(self, arg2: object=None) -> None:
+            def add_sample_loop_end_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "sample_loop_end" has changed. C++ signature :  void add_sample_loop_end_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15702,7 +15702,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def add_sample_loop_fade_listener(self, arg2: object=None) -> None:
+            def add_sample_loop_fade_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "sample_loop_fade" has changed. C++ signature :  void add_sample_loop_fade_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15711,7 +15711,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def add_sample_loop_start_listener(self, arg2: object=None) -> None:
+            def add_sample_loop_start_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "sample_loop_start" has changed. C++ signature :  void add_sample_loop_start_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15720,7 +15720,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def add_sample_start_listener(self, arg2: object=None) -> None:
+            def add_sample_start_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "sample_start" has changed. C++ signature :  void add_sample_start_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15729,7 +15729,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def add_selected_slice_listener(self, arg2: object=None) -> None:
+            def add_selected_slice_listener(self, arg2: object) -> None:
                 """
                 Add a listener function or method, which will be called as soon as the property "selected_slice" has changed. C++ signature :  void add_selected_slice_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15738,7 +15738,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def is_collapsed_has_listener(self, arg2: object=bool) -> bool:
+            def is_collapsed_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "is_collapsed". C++ signature :  bool is_collapsed_has_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -15747,7 +15747,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def remove_is_collapsed_listener(self, arg2: object=None) -> None:
+            def remove_is_collapsed_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "is_collapsed". C++ signature :  void remove_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
                 :param arg2: arg2
@@ -15756,7 +15756,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def remove_sample_end_listener(self, arg2: object=None) -> None:
+            def remove_sample_end_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "sample_end". C++ signature :  void remove_sample_end_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15765,7 +15765,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def remove_sample_env_fade_in_listener(self, arg2: object=None) -> None:
+            def remove_sample_env_fade_in_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "sample_env_fade_in". C++ signature :  void remove_sample_env_fade_in_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15774,7 +15774,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def remove_sample_env_fade_out_listener(self, arg2: object=None) -> None:
+            def remove_sample_env_fade_out_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "sample_env_fade_out". C++ signature :  void remove_sample_env_fade_out_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15783,7 +15783,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def remove_sample_loop_end_listener(self, arg2: object=None) -> None:
+            def remove_sample_loop_end_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "sample_loop_end". C++ signature :  void remove_sample_loop_end_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15792,7 +15792,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def remove_sample_loop_fade_listener(self, arg2: object=None) -> None:
+            def remove_sample_loop_fade_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "sample_loop_fade". C++ signature :  void remove_sample_loop_fade_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15801,7 +15801,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def remove_sample_loop_start_listener(self, arg2: object=None) -> None:
+            def remove_sample_loop_start_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "sample_loop_start". C++ signature :  void remove_sample_loop_start_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15810,7 +15810,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def remove_sample_start_listener(self, arg2: object=None) -> None:
+            def remove_sample_start_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "sample_start". C++ signature :  void remove_sample_start_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15819,7 +15819,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def remove_selected_slice_listener(self, arg2: object=None) -> None:
+            def remove_selected_slice_listener(self, arg2: object) -> None:
                 """
                 Remove a previously set listener function or method from property "selected_slice". C++ signature :  void remove_selected_slice_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15828,7 +15828,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def sample_end_has_listener(self, arg2: object=bool) -> bool:
+            def sample_end_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "sample_end". C++ signature :  bool sample_end_has_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15837,7 +15837,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def sample_env_fade_in_has_listener(self, arg2: object=bool) -> bool:
+            def sample_env_fade_in_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "sample_env_fade_in". C++ signature :  bool sample_env_fade_in_has_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15846,7 +15846,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def sample_env_fade_out_has_listener(self, arg2: object=bool) -> bool:
+            def sample_env_fade_out_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "sample_env_fade_out". C++ signature :  bool sample_env_fade_out_has_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15855,7 +15855,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def sample_loop_end_has_listener(self, arg2: object=bool) -> bool:
+            def sample_loop_end_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "sample_loop_end". C++ signature :  bool sample_loop_end_has_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15864,7 +15864,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def sample_loop_fade_has_listener(self, arg2: object=bool) -> bool:
+            def sample_loop_fade_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "sample_loop_fade". C++ signature :  bool sample_loop_fade_has_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15873,7 +15873,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def sample_loop_start_has_listener(self, arg2: object=bool) -> bool:
+            def sample_loop_start_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "sample_loop_start". C++ signature :  bool sample_loop_start_has_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15882,7 +15882,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def sample_start_has_listener(self, arg2: object=bool) -> bool:
+            def sample_start_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "sample_start". C++ signature :  bool sample_start_has_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -15891,7 +15891,7 @@ class SimplerDevice(ModuleType):
                 """
                 pass
 
-            def selected_slice_has_listener(self, arg2: object=bool) -> bool:
+            def selected_slice_has_listener(self, arg2: object) -> bool:
                 """
                 Returns true, if the given listener function or method is connected to the property "selected_slice". C++ signature :  bool selected_slice_has_listener(TSimplerDevicePyViewData,boost::python::api::object)
                 :param arg2: arg2
@@ -16002,7 +16002,7 @@ class Song(ModuleType):
             """
             pass
 
-        def add_name_listener(self, arg2: object=None) -> None:
+        def add_name_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ACuePoint>,boost::python::api::object)
             :param arg2: arg2
@@ -16011,7 +16011,7 @@ class Song(ModuleType):
             """
             pass
 
-        def add_time_listener(self, arg2: object=None) -> None:
+        def add_time_listener(self, arg2: object) -> None:
             """
             Add a listener function or method, which will be called as soon as the property "time" has changed. C++ signature :  void add_time_listener(TPyHandle<ACuePoint>,boost::python::api::object)
             :param arg2: arg2
@@ -16027,7 +16027,7 @@ class Song(ModuleType):
             """
             pass
 
-        def name_has_listener(self, arg2: object=bool) -> bool:
+        def name_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ACuePoint>,boost::python::api::object)
             :param arg2: arg2
@@ -16036,7 +16036,7 @@ class Song(ModuleType):
             """
             pass
 
-        def remove_name_listener(self, arg2: object=None) -> None:
+        def remove_name_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ACuePoint>,boost::python::api::object)
             :param arg2: arg2
@@ -16045,7 +16045,7 @@ class Song(ModuleType):
             """
             pass
 
-        def remove_time_listener(self, arg2: object=None) -> None:
+        def remove_time_listener(self, arg2: object) -> None:
             """
             Remove a previously set listener function or method from property "time". C++ signature :  void remove_time_listener(TPyHandle<ACuePoint>,boost::python::api::object)
             :param arg2: arg2
@@ -16054,7 +16054,7 @@ class Song(ModuleType):
             """
             pass
 
-        def time_has_listener(self, arg2: object=bool) -> bool:
+        def time_has_listener(self, arg2: object) -> bool:
             """
             Returns true, if the given listener function or method is connected to the property "time". C++ signature :  bool time_has_listener(TPyHandle<ACuePoint>,boost::python::api::object)
             :param arg2: arg2
@@ -16196,3 +16196,6128 @@ class Song(ModuleType):
             Get/Set access to the quantization settings that are used to fireClips in the Session.
             """
             pass
+
+        @property
+        def count_in_duration(self):
+            """
+            Get the count in duration. Returns an index, mapped as follows: 0 - None, 1 - 1 Bar, 2 - 2 Bars, 3 - 4 Bars.
+            """
+            pass
+
+        @property
+        def cue_points(self):
+            """
+            Const access to a list of all cue points of the Live Song.
+            """
+            pass
+
+        @property
+        def current_song_time(self):
+            """
+            Get/Set access to the songs current playing position in beats.
+            """
+            pass
+
+        @property
+        def exclusive_arm(self):
+            """
+            Get if Tracks should be armed exclusively by default.
+            """
+            pass
+
+        @property
+        def exclusive_solo(self):
+            """
+            Get if Tracks should be soloed exclusively by default.
+            """
+            pass
+
+        @property
+        def file_path(self):
+            """
+            Get the current Live Set's path on disk.
+            """
+            pass
+
+        @property
+        def groove_amount(self):
+            """
+            Get/Set the global groove amount, that adjust all setup groovesin all clips.
+            """
+            pass
+
+        @property
+        def groove_pool(self):
+            """
+            Get the groove pool.
+            """
+            pass
+
+        @property
+        def is_ableton_link_enabled(self):
+            """
+            Enable/disable Ableton Link.
+            """
+            pass
+
+        @property
+        def is_ableton_link_start_stop_sync_enabled(self):
+            """
+            Enable/disable Ableton Link Start Stop Sync.
+            """
+            pass
+
+        @property
+        def is_counting_in(self):
+            """
+            Get whether currently counting in.
+            """
+            pass
+
+        @property
+        def is_playing(self):
+            """
+            Returns true if the Song is currently playing.
+            """
+            pass
+
+        @property
+        def last_event_time(self):
+            """
+            Return the time of the last set event in the song. In contrary tosong_length, this will not add some extra beats that are mostly neededfor Display purposes in the Arrangerview.
+            """
+            pass
+
+        @property
+        def loop(self):
+            """
+            Get/Set the looping flag that en/disables the usage of the globalloop markers in the song.
+            """
+            pass
+
+        @property
+        def loop_length(self):
+            """
+            Get/Set the length of the global loop marker position in beats.
+            """
+            pass
+
+        @property
+        def loop_start(self):
+            """
+            Get/Set the start of the global loop marker position in beats.
+            """
+            pass
+
+        @property
+        def master_track(self):
+            """
+            Access to the Main Track (always available)
+            """
+            pass
+
+        @property
+        def metronome(self):
+            """
+            Get/Set if the metronom is audible.
+            """
+            pass
+
+        @property
+        def midi_recording_quantization(self):
+            """
+            Get/Set access to the settings that are used to quantizeMIDI recordings.
+            """
+            pass
+
+        @property
+        def name(self):
+            """
+            Get the current Live Set's name.
+            """
+            pass
+
+        @property
+        def nudge_down(self):
+            """
+            Get/Set the status of the nudge down button.
+            """
+            pass
+
+        @property
+        def nudge_up(self):
+            """
+            Get/Set the status of the nudge up button.
+            """
+            pass
+
+        @property
+        def overdub(self):
+            """
+            Legacy hook for Live 8 overdub state. Now hooks tosession record, but never starts playback.
+            """
+            pass
+
+        @property
+        def punch_in(self):
+            """
+            Get/Set the flag that will enable recording as soon as the Song playsand hits the global loop start region.
+            """
+            pass
+
+        @property
+        def punch_out(self):
+            """
+            Get/Set the flag that will disable recording as soon as the Song playsand hits the global loop end region.
+            """
+            pass
+
+        @property
+        def re_enable_automation_enabled(self):
+            """
+            Returns true if some automated parameter has been overriden
+            """
+            pass
+
+        @property
+        def record_mode(self):
+            """
+            Get/Set the state of the global recording flag.
+            """
+            pass
+
+        @property
+        def return_tracks(self):
+            """
+            Const access to the list of available Return Tracks.
+            """
+            pass
+
+        @property
+        def root_note(self):
+            """
+            Set and access the root (i.e. key) of the song. The root can be a number between 0 and 11, with 0 corresponding to C and 11 corresponding to B.
+            """
+            pass
+
+        @property
+        def scale_intervals(self):
+            """
+            Reports the current scale's intervals as a list of integers, starting with the root and representing the number of halfsteps (e.g. Major -> 0, 2, 4, 5, 7, 9, 11)
+            """
+            pass
+
+        @property
+        def scale_mode(self):
+            """
+            Access to the Scale Mode setting in Live. When on, key tracks that belong to the currently selected scale are highlighted in Live's MIDI Note Editor, and pitch-based parameters in MIDI Tools and Devices can be edited in scale degrees rather than semitones.
+            """
+            pass
+
+        @property
+        def scale_name(self):
+            """
+            Set and access the currently selected scale by name. The default scale names that can be saved with a set and recalled are'Major', 'Minor', 'Dorian', 'Mixolydian' ,'Lydian' ,'Phrygian' ,'Locrian', 'Whole Tone', 'Half-whole Dim.', 'Whole-half Dim.', 'Minor Blues', 'Minor Pentatonic', 'Major Pentatonic', 'Harmonic Minor', 'Harmonic Major', 'Dorian #4', 'Phrygian Dominant', 'Melodic Minor', 'Lydian Augmented', 'Lydian Dominant', 'Super Locrian', 'Bhairav', 'Hungarian Minor', '8-Tone Spanish', 'Hirajoshi', 'In-Sen', 'Iwato', 'Kumoi', 'Pelog Selisir', 'Pelog Tembung', 'Messiaen 3', 'Messiaen 4', 'Messiaen 5', 'Messiaen 6', 'Messiaen 7'
+            """
+            pass
+
+        @property
+        def scenes(self):
+            """
+            Const access to a list of all Scenes in the Live Song.
+            """
+            pass
+
+        @property
+        def select_on_launch(self):
+            """
+            Get if Scenes and Clips should be selected when fired.
+            """
+            pass
+
+        @property
+        def session_automation_record(self):
+            """
+            Returns true if automation recording is enabled.
+            """
+            pass
+
+        @property
+        def session_record(self):
+            """
+            Get/Set the session record state.
+            """
+            pass
+
+        @property
+        def session_record_status(self):
+            """
+            Get the session slot-recording state.
+            """
+            pass
+
+        @property
+        def signature_denominator(self):
+            """
+            Get/Set access to the global signature denominator of the Song.
+            """
+            pass
+
+        @property
+        def signature_numerator(self):
+            """
+            Get/Set access to the global signature numerator of the Song.
+            """
+            pass
+
+        @property
+        def song_length(self):
+            """
+            Return the time of the last set event in the song, plus som extra beatsthat are usually added for better navigation in the arrangerview.
+            """
+            pass
+
+        @property
+        def start_time(self):
+            """
+            Get/Set access to the songs current start time in beats. The set timemay be overridden by the current loop/locator start time.
+            """
+            pass
+
+        @property
+        def swing_amount(self):
+            """
+            Get/Set access to the amount of swing that is applied when adding or quantizing notes to MIDI clips
+            """
+            pass
+
+        @property
+        def tempo(self):
+            """
+            Get/Set the global project tempo.
+            """
+            pass
+
+        @property
+        def tempo_follower_enabled(self):
+            """
+            Get/Set whether the Tempo Follower is controlling the tempo. The Tempo Follower Toggle must be made visible in the preferences for this property to be effective.
+            """
+            pass
+
+        @property
+        def tracks(self):
+            """
+            Const access to a list of all Player Tracks in the Live Song, excludingthe return and Main Track (see also Song.send_tracks and Song.master_track).At least one MIDI or Audio Track is always available.
+            """
+            pass
+
+        @property
+        def tuning_system(self):
+            """
+            Access the currently active tuning system.
+            """
+            pass
+
+        @property
+        def view(self):
+            """
+            Representing the view aspects of a Live document: The Session and Arrangerview.
+            """
+            pass
+
+        @property
+        def visible_tracks(self):
+            """
+            Const access to a list of all visible Player Tracks in the Live Song, excludingthe return and Main Track (see also Song.send_tracks and Song.master_track).At least one MIDI or Audio Track is always available.
+            """
+            pass
+
+        def add_appointed_device_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "appointed_device" has changed. C++ signature :  void add_appointed_device_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_arrangement_overdub_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "arrangement_overdub" has changed. C++ signature :  void add_arrangement_overdub_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_back_to_arranger_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "back_to_arranger" has changed. C++ signature :  void add_back_to_arranger_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_can_capture_midi_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "can_capture_midi" has changed. C++ signature :  void add_can_capture_midi_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_can_jump_to_next_cue_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "can_jump_to_next_cue" has changed. C++ signature :  void add_can_jump_to_next_cue_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_can_jump_to_prev_cue_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "can_jump_to_prev_cue" has changed. C++ signature :  void add_can_jump_to_prev_cue_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_clip_trigger_quantization_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "clip_trigger_quantization" has changed. C++ signature :  void add_clip_trigger_quantization_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_count_in_duration_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "count_in_duration" has changed. C++ signature :  void add_count_in_duration_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_cue_points_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "cue_points" has changed. C++ signature :  void add_cue_points_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_current_song_time_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "current_song_time" has changed. C++ signature :  void add_current_song_time_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_data_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "data" has changed. C++ signature :  void add_data_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_exclusive_arm_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "exclusive_arm" has changed. C++ signature :  void add_exclusive_arm_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_groove_amount_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "groove_amount" has changed. C++ signature :  void add_groove_amount_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_is_ableton_link_enabled_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "is_ableton_link_enabled" has changed. C++ signature :  void add_is_ableton_link_enabled_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_is_ableton_link_start_stop_sync_enabled_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "is_ableton_link_start_stop_sync_enabled" has changed. C++ signature :  void add_is_ableton_link_start_stop_sync_enabled_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_is_counting_in_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "is_counting_in" has changed. C++ signature :  void add_is_counting_in_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_is_playing_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "is_playing" has changed. C++ signature :  void add_is_playing_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_loop_length_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "loop_length" has changed. C++ signature :  void add_loop_length_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_loop_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "loop" has changed. C++ signature :  void add_loop_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_loop_start_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "loop_start" has changed. C++ signature :  void add_loop_start_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_metronome_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "metronome" has changed. C++ signature :  void add_metronome_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_midi_recording_quantization_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "midi_recording_quantization" has changed. C++ signature :  void add_midi_recording_quantization_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_nudge_down_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "nudge_down" has changed. C++ signature :  void add_nudge_down_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_nudge_up_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "nudge_up" has changed. C++ signature :  void add_nudge_up_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_overdub_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "overdub" has changed. C++ signature :  void add_overdub_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_punch_in_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "punch_in" has changed. C++ signature :  void add_punch_in_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_punch_out_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "punch_out" has changed. C++ signature :  void add_punch_out_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_re_enable_automation_enabled_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "re_enable_automation_enabled" has changed. C++ signature :  void add_re_enable_automation_enabled_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_record_mode_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "record_mode" has changed. C++ signature :  void add_record_mode_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_return_tracks_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "return_tracks" has changed. C++ signature :  void add_return_tracks_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_root_note_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "root_note" has changed. C++ signature :  void add_root_note_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_scale_information_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "scale_information" has changed. C++ signature :  void add_scale_information_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_scale_intervals_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "scale_intervals" has changed. C++ signature :  void add_scale_intervals_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_scale_mode_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "scale_mode" has changed. C++ signature :  void add_scale_mode_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_scale_name_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "scale_name" has changed. C++ signature :  void add_scale_name_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_scenes_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "scenes" has changed. C++ signature :  void add_scenes_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_session_automation_record_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "session_automation_record" has changed. C++ signature :  void add_session_automation_record_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_session_record_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "session_record" has changed. C++ signature :  void add_session_record_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_session_record_status_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "session_record_status" has changed. C++ signature :  void add_session_record_status_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_signature_denominator_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "signature_denominator" has changed. C++ signature :  void add_signature_denominator_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_signature_numerator_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "signature_numerator" has changed. C++ signature :  void add_signature_numerator_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_song_length_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "song_length" has changed. C++ signature :  void add_song_length_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_start_time_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "start_time" has changed. C++ signature :  void add_start_time_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_swing_amount_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "swing_amount" has changed. C++ signature :  void add_swing_amount_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_tempo_follower_enabled_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "tempo_follower_enabled" has changed. C++ signature :  void add_tempo_follower_enabled_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_tempo_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "tempo" has changed. C++ signature :  void add_tempo_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_tracks_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "tracks" has changed. C++ signature :  void add_tracks_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_tuning_system_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "tuning_system" has changed. C++ signature :  void add_tuning_system_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_visible_tracks_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "visible_tracks" has changed. C++ signature :  void add_visible_tracks_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def appointed_device_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "appointed_device". C++ signature :  bool appointed_device_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def arrangement_overdub_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "arrangement_overdub". C++ signature :  bool arrangement_overdub_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def back_to_arranger_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "back_to_arranger". C++ signature :  bool back_to_arranger_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def begin_undo_step(self, ) -> None:
+            """
+            C++ signature :  void begin_undo_step(TPyHandle<ASong>)
+            :rtype: None
+            """
+            pass
+
+        def can_capture_midi_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "can_capture_midi". C++ signature :  bool can_capture_midi_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def can_jump_to_next_cue_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "can_jump_to_next_cue". C++ signature :  bool can_jump_to_next_cue_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def can_jump_to_prev_cue_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "can_jump_to_prev_cue". C++ signature :  bool can_jump_to_prev_cue_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def capture_and_insert_scene(self, CaptureMode: int) -> None:
+            """
+            Capture currently playing clips and insert them as a new scene after the selected scene. Raises a runtime error if creating a new scene would exceed the limitations. C++ signature :  void capture_and_insert_scene(TPyHandle<ASong> [,int=Song.CaptureMode.all])
+            :param CaptureMode: CaptureMode
+            :type CaptureMode: int
+            :rtype: None
+            """
+            pass
+
+        def capture_midi(self, Destination: int) -> None:
+            """
+            Capture recently played MIDI material from audible tracks. If no Destination is given or Destination is set to CaptureDestination.auto, the captured material is inserted into the Session or Arrangement depending on which is visible. If Destination is set to CaptureDestination.session or CaptureDestination.arrangement, inserts the material into Session or Arrangement, respectively. Raises a limitation error when capturing into the Session and a new scene would have to be created but can't because it would exceed the limitations. C++ signature :  void capture_midi(TPyHandle<ASong> [,int=Song.CaptureDestination.auto])
+            :param Destination: Destination
+            :type Destination: int
+            :rtype: None
+            """
+            pass
+
+        def clip_trigger_quantization_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "clip_trigger_quantization". C++ signature :  bool clip_trigger_quantization_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def continue_playing(self, ) -> None:
+            """
+            Continue playing the song from the current position C++ signature :  void continue_playing(TPyHandle<ASong>)
+            :rtype: None
+            """
+            pass
+
+        def count_in_duration_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "count_in_duration". C++ signature :  bool count_in_duration_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def create_audio_track(self, Index: object) -> Track:
+            """
+            Create a new audio track at the optional given index and return it.If the index is -1, the new track is added at the end. It will create a default audio track if possible. If the index is invalid or the new track would exceed the limitations, a limitation error is raised.If the index is missing, the track is created after the last selected item C++ signature :  TWeakPtr<TTrackPyHandle> create_audio_track(TPyHandle<ASong> [,boost::python::api::object=None])
+            :param Index: Index
+            :type Index: object
+            :rtype: Track
+            """
+            pass
+
+        def create_midi_track(self, Index: object) -> Track:
+            """
+            Create a new midi track at the optional given index and return it.If the index is -1,  the new track is added at the end.It will create a default midi track if possible. If the index is invalid or the new track would exceed the limitations, a limitation error is raised.If the index is missing, the track is created after the last selected item C++ signature :  TWeakPtr<TTrackPyHandle> create_midi_track(TPyHandle<ASong> [,boost::python::api::object=None])
+            :param Index: Index
+            :type Index: object
+            :rtype: Track
+            """
+            pass
+
+        def create_return_track(self, ) -> Track:
+            """
+            Create a new return track at the end and return it. If the new track would exceed  the limitations, a limitation error is raised.  If the maximum number of return tracks is exceeded, a RuntimeError is raised. C++ signature :  TWeakPtr<TTrackPyHandle> create_return_track(TPyHandle<ASong>)
+            :rtype: Track
+            """
+            pass
+
+        def create_scene(self, arg2: int) -> Scene:
+            """
+            Create a new scene at the given index. If the index is -1, the new scene is added at the end. If the index is invalid or the new scene would exceed the limitations, a limitation error is raised. C++ signature :  TWeakPtr<TPyHandle<AScene>> create_scene(TPyHandle<ASong>,int)
+            :param arg2: arg2
+            :type arg2: int
+            :rtype: Scene
+            """
+            pass
+
+        def cue_points_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "cue_points". C++ signature :  bool cue_points_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def current_song_time_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "current_song_time". C++ signature :  bool current_song_time_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def data_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "data". C++ signature :  bool data_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def delete_return_track(self, arg2: int) -> None:
+            """
+            Delete the return track with the given index. If no track with this index exists, an exception will be raised. C++ signature :  void delete_return_track(TPyHandle<ASong>,int)
+            :param arg2: arg2
+            :type arg2: int
+            :rtype: None
+            """
+            pass
+
+        def delete_scene(self, arg2: int) -> None:
+            """
+            Delete the scene with the given index. If no scene with this index exists, an exception will be raised. C++ signature :  void delete_scene(TPyHandle<ASong>,int)
+            :param arg2: arg2
+            :type arg2: int
+            :rtype: None
+            """
+            pass
+
+        def delete_track(self, arg2: int) -> None:
+            """
+            Delete the track with the given index. If no track with this index exists, an exception will be raised. C++ signature :  void delete_track(TPyHandle<ASong>,int)
+            :param arg2: arg2
+            :type arg2: int
+            :rtype: None
+            """
+            pass
+
+        def duplicate_scene(self, arg2: int) -> None:
+            """
+            Duplicates a scene and selects the new one. Raises a limitation error if creating a new scene would exceed the limitations. C++ signature :  void duplicate_scene(TPyHandle<ASong>,int)
+            :param arg2: arg2
+            :type arg2: int
+            :rtype: None
+            """
+            pass
+
+        def duplicate_track(self, arg2: int) -> None:
+            """
+            Duplicates a track and selects the new one. If the track is inside a folded group track, the group track is unfolded. Raises a limitation error if creating a new track would exceed the limitations. C++ signature :  void duplicate_track(TPyHandle<ASong>,int)
+            :param arg2: arg2
+            :type arg2: int
+            :rtype: None
+            """
+            pass
+
+        def end_undo_step(self, ) -> None:
+            """
+            C++ signature :  void end_undo_step(TPyHandle<ASong>)
+            :rtype: None
+            """
+            pass
+
+        def exclusive_arm_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "exclusive_arm". C++ signature :  bool exclusive_arm_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def find_device_position(self, device: Device, target: LomObject, target_position: int) -> int:
+            """
+            Returns the closest possible position to the given target, where the device can be inserted. If inserting is not possible at all (i.e. if the device type is wrong), -1 is returned. C++ signature :  int find_device_position(TPyHandle<ASong>,TPyHandle<ADevice>,TPyHandleBase,int)
+            :param device: device
+            :type device: Device
+            :param target: target
+            :type target: LomObject
+            :param target_position: target_position
+            :type target_position: int
+            :rtype: int
+            """
+            pass
+
+        def force_link_beat_time(self, ) -> None:
+            """
+            Force the Link timeline to jump to Lives current beat time. Danger: This can cause beat time discontinuities in other connected apps. C++ signature :  void force_link_beat_time(TPyHandle<ASong>)
+            :rtype: None
+            """
+            pass
+
+        def get_beats_loop_length(self, ) -> BeatTime:
+            """
+            Get const access to the songs loop length, using a BeatTime class with the current global set signature. C++ signature :  NSongApi::TBeatTime get_beats_loop_length(TPyHandle<ASong>)
+            :rtype: BeatTime
+            """
+            pass
+
+        def get_beats_loop_start(self, ) -> BeatTime:
+            """
+            Get const access to the songs loop start, using a BeatTime class with the current global set signature. C++ signature :  NSongApi::TBeatTime get_beats_loop_start(TPyHandle<ASong>)
+            :rtype: BeatTime
+            """
+            pass
+
+        def get_current_beats_song_time(self, ) -> BeatTime:
+            """
+            Get const access to the songs current playing position, using a BeatTime class with the current global set signature. C++ signature :  NSongApi::TBeatTime get_current_beats_song_time(TPyHandle<ASong>)
+            :rtype: BeatTime
+            """
+            pass
+
+        def get_current_smpte_song_time(self, arg2: int) -> SmptTime:
+            """
+            Get const access to the songs current playing position, by specifying the SMPTE format in which you would like to receive the time. C++ signature :  NSongApi::TSmptTime get_current_smpte_song_time(TPyHandle<ASong>,int)
+            :param arg2: arg2
+            :type arg2: int
+            :rtype: SmptTime
+            """
+            pass
+
+        def get_data(self, key: object, default_value: object) -> object:
+            """
+            Get data for the given key, that was previously stored using set_data. C++ signature :  boost::python::api::object get_data(TPyHandle<ASong>,TString,boost::python::api::object)
+            :param key: key
+            :type key: object
+            :param default_value: default_value
+            :type default_value: object
+            :rtype: object
+            """
+            pass
+
+        def groove_amount_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "groove_amount". C++ signature :  bool groove_amount_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def is_ableton_link_enabled_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "is_ableton_link_enabled". C++ signature :  bool is_ableton_link_enabled_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def is_ableton_link_start_stop_sync_enabled_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "is_ableton_link_start_stop_sync_enabled". C++ signature :  bool is_ableton_link_start_stop_sync_enabled_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def is_counting_in_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "is_counting_in". C++ signature :  bool is_counting_in_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def is_cue_point_selected(self, ) -> bool:
+            """
+            Return true if the global playing pos is currently on a cue point. C++ signature :  bool is_cue_point_selected(TPyHandle<ASong>)
+            :rtype: bool
+            """
+            pass
+
+        def is_playing_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "is_playing". C++ signature :  bool is_playing_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def jump_by(self, arg2: float) -> None:
+            """
+            Set a new playing pos, relative to the current one. C++ signature :  void jump_by(TPyHandle<ASong>,double)
+            :param arg2: arg2
+            :type arg2: float
+            :rtype: None
+            """
+            pass
+
+        def jump_to_next_cue(self, ) -> None:
+            """
+            Jump to the next cue (marker) if possible. C++ signature :  void jump_to_next_cue(TPyHandle<ASong>)
+            :rtype: None
+            """
+            pass
+
+        def jump_to_prev_cue(self, ) -> None:
+            """
+            Jump to the prior cue (marker) if possible. C++ signature :  void jump_to_prev_cue(TPyHandle<ASong>)
+            :rtype: None
+            """
+            pass
+
+        def loop_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "loop". C++ signature :  bool loop_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def loop_length_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "loop_length". C++ signature :  bool loop_length_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def loop_start_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "loop_start". C++ signature :  bool loop_start_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def metronome_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "metronome". C++ signature :  bool metronome_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def midi_recording_quantization_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "midi_recording_quantization". C++ signature :  bool midi_recording_quantization_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def move_device(self, device: Device, target: LomObject, target_position: int) -> int:
+            """
+            Move a device into the target at the given position, where 0 moves it before the first device and len(devices) moves it to the end of the device chain.If the device cannot be moved to this position, the nearest possible position is chosen. If the device type is not valid, a runtime error is raised.Returns the index, where the device was moved to. C++ signature :  int move_device(TPyHandle<ASong>,TPyHandle<ADevice>,TPyHandleBase,int)
+            :param device: device
+            :type device: Device
+            :param target: target
+            :type target: LomObject
+            :param target_position: target_position
+            :type target_position: int
+            :rtype: int
+            """
+            pass
+
+        def nudge_down_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "nudge_down". C++ signature :  bool nudge_down_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def nudge_up_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "nudge_up". C++ signature :  bool nudge_up_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def overdub_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "overdub". C++ signature :  bool overdub_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def play_selection(self, ) -> None:
+            """
+            Start playing the current set selection, or do nothing if no selection is set. C++ signature :  void play_selection(TPyHandle<ASong>)
+            :rtype: None
+            """
+            pass
+
+        def punch_in_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "punch_in". C++ signature :  bool punch_in_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def punch_out_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "punch_out". C++ signature :  bool punch_out_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def re_enable_automation(self, ) -> None:
+            """
+            Discards overrides of automated parameters. C++ signature :  void re_enable_automation(TPyHandle<ASong>)
+            :rtype: None
+            """
+            pass
+
+        def re_enable_automation_enabled_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "re_enable_automation_enabled". C++ signature :  bool re_enable_automation_enabled_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def record_mode_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "record_mode". C++ signature :  bool record_mode_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def redo(self, ) -> str:
+            """
+            Redo the last action that was undone. C++ signature :  TString redo(TPyHandle<ASong>)
+            :rtype: str
+            """
+            pass
+
+        def remove_appointed_device_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "appointed_device". C++ signature :  void remove_appointed_device_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_arrangement_overdub_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "arrangement_overdub". C++ signature :  void remove_arrangement_overdub_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_back_to_arranger_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "back_to_arranger". C++ signature :  void remove_back_to_arranger_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_can_capture_midi_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "can_capture_midi". C++ signature :  void remove_can_capture_midi_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_can_jump_to_next_cue_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "can_jump_to_next_cue". C++ signature :  void remove_can_jump_to_next_cue_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_can_jump_to_prev_cue_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "can_jump_to_prev_cue". C++ signature :  void remove_can_jump_to_prev_cue_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_clip_trigger_quantization_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "clip_trigger_quantization". C++ signature :  void remove_clip_trigger_quantization_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_count_in_duration_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "count_in_duration". C++ signature :  void remove_count_in_duration_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_cue_points_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "cue_points". C++ signature :  void remove_cue_points_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_current_song_time_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "current_song_time". C++ signature :  void remove_current_song_time_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_data_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "data". C++ signature :  void remove_data_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_exclusive_arm_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "exclusive_arm". C++ signature :  void remove_exclusive_arm_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_groove_amount_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "groove_amount". C++ signature :  void remove_groove_amount_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_is_ableton_link_enabled_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "is_ableton_link_enabled". C++ signature :  void remove_is_ableton_link_enabled_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_is_ableton_link_start_stop_sync_enabled_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "is_ableton_link_start_stop_sync_enabled". C++ signature :  void remove_is_ableton_link_start_stop_sync_enabled_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_is_counting_in_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "is_counting_in". C++ signature :  void remove_is_counting_in_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_is_playing_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "is_playing". C++ signature :  void remove_is_playing_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_loop_length_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "loop_length". C++ signature :  void remove_loop_length_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_loop_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "loop". C++ signature :  void remove_loop_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_loop_start_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "loop_start". C++ signature :  void remove_loop_start_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_metronome_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "metronome". C++ signature :  void remove_metronome_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_midi_recording_quantization_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "midi_recording_quantization". C++ signature :  void remove_midi_recording_quantization_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_nudge_down_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "nudge_down". C++ signature :  void remove_nudge_down_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_nudge_up_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "nudge_up". C++ signature :  void remove_nudge_up_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_overdub_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "overdub". C++ signature :  void remove_overdub_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_punch_in_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "punch_in". C++ signature :  void remove_punch_in_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_punch_out_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "punch_out". C++ signature :  void remove_punch_out_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_re_enable_automation_enabled_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "re_enable_automation_enabled". C++ signature :  void remove_re_enable_automation_enabled_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_record_mode_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "record_mode". C++ signature :  void remove_record_mode_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_return_tracks_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "return_tracks". C++ signature :  void remove_return_tracks_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_root_note_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "root_note". C++ signature :  void remove_root_note_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_scale_information_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "scale_information". C++ signature :  void remove_scale_information_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_scale_intervals_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "scale_intervals". C++ signature :  void remove_scale_intervals_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_scale_mode_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "scale_mode". C++ signature :  void remove_scale_mode_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_scale_name_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "scale_name". C++ signature :  void remove_scale_name_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_scenes_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "scenes". C++ signature :  void remove_scenes_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_session_automation_record_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "session_automation_record". C++ signature :  void remove_session_automation_record_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_session_record_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "session_record". C++ signature :  void remove_session_record_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_session_record_status_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "session_record_status". C++ signature :  void remove_session_record_status_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_signature_denominator_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "signature_denominator". C++ signature :  void remove_signature_denominator_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_signature_numerator_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "signature_numerator". C++ signature :  void remove_signature_numerator_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_song_length_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "song_length". C++ signature :  void remove_song_length_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_start_time_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "start_time". C++ signature :  void remove_start_time_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_swing_amount_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "swing_amount". C++ signature :  void remove_swing_amount_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_tempo_follower_enabled_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "tempo_follower_enabled". C++ signature :  void remove_tempo_follower_enabled_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_tempo_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "tempo". C++ signature :  void remove_tempo_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_tracks_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "tracks". C++ signature :  void remove_tracks_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_tuning_system_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "tuning_system". C++ signature :  void remove_tuning_system_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_visible_tracks_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "visible_tracks". C++ signature :  void remove_visible_tracks_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def return_tracks_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "return_tracks". C++ signature :  bool return_tracks_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def root_note_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "root_note". C++ signature :  bool root_note_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def scale_information_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "scale_information". C++ signature :  bool scale_information_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def scale_intervals_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "scale_intervals". C++ signature :  bool scale_intervals_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def scale_mode_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "scale_mode". C++ signature :  bool scale_mode_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def scale_name_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "scale_name". C++ signature :  bool scale_name_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def scenes_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "scenes". C++ signature :  bool scenes_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def scrub_by(self, arg2: float) -> None:
+            """
+            Same as jump_by, but does not stop playback. C++ signature :  void scrub_by(TPyHandle<ASong>,double)
+            :param arg2: arg2
+            :type arg2: float
+            :rtype: None
+            """
+            pass
+
+        def session_automation_record_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "session_automation_record". C++ signature :  bool session_automation_record_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def session_record_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "session_record". C++ signature :  bool session_record_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def session_record_status_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "session_record_status". C++ signature :  bool session_record_status_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def set_data(self, key: object, value: object) -> None:
+            """
+            Store data for the given key in this object. The data is persistent and will be restored when loading the Live Set. C++ signature :  void set_data(TPyHandle<ASong>,TString,boost::python::api::object)
+            :param key: key
+            :type key: object
+            :param value: value
+            :type value: object
+            :rtype: None
+            """
+            pass
+
+        def set_or_delete_cue(self, ) -> None:
+            """
+            When a cue is selected, it gets deleted. If no cue is selected, a new cue is created at the current global songtime. C++ signature :  void set_or_delete_cue(TPyHandle<ASong>)
+            :rtype: None
+            """
+            pass
+
+        def signature_denominator_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "signature_denominator". C++ signature :  bool signature_denominator_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def signature_numerator_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "signature_numerator". C++ signature :  bool signature_numerator_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def song_length_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "song_length". C++ signature :  bool song_length_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def start_playing(self, ) -> None:
+            """
+            Start playing from the startmarker C++ signature :  void start_playing(TPyHandle<ASong>)
+            :rtype: None
+            """
+            pass
+
+        def start_time_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "start_time". C++ signature :  bool start_time_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def stop_all_clips(self, Quantized: bool) -> None:
+            """
+            Stop all playing Clips (if any) but continue playing the Song. C++ signature :  void stop_all_clips(TPyHandle<ASong> [,bool=True])
+            :param Quantized: Quantized
+            :type Quantized: bool
+            :rtype: None
+            """
+            pass
+
+        def stop_playing(self, ) -> None:
+            """
+            Stop playing the Song. C++ signature :  void stop_playing(TPyHandle<ASong>)
+            :rtype: None
+            """
+            pass
+
+        def swing_amount_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "swing_amount". C++ signature :  bool swing_amount_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def tap_tempo(self, ) -> None:
+            """
+            Trigger the tap tempo function. C++ signature :  void tap_tempo(TPyHandle<ASong>)
+            :rtype: None
+            """
+            pass
+
+        def tempo_follower_enabled_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "tempo_follower_enabled". C++ signature :  bool tempo_follower_enabled_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def tempo_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "tempo". C++ signature :  bool tempo_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def tracks_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "tracks". C++ signature :  bool tracks_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def trigger_session_record(self, record_length: float) -> None:
+            """
+            Triggers a new session recording. C++ signature :  void trigger_session_record(TPyHandle<ASong> [,double=1.7976931348623157e+308])
+            :param record_length: record_length
+            :type record_length: float
+            :rtype: None
+            """
+            pass
+
+        def tuning_system_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "tuning_system". C++ signature :  bool tuning_system_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def undo(self, ) -> str:
+            """
+            Undo the last action that was made. C++ signature :  TString undo(TPyHandle<ASong>)
+            :rtype: str
+            """
+            pass
+
+        def visible_tracks_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "visible_tracks". C++ signature :  bool visible_tracks_has_listener(TPyHandle<ASong>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        class View(object):
+            def __init__(self, *a, **k):
+                """
+                Representing the view aspects of a Live document: The Session and Arrangerview.
+                """
+                pass
+
+            @property
+            def _live_ptr(self):
+                pass
+
+            @property
+            def canonical_parent(self):
+                """
+                Get the canonical parent of the song view.
+                """
+                pass
+
+            @property
+            def detail_clip(self):
+                """
+                Get/Set the Clip that is currently visible in Lives Detailview.
+                """
+                pass
+
+            @property
+            def draw_mode(self):
+                """
+                Get/Set if the Envelope/Note draw mode is enabled.
+                """
+                pass
+
+            @property
+            def follow_song(self):
+                """
+                Get/Set if the Arrangerview should scroll to show the playmarker.
+                """
+                pass
+
+            @property
+            def highlighted_clip_slot(self):
+                """
+                Get/Set the clip slot, defined via the selected track and scene in the Session.Will be None for Main- and Sendtracks.
+                """
+                pass
+
+            @property
+            def selected_chain(self):
+                """
+                Get the highlighted chain if available.
+                """
+                pass
+
+            @property
+            def selected_parameter(self):
+                """
+                Get the currently selected device parameter.
+                """
+                pass
+
+            @property
+            def selected_scene(self):
+                """
+                Get/Set the current selected scene in Lives Sessionview.
+                """
+                pass
+
+            @property
+            def selected_track(self):
+                """
+                Get/Set the current selected Track in Lives Session or Arrangerview.
+                """
+                pass
+
+            def add_detail_clip_listener(self, arg2: object) -> None:
+                """
+                Add a listener function or method, which will be called as soon as the property "detail_clip" has changed. C++ signature :  void add_detail_clip_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def add_draw_mode_listener(self, arg2: object) -> None:
+                """
+                Add a listener function or method, which will be called as soon as the property "draw_mode" has changed. C++ signature :  void add_draw_mode_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def add_follow_song_listener(self, arg2: object) -> None:
+                """
+                Add a listener function or method, which will be called as soon as the property "follow_song" has changed. C++ signature :  void add_follow_song_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def add_selected_chain_listener(self, arg2: object) -> None:
+                """
+                Add a listener function or method, which will be called as soon as the property "selected_chain" has changed. C++ signature :  void add_selected_chain_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def add_selected_parameter_listener(self, arg2: object) -> None:
+                """
+                Add a listener function or method, which will be called as soon as the property "selected_parameter" has changed. C++ signature :  void add_selected_parameter_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def add_selected_scene_listener(self, arg2: object) -> None:
+                """
+                Add a listener function or method, which will be called as soon as the property "selected_scene" has changed. C++ signature :  void add_selected_scene_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def add_selected_track_listener(self, arg2: object) -> None:
+                """
+                Add a listener function or method, which will be called as soon as the property "selected_track" has changed. C++ signature :  void add_selected_track_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def detail_clip_has_listener(self, arg2: object) -> bool:
+                """
+                Returns true, if the given listener function or method is connected to the property "detail_clip". C++ signature :  bool detail_clip_has_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: bool
+                """
+                pass
+
+            def draw_mode_has_listener(self, arg2: object) -> bool:
+                """
+                Returns true, if the given listener function or method is connected to the property "draw_mode". C++ signature :  bool draw_mode_has_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: bool
+                """
+                pass
+
+            def follow_song_has_listener(self, arg2: object) -> bool:
+                """
+                Returns true, if the given listener function or method is connected to the property "follow_song". C++ signature :  bool follow_song_has_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: bool
+                """
+                pass
+
+            def remove_detail_clip_listener(self, arg2: object) -> None:
+                """
+                Remove a previously set listener function or method from property "detail_clip". C++ signature :  void remove_detail_clip_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def remove_draw_mode_listener(self, arg2: object) -> None:
+                """
+                Remove a previously set listener function or method from property "draw_mode". C++ signature :  void remove_draw_mode_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def remove_follow_song_listener(self, arg2: object) -> None:
+                """
+                Remove a previously set listener function or method from property "follow_song". C++ signature :  void remove_follow_song_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def remove_selected_chain_listener(self, arg2: object) -> None:
+                """
+                Remove a previously set listener function or method from property "selected_chain". C++ signature :  void remove_selected_chain_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def remove_selected_parameter_listener(self, arg2: object) -> None:
+                """
+                Remove a previously set listener function or method from property "selected_parameter". C++ signature :  void remove_selected_parameter_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def remove_selected_scene_listener(self, arg2: object) -> None:
+                """
+                Remove a previously set listener function or method from property "selected_scene". C++ signature :  void remove_selected_scene_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def remove_selected_track_listener(self, arg2: object) -> None:
+                """
+                Remove a previously set listener function or method from property "selected_track". C++ signature :  void remove_selected_track_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def select_device(self, arg2: Device, ShouldAppointDevice: bool) -> None:
+                """
+                Select the given device. C++ signature :  void select_device(TPyViewData<ASong>,TPyHandle<ADevice> [,bool=True])
+                :param arg2: arg2
+                :type arg2: Device
+                :param ShouldAppointDevice: ShouldAppointDevice
+                :type ShouldAppointDevice: bool
+                :rtype: None
+                """
+                pass
+
+            def selected_chain_has_listener(self, arg2: object) -> bool:
+                """
+                Returns true, if the given listener function or method is connected to the property "selected_chain". C++ signature :  bool selected_chain_has_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: bool
+                """
+                pass
+
+            def selected_parameter_has_listener(self, arg2: object) -> bool:
+                """
+                Returns true, if the given listener function or method is connected to the property "selected_parameter". C++ signature :  bool selected_parameter_has_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: bool
+                """
+                pass
+
+            def selected_scene_has_listener(self, arg2: object) -> bool:
+                """
+                Returns true, if the given listener function or method is connected to the property "selected_scene". C++ signature :  bool selected_scene_has_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: bool
+                """
+                pass
+
+            def selected_track_has_listener(self, arg2: object) -> bool:
+                """
+                Returns true, if the given listener function or method is connected to the property "selected_track". C++ signature :  bool selected_track_has_listener(TPyViewData<ASong>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: bool
+                """
+                pass
+
+    class TimeFormat(object):
+        def __init__(self, *a, **k):
+            pass
+
+        def from_bytes(self, *a, **k) -> None:
+            """
+            Return the integer represented by the given array of bytes.  bytes Holds the array of bytes to convert.  The argument must either support the buffer protocol or be an iterable object producing bytes. Bytes and bytearray are examples of built-in objects that support the buffer protocol.  byteorder The byte order used to represent the integer.  If byteorder is 'big', the most significant byte is at the beginning of the byte array.  If byteorder is 'little', the most significant byte is at the end of the byte array.  To request the native byte order of the host system, use `sys.byteorder' as the byte order value.  Default is to use 'big'.  signed Indicates whether two's complement is used to represent the integer.
+            """
+            pass
+
+
+class SpectralResonatorDevice(ModuleType):
+    pass
+
+    class SpectralResonatorDevice(object):
+        def __init__(self, *a, **k):
+            """
+            This class represents a Spectral Resonator device.
+            """
+            pass
+
+        @property
+        def _live_ptr(self):
+            pass
+
+        @property
+        def can_have_chains(self):
+            """
+            Returns true if the device is a rack.
+            """
+            pass
+
+        @property
+        def can_have_drum_pads(self):
+            """
+            Returns true if the device is a drum rack.
+            """
+            pass
+
+        @property
+        def canonical_parent(self):
+            """
+            Get the canonical parent of the Device.
+            """
+            pass
+
+        @property
+        def class_display_name(self):
+            """
+            Return const access to the name of the device's class name as displayed in Live's browser and device chain
+            """
+            pass
+
+        @property
+        def class_name(self):
+            """
+            Return const access to the name of the device's class.
+            """
+            pass
+
+        @property
+        def frequency_dial_mode(self):
+            """
+            Return the current frequency dial mode index
+            """
+            pass
+
+        @property
+        def frequency_dial_mode_list(self):
+            """
+            Return the current frequency dial mode list
+            """
+            pass
+
+        @property
+        def is_active(self):
+            """
+            Return const access to whether this device is active. This will be false bothwhen the device is off and when it's inside a rack device which is off.
+            """
+            pass
+
+        @property
+        def latency_in_ms(self):
+            """
+            Returns the latency of the device in ms.
+            """
+            pass
+
+        @property
+        def latency_in_samples(self):
+            """
+            Returns the latency of the device in samples.
+            """
+            pass
+
+        @property
+        def midi_gate(self):
+            """
+            Return the current midi gate index
+            """
+            pass
+
+        @property
+        def midi_gate_list(self):
+            """
+            Return the current midi gate list
+            """
+            pass
+
+        @property
+        def mod_mode(self):
+            """
+            Return the current mod mode index
+            """
+            pass
+
+        @property
+        def mod_mode_list(self):
+            """
+            Return the current mod mode list
+            """
+            pass
+
+        @property
+        def mono_poly(self):
+            """
+            Return the current mono poly mode index
+            """
+            pass
+
+        @property
+        def mono_poly_list(self):
+            """
+            Return the current mono poly mode list
+            """
+            pass
+
+        @property
+        def name(self):
+            """
+            Return access to the name of the device.
+            """
+            pass
+
+        @property
+        def parameters(self):
+            """
+            Const access to the list of available automatable parameters for this device.
+            """
+            pass
+
+        @property
+        def pitch_bend_range(self):
+            """
+            Return the current pitch bend range
+            """
+            pass
+
+        @property
+        def pitch_mode(self):
+            """
+            Return the current pitch mode index
+            """
+            pass
+
+        @property
+        def pitch_mode_list(self):
+            """
+            Return the current pitch mode list
+            """
+            pass
+
+        @property
+        def polyphony(self):
+            """
+            Return the current polyphony
+            """
+            pass
+
+        @property
+        def type(self):
+            """
+            Return the type of the device.
+            """
+            pass
+
+        @property
+        def view(self):
+            """
+            Representing the view aspects of a device.
+            """
+            pass
+
+        def add_frequency_dial_mode_list_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "frequency_dial_mode_list" has changed. C++ signature :  void add_frequency_dial_mode_list_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_frequency_dial_mode_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "frequency_dial_mode" has changed. C++ signature :  void add_frequency_dial_mode_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_is_active_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "is_active" has changed. C++ signature :  void add_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_latency_in_ms_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "latency_in_ms" has changed. C++ signature :  void add_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_latency_in_samples_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "latency_in_samples" has changed. C++ signature :  void add_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_midi_gate_list_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "midi_gate_list" has changed. C++ signature :  void add_midi_gate_list_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_midi_gate_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "midi_gate" has changed. C++ signature :  void add_midi_gate_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_mod_mode_list_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "mod_mode_list" has changed. C++ signature :  void add_mod_mode_list_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_mod_mode_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "mod_mode" has changed. C++ signature :  void add_mod_mode_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_mono_poly_list_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "mono_poly_list" has changed. C++ signature :  void add_mono_poly_list_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_mono_poly_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "mono_poly" has changed. C++ signature :  void add_mono_poly_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_name_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_parameters_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "parameters" has changed. C++ signature :  void add_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_pitch_bend_range_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "pitch_bend_range" has changed. C++ signature :  void add_pitch_bend_range_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_pitch_mode_list_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "pitch_mode_list" has changed. C++ signature :  void add_pitch_mode_list_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_pitch_mode_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "pitch_mode" has changed. C++ signature :  void add_pitch_mode_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_polyphony_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "polyphony" has changed. C++ signature :  void add_polyphony_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def frequency_dial_mode_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "frequency_dial_mode". C++ signature :  bool frequency_dial_mode_has_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def frequency_dial_mode_list_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "frequency_dial_mode_list". C++ signature :  bool frequency_dial_mode_list_has_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def is_active_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "is_active". C++ signature :  bool is_active_has_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def latency_in_ms_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "latency_in_ms". C++ signature :  bool latency_in_ms_has_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def latency_in_samples_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "latency_in_samples". C++ signature :  bool latency_in_samples_has_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def midi_gate_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "midi_gate". C++ signature :  bool midi_gate_has_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def midi_gate_list_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "midi_gate_list". C++ signature :  bool midi_gate_list_has_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def mod_mode_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "mod_mode". C++ signature :  bool mod_mode_has_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def mod_mode_list_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "mod_mode_list". C++ signature :  bool mod_mode_list_has_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def mono_poly_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "mono_poly". C++ signature :  bool mono_poly_has_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def mono_poly_list_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "mono_poly_list". C++ signature :  bool mono_poly_list_has_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def name_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def parameters_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "parameters". C++ signature :  bool parameters_has_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def pitch_bend_range_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "pitch_bend_range". C++ signature :  bool pitch_bend_range_has_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def pitch_mode_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "pitch_mode". C++ signature :  bool pitch_mode_has_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def pitch_mode_list_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "pitch_mode_list". C++ signature :  bool pitch_mode_list_has_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def polyphony_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "polyphony". C++ signature :  bool polyphony_has_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def remove_frequency_dial_mode_list_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "frequency_dial_mode_list". C++ signature :  void remove_frequency_dial_mode_list_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_frequency_dial_mode_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "frequency_dial_mode". C++ signature :  void remove_frequency_dial_mode_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_is_active_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "is_active". C++ signature :  void remove_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_latency_in_ms_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "latency_in_ms". C++ signature :  void remove_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_latency_in_samples_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "latency_in_samples". C++ signature :  void remove_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_midi_gate_list_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "midi_gate_list". C++ signature :  void remove_midi_gate_list_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_midi_gate_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "midi_gate". C++ signature :  void remove_midi_gate_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_mod_mode_list_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "mod_mode_list". C++ signature :  void remove_mod_mode_list_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_mod_mode_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "mod_mode". C++ signature :  void remove_mod_mode_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_mono_poly_list_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "mono_poly_list". C++ signature :  void remove_mono_poly_list_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_mono_poly_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "mono_poly". C++ signature :  void remove_mono_poly_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_name_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_parameters_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "parameters". C++ signature :  void remove_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_pitch_bend_range_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "pitch_bend_range". C++ signature :  void remove_pitch_bend_range_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_pitch_mode_list_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "pitch_mode_list". C++ signature :  void remove_pitch_mode_list_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_pitch_mode_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "pitch_mode". C++ signature :  void remove_pitch_mode_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_polyphony_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "polyphony". C++ signature :  void remove_polyphony_listener(TTransmuteDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def store_chosen_bank(self, arg2: int, arg3: int) -> None:
+            """
+            Set the selected bank in the device for persistency. C++ signature :  void store_chosen_bank(TPyHandle<ADevice>,int,int)
+            :param arg2: arg2
+            :type arg2: int
+            :param arg3: arg3
+            :type arg3: int
+            :rtype: None
+            """
+            pass
+
+        class View(object):
+            def __init__(self, *a, **k):
+                """
+                Representing the view aspects of a device.
+                """
+                pass
+
+            @property
+            def _live_ptr(self):
+                pass
+
+            @property
+            def canonical_parent(self):
+                """
+                Get the canonical parent of the View.
+                """
+                pass
+
+            @property
+            def is_collapsed(self):
+                """
+                Get/Set/Listen if the device is shown collapsed in the device chain.
+                """
+                pass
+
+            def add_is_collapsed_listener(self, arg2: object) -> None:
+                """
+                Add a listener function or method, which will be called as soon as the property "is_collapsed" has changed. C++ signature :  void add_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def is_collapsed_has_listener(self, arg2: object) -> bool:
+                """
+                Returns true, if the given listener function or method is connected to the property "is_collapsed". C++ signature :  bool is_collapsed_has_listener(TPyViewData<ADevice>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: bool
+                """
+                pass
+
+            def remove_is_collapsed_listener(self, arg2: object) -> None:
+                """
+                Remove a previously set listener function or method from property "is_collapsed". C++ signature :  void remove_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+
+class Track(ModuleType):
+    pass
+
+    class DeviceContainer(object):
+        def __init__(self, *a, **k):
+            """
+            This class is a common super class of Track and Chain
+            """
+            pass
+
+        @property
+        def _live_ptr(self):
+            pass
+
+    class DeviceInsertMode(object):
+        def __init__(self, *a, **k):
+            pass
+
+        def from_bytes(self, *a, **k) -> None:
+            """
+            Return the integer represented by the given array of bytes.  bytes Holds the array of bytes to convert.  The argument must either support the buffer protocol or be an iterable object producing bytes. Bytes and bytearray are examples of built-in objects that support the buffer protocol.  byteorder The byte order used to represent the integer.  If byteorder is 'big', the most significant byte is at the beginning of the byte array.  If byteorder is 'little', the most significant byte is at the end of the byte array.  To request the native byte order of the host system, use `sys.byteorder' as the byte order value.  Default is to use 'big'.  signed Indicates whether two's complement is used to represent the integer.
+            """
+            pass
+
+    class RoutingChannel(object):
+        def __init__(self, *a, **k):
+            """
+            This class represents a routing channel.
+            """
+            pass
+
+        @property
+        def display_name(self):
+            """
+            Display name of routing channel.
+            """
+            pass
+
+        @property
+        def layout(self):
+            """
+            The routing channel's Layout, e.g., mono or stereo.
+            """
+            pass
+
+    class RoutingChannelLayout(object):
+        def __init__(self, *a, **k):
+            pass
+
+        def from_bytes(self, *a, **k) -> None:
+            """
+            Return the integer represented by the given array of bytes.  bytes Holds the array of bytes to convert.  The argument must either support the buffer protocol or be an iterable object producing bytes. Bytes and bytearray are examples of built-in objects that support the buffer protocol.  byteorder The byte order used to represent the integer.  If byteorder is 'big', the most significant byte is at the beginning of the byte array.  If byteorder is 'little', the most significant byte is at the end of the byte array.  To request the native byte order of the host system, use `sys.byteorder' as the byte order value.  Default is to use 'big'.  signed Indicates whether two's complement is used to represent the integer.
+            """
+            pass
+
+    class RoutingChannelVector(object):
+        def __init__(self, *a, **k):
+            """
+            A container for returning routing channels from Live.
+            """
+            pass
+
+        def append(self, arg2: object) -> None:
+            """
+            C++ signature :  void append(std::__1::vector<NRoutingApi::TRoutingChannel, std::__1::allocator<NRoutingApi::TRoutingChannel>> {lvalue},boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def extend(self, arg2: object) -> None:
+            """
+            C++ signature :  void extend(std::__1::vector<NRoutingApi::TRoutingChannel, std::__1::allocator<NRoutingApi::TRoutingChannel>> {lvalue},boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+    class RoutingType(object):
+        def __init__(self, *a, **k):
+            """
+            This class represents a routing type.
+            """
+            pass
+
+        @property
+        def attached_object(self):
+            """
+            Live object associated with the routing type.
+            """
+            pass
+
+        @property
+        def category(self):
+            """
+            Category of the routing type.
+            """
+            pass
+
+        @property
+        def display_name(self):
+            """
+            Display name of routing type.
+            """
+            pass
+
+    class RoutingTypeCategory(object):
+        def __init__(self, *a, **k):
+            pass
+
+        def from_bytes(self, *a, **k) -> None:
+            """
+            Return the integer represented by the given array of bytes.  bytes Holds the array of bytes to convert.  The argument must either support the buffer protocol or be an iterable object producing bytes. Bytes and bytearray are examples of built-in objects that support the buffer protocol.  byteorder The byte order used to represent the integer.  If byteorder is 'big', the most significant byte is at the beginning of the byte array.  If byteorder is 'little', the most significant byte is at the end of the byte array.  To request the native byte order of the host system, use `sys.byteorder' as the byte order value.  Default is to use 'big'.  signed Indicates whether two's complement is used to represent the integer.
+            """
+            pass
+
+    class RoutingTypeVector(object):
+        def __init__(self, *a, **k):
+            """
+            A container for returning routing types from Live.
+            """
+            pass
+
+        def append(self, arg2: object) -> None:
+            """
+            C++ signature :  void append(std::__1::vector<NRoutingApi::TRoutingType, std::__1::allocator<NRoutingApi::TRoutingType>> {lvalue},boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def extend(self, arg2: object) -> None:
+            """
+            C++ signature :  void extend(std::__1::vector<NRoutingApi::TRoutingType, std::__1::allocator<NRoutingApi::TRoutingType>> {lvalue},boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+    class Track(object):
+        def __init__(self, *a, **k):
+            """
+            This class represents a track in Live. It can be either an Audio track, a MIDI Track, a Return Track or the Main track. The Main Track and at least one Audio or MIDI track will be always present.Return Tracks are optional.
+            """
+            pass
+
+        @property
+        def _live_ptr(self):
+            pass
+
+        @property
+        def arm(self):
+            """
+            Arm the track for recording. Not available for Main- and Send Tracks.
+            """
+            pass
+
+        @property
+        def arrangement_clips(self):
+            """
+            const access to the list of clips in arrangement viewThe list will be empty for the main, send and group tracks.
+            """
+            pass
+
+        @property
+        def available_input_routing_channels(self):
+            """
+            Return a list of source channels for input routing.
+            """
+            pass
+
+        @property
+        def available_input_routing_types(self):
+            """
+            Return a list of source types for input routing.
+            """
+            pass
+
+        @property
+        def available_output_routing_channels(self):
+            """
+            Return a list of destination channels for output routing.
+            """
+            pass
+
+        @property
+        def available_output_routing_types(self):
+            """
+            Return a list of destination types for output routing.
+            """
+            pass
+
+        @property
+        def back_to_arranger(self):
+            """
+            Indicates if it's possible to go back to playing back the clips in the Arranger.Setting a value 0 will go back to the Arranger playback. Setting on grouptracks will go back to the Arranger on all grouped tracks.
+            """
+            pass
+
+        @property
+        def can_be_armed(self):
+            """
+            return True, if this Track has a valid arm property. Not all trackscan be armed (for example return Tracks or the Main Tracks).
+            """
+            pass
+
+        @property
+        def can_be_frozen(self):
+            """
+            return True, if this Track can be frozen.
+            """
+            pass
+
+        @property
+        def can_show_chains(self):
+            """
+            return True, if this Track contains a rack instrument device that is capable of showing its chains in session view.
+            """
+            pass
+
+        @property
+        def canonical_parent(self):
+            """
+            Get the canonical parent of the track.
+            """
+            pass
+
+        @property
+        def clip_slots(self):
+            """
+            const access to the list of clipslots (see class AClipSlot) for this track.The list will be empty for the main and sendtracks.
+            """
+            pass
+
+        @property
+        def color(self):
+            """
+            Get/set access to the color of the Track (RGB).
+            """
+            pass
+
+        @property
+        def color_index(self):
+            """
+            Get/Set access to the color index of the track. Can be None for no color.
+            """
+            pass
+
+        @property
+        def current_input_routing(self):
+            """
+            Get/Set the name of the current active input routing.When setting a new routing, the new routing must be one of the available ones.
+            """
+            pass
+
+        @property
+        def current_input_sub_routing(self):
+            """
+            Get/Set the current active input sub routing.When setting a new routing, the new routing must be one of the available ones.
+            """
+            pass
+
+        @property
+        def current_monitoring_state(self):
+            """
+            Get/Set the track's current monitoring state.
+            """
+            pass
+
+        @property
+        def current_output_routing(self):
+            """
+            Get/Set the current active output routing.When setting a new routing, the new routing must be one of the available ones.
+            """
+            pass
+
+        @property
+        def current_output_sub_routing(self):
+            """
+            Get/Set the current active output sub routing.When setting a new routing, the new routing must be one of the available ones.
+            """
+            pass
+
+        @property
+        def devices(self):
+            """
+            Return const access to all available Devices that are present in the TracksDevicechain. This tuple will also include the 'mixer_device' that every Trackalways has.
+            """
+            pass
+
+        @property
+        def fired_slot_index(self):
+            """
+            const access to the index of the fired (and thus blinking) clipslot in this track.This index is -1 if no slot is fired and -2 if the track's stop button has been fired.
+            """
+            pass
+
+        @property
+        def fold_state(self):
+            """
+            Get/Set whether the track is folded or not. Only available if is_foldable is True.
+            """
+            pass
+
+        @property
+        def group_track(self):
+            """
+            return the group track if is_grouped.
+            """
+            pass
+
+        @property
+        def has_audio_input(self):
+            """
+            return True, if this Track can be feed with an Audio signal. This istrue for all Audio Tracks.
+            """
+            pass
+
+        @property
+        def has_audio_output(self):
+            """
+            return True, if this Track sends out an Audio signal. This istrue for all Audio Tracks, and MIDI tracks with an Instrument.
+            """
+            pass
+
+        @property
+        def has_midi_input(self):
+            """
+            return True, if this Track can be feed with an Audio signal. This istrue for all MIDI Tracks.
+            """
+            pass
+
+        @property
+        def has_midi_output(self):
+            """
+            return True, if this Track sends out MIDI events. This istrue for all MIDI Tracks with no Instruments.
+            """
+            pass
+
+        @property
+        def implicit_arm(self):
+            """
+            Arm the track for recording. When The track is implicitly armed, it showsin a weaker color in the live GUI and is not saved in the set.
+            """
+            pass
+
+        @property
+        def input_meter_left(self):
+            """
+            Momentary value of left input channel meter, 0.0 to 1.0. For Audio Tracks only.
+            """
+            pass
+
+        @property
+        def input_meter_level(self):
+            """
+            Return the MIDI or Audio meter value of the Tracks input, depending on thetype of the Track input. Meter values (MIDI or Audio) are always scaledfrom 0.0 to 1.0.
+            """
+            pass
+
+        @property
+        def input_meter_right(self):
+            """
+            Momentary value of right input channel meter, 0.0 to 1.0. For Audio Tracks only.
+            """
+            pass
+
+        @property
+        def input_routing_channel(self):
+            """
+            Get and set the current source channel for input routing.Raises ValueError if the type isn't one of the current values inavailable_input_routing_channels.
+            """
+            pass
+
+        @property
+        def input_routing_type(self):
+            """
+            Get and set the current source type for input routing.Raises ValueError if the type isn't one of the current values inavailable_input_routing_types.
+            """
+            pass
+
+        @property
+        def input_routings(self):
+            """
+            Const access to the list of available input routings.
+            """
+            pass
+
+        @property
+        def input_sub_routings(self):
+            """
+            Return a list of all available input sub routings.
+            """
+            pass
+
+        @property
+        def is_foldable(self):
+            """
+            return True if the track can be (un)folded to hide/reveal contained tracks.
+            """
+            pass
+
+        @property
+        def is_frozen(self):
+            """
+            return True if this Track is currently frozen. No changes should be applied to the track's devices or clips while it is frozen.
+            """
+            pass
+
+        @property
+        def is_grouped(self):
+            """
+            return True if this Track is current part of a group track.
+            """
+            pass
+
+        @property
+        def is_part_of_selection(self):
+            """
+            return False if the track is not selected.
+            """
+            pass
+
+        @property
+        def is_showing_chains(self):
+            """
+            Get/Set whether a track with a rack device is showing its chains in session view.
+            """
+            pass
+
+        @property
+        def is_visible(self):
+            """
+            return False if the track is hidden within a folded group track.
+            """
+            pass
+
+        @property
+        def mixer_device(self):
+            """
+            Return access to the special Device that every Track has: This Device containsthe Volume, Pan, Sendamounts, and Crossfade assignment parameters.
+            """
+            pass
+
+        @property
+        def mute(self):
+            """
+            Mute/unmute the track.
+            """
+            pass
+
+        @property
+        def muted_via_solo(self):
+            """
+            Returns true if the track is muted because another track is soloed.
+            """
+            pass
+
+        @property
+        def name(self):
+            """
+            Read/write access to the name of the Track, as visible in the track header.
+            """
+            pass
+
+        @property
+        def output_meter_left(self):
+            """
+            Momentary value of left output channel meter, 0.0 to 1.0.For tracks with audio output only.
+            """
+            pass
+
+        @property
+        def output_meter_level(self):
+            """
+            Return the MIDI or Audio meter value of the Track output (behind themixer_device), depending on the type of the Track input, this can be a MIDIor Audio meter. Meter values (MIDI or Audio) are always scaled from 0.0 to 1.0.
+            """
+            pass
+
+        @property
+        def output_meter_right(self):
+            """
+            Momentary value of right output channel meter, 0.0 to 1.0.For tracks with audio output only.
+            """
+            pass
+
+        @property
+        def output_routing_channel(self):
+            """
+            Get and set the current destination channel for output routing.Raises ValueError if the channel isn't one of the current values inavailable_output_routing_channels.
+            """
+            pass
+
+        @property
+        def output_routing_type(self):
+            """
+            Get and set the current destination type for output routing.Raises ValueError if the type isn't one of the current values inavailable_output_routing_types.
+            """
+            pass
+
+        @property
+        def output_routings(self):
+            """
+            Const access to the list of all available output routings.
+            """
+            pass
+
+        @property
+        def output_sub_routings(self):
+            """
+            Return a list of all available output sub routings.
+            """
+            pass
+
+        @property
+        def performance_impact(self):
+            """
+            Reports the performance impact of this track.
+            """
+            pass
+
+        @property
+        def playing_slot_index(self):
+            """
+            const access to the index of the currently playing clip in the track.Will be -1 when no clip is playing.
+            """
+            pass
+
+        @property
+        def solo(self):
+            """
+            Get/Set the solo status of the track. Note that this will not disable thesolo state of any other track. If you want exclusive solo, you have to disable the solo state of the other Tracks manually.
+            """
+            pass
+
+        @property
+        def view(self):
+            """
+            Representing the view aspects of a Track.
+            """
+            pass
+
+        def add_arm_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "arm" has changed. C++ signature :  void add_arm_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_arrangement_clips_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "arrangement_clips" has changed. C++ signature :  void add_arrangement_clips_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_available_input_routing_channels_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "available_input_routing_channels" has changed. C++ signature :  void add_available_input_routing_channels_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_available_input_routing_types_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "available_input_routing_types" has changed. C++ signature :  void add_available_input_routing_types_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_available_output_routing_channels_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "available_output_routing_channels" has changed. C++ signature :  void add_available_output_routing_channels_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_available_output_routing_types_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "available_output_routing_types" has changed. C++ signature :  void add_available_output_routing_types_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_back_to_arranger_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "back_to_arranger" has changed. C++ signature :  void add_back_to_arranger_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_clip_slots_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "clip_slots" has changed. C++ signature :  void add_clip_slots_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_color_index_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "color_index" has changed. C++ signature :  void add_color_index_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_color_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "color" has changed. C++ signature :  void add_color_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_current_input_routing_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "current_input_routing" has changed. C++ signature :  void add_current_input_routing_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_current_input_sub_routing_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "current_input_sub_routing" has changed. C++ signature :  void add_current_input_sub_routing_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_current_monitoring_state_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "current_monitoring_state" has changed. C++ signature :  void add_current_monitoring_state_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_current_output_routing_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "current_output_routing" has changed. C++ signature :  void add_current_output_routing_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_current_output_sub_routing_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "current_output_sub_routing" has changed. C++ signature :  void add_current_output_sub_routing_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_data_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "data" has changed. C++ signature :  void add_data_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_devices_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "devices" has changed. C++ signature :  void add_devices_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_fired_slot_index_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "fired_slot_index" has changed. C++ signature :  void add_fired_slot_index_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_has_audio_input_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "has_audio_input" has changed. C++ signature :  void add_has_audio_input_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_has_audio_output_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "has_audio_output" has changed. C++ signature :  void add_has_audio_output_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_has_midi_input_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "has_midi_input" has changed. C++ signature :  void add_has_midi_input_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_has_midi_output_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "has_midi_output" has changed. C++ signature :  void add_has_midi_output_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_implicit_arm_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "implicit_arm" has changed. C++ signature :  void add_implicit_arm_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_input_meter_left_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "input_meter_left" has changed. C++ signature :  void add_input_meter_left_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_input_meter_level_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "input_meter_level" has changed. C++ signature :  void add_input_meter_level_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_input_meter_right_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "input_meter_right" has changed. C++ signature :  void add_input_meter_right_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_input_routing_channel_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "input_routing_channel" has changed. C++ signature :  void add_input_routing_channel_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_input_routing_type_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "input_routing_type" has changed. C++ signature :  void add_input_routing_type_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_input_routings_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "input_routings" has changed. C++ signature :  void add_input_routings_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_input_sub_routings_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "input_sub_routings" has changed. C++ signature :  void add_input_sub_routings_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_is_frozen_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "is_frozen" has changed. C++ signature :  void add_is_frozen_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_is_showing_chains_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "is_showing_chains" has changed. C++ signature :  void add_is_showing_chains_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_mute_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "mute" has changed. C++ signature :  void add_mute_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_muted_via_solo_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "muted_via_solo" has changed. C++ signature :  void add_muted_via_solo_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_name_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_output_meter_left_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "output_meter_left" has changed. C++ signature :  void add_output_meter_left_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_output_meter_level_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "output_meter_level" has changed. C++ signature :  void add_output_meter_level_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_output_meter_right_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "output_meter_right" has changed. C++ signature :  void add_output_meter_right_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_output_routing_channel_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "output_routing_channel" has changed. C++ signature :  void add_output_routing_channel_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_output_routing_type_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "output_routing_type" has changed. C++ signature :  void add_output_routing_type_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_output_routings_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "output_routings" has changed. C++ signature :  void add_output_routings_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_output_sub_routings_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "output_sub_routings" has changed. C++ signature :  void add_output_sub_routings_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_performance_impact_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "performance_impact" has changed. C++ signature :  void add_performance_impact_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_playing_slot_index_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "playing_slot_index" has changed. C++ signature :  void add_playing_slot_index_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_solo_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "solo" has changed. C++ signature :  void add_solo_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def arm_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "arm". C++ signature :  bool arm_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def arrangement_clips_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "arrangement_clips". C++ signature :  bool arrangement_clips_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def available_input_routing_channels_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "available_input_routing_channels". C++ signature :  bool available_input_routing_channels_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def available_input_routing_types_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "available_input_routing_types". C++ signature :  bool available_input_routing_types_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def available_output_routing_channels_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "available_output_routing_channels". C++ signature :  bool available_output_routing_channels_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def available_output_routing_types_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "available_output_routing_types". C++ signature :  bool available_output_routing_types_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def back_to_arranger_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "back_to_arranger". C++ signature :  bool back_to_arranger_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def clip_slots_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "clip_slots". C++ signature :  bool clip_slots_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def color_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "color". C++ signature :  bool color_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def color_index_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "color_index". C++ signature :  bool color_index_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def create_audio_clip(self, arg2: object, arg3: float) -> None:
+            """
+            Creates an audio clip referencing the file at the given path and inserts it into the arrangement at the specified time. Throws an error when called on a non-audio or a frozen track, when the specified time is outside the [0., 1576800.] range, when the track is currently being recorded into, or when the path doesn't point to a valid audio file. C++ signature :  void create_audio_clip(TTrackPyHandle,TString,double)
+            :param arg2: arg2
+            :type arg2: object
+            :param arg3: arg3
+            :type arg3: float
+            :rtype: None
+            """
+            pass
+
+        def current_input_routing_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "current_input_routing". C++ signature :  bool current_input_routing_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def current_input_sub_routing_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "current_input_sub_routing". C++ signature :  bool current_input_sub_routing_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def current_monitoring_state_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "current_monitoring_state". C++ signature :  bool current_monitoring_state_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def current_output_routing_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "current_output_routing". C++ signature :  bool current_output_routing_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def current_output_sub_routing_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "current_output_sub_routing". C++ signature :  bool current_output_sub_routing_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def data_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "data". C++ signature :  bool data_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def delete_clip(self, arg2: Clip) -> None:
+            """
+            Delete the given clip. Raises a runtime error when the clip belongs to another track. C++ signature :  void delete_clip(TTrackPyHandle,TPyHandle<AClip>)
+            :param arg2: arg2
+            :type arg2: Clip
+            :rtype: None
+            """
+            pass
+
+        def delete_device(self, arg2: int) -> None:
+            """
+            Delete a device identified by the index in the 'devices' list. C++ signature :  void delete_device(TTrackPyHandle,int)
+            :param arg2: arg2
+            :type arg2: int
+            :rtype: None
+            """
+            pass
+
+        def devices_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "devices". C++ signature :  bool devices_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def duplicate_clip_slot(self, arg2: int) -> int:
+            """
+            Duplicate a clip and put it into the next free slot and return the index of the destination slot. A new scene is created if no free slot is available. If creating the new scene would exceed the limitations, a runtime error is raised. C++ signature :  int duplicate_clip_slot(TTrackPyHandle,int)
+            :param arg2: arg2
+            :type arg2: int
+            :rtype: int
+            """
+            pass
+
+        def duplicate_clip_to_arrangement(self, clip: Clip, destination_time: float) -> Clip:
+            """
+            Duplicate the given clip into the arrangement of this track at the provided destination time and return it. When the type of the clip and the type of the track are incompatible, a runtime error is raised. C++ signature :  TWeakPtr<TPyHandle<AClip>> duplicate_clip_to_arrangement(TTrackPyHandle,TPyHandle<AClip>,double)
+            :param clip: clip
+            :type clip: Clip
+            :param destination_time: destination_time
+            :type destination_time: float
+            :rtype: Clip
+            """
+            pass
+
+        def fired_slot_index_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "fired_slot_index". C++ signature :  bool fired_slot_index_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def get_data(self, key: object, default_value: object) -> object:
+            """
+            Get data for the given key, that was previously stored using set_data. C++ signature :  boost::python::api::object get_data(TTrackPyHandle,TString,boost::python::api::object)
+            :param key: key
+            :type key: object
+            :param default_value: default_value
+            :type default_value: object
+            :rtype: object
+            """
+            pass
+
+        def has_audio_input_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "has_audio_input". C++ signature :  bool has_audio_input_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def has_audio_output_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "has_audio_output". C++ signature :  bool has_audio_output_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def has_midi_input_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "has_midi_input". C++ signature :  bool has_midi_input_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def has_midi_output_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "has_midi_output". C++ signature :  bool has_midi_output_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def implicit_arm_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "implicit_arm". C++ signature :  bool implicit_arm_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def input_meter_left_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "input_meter_left". C++ signature :  bool input_meter_left_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def input_meter_level_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "input_meter_level". C++ signature :  bool input_meter_level_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def input_meter_right_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "input_meter_right". C++ signature :  bool input_meter_right_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def input_routing_channel_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "input_routing_channel". C++ signature :  bool input_routing_channel_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def input_routing_type_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "input_routing_type". C++ signature :  bool input_routing_type_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def input_routings_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "input_routings". C++ signature :  bool input_routings_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def input_sub_routings_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "input_sub_routings". C++ signature :  bool input_sub_routings_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def is_frozen_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "is_frozen". C++ signature :  bool is_frozen_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def is_showing_chains_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "is_showing_chains". C++ signature :  bool is_showing_chains_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def jump_in_running_session_clip(self, arg2: float) -> None:
+            """
+            Jump forward or backward in the currently running Sessionclip (if any) by the specified relative amount in beats. Does nothing if no Session Clip is currently running. C++ signature :  void jump_in_running_session_clip(TTrackPyHandle,double)
+            :param arg2: arg2
+            :type arg2: float
+            :rtype: None
+            """
+            pass
+
+        def mute_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "mute". C++ signature :  bool mute_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def muted_via_solo_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "muted_via_solo". C++ signature :  bool muted_via_solo_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def name_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def output_meter_left_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "output_meter_left". C++ signature :  bool output_meter_left_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def output_meter_level_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "output_meter_level". C++ signature :  bool output_meter_level_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def output_meter_right_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "output_meter_right". C++ signature :  bool output_meter_right_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def output_routing_channel_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "output_routing_channel". C++ signature :  bool output_routing_channel_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def output_routing_type_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "output_routing_type". C++ signature :  bool output_routing_type_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def output_routings_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "output_routings". C++ signature :  bool output_routings_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def output_sub_routings_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "output_sub_routings". C++ signature :  bool output_sub_routings_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def performance_impact_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "performance_impact". C++ signature :  bool performance_impact_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def playing_slot_index_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "playing_slot_index". C++ signature :  bool playing_slot_index_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def remove_arm_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "arm". C++ signature :  void remove_arm_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_arrangement_clips_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "arrangement_clips". C++ signature :  void remove_arrangement_clips_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_available_input_routing_channels_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "available_input_routing_channels". C++ signature :  void remove_available_input_routing_channels_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_available_input_routing_types_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "available_input_routing_types". C++ signature :  void remove_available_input_routing_types_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_available_output_routing_channels_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "available_output_routing_channels". C++ signature :  void remove_available_output_routing_channels_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_available_output_routing_types_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "available_output_routing_types". C++ signature :  void remove_available_output_routing_types_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_back_to_arranger_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "back_to_arranger". C++ signature :  void remove_back_to_arranger_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_clip_slots_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "clip_slots". C++ signature :  void remove_clip_slots_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_color_index_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "color_index". C++ signature :  void remove_color_index_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_color_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "color". C++ signature :  void remove_color_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_current_input_routing_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "current_input_routing". C++ signature :  void remove_current_input_routing_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_current_input_sub_routing_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "current_input_sub_routing". C++ signature :  void remove_current_input_sub_routing_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_current_monitoring_state_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "current_monitoring_state". C++ signature :  void remove_current_monitoring_state_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_current_output_routing_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "current_output_routing". C++ signature :  void remove_current_output_routing_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_current_output_sub_routing_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "current_output_sub_routing". C++ signature :  void remove_current_output_sub_routing_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_data_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "data". C++ signature :  void remove_data_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_devices_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "devices". C++ signature :  void remove_devices_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_fired_slot_index_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "fired_slot_index". C++ signature :  void remove_fired_slot_index_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_has_audio_input_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "has_audio_input". C++ signature :  void remove_has_audio_input_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_has_audio_output_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "has_audio_output". C++ signature :  void remove_has_audio_output_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_has_midi_input_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "has_midi_input". C++ signature :  void remove_has_midi_input_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_has_midi_output_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "has_midi_output". C++ signature :  void remove_has_midi_output_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_implicit_arm_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "implicit_arm". C++ signature :  void remove_implicit_arm_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_input_meter_left_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "input_meter_left". C++ signature :  void remove_input_meter_left_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_input_meter_level_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "input_meter_level". C++ signature :  void remove_input_meter_level_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_input_meter_right_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "input_meter_right". C++ signature :  void remove_input_meter_right_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_input_routing_channel_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "input_routing_channel". C++ signature :  void remove_input_routing_channel_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_input_routing_type_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "input_routing_type". C++ signature :  void remove_input_routing_type_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_input_routings_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "input_routings". C++ signature :  void remove_input_routings_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_input_sub_routings_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "input_sub_routings". C++ signature :  void remove_input_sub_routings_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_is_frozen_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "is_frozen". C++ signature :  void remove_is_frozen_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_is_showing_chains_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "is_showing_chains". C++ signature :  void remove_is_showing_chains_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_mute_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "mute". C++ signature :  void remove_mute_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_muted_via_solo_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "muted_via_solo". C++ signature :  void remove_muted_via_solo_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_name_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_output_meter_left_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "output_meter_left". C++ signature :  void remove_output_meter_left_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_output_meter_level_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "output_meter_level". C++ signature :  void remove_output_meter_level_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_output_meter_right_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "output_meter_right". C++ signature :  void remove_output_meter_right_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_output_routing_channel_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "output_routing_channel". C++ signature :  void remove_output_routing_channel_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_output_routing_type_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "output_routing_type". C++ signature :  void remove_output_routing_type_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_output_routings_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "output_routings". C++ signature :  void remove_output_routings_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_output_sub_routings_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "output_sub_routings". C++ signature :  void remove_output_sub_routings_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_performance_impact_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "performance_impact". C++ signature :  void remove_performance_impact_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_playing_slot_index_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "playing_slot_index". C++ signature :  void remove_playing_slot_index_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_solo_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "solo". C++ signature :  void remove_solo_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def set_data(self, key: object, value: object) -> None:
+            """
+            Store data for the given key in this object. The data is persistent and will be restored when loading the Live Set. C++ signature :  void set_data(TTrackPyHandle,TString,boost::python::api::object)
+            :param key: key
+            :type key: object
+            :param value: value
+            :type value: object
+            :rtype: None
+            """
+            pass
+
+        def solo_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "solo". C++ signature :  bool solo_has_listener(TTrackPyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def stop_all_clips(self, Quantized: bool) -> None:
+            """
+            Stop running and triggered clip and slots on this track. C++ signature :  void stop_all_clips(TTrackPyHandle [,bool=True])
+            :param Quantized: Quantized
+            :type Quantized: bool
+            :rtype: None
+            """
+            pass
+
+        class View(object):
+            def __init__(self, *a, **k):
+                """
+                Representing the view aspects of a Track.
+                """
+                pass
+
+            @property
+            def _live_ptr(self):
+                pass
+
+            @property
+            def canonical_parent(self):
+                """
+                Get the canonical parent of the track view.
+                """
+                pass
+
+            @property
+            def device_insert_mode(self):
+                """
+                Get/Listen the device insertion mode of the track.  By default, it will insert devices at the end, but it can be changed to make it relative to current selection.
+                """
+                pass
+
+            @property
+            def is_collapsed(self):
+                """
+                Get/Set/Listen if the track is shown collapsed in the arranger view.
+                """
+                pass
+
+            @property
+            def selected_device(self):
+                """
+                Get/Set/Listen the insertion mode of the device.  While in insertion mode, loading new devices from the browser will place devices at the selected position.
+                """
+                pass
+
+            def add_device_insert_mode_listener(self, arg2: object) -> None:
+                """
+                Add a listener function or method, which will be called as soon as the property "device_insert_mode" has changed. C++ signature :  void add_device_insert_mode_listener(TPyViewData<ATrack>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def add_is_collapsed_listener(self, arg2: object) -> None:
+                """
+                Add a listener function or method, which will be called as soon as the property "is_collapsed" has changed. C++ signature :  void add_is_collapsed_listener(TPyViewData<ATrack>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def add_selected_device_listener(self, arg2: object) -> None:
+                """
+                Add a listener function or method, which will be called as soon as the property "selected_device" has changed. C++ signature :  void add_selected_device_listener(TPyViewData<ATrack>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def device_insert_mode_has_listener(self, arg2: object) -> bool:
+                """
+                Returns true, if the given listener function or method is connected to the property "device_insert_mode". C++ signature :  bool device_insert_mode_has_listener(TPyViewData<ATrack>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: bool
+                """
+                pass
+
+            def is_collapsed_has_listener(self, arg2: object) -> bool:
+                """
+                Returns true, if the given listener function or method is connected to the property "is_collapsed". C++ signature :  bool is_collapsed_has_listener(TPyViewData<ATrack>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: bool
+                """
+                pass
+
+            def remove_device_insert_mode_listener(self, arg2: object) -> None:
+                """
+                Remove a previously set listener function or method from property "device_insert_mode". C++ signature :  void remove_device_insert_mode_listener(TPyViewData<ATrack>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def remove_is_collapsed_listener(self, arg2: object) -> None:
+                """
+                Remove a previously set listener function or method from property "is_collapsed". C++ signature :  void remove_is_collapsed_listener(TPyViewData<ATrack>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def remove_selected_device_listener(self, arg2: object) -> None:
+                """
+                Remove a previously set listener function or method from property "selected_device". C++ signature :  void remove_selected_device_listener(TPyViewData<ATrack>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def select_instrument(self, ) -> bool:
+                """
+                Selects the track's instrument if it has one. C++ signature :  bool select_instrument(TPyViewData<ATrack>)
+                :rtype: bool
+                """
+                pass
+
+            def selected_device_has_listener(self, arg2: object) -> bool:
+                """
+                Returns true, if the given listener function or method is connected to the property "selected_device". C++ signature :  bool selected_device_has_listener(TPyViewData<ATrack>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: bool
+                """
+                pass
+
+        class monitoring_states(object):
+            def __init__(self, *a, **k):
+                pass
+
+            def from_bytes(self, *a, **k) -> None:
+                """
+                Return the integer represented by the given array of bytes.  bytes Holds the array of bytes to convert.  The argument must either support the buffer protocol or be an iterable object producing bytes. Bytes and bytearray are examples of built-in objects that support the buffer protocol.  byteorder The byte order used to represent the integer.  If byteorder is 'big', the most significant byte is at the beginning of the byte array.  If byteorder is 'little', the most significant byte is at the end of the byte array.  To request the native byte order of the host system, use `sys.byteorder' as the byte order value.  Default is to use 'big'.  signed Indicates whether two's complement is used to represent the integer.
+                """
+                pass
+
+
+class TuningSystem(ModuleType):
+    pass
+
+    class PitchClassAndOctave(object):
+        def __init__(self, *a, **k):
+            """
+            This class represents a PitchClassAndOctave type.
+            """
+            pass
+
+        @property
+        def index_in_octave(self):
+            """
+            A PitchClassAndOctave's index within the pseudo octave.
+            """
+            pass
+
+        @property
+        def octave(self):
+            """
+            A PitchClassAndOctave's octave.
+            """
+            pass
+
+    class ReferencePitch(object):
+        def __init__(self, *a, **k):
+            """
+            This class represents a ReferencePitch type.
+            """
+            pass
+
+        @property
+        def frequency(self):
+            """
+            A ReferencePitch's frequency in Hz.
+            """
+            pass
+
+        @property
+        def index_in_octave(self):
+            """
+            A ReferencePitch's index within the pseudo octave.
+            """
+            pass
+
+        @property
+        def octave(self):
+            """
+            A ReferencePitch's octave.
+            """
+            pass
+
+    class TuningSystem(object):
+        def __init__(self, *a, **k):
+            """
+            Represents a Tuning System and its properties.
+            """
+            pass
+
+        @property
+        def _live_ptr(self):
+            pass
+
+        @property
+        def canonical_parent(self):
+            """
+            Get the canonical parent of the TuningSystem.
+            """
+            pass
+
+        @property
+        def highest_note(self):
+            """
+            Get/Set the highest note of the current tuning system, where the first entry isthe index within the pseudo octave and the second entry is the octave.
+            """
+            pass
+
+        @property
+        def lowest_note(self):
+            """
+            Get/Set the lowest note of the current tuning system, where the first entry isthe index within the pseudo octave and the second entry is the octave.
+            """
+            pass
+
+        @property
+        def name(self):
+            """
+            Get/Set the name of the currently active tuning system.
+            """
+            pass
+
+        @property
+        def note_tunings(self):
+            """
+            Get/Set the currently active tuning system's note tunings, specified in Cents, where 100 Cents is one semi-tone in equal temperament.
+            """
+            pass
+
+        @property
+        def number_of_notes_in_pseudo_octave(self):
+            """
+            Get the number of notes in the pseudo octave.
+            """
+            pass
+
+        @property
+        def pseudo_octave_in_cents(self):
+            """
+            Get the pseudo octave in cents for the currently active tuning system.
+            """
+            pass
+
+        @property
+        def reference_pitch(self):
+            """
+            Get/Set the reference pitch the currently active tuning system.
+            """
+            pass
+
+        def add_highest_note_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "highest_note" has changed. C++ signature :  void add_highest_note_listener(TPyHandle<ATuningSystem>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_lowest_note_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "lowest_note" has changed. C++ signature :  void add_lowest_note_listener(TPyHandle<ATuningSystem>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_name_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ATuningSystem>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_note_tunings_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "note_tunings" has changed. C++ signature :  void add_note_tunings_listener(TPyHandle<ATuningSystem>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_reference_pitch_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "reference_pitch" has changed. C++ signature :  void add_reference_pitch_listener(TPyHandle<ATuningSystem>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def highest_note_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "highest_note". C++ signature :  bool highest_note_has_listener(TPyHandle<ATuningSystem>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def lowest_note_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "lowest_note". C++ signature :  bool lowest_note_has_listener(TPyHandle<ATuningSystem>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def name_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ATuningSystem>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def note_tunings_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "note_tunings". C++ signature :  bool note_tunings_has_listener(TPyHandle<ATuningSystem>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def reference_pitch_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "reference_pitch". C++ signature :  bool reference_pitch_has_listener(TPyHandle<ATuningSystem>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def remove_highest_note_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "highest_note". C++ signature :  void remove_highest_note_listener(TPyHandle<ATuningSystem>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_lowest_note_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "lowest_note". C++ signature :  void remove_lowest_note_listener(TPyHandle<ATuningSystem>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_name_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ATuningSystem>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_note_tunings_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "note_tunings". C++ signature :  void remove_note_tunings_listener(TPyHandle<ATuningSystem>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_reference_pitch_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "reference_pitch". C++ signature :  void remove_reference_pitch_listener(TPyHandle<ATuningSystem>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+
+class WavetableDevice(ModuleType):
+    pass
+
+    class EffectMode(object):
+        def __init__(self, *a, **k):
+            pass
+
+        def from_bytes(self, *a, **k) -> None:
+            """
+            Return the integer represented by the given array of bytes.  bytes Holds the array of bytes to convert.  The argument must either support the buffer protocol or be an iterable object producing bytes. Bytes and bytearray are examples of built-in objects that support the buffer protocol.  byteorder The byte order used to represent the integer.  If byteorder is 'big', the most significant byte is at the beginning of the byte array.  If byteorder is 'little', the most significant byte is at the end of the byte array.  To request the native byte order of the host system, use `sys.byteorder' as the byte order value.  Default is to use 'big'.  signed Indicates whether two's complement is used to represent the integer.
+            """
+            pass
+
+    class FilterRouting(object):
+        def __init__(self, *a, **k):
+            pass
+
+        def from_bytes(self, *a, **k) -> None:
+            """
+            Return the integer represented by the given array of bytes.  bytes Holds the array of bytes to convert.  The argument must either support the buffer protocol or be an iterable object producing bytes. Bytes and bytearray are examples of built-in objects that support the buffer protocol.  byteorder The byte order used to represent the integer.  If byteorder is 'big', the most significant byte is at the beginning of the byte array.  If byteorder is 'little', the most significant byte is at the end of the byte array.  To request the native byte order of the host system, use `sys.byteorder' as the byte order value.  Default is to use 'big'.  signed Indicates whether two's complement is used to represent the integer.
+            """
+            pass
+
+    class ModulationSource(object):
+        def __init__(self, *a, **k):
+            pass
+
+        def from_bytes(self, *a, **k) -> None:
+            """
+            Return the integer represented by the given array of bytes.  bytes Holds the array of bytes to convert.  The argument must either support the buffer protocol or be an iterable object producing bytes. Bytes and bytearray are examples of built-in objects that support the buffer protocol.  byteorder The byte order used to represent the integer.  If byteorder is 'big', the most significant byte is at the beginning of the byte array.  If byteorder is 'little', the most significant byte is at the end of the byte array.  To request the native byte order of the host system, use `sys.byteorder' as the byte order value.  Default is to use 'big'.  signed Indicates whether two's complement is used to represent the integer.
+            """
+            pass
+
+    class UnisonMode(object):
+        def __init__(self, *a, **k):
+            pass
+
+        def from_bytes(self, *a, **k) -> None:
+            """
+            Return the integer represented by the given array of bytes.  bytes Holds the array of bytes to convert.  The argument must either support the buffer protocol or be an iterable object producing bytes. Bytes and bytearray are examples of built-in objects that support the buffer protocol.  byteorder The byte order used to represent the integer.  If byteorder is 'big', the most significant byte is at the beginning of the byte array.  If byteorder is 'little', the most significant byte is at the end of the byte array.  To request the native byte order of the host system, use `sys.byteorder' as the byte order value.  Default is to use 'big'.  signed Indicates whether two's complement is used to represent the integer.
+            """
+            pass
+
+    class VoiceCount(object):
+        def __init__(self, *a, **k):
+            pass
+
+        def from_bytes(self, *a, **k) -> None:
+            """
+            Return the integer represented by the given array of bytes.  bytes Holds the array of bytes to convert.  The argument must either support the buffer protocol or be an iterable object producing bytes. Bytes and bytearray are examples of built-in objects that support the buffer protocol.  byteorder The byte order used to represent the integer.  If byteorder is 'big', the most significant byte is at the beginning of the byte array.  If byteorder is 'little', the most significant byte is at the end of the byte array.  To request the native byte order of the host system, use `sys.byteorder' as the byte order value.  Default is to use 'big'.  signed Indicates whether two's complement is used to represent the integer.
+            """
+            pass
+
+    class Voicing(object):
+        def __init__(self, *a, **k):
+            pass
+
+        def from_bytes(self, *a, **k) -> None:
+            """
+            Return the integer represented by the given array of bytes.  bytes Holds the array of bytes to convert.  The argument must either support the buffer protocol or be an iterable object producing bytes. Bytes and bytearray are examples of built-in objects that support the buffer protocol.  byteorder The byte order used to represent the integer.  If byteorder is 'big', the most significant byte is at the beginning of the byte array.  If byteorder is 'little', the most significant byte is at the end of the byte array.  To request the native byte order of the host system, use `sys.byteorder' as the byte order value.  Default is to use 'big'.  signed Indicates whether two's complement is used to represent the integer.
+            """
+            pass
+
+    class WavetableDevice(object):
+        def __init__(self, *a, **k):
+            """
+            This class represents a Wavetable device.
+            """
+            pass
+
+        @property
+        def _live_ptr(self):
+            pass
+
+        @property
+        def can_have_chains(self):
+            """
+            Returns true if the device is a rack.
+            """
+            pass
+
+        @property
+        def can_have_drum_pads(self):
+            """
+            Returns true if the device is a drum rack.
+            """
+            pass
+
+        @property
+        def canonical_parent(self):
+            """
+            Get the canonical parent of the Device.
+            """
+            pass
+
+        @property
+        def class_display_name(self):
+            """
+            Return const access to the name of the device's class name as displayed in Live's browser and device chain
+            """
+            pass
+
+        @property
+        def class_name(self):
+            """
+            Return const access to the name of the device's class.
+            """
+            pass
+
+        @property
+        def filter_routing(self):
+            """
+            Return the current filter routing.
+            """
+            pass
+
+        @property
+        def is_active(self):
+            """
+            Return const access to whether this device is active. This will be false bothwhen the device is off and when it's inside a rack device which is off.
+            """
+            pass
+
+        @property
+        def latency_in_ms(self):
+            """
+            Returns the latency of the device in ms.
+            """
+            pass
+
+        @property
+        def latency_in_samples(self):
+            """
+            Returns the latency of the device in samples.
+            """
+            pass
+
+        @property
+        def mono_poly(self):
+            """
+            Return the current voicing mode.
+            """
+            pass
+
+        @property
+        def name(self):
+            """
+            Return access to the name of the device.
+            """
+            pass
+
+        @property
+        def oscillator_1_effect_mode(self):
+            """
+            Return the current effect mode of the oscillator 1.
+            """
+            pass
+
+        @property
+        def oscillator_1_wavetable_category(self):
+            """
+            Return the current wavetable category of the oscillator 1.
+            """
+            pass
+
+        @property
+        def oscillator_1_wavetable_index(self):
+            """
+            Return the current wavetable index of the oscillator 1.
+            """
+            pass
+
+        @property
+        def oscillator_1_wavetables(self):
+            """
+            Get a vector of oscillator 1's wavetable names.
+            """
+            pass
+
+        @property
+        def oscillator_2_effect_mode(self):
+            """
+            Return the current effect mode of the oscillator 2.
+            """
+            pass
+
+        @property
+        def oscillator_2_wavetable_category(self):
+            """
+            Return the current wavetable category of the oscillator 2.
+            """
+            pass
+
+        @property
+        def oscillator_2_wavetable_index(self):
+            """
+            Return the current wavetable index of the oscillator 2.
+            """
+            pass
+
+        @property
+        def oscillator_2_wavetables(self):
+            """
+            Get a vector of oscillator 2's wavetable names.
+            """
+            pass
+
+        @property
+        def oscillator_wavetable_categories(self):
+            """
+            Get a vector of the available wavetable categories.
+            """
+            pass
+
+        @property
+        def parameters(self):
+            """
+            Const access to the list of available automatable parameters for this device.
+            """
+            pass
+
+        @property
+        def poly_voices(self):
+            """
+            Return the current number of polyphonic voices. Uses the VoiceCount enumeration.
+            """
+            pass
+
+        @property
+        def type(self):
+            """
+            Return the type of the device.
+            """
+            pass
+
+        @property
+        def unison_mode(self):
+            """
+            Return the current unison mode.
+            """
+            pass
+
+        @property
+        def unison_voice_count(self):
+            """
+            Return the current number of unison voices.
+            """
+            pass
+
+        @property
+        def view(self):
+            """
+            Representing the view aspects of a device.
+            """
+            pass
+
+        @property
+        def visible_modulation_target_names(self):
+            """
+            Get the names of all the visible modulation targets.
+            """
+            pass
+
+        def add_filter_routing_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "filter_routing" has changed. C++ signature :  void add_filter_routing_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_is_active_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "is_active" has changed. C++ signature :  void add_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_latency_in_ms_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "latency_in_ms" has changed. C++ signature :  void add_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_latency_in_samples_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "latency_in_samples" has changed. C++ signature :  void add_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_modulation_matrix_changed_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "modulation_matrix_changed" has changed. C++ signature :  void add_modulation_matrix_changed_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_mono_poly_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "mono_poly" has changed. C++ signature :  void add_mono_poly_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_name_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "name" has changed. C++ signature :  void add_name_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_oscillator_1_effect_mode_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "oscillator_1_effect_mode" has changed. C++ signature :  void add_oscillator_1_effect_mode_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_oscillator_1_wavetable_category_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "oscillator_1_wavetable_category" has changed. C++ signature :  void add_oscillator_1_wavetable_category_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_oscillator_1_wavetable_index_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "oscillator_1_wavetable_index" has changed. C++ signature :  void add_oscillator_1_wavetable_index_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_oscillator_1_wavetables_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "oscillator_1_wavetables" has changed. C++ signature :  void add_oscillator_1_wavetables_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_oscillator_2_effect_mode_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "oscillator_2_effect_mode" has changed. C++ signature :  void add_oscillator_2_effect_mode_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_oscillator_2_wavetable_category_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "oscillator_2_wavetable_category" has changed. C++ signature :  void add_oscillator_2_wavetable_category_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_oscillator_2_wavetable_index_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "oscillator_2_wavetable_index" has changed. C++ signature :  void add_oscillator_2_wavetable_index_listener(TWavetableDevicePyHandle,boost::python::api::object)add_oscillator_2_wavetable_index_listener( (WavetableDevice)arg1, (object)arg2) -> None : Add a listener function or method, which will be called as soon as the property "oscillator_2_wavetable_index" has changed. C++ signature :  void add_oscillator_2_wavetable_index_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_oscillator_2_wavetables_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "oscillator_2_wavetables" has changed. C++ signature :  void add_oscillator_2_wavetables_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_parameter_to_modulation_matrix(self, parameter: DeviceParameter) -> int:
+            """
+            Add a non-pitch parameter to the modulation matrix. C++ signature :  int add_parameter_to_modulation_matrix(TWavetableDevicePyHandle,TPyHandle<ATimeableValue>)
+            :param parameter: parameter
+            :type parameter: DeviceParameter
+            :rtype: int
+            """
+            pass
+
+        def add_parameters_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "parameters" has changed. C++ signature :  void add_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_poly_voices_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "poly_voices" has changed. C++ signature :  void add_poly_voices_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_unison_mode_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "unison_mode" has changed. C++ signature :  void add_unison_mode_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_unison_voice_count_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "unison_voice_count" has changed. C++ signature :  void add_unison_voice_count_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def add_visible_modulation_target_names_listener(self, arg2: object) -> None:
+            """
+            Add a listener function or method, which will be called as soon as the property "visible_modulation_target_names" has changed. C++ signature :  void add_visible_modulation_target_names_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def filter_routing_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "filter_routing". C++ signature :  bool filter_routing_has_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def get_modulation_target_parameter_name(self, target_index: int) -> str:
+            """
+            Get the parameter name of the modulation target at the given index. C++ signature :  TString get_modulation_target_parameter_name(TWavetableDevicePyHandle,int)
+            :param target_index: target_index
+            :type target_index: int
+            :rtype: str
+            """
+            pass
+
+        def get_modulation_value(self, target_index: int, source: int) -> float:
+            """
+            Get the value of a modulation amount for the given target-source connection. C++ signature :  float get_modulation_value(TWavetableDevicePyHandle,int,int)
+            :param target_index: target_index
+            :type target_index: int
+            :param source: source
+            :type source: int
+            :rtype: float
+            """
+            pass
+
+        def is_active_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "is_active". C++ signature :  bool is_active_has_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def is_parameter_modulatable(self, parameter: DeviceParameter) -> bool:
+            """
+            Indicate whether the parameter is modulatable. Note that pitch parameters only exist in python and must be handled there. C++ signature :  bool is_parameter_modulatable(TWavetableDevicePyHandle,TPyHandle<ATimeableValue>)
+            :param parameter: parameter
+            :type parameter: DeviceParameter
+            :rtype: bool
+            """
+            pass
+
+        def latency_in_ms_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "latency_in_ms". C++ signature :  bool latency_in_ms_has_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def latency_in_samples_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "latency_in_samples". C++ signature :  bool latency_in_samples_has_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def modulation_matrix_changed_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "modulation_matrix_changed". C++ signature :  bool modulation_matrix_changed_has_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def mono_poly_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "mono_poly". C++ signature :  bool mono_poly_has_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def name_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "name". C++ signature :  bool name_has_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def oscillator_1_effect_mode_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "oscillator_1_effect_mode". C++ signature :  bool oscillator_1_effect_mode_has_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def oscillator_1_wavetable_category_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "oscillator_1_wavetable_category". C++ signature :  bool oscillator_1_wavetable_category_has_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def oscillator_1_wavetable_index_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "oscillator_1_wavetable_index". C++ signature :  bool oscillator_1_wavetable_index_has_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def oscillator_1_wavetables_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "oscillator_1_wavetables". C++ signature :  bool oscillator_1_wavetables_has_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def oscillator_2_effect_mode_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "oscillator_2_effect_mode". C++ signature :  bool oscillator_2_effect_mode_has_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def oscillator_2_wavetable_category_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "oscillator_2_wavetable_category". C++ signature :  bool oscillator_2_wavetable_category_has_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def oscillator_2_wavetable_index_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "oscillator_2_wavetable_index". C++ signature :  bool oscillator_2_wavetable_index_has_listener(TWavetableDevicePyHandle,boost::python::api::object)oscillator_2_wavetable_index_has_listener( (WavetableDevice)arg1, (object)arg2) -> bool : Returns true, if the given listener function or method is connected to the property "oscillator_2_wavetable_index". C++ signature :  bool oscillator_2_wavetable_index_has_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def oscillator_2_wavetables_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "oscillator_2_wavetables". C++ signature :  bool oscillator_2_wavetables_has_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def parameters_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "parameters". C++ signature :  bool parameters_has_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def poly_voices_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "poly_voices". C++ signature :  bool poly_voices_has_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def remove_filter_routing_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "filter_routing". C++ signature :  void remove_filter_routing_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_is_active_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "is_active". C++ signature :  void remove_is_active_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_latency_in_ms_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "latency_in_ms". C++ signature :  void remove_latency_in_ms_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_latency_in_samples_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "latency_in_samples". C++ signature :  void remove_latency_in_samples_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_modulation_matrix_changed_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "modulation_matrix_changed". C++ signature :  void remove_modulation_matrix_changed_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_mono_poly_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "mono_poly". C++ signature :  void remove_mono_poly_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_name_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "name". C++ signature :  void remove_name_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_oscillator_1_effect_mode_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "oscillator_1_effect_mode". C++ signature :  void remove_oscillator_1_effect_mode_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_oscillator_1_wavetable_category_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "oscillator_1_wavetable_category". C++ signature :  void remove_oscillator_1_wavetable_category_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_oscillator_1_wavetable_index_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "oscillator_1_wavetable_index". C++ signature :  void remove_oscillator_1_wavetable_index_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_oscillator_1_wavetables_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "oscillator_1_wavetables". C++ signature :  void remove_oscillator_1_wavetables_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_oscillator_2_effect_mode_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "oscillator_2_effect_mode". C++ signature :  void remove_oscillator_2_effect_mode_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_oscillator_2_wavetable_category_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "oscillator_2_wavetable_category". C++ signature :  void remove_oscillator_2_wavetable_category_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_oscillator_2_wavetable_index_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "oscillator_2_wavetable_index". C++ signature :  void remove_oscillator_2_wavetable_index_listener(TWavetableDevicePyHandle,boost::python::api::object)remove_oscillator_2_wavetable_index_listener( (WavetableDevice)arg1, (object)arg2) -> None : Remove a previously set listener function or method from property "oscillator_2_wavetable_index". C++ signature :  void remove_oscillator_2_wavetable_index_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_oscillator_2_wavetables_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "oscillator_2_wavetables". C++ signature :  void remove_oscillator_2_wavetables_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_parameters_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "parameters". C++ signature :  void remove_parameters_listener(TPyHandle<ADevice>,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_poly_voices_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "poly_voices". C++ signature :  void remove_poly_voices_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_unison_mode_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "unison_mode". C++ signature :  void remove_unison_mode_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_unison_voice_count_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "unison_voice_count". C++ signature :  void remove_unison_voice_count_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def remove_visible_modulation_target_names_listener(self, arg2: object) -> None:
+            """
+            Remove a previously set listener function or method from property "visible_modulation_target_names". C++ signature :  void remove_visible_modulation_target_names_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: None
+            """
+            pass
+
+        def set_modulation_value(self, target_index: int, source: int, value: float) -> None:
+            """
+            Set the value of a modulation amount for the given target-source connection. C++ signature :  void set_modulation_value(TWavetableDevicePyHandle,int,int,float)
+            :param target_index: target_index
+            :type target_index: int
+            :param source: source
+            :type source: int
+            :param value: value
+            :type value: float
+            :rtype: None
+            """
+            pass
+
+        def store_chosen_bank(self, arg2: int, arg3: int) -> None:
+            """
+            Set the selected bank in the device for persistency. C++ signature :  void store_chosen_bank(TPyHandle<ADevice>,int,int)
+            :param arg2: arg2
+            :type arg2: int
+            :param arg3: arg3
+            :type arg3: int
+            :rtype: None
+            """
+            pass
+
+        def unison_mode_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "unison_mode". C++ signature :  bool unison_mode_has_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def unison_voice_count_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "unison_voice_count". C++ signature :  bool unison_voice_count_has_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        def visible_modulation_target_names_has_listener(self, arg2: object) -> bool:
+            """
+            Returns true, if the given listener function or method is connected to the property "visible_modulation_target_names". C++ signature :  bool visible_modulation_target_names_has_listener(TWavetableDevicePyHandle,boost::python::api::object)
+            :param arg2: arg2
+            :type arg2: object
+            :rtype: bool
+            """
+            pass
+
+        class View(object):
+            def __init__(self, *a, **k):
+                """
+                Representing the view aspects of a device.
+                """
+                pass
+
+            @property
+            def _live_ptr(self):
+                pass
+
+            @property
+            def canonical_parent(self):
+                """
+                Get the canonical parent of the View.
+                """
+                pass
+
+            @property
+            def is_collapsed(self):
+                """
+                Get/Set/Listen if the device is shown collapsed in the device chain.
+                """
+                pass
+
+            def add_is_collapsed_listener(self, arg2: object) -> None:
+                """
+                Add a listener function or method, which will be called as soon as the property "is_collapsed" has changed. C++ signature :  void add_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
+
+            def is_collapsed_has_listener(self, arg2: object) -> bool:
+                """
+                Returns true, if the given listener function or method is connected to the property "is_collapsed". C++ signature :  bool is_collapsed_has_listener(TPyViewData<ADevice>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: bool
+                """
+                pass
+
+            def remove_is_collapsed_listener(self, arg2: object) -> None:
+                """
+                Remove a previously set listener function or method from property "is_collapsed". C++ signature :  void remove_is_collapsed_listener(TPyViewData<ADevice>,boost::python::api::object)
+                :param arg2: arg2
+                :type arg2: object
+                :rtype: None
+                """
+                pass
