@@ -1,84 +1,41 @@
-import http.server
 import inspect
-import codecs
-import socketserver
+from codecs import StreamReaderWriter
+from typing import Union
 import sys
 import os
-import http
-import threading
-from typing import Any, Callable, Union
 
-from ..types.BuildMode import BuildMode
 from ..helpers.app import get_version_number
+from .Generator import Generator
 
 
-class DocumentationGenerator:
-    module: Any
-    outdir: str
-    script_dir: str
-    xmlfilename: str
+class DocumentationGenerator(Generator):
     lines = []
-    xmlFile: Union[codecs.StreamReaderWriter, None] = None
-    port: int
-    on_server_start: Union[Callable[[int], None], None]
-    httpd: socketserver.TCPServer
-    build_mode: BuildMode
 
-    def __init__(
-        self,
-        module,
-        outdir,
-        script_dir,
-        build_mode: BuildMode,
-        port=8080,
-        on_server_start: Union[Callable[[int], None], None] = None,
-    ):
-        self.module = module
-        self.outdir = outdir
-        self.script_dir = script_dir
-        self.build_mode = build_mode
-        self.port = port
-        self.on_server_start = on_server_start
-
-    def generate(self):
-        if not os.path.exists(self.outdir):
-            os.makedirs(self.outdir)
-
-        self.make_doc(self.module)
+    def __init__(self, module, outdir, script_dir):
+        super().__init__(
+            module,
+            outdir,
+            script_dir,
+            os.path.join(outdir, str(module.__name__) + ".xml"),
+        )
 
     def make_doc(self, module):
-        self.xmlfilename = os.path.join(self.outdir, str(module.__name__) + ".xml")
+        self.write(self.header)
+        self.write("<Root><Live>")
 
-        if self.xmlfilename is not None:
-            with codecs.open(self.xmlfilename, "w", "utf-8") as f:
-                self.xmlFile = f
+        self.write(
+            f"<Header>Live API Version {get_version_number(module)}</Header>"
+        )  # main title
 
-                self._write_to_xml(self.header)
-                self._write_to_xml("<Root><Live>")
+        self.write(f"<Doc>Running Python version {sys.version.split(' ')[0]}</Doc>\n")
 
-                self._write_to_xml(
-                    f"<Header>Live API Version {get_version_number(module)}</Header>"
-                )  # main title
+        self.write(f"<Doc>\t{self.disclaimer}</Doc>\n")
 
-                self._write_to_xml(
-                    f"<Doc>Running Python version {sys.version.split(' ')[0]}</Doc>\n"
-                )
+        self._describe_module(self.file, module)
 
-                self._write_to_xml(f"<Doc>\t{self.disclaimer}</Doc>\n")
+        self.write("</Live></Root>")
 
-                self._describe_module(f, module)
-
-                self._write_to_xml("</Live></Root>")
-
-                self.xmlFile = None
-
-            if self.build_mode != BuildMode.Build:
-                self.server_thread = threading.Thread(
-                    target=self._start_http_server, daemon=True
-                )
-                if self.on_server_start is not None:
-                    self.on_server_start(self.port)
-                self.server_thread.start()
+        self.xmlFile = None
 
     def _get_doc(self, obj):
         """Get object's doc string and remove \n's and clean up <'s and >'s for XML compatibility"""
@@ -118,9 +75,7 @@ class DocumentationGenerator:
 
         # Proceed only if name_str is available
         if name_str is None:
-            self._write_to_xml(
-                f"Warning: No name available for object {obj}. Skipping."
-            )
+            self.write(f"Warning: No name available for object {obj}. Skipping.")
             return
 
         # Handle self.lines stack
@@ -137,14 +92,14 @@ class DocumentationGenerator:
         line_str = "".join(self.lines)
 
         # Print the formatted description
-        self._write_to_xml(
+        self.write(
             "<%s>%s<Description>%s</Description></%s>\n"
             % (description, line_str, description, description)
         )
 
         # Print the docstring if available
         if hasattr(obj, "__doc__") and getattr(obj, "__doc__"):
-            self._write_to_xml(f"<Doc>\t{self._get_doc(obj)}</Doc>\n")
+            self.write(f"<Doc>\t{self._get_doc(obj)}</Doc>\n")
 
     def _describe_obj(self, descr: str, obj):
         """Describe object passed as argument, and identify as Class, Method, Property, Value, or Built-In"""
@@ -205,12 +160,14 @@ class DocumentationGenerator:
 
         except Exception as e:
             # Log the exception with more detail
-            self._write_to_xml(f"<Error> Error processing object {obj}: {e} </Error>")
+            self.write(f"<Error> Error processing object {obj}: {e} </Error>")
             return
 
-    def _describe_module(self, f, module):
-        """Describe the module object passed as argument
-        including its root classes and functions"""
+    def _describe_module(self, f: Union[StreamReaderWriter, None], module):
+        """
+        Describe the module object passed as argument
+        including its root classes and functions
+        """
 
         self._print_obj_info("Module", module)
 
@@ -230,31 +187,9 @@ class DocumentationGenerator:
 
         self.lines.pop()
 
-    def _write_to_xml(self, text: str) -> None:
-        if text is not None and self.xmlFile is not None:
-            self.xmlFile.write(text)
-
     @staticmethod
     def is_boost_python(obj):
         return hasattr(obj, "__module__") and "boost.python" in obj.__module__
-
-    def _start_http_server(self):
-        """Start a simple HTTP server to host Live.xml"""
-
-        # Change the current working directory to the output directory
-        os.chdir(self.outdir)
-
-        handler = http.server.SimpleHTTPRequestHandler
-
-        with socketserver.TCPServer(("", self.port), handler) as httpd:
-            self.httpd = httpd
-            try:
-                httpd.serve_forever()
-            except Exception:
-                httpd.server_close()
-
-    def close(self):
-        self.httpd.server_close()
 
     header = """<?xml-stylesheet type="text/css" href="../Live.css"?>"""
 

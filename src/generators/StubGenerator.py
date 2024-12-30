@@ -45,8 +45,8 @@ class StubGenerator:
             doc = (
                 doc.replace(">", ">")
                 .replace("<", "<")
-                .replace("&gt;", ">")
-                .replace("&lt;", "<")
+                .replace("&amp;gt;", ">")
+                .replace("&amp;lt;", "<")
                 .replace("&amp;", "&")
             )
         if tag is not None and name is not None and name != "Live":
@@ -62,11 +62,11 @@ class StubGenerator:
                 f.write(f'"""Stub generated for Ableton Version  {self.version}"""\n')
 
             if tag == "Module":
-                f.write("\n\n%sclass %s(ModuleType):\n" % (indent, short_name))
+                f.write(f"\n\n{indent}class {short_name}(ModuleType):\n")
 
             if tag == "Class" or tag == "Sub-Class":
-                f.write("\n%sclass %s(object):\n" % (indent, short_name))
-                f.write("%s    def __init__(self, *a, **k):\n" % indent)
+                f.write(f"\n{indent}class {short_name}(object):\n")
+                f.write(f"{indent}    def __init__(self, *a, **k):\n")
                 indent += "    "
 
             if tag == "Method":
@@ -100,7 +100,6 @@ class StubGenerator:
                     f.write("%sdef %s():\n" % (indent, short_name))
 
             if tag == "Property" or tag == "Value":
-                args, ret, doc = self.parse_args_from_doc(doc)
                 f.write(f"\n{indent}@property\n")
                 f.write(f"{indent}def {short_name}(self):\n")
 
@@ -127,7 +126,7 @@ class StubGenerator:
                     arg_name = name_default[0].strip()
                     arg_type = arg_parts[1].strip()
 
-                    args.append((arg_name, arg_type, ret))
+                    args.append((arg_name, arg_type, None))
 
                 doc = parts[1].strip()
         except Exception as e:

@@ -65,8 +65,6 @@ class APIMakeDoc(ControlSurface):
             Live,
             outdir=self.outdir,
             script_dir=self.script_dir,
-            on_server_start=self.handle_on_server_start,
-            build_mode=self.build_mode,
         )
         doc_generator.generate()
 
