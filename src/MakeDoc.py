@@ -61,11 +61,12 @@ class APIMakeDoc(ControlSurface):
     def build_documentation(self):
         self.log_message("Generating documentation for Live API")
 
-        doc_generator = self.document_gen = DocumentationGenerator(
+        doc_generator = DocumentationGenerator(
             Live,
             outdir=self.outdir,
             script_dir=self.script_dir,
         )
+
         doc_generator.generate()
 
         self.log_message("Completed Generating documentation for Live API")
@@ -73,7 +74,10 @@ class APIMakeDoc(ControlSurface):
     def build_stub(self):
         self.log_message("Generating stub for Live API")
 
-        stub_generator = StubGenerator(self.outdir, version=self.version)
+        stub_generator = StubGenerator(
+            Live, outdir=self.outdir, script_dir=self.script_dir
+        )
+
         stub_generator.generate()
 
         self.log_message("Completed generating stub for Live API")

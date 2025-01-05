@@ -1073,7 +1073,7 @@ shown in the currently selected window.
             """
             Return the integer represented by the given array of bytes.
 
-  bytes
+  bytes 
  Holds the array of bytes to convert.  The argument must either
  support the buffer protocol or be an iterable object producing bytes.
  Bytes and bytearray are examples of built-in objects that support the

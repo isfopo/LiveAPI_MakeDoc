@@ -38,26 +38,6 @@ class DocumentationGenerator(Generator):
             footer,
         )
 
-    def _get_doc(self, obj):
-        """Get object's doc string and remove \n's and clean up <'s and >'s for XML compatibility"""
-
-        if getattr(obj, "__doc__") is not None:
-            return self._clean_doc(getattr(obj, "__doc__"))
-
-    def _clean_doc(self, doc):
-        """Remove \n's and clean up <'s and >'s for XML compatibility"""
-
-        doc = doc.replace(
-            "\n", ""
-        )  # remove newlines from Live API docstings, for wrapped display
-        doc = doc.replace(
-            "   ", ""
-        )  # Strip chunks of whitespace from docstrings, for wrapped display
-        doc = doc.replace("&", "&amp;")
-        doc = doc.replace("<", "&lt;")  # replace XML reserved characters
-        doc = doc.replace(">", "&gt;")
-        return doc
-
     def _print_obj_info(self, description, obj, name=None):
         """Print object's descriptor and name on one line, and docstring (if any) on the next"""
 
@@ -101,3 +81,29 @@ class DocumentationGenerator(Generator):
         # Print the docstring if available
         if hasattr(obj, "__doc__") and getattr(obj, "__doc__"):
             self.write(f"<Doc>\t{self._get_doc(obj)}</Doc>\n")
+
+        self.handle_line_end()
+
+    def _get_doc(self, obj):
+        """Get object's doc string and remove \n's and clean up <'s and >'s for XML compatibility"""
+
+        if getattr(obj, "__doc__") is not None:
+            return self._clean_doc(getattr(obj, "__doc__"))
+
+    def _clean_doc(self, doc):
+        """Remove \n's and clean up <'s and >'s for XML compatibility"""
+
+        doc = doc.replace(
+            "\n", ""
+        )  # remove newlines from Live API docstings, for wrapped display
+        doc = doc.replace(
+            "   ", ""
+        )  # Strip chunks of whitespace from docstrings, for wrapped display
+        doc = doc.replace("&", "&amp;")
+        doc = doc.replace("<", "&lt;")  # replace XML reserved characters
+        doc = doc.replace(">", "&gt;")
+        return doc
+
+    def handle_line_end(self):
+        if self.lines:
+            self.lines.pop()

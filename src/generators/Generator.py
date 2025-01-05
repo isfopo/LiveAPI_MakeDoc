@@ -3,10 +3,10 @@ import codecs
 import inspect
 import os
 from typing import Any, Union
-from abc import abstractmethod
+from abc import ABCMeta, abstractmethod
 
 
-class Generator:
+class Generator(metaclass=ABCMeta):
     module: Any
     outdir: str
     script_dir: str
@@ -15,9 +15,15 @@ class Generator:
     header: str
     footer: str
 
-    lines = []
-
-    def __init__(self, module, outdir, script_dir, filepath, header="", footer=""):
+    def __init__(
+        self,
+        module: Any,
+        outdir: str,
+        script_dir: str,
+        filepath: str,
+        header: str = "",
+        footer: str = "",
+    ):
         self.module = module
         self.outdir = outdir
         self.script_dir = script_dir
@@ -42,13 +48,28 @@ class Generator:
         if text is not None and self.file is not None:
             self.file.write(text)
 
-    def close(self):
+    def _describe_module(self, module):
         """
-        Closes the documentation file.
+        Describe the module object passed as argument
+        including its root classes and functions
         """
-        if self.file is not None:
-            self.file.close()
-            self.file = None
+
+        self._print_obj_info("Module", module)
+
+        for name in dir(module):  # do the built-ins first
+            obj = getattr(module, name)
+            if inspect.isbuiltin(obj):
+                self._describe_obj("Built-In", obj)
+
+        for name in dir(module):  # then the rest
+            obj = getattr(module, name)
+            if inspect.isclass(obj):
+                self._describe_obj("Class", obj)
+            elif inspect.ismethod(obj) or inspect.isfunction(obj):
+                self._describe_obj("Method", obj)
+            elif inspect.ismodule(obj):
+                self._describe_module(obj)
+        self.handle_line_end()
 
     def _describe_obj(self, descr: str, obj):
         """Describe object passed as argument, and identify as Class, Method, Property, Value, or Built-In"""
@@ -71,8 +92,6 @@ class Generator:
 
         # If the object is a method or built-in, stop further processing
         if inspect.ismethod(obj) or inspect.isbuiltin(obj):
-            if self.lines:
-                self.lines.pop()
             return
 
         try:
@@ -83,8 +102,6 @@ class Generator:
             for name, member in members:
                 if isinstance(member, property):
                     self._print_obj_info("Property", member, name)
-                    if self.lines:
-                        self.lines.pop()
 
             # Process methods and functions
             for name, member in members:
@@ -104,40 +121,27 @@ class Generator:
                         # 'obj' is not a class, so cannot be a base class
                         self._describe_obj("Class", member)
 
-            if self.lines:
-                self.lines.pop()
+            self.handle_line_end()
 
         except Exception as e:
             # Log the exception with more detail
             self.write(f"<Error> Error processing object {obj}: {e} </Error>")
             return
 
-    def _describe_module(self, module):
-        """
-        Describe the module object passed as argument
-        including its root classes and functions
-        """
-
-        self._print_obj_info("Module", module)
-
-        for name in dir(module):  # do the built-ins first
-            obj = getattr(module, name)
-            if inspect.isbuiltin(obj):
-                self._describe_obj("Built-In", obj)
-
-        for name in dir(module):  # then the rest
-            obj = getattr(module, name)
-            if inspect.isclass(obj):
-                self._describe_obj("Class", obj)
-            elif inspect.ismethod(obj) or inspect.isfunction(obj):
-                self._describe_obj("Method", obj)
-            elif inspect.ismodule(obj):
-                self._describe_module(obj)
-
-        if self.lines:
-            self.lines.pop()
-
     @abstractmethod
     def _print_obj_info(self, description: str, obj: Any, name=None):
         """Print object's descriptor and name on one line, and docstring (if any) on the next"""
         pass
+
+    @abstractmethod
+    def handle_line_end(self):
+        """Handle the end of a line"""
+        pass
+
+    def close(self):
+        """
+        Closes the documentation file.
+        """
+        if self.file is not None:
+            self.file.close()
+            self.file = None
