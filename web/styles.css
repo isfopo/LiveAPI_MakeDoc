@@ -27,10 +27,6 @@ body {
 main {
     margin: 0;
     padding-right: 0;
-
-    @media (min-width: 768px) {
-        padding-right: 16vw;
-    }
 }
 
 h1 {
