@@ -2,7 +2,7 @@
         <?xml-stylesheet type="text/css" href="../Live.css"?>
         <Root>
             <Live>
-            <Header>Live API Version 12.1.5</Header>
+            <Header>Live API Version 12.1.10</Header>
             <Doc>
                 Running Python version 3.11.6
             </Doc>
@@ -4894,6 +4894,8 @@
 <Doc>	color_index_has_listener( (Track)arg1, (object)arg2) -&gt; bool : Returns true, if the given listener function or method is connected to the property "color_index". C++ signature :  bool color_index_has_listener(TTrackPyHandle,boost::python::api::object)</Doc>
 <Method>create_audio_clip<Description>Method</Description></Method>
 <Doc>	create_audio_clip( (Track)arg1, (object)arg2, (float)arg3) -&gt; None : Creates an audio clip referencing the file at the given path and inserts it into the arrangement at the specified time. Throws an error when called on a non-audio or a frozen track, when the specified time is outside the [0., 1576800.] range, when the track is currently being recorded into, or when the path doesn't point to a valid audio file. C++ signature :  void create_audio_clip(TTrackPyHandle,TString,double)</Doc>
+<Method>create_midi_clip<Description>Method</Description></Method>
+<Doc>	create_midi_clip( (Track)arg1, (float)arg2, (float)arg3) -&gt; None : Creates an empty MIDI clip and inserts it into the arrangement at the specified time. Throws an error when called on a non-MIDI track or a frozen track, when the specified time is outside the [0., 1576800.] range, or when the track is currently being recorded into. C++ signature :  void create_midi_clip(TTrackPyHandle,double,double)</Doc>
 <Method>current_input_routing_has_listener<Description>Method</Description></Method>
 <Doc>	current_input_routing_has_listener( (Track)arg1, (object)arg2) -&gt; bool : Returns true, if the given listener function or method is connected to the property "current_input_routing". C++ signature :  bool current_input_routing_has_listener(TTrackPyHandle,boost::python::api::object)</Doc>
 <Method>current_input_sub_routing_has_listener<Description>Method</Description></Method>
