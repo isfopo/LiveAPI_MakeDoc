@@ -11,7 +11,7 @@ class DocumentationGenerator(Generator):
 
     def __init__(self, module, outdir, script_dir):
         header = f"""
-        <?xml-stylesheet type="text/css" href="../Live.css"?>
+        <?xml-stylesheet type="text/css" href="../static/Live.css"?>
         <Root>
             <Live>
             <Header>Live API Version {get_version_number(module)}</Header>

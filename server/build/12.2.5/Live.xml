@@ -1,4 +1,4 @@
-<?xml-stylesheet type="text/css" href="../Live.css"?>
+<?xml-stylesheet type="text/css" href="../static/Live.css"?>
 <Root>
             <Live>
             <Header>Live API Version 12.2.5</Header>

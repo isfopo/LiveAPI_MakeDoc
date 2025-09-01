@@ -29,7 +29,7 @@
                 use in your own projects.
             </p>
             <ul>
-                {% for version in versions %}
+                {% for version in data.versions %}
                 <li>
                     <h3>{{version}}</h3>
                     <span>
@@ -38,7 +38,7 @@
                         >
                             Module
                         </a>
-                        <a href="${{version}}/Live.xml" class="primary">
+                        <a href="{{version}}" class="primary">
                             Documentation
                         </a>
                     </span>

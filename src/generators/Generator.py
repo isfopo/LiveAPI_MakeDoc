@@ -51,7 +51,8 @@ class Generator:
             self.file = None
 
     def _describe_obj(self, descr: str, obj):
-        """Describe object passed as argument, and identify as Class, Method, Property, Value, or Built-In"""
+        self.write(f"<Debug>_describe_obj called with descr='{descr}', obj_type='{type(obj)}', obj='{obj}'</Debug>")
+        """Describe object passed as argument, and identify as Class, Method, Property, Value, or Built-In\"\"\"
 
         # Attempt to get object name via __name__ or __qualname__
         obj_name = getattr(obj, "__name__", getattr(obj, "__qualname__", None))
@@ -76,6 +77,7 @@ class Generator:
             return
 
         try:
+            self.write(f"<Debug>Retrieving members for obj_type='{type(obj)}', obj='{obj}'</Debug>")
             # Retrieve all members of the object
             members = [(name, getattr(obj, name)) for name in dir(obj)]
 
@@ -89,6 +91,7 @@ class Generator:
             # Process methods and functions
             for name, member in members:
                 if inspect.isbuiltin(member) or inspect.isfunction(member):
+                    self.write(f"<Debug>_describe_obj (Method) recursing with member_type='{type(member)}', member='{member}'</Debug>")
                     self._describe_obj("Method", member)
 
             # Process subclasses of the current object
@@ -97,11 +100,14 @@ class Generator:
                     # Check if 'member' is a subclass of 'obj'
                     try:
                         if issubclass(member, obj):
+                            self.write(f"<Debug>_describe_obj (Sub-Class) recursing with member_type='{type(member)}', member='{member}'</Debug>")
                             self._describe_obj("Sub-Class", member)
                         else:
+                            self.write(f"<Debug>_describe_obj (Class from issubclass) recursing with member_type='{type(member)}', member='{member}'</Debug>")
                             self._describe_obj("Class", member)
                     except TypeError:
                         # 'obj' is not a class, so cannot be a base class
+                        self.write(f"<Debug>_describe_obj (Class from TypeError) recursing with member_type='{type(member)}', member='{member}'</Debug>")
                         self._describe_obj("Class", member)
 
             if self.lines:

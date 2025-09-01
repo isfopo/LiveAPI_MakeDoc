@@ -1,0 +1,13 @@
+<!doctype xml>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Version {{data.version}} - Live Data</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{{ url_for('static', filename='Live.css') }}"
+        />
+    </head>
+    <pre id="xml-data">{{data.xml_content}}</pre>
+</html>
