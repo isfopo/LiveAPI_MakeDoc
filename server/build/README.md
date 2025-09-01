@@ -1,6 +1,6 @@
 # Build and Release
 
-Because the output of this documentation and stub is dependant on the version of this software and the version of Ableton Live, releases to this repository are tagged with the version of Ableton Live they are compatible with. Changes to this software are made in the `develop` branch and merged into the `master` branch when a new release is ready will trigger the `create_release` action, causing all available versions of Live API documentation are updated at the same time.
+Because the output of this documentation and stub is dependent on the version of this software and the version of Ableton Live, releases to this repository are tagged with the version of Ableton Live they are compatible with. Changes to this software are made in the `develop` branch and merged into the `master` branch when a new release is ready will trigger the `create_release` action, causing all available versions of Live API documentation are updated at the same time.
 
 ## Generating Docs
 
