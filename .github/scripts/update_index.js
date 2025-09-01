@@ -13,6 +13,14 @@ const stylesPath = join(webDir, "styles.css");
 const indexDest = join(buildDir, "index.html");
 const stylesDest = join(buildDir, "styles.css");
 
+const sortSemVer = (a, b) => {
+  const [aMajor, aMinor, aPatch] = a.split(".").map(Number);
+  const [bMajor, bMinor, bPatch] = b.split(".").map(Number);
+  if (aMajor !== bMajor) return bMajor - aMajor;
+  if (aMinor !== bMinor) return bMinor - aMinor;
+  return bPatch - aPatch;
+};
+
 readFile(templatePath, "utf8", (err, templateData) => {
   if (err) {
     console.error("Error reading template file:", err);
@@ -29,13 +37,7 @@ readFile(templatePath, "utf8", (err, templateData) => {
     const versionDirs = files
       .filter((dir) => dir.isDirectory() && /^\d+\.\d+\.\d+$/.test(dir.name))
       .map((dir) => dir.name)
-      .sort((a, b) => {
-        const [aMajor, aMinor, aPatch] = a.split(".").map(Number);
-        const [bMajor, bMinor, bPatch] = b.split(".").map(Number);
-        if (aMajor !== bMajor) return aMajor - bMajor;
-        if (aMinor !== bMinor) return aMinor - bMinor;
-        return bPatch - aPatch;
-      });
+      .sort(sortSemVer);
 
     // Generate HTML list items for each version
     const listItems = versionDirs
@@ -58,7 +60,7 @@ readFile(templatePath, "utf8", (err, templateData) => {
     // Replace the placeholder with the generated list items
     const updatedContent = templateData.replace(
       "<!-- VERSIONS_PLACEHOLDER -->",
-      listItems
+      listItems,
     );
 
     // Write the updated content to index.html
@@ -68,7 +70,7 @@ readFile(templatePath, "utf8", (err, templateData) => {
         process.exit(1);
       }
       console.log(
-        "build/index.html has been successfully updated with available versions."
+        "build/index.html has been successfully updated with available versions.",
       );
     });
   });
@@ -86,7 +88,7 @@ readFile(stylesPath, "utf8", (err, content) => {
       process.exit(1);
     }
     console.log(
-      "build/styles.css has been successfully updated at" + stylesDest
+      "build/styles.css has been successfully updated at" + stylesDest,
     );
   });
 });
