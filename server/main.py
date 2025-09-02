@@ -1,6 +1,6 @@
 import os
 import re
-from flask import Flask, render_template, make_response
+from flask import Flask, Response, render_template, make_response
 
 
 semver_component_regex = r'(?:0|[1-9]\d*)'
@@ -10,7 +10,7 @@ build_folder = './build'
 app = Flask(__name__)
 
 @app.route("/")
-def index():
+def index() -> Response:
 
     print("Fetching version list...")
     semver_dirs = []
@@ -30,10 +30,10 @@ def index():
     return make_response(render_template('index.html', data={'versions': semver_dirs}))
 
 @app.route("/<string:version>")
-def version(version):
+def version(version: str) -> Response:
     # Check if the version is a valid semantic version
     if not re.match(semver_regex, version):
-        return f"Invalid version: {version}", 400
+        return make_response(f"Invalid version: {version}", 400)
 
     try:
         version_path = os.path.join(build_folder, version)
@@ -53,7 +53,7 @@ def version(version):
 
     except FileNotFoundError:
         # If the specified XML file or version directory does not exist, return a 404 Not Found error
-        return f"Version {version} or its Live.xml file not found", 404
+        return make_response(f"Version {version} or its Live.xml file not found", 404)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=8080)
