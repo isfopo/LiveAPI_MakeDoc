@@ -43,7 +43,6 @@ def version(version):
         if not os.path.isdir(version_path):
             raise FileNotFoundError(f"Version directory not found for {version}")
 
-        xml_content = ""
         # Attempt to open and read the version-specific XML file
         with open(xml_file_path, 'r', encoding='utf-8') as f:
             xml_content = f.read() # Read the content of the XML file
