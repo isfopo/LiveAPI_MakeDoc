@@ -2,7 +2,6 @@ import os
 import re
 from flask import Flask, render_template, make_response
 from flask_restful import Api, Resource
-import xml.etree.ElementTree as ET
 
 
 semver_component_regex = r'(?:0|[1-9]\d*)'
@@ -62,12 +61,6 @@ class VersionResource(Resource):
             # Attempt to open and read the version-specific XML file
             with open(xml_file_path, 'r', encoding='utf-8') as f:
                 xml_content = f.read() # Read the content of the XML file
-
-            # Parse the XML content using ElementTree
-            root = ET.fromstring(xml_content)
-
-            # Perform any necessary processing on the XML data
-
 
             resp = make_response(xml_content, 200)
             resp.headers['Content-Type'] = 'application/xml'
