@@ -15,3 +15,6 @@ reload:
 
 watch:
 	python3 watch.py --version 'Live 12.1.5'
+
+start-server:
+    cd server && chmod +x run.sh && ./run.sh
